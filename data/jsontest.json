@@ -1,0 +1,12 @@
+[
+  {
+    "code": "01SV-001-01",
+    "name": "REPLACE ENGINE OIL 换机油",
+    "labor": 580,
+    "materials": [
+      { "name": "puma hd 15w", "qty": 5, "rate": 100 },
+      { "name": "puma hd 16w", "qty": 3, "rate": 150 },
+      { "name": "puma hd 18w", "qty": 5, "rate": 1000 }
+    ]
+  }
+]

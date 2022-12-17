@@ -1,0 +1,1471 @@
+﻿code,item,cost,type
+01SV-001,Ordinary Service I 常规保养I,450,Ordinary Service常规保养
+01SV-001-01,Replace engine oil 更换发动机机油,-,Ordinary Service常规保养
+01SV-001-02,Replace oil filter 更换机油滤芯,-,Ordinary Service常规保养
+01SV-001-03,Replace air filter 更换空气滤芯,-,Ordinary Service常规保养
+01SV-001-04,Clean air filter 清洁空气滤芯,-,Ordinary Service常规保养
+01SV-001-05,Replace A/C filter 更换空调滤芯,-,Ordinary Service常规保养
+01SV-001-06,Clean A/C filter 清洁空调滤芯,-,Ordinary Service常规保养
+01SV-001-07,"Service reset & clear the fault codes
+保养重置/复位及清码",-,Ordinary Service常规保养
+01SV-002,Ordinary Service II 常规保养II,580,Ordinary Service常规保养
+01SV-003,Ordinary Service III 常规保养III,880,Ordinary Service常规保养
+02EN-001,Top up engine oil 补充机油,0,oil 机油
+02EN-002,Check for the oil leakage 检查漏油,200,leakage 漏油
+02EN-003,Repair the engine oil leakage 维修发动机漏油,200,leakage 漏油
+02EN-004,Remove to clean oil sump and fit it back 拆装清洗油底壳,200,oil sump 油底壳
+02EN-005,Remove to clean the oil strainer and fit it back 拆装清洗机油滤网,350,oil sump 油底壳
+02EN-006,Seal the oil sump 油底壳打胶密封,350,oil sump 油底壳
+02EN-007,Replace draining plug 更换油底壳螺丝,350,oil sump 油底壳
+02EN-008,Replace the oil sump screw washer 更换油底壳螺丝垫片,350,oil sump 油底壳
+02EN-009,Repair the oil sump 维修油底壳,100,oil sump 油底壳
+02EN-010,Clean the diesel filter 清洗柴油滤芯  ,100,fuel filter燃油滤芯
+02EN-011,Replace the diesel filter 更换柴油滤芯  ,100,fuel filter燃油滤芯
+02EN-012,Replace the petrol filter 更换汽油滤芯 ,100,fuel filter燃油滤芯
+02EN-013,Clean the fuel filter shell 清洗燃油滤芯壳子,100,fuel filter燃油滤芯
+02EN-014,Replace the fuel filter 更换燃油滤芯,100,fuel filter燃油滤芯
+02EN-015,Replace the inner fuel filter 更换内置燃油过滤器,350,fuel filter燃油滤芯
+02EN-016,Remove to clean the throttle body and fit it back 拆装清洗节气门总成,350,throttle 节气门
+02EN-017,Replace the throttle body complete 更换节气门总成,180,throttle 节气门
+02EN-018,Remove to test the injectors and fit them back 拆装检测喷油嘴,180,injectors 喷油嘴
+02EN-019,Remove to clean the injectiors and fit them back 拆装清洗喷油嘴,180,injectors 喷油嘴
+02EN-020,Test the injector nozzles with machine 检测喷油嘴,180,injectors 喷油嘴
+02EN-021,Calibration of the injector nozzles 调校喷油嘴,180,injectors 喷油嘴
+02EN-022,Repair the injector nozzles 维修喷油嘴,180,injectors 喷油嘴
+02EN-023,Replace the injector nozzles 更换喷油嘴,500,injectors 喷油嘴
+02EN-024,Replace the gasket nozzle holder 更换喷油嘴胶圈,500,injectors 喷油嘴
+02EN-025,Replace seals nozzle holder 更换喷油嘴进油管油封,150,injectors 喷油嘴
+02EN-026,Replace washers of injector fuel pipe 更换喷油嘴回油管垫片,150,injectors 喷油嘴
+02EN-027,Replace the screw of injector fuel pipe 更换喷油嘴油管螺丝,180,injectors 喷油嘴
+02EN-028,Replace the injector driver 更换喷油嘴驱动板,180,injectors 喷油嘴
+02EN-029,Brazing the injector fuel pipe 喷油嘴回油管焊接,350,fuel pipe 油管
+02EN-030,Repair the fuel return pipe 维修回油管,350,fuel pipe 油管
+02EN-031,Replace the fuel pipe 更换燃油管,300,fuel pipe 油管
+02EN-032,Repair the fuel pipe leakage 维修油管漏油,300,fuel pipe 油管
+02EN-033,Replace the washers 更换油管垫片,300,fuel pipe 油管
+02EN-034,Remove to test the common rail and fit it back 拆装检测共轨器,300,common rail 共轨器
+02EN-035,Test the common rail 检测共轨器,300,common rail 共轨器
+02EN-036,Replace the common rail 更换共轨器,300,common rail 共轨器
+02EN-037,Remove to test the fuel pump and fit it back 拆装检测油泵,, fuel pump油泵
+02EN-038,Calibration of high pressure pump 调校高压油泵,, fuel pump油泵
+02EN-039,Deal with the high pressure pump noisy 处理高压油泵异响,0, fuel pump油泵
+02EN-040,Test the high pressure pump with machine 检测高压油泵,0, fuel pump油泵
+02EN-041,Repair the high pressure pump 维修高压油泵,0, fuel pump油泵
+02EN-042,Replace high pressure pump 更换高压油泵,0, fuel pump油泵
+02EN-043,Fix the bolt of high pressure pump 高压油泵螺丝紧固,300, fuel pump油泵
+02EN-044,Replace the fuel pump (petrol) 更换汽油泵,300, fuel pump油泵
+02EN-045,Replace th injector pump 更换柴油泵,350, fuel pump油泵
+02EN-046,Replace the fuel pump（within the fuel tank）更换油箱内燃油泵,350, fuel pump油泵
+02EN-047,Clean the fuel pump filter 清洗油泵滤芯,350, fuel pump油泵
+02EN-048,"Replace the fuel pump filter assembly（within the fuel tank）
+更换油箱内燃油泵泵芯总成",350, fuel pump油泵
+02EN-049,Replace the fuel pump electrical switch 更换油泵开关,350, fuel pump油泵
+02EN-050,Repair the feed pump 维修手油泵,350,feed pump手油泵
+02EN-051,Fix the bolt of feed pump 手油泵螺丝紧固,350,feed pump手油泵
+02EN-052,Replace the feed pump 更换手油泵,350,feed pump手油泵
+02EN-053,Replace the oil pump 更换机油泵,500,oil pump 机油泵
+02EN-054,Remove to test the starter motor and fit it back 拆装检测启动马达,500, starter motor 启动马达
+02EN-055,Repair the starter motor 维修启动马达,350, starter motor 启动马达
+02EN-056,Replace the starter motor 更换启动马达,350, starter motor 启动马达
+02EN-057,Replace the starter motor bolt 更换启动马达螺栓,350, starter motor 启动马达
+02EN-058,Remove to test the alternator and fit it back 拆装检测发电机,350,alternator 发电机
+02EN-059,Repair the alternator 维修发电机,250,alternator 发电机
+02EN-060,Replace the alternator 更换发电机,250,alternator 发电机
+02EN-061,Adjust the alternator belt 调校发电机皮带,300,alternator 发电机
+02EN-062,Replace the alternator belt 更换发电机皮带,,alternator 发电机
+02EN-063, Replace the alternator belt tensioner 更换发电机皮带张紧轮,500,alternator 发电机
+02EN-064, Replace the alternator belt tensioner bearing 更换发电机皮带张紧轮轴承,300,alternator 发电机
+02EN-065,Repair the pulley 维修皮带轮,0,pulley 皮带轮
+02EN-066,Replace the Hydro Gear(pulley kit) 更换皮带轮套件,500,pulley 皮带轮
+02EN-067,Replace the pulley bearing 更换皮带轮轴承,500,pulley 皮带轮
+02EN-068,Remove the turbo charger to repair and fix it back 拆装维修涡轮增压器,0,turbo 涡轮
+02EN-069,Replace the movement of turbo charger 更换涡轮增压器机芯,,turbo 涡轮
+02EN-070,Replace the turbo charger 更换涡轮增压器,2500,turbo 涡轮
+02EN-071,Adjust the timing belt 调节正时皮带,500,timing 正时
+02EN-072,Replace the timing belt 更换正时皮带,0,timing 正时
+02EN-073,Ajust the timing chain 调节正时链条,350,timing 正时
+02EN-074,Replace the timing chain 更换正时链条,0,timing 正时
+02EN-075,Replace timing chain guide 更换正时链条导轨,,timing 正时
+02EN-076,Replace the timing gear 更换正时齿轮,0,timing 正时
+02EN-077,Replace the timing kit 更换正时套件,0,timing 正时
+02EN-078,Ajust the timing 调节正时,850,timing 正时
+02EN-079,Remove the engine to ajust the timing and fit it back 拆装发动机调节正时,0,timing 正时
+02EN-080,Replace the timing belt tentioner 更换正时组件（带端盖）,100,timing 正时
+02EN-081,Replace timing cover 更换正时盖,,
+02EN-082,Replace timing cover gasket 更换正时盖垫,,
+02EN-083,Remove the fuel tank and fit back 拆装油箱,0,fuel tank 油箱
+02EN-084,Clean the fuel tank 清洗油箱,300,fuel tank 油箱
+02EN-085,Clean the fuel gauge 清洗电子油尺,850,fuel tank 油箱
+02EN-086,Replace the fuel gauge 更换电子油尺,300,fuel tank 油箱
+02EN-087,Clean the fueL pump and fuel system 清理油泵和油路系统,100,fuel tank 油箱
+02EN-088,Fuel system cleaning 油路系统清洁,500,fuel tank 油箱
+02EN-089,Repair the fuel leakage of fuel tank 维修油箱漏油,300,fuel tank 油箱
+02EN-090,Clean the intercooler 清洗中冷箱,300,intercooler 中冷箱
+02EN-091,Replace the intercooler 更换中冷箱,300,intercooler 中冷箱
+02EN-092,Remove to clean three-way catalysis and fix it back 拆装清洗三元催化,500,three-way catalysis 三元催化
+02EN-093,Unblock three-way catalysis 疏通三元催化,500,three-way catalysis 三元催化
+02EN-094,Cutting to remove the exhaust pipe and welding to fix it back 拆装焊接排气管,,exhaust 排气管
+02EN-095,Repair the exhaust pipe 维修排气管,300,exhaust 排气管
+02EN-096,Modification and welding of exhaust pipe 排气管改装焊接,350,exhaust 排气管
+02EN-097,Replace the flaxible pipe 更换排气管金属软喉,500,exhaust 排气管
+02EN-098,Remove the engine complete and fit it back 拆装发动机总成,,
+02EN-099,Replace the engine complete 更换发动机总成,100,engine 发动机
+02EN-100,Dismantle the engine and fit it back 发动机拆解组装,,engine 发动机
+02EN-101,"Dismantle the old engine and fix the useful parts to the new engine
+拆解旧发动机并将有用附件组装至新发动机",300,engine 发动机
+02EN-102,Clean the engine parts 清洗发动机零件,350,engine 发动机
+02EN-103,Clean the engine surface 发动机外部清洗,400,engine 发动机
+02EN-104,Engine flush and lubrication system cleaning 发动机内部及润滑系统清洗,100,engine 发动机
+02EN-105,Engine treatment 发动机深度养护,350,engine 发动机
+02EN-106,Replace the pistons 更换活塞,300,piston 活塞
+02EN-107,Replace the piston sleeves 更换活塞套筒,1200,piston 活塞
+02EN-108,Replace the piston rings 更换活塞环,400,piston 活塞
+02EN-109,Replace the piston connecting rod 更换活塞连杆,350,piston 活塞
+02EN-110,Resleeve the block sleeves 磨缸套,350,piston cylinder 缸套
+02EN-111,Replace the piston cylinder 换缸套,300,piston cylinder 缸套
+02EN-112,Grinding the valves 磨气门,1200,valves 气门
+02EN-113,Grinding the piston cylinder 磨缸套,350,piston cylinder 缸套
+02EN-114,Replace the intake valves 更换进气门,350,valves 气门
+02EN-115,Replace the exhaust valves 更换排气门,1500,valves 气门
+02EN-116,Replace the valve seals 更换气门油封,300,valves 气门
+02EN-117,Replace valve lifters 更换气门顶杆,350,valves 气门
+02EN-118,Replace valve tubes 更换气门筒,350,valves 气门
+02EN-119,Replace the overhaul gasket 更换大修包,200,overhaul gasket 大修包
+02EN-120,Dismantle to examine the cylinder 拆装检修汽缸床,1500,cylinder 汽缸
+02EN-121,Skiming the cylinder 维修汽缸床,200,cylinder 汽缸
+02EN-122,Grinding the cylinder head 磨缸盖,350,cylinder 汽缸
+02EN-123,Replace the cylinder head gasket 更换汽缸垫,350,cylinder 汽缸
+02EN-124,Skiming the cylinder 磨汽缸床,200,cylinder 汽缸
+02EN-125,Replace the cylinder head 更换汽缸头,350,cylinder 汽缸
+02EN-126,Replace the cylinder 更换汽缸床,200,cylinder 汽缸
+02EN-127,Replace the cylinder head bolt 更换汽缸床螺杆,400,cylinder 汽缸
+02EN-128,Repair the tapet cover leakage 维修气门室盖漏油,350,tapet 气门室盖
+02EN-129,Remove to clean the tapet cover seal 拆装清洗气门室盖垫,350,tapet 气门室盖
+02EN-130,Replace the tappet cover seal 更换气门室盖垫,350,tapet 气门室盖
+02EN-131,Replace the tappet seal 更换气门室盖油封,,tapet 气门室盖
+02EN-132,Replace the tappet cover 更换气门室盖,400,tapet 气门室盖
+02EN-133,Remove to clean the intake pipe and fit it back 拆装清洗进气管,3000,intake 进气管
+02EN-134,Remove to clean the intake manifold and fit it back 拆装清洗进气歧管,350,intake 进气管
+02EN-135,Replace the main bearing 更换大瓦,2500,bearing 轴瓦
+02EN-136,Replace the conrod bearing 更换小瓦,,bearing 轴瓦
+02EN-137,Grinding the crankshaft 磨曲轴,400,crankshaft 曲轴
+02EN-138,Replace the crankshaft 更换曲轴,3000,crankshaft 曲轴
+02EN-139,Replace the crankshaft arm 更换曲轴摇臂,450,crankshaft 曲轴
+02EN-140,Replace crankshaft thrust washers 更换曲轴止退片,2500,crankshaft 曲轴
+02EN-141,Replace front crankshaft seal 更换曲轴前油封,400,crankshaft 曲轴
+02EN-142,Replace rear crankshaft seal 更换曲轴后油封,400,crankshaft 曲轴
+02EN-143,Replace crankshaft pully and targ 更换曲轴皮带轮和定位销,450,crankshaft 曲轴
+02EN-144,Replace the camshaft 更换凸轮轴,450,camshaft 凸轮轴
+02EN-145,Replace the camshaft seal 更换凸轮轴油封,500,camshaft 凸轮轴
+02EN-146,Replace the rocker shaft 更换凸轮轴抱瓦,400,camshaft 凸轮轴
+02EN-147,Replace balancing shaft case 更换平衡轴支架总成,450,balance平衡轴
+02EN-148,Adjust the engine balance shaft 调节发动机平衡轴,450,balance平衡轴
+02EN-149,Replace balancing shaft ricker 更换平衡轴轴套,500,balance平衡轴
+02EN-150,Remove to clean the EGR valve 拆装清洗废气阀,500,EGR 废弃阀
+02EN-151,Replace the EGR valve 更换废气阀,300,EGR 废弃阀
+02EN-152,Replace front engine mounting 更换前发动机机脚胶,450,mounting 机脚胶
+02EN-153,Replace left engine mounting (Front puller) 更换发动机左机脚胶(前驱),2500,mounting 机脚胶
+02EN-154,Replace right engine mounting (Front puller) 更换发动机右机脚胶(前驱),500,mounting 机脚胶
+02EN-155,Replace left engine mounting (Rear puller) 更换发动机左机脚胶(后驱),500,mounting 机脚胶
+02EN-156,Replace right engine mounting (Rear puller) 更换发动机右机脚胶(后驱),300,mounting 机脚胶
+02EN-157,Replace gearbox mounting (Front puller) 更换变速箱机脚胶(前驱),500,mounting 机脚胶
+02EN-158,Replace gearbox mounting (Rear puller)更换变速箱机脚胶(后驱),2500,gera mount变速箱机脚胶
+02EN-159,Rrplace the mounting bracket 更换机脚胶支架,200,gera mount变速箱机脚胶
+02EN-160,Replace gearbox mounting bush 更换变速箱机脚胶胶芯,500,gera mount变速箱机脚胶
+02EN-161,Adjust the idle speed 调怠速,300,
+02EN-162,Clean the engine compartment 清理发动机舱,500,
+02EN-163,Replace the washers 更换垫片,300,
+02EN-164,Modify the electronic pump to a manual pump 改电控油泵为手动机械泵,200,
+02EN-165,Repair the dark smoke and blue smoke of engine 维修发动机冒黑烟，冒蓝烟,,
+02EN-166,Replace the wire plug of injectors 更换喷油嘴线束插头,,
+02EN-167,Repair  the engine was leaking air 维修发动机漏气,,
+03EL-001,Scan and clear fault codes with diagnostic tool 解码器检测并清除故障码,180,codes 清码
+03EL-002,Replace the key battery 更换钥匙纽扣电池,180,battery 电池
+03EL-003,Replace the new battery 更换新电瓶,50,battery 电瓶
+03EL-004,Fix the battery 固定电瓶,50,battery 电瓶
+03EL-005,Clean and fix the battery terminals 清洗紧固电瓶夹,50,battery 电瓶
+03EL-006,Replace the battery terminals更换电瓶夹,50,battery 电瓶
+03EL-007,Replace the power cable 更换搭铁线,50,battery 电瓶
+03EL-008,Replace the cable connector 更换铜线耳,50,battery 电瓶
+03EL-009,Repair the circuit of battery terminals 维修电瓶桩头线路,50,battery 电瓶
+03EL-010,Remove to test and clean the spark plugs and fit them back 拆装检测清洗火花塞,50,spark plugs火花塞
+03EL-011,Replace the spark plugs 更换火花塞,50,spark plugs火花塞
+03EL-012,Install the heater plug switch 加装预热赛开关,50,heater plug 预热赛
+03EL-013,Replace the heater plugs 更换预热塞,50,heater plug 预热赛
+03EL-014,Remove to test and clean the ignition coils and fit them back 拆装检测清洗点火线圈,50, ignition coils 点火线圈
+03EL-015,Replace the ignition coils 更换点火线圈,50, ignition coils 点火线圈
+03EL-016,Replace the ignition cable 更换点火线,50, ignition coils 点火线
+03EL-017,Repair the fault relay 维修故障继电器,150,relay 继电器
+03EL-018,Replace the relpay 更换继电器,150,relay 继电器
+03EL-019,Replace the fuse 更换保险,250,fuse 保险
+03EL-020,Repair the fuse box circuit 维修保险线路,,
+03EL-021,Repair the fuse box 维修保险盒,250,fuse 保险
+03EL-022,Replace the fuse box 更换保险盒,200,fuse 保险
+03EL-023,Repair the Cig-fuse 维修点烟器,200,fuse 保险
+03EL-024,Replace the Cig fuse更换点烟器,300,fuse 保险
+03EL-025,Test the ECU 检测发动机电脑版,300,ECU 电脑版
+03EL-026,Replace the ECU 更换发动机电脑版,300,ECU 电脑版
+03EL-027,Match alarm chip and engine control program 匹配防盗芯片和发动机控制程序,300,ECU 电脑版
+03EL-028,Test the steering control model 检测方向机电脑版,350,ECU 电脑版
+03EL-029,Replace the steering control model 更换方向机电脑版,350,ECU 电脑版
+03EL-030,Test the BCM 检测车身电脑版,300,ECU 电脑版
+03EL-031,Replace the BCM 更换车身电脑版,300,ECU 电脑版
+03EL-032,Replace the A/C computer box 更换空调电脑版,300,ECU 电脑版
+03EL-033,Repair the A/C control model 维修空调控制面板,300,ECU 电脑版
+03EL-034,Replace the A/C control model 更换空调控制面板,150,ECU 电脑版
+03EL-035,Repair the control model of lights 维修灯光控制板,150,ECU 电脑版
+03EL-036,Computer testing and programming 电脑检测并写程序,50,program 程序
+03EL-037,Repair and reset the computer box 维修电脑版并重写程序,50,program 程序
+03EL-038,Reset the oil-water separator 复位油水分离器,50,program 程序
+03EL-039,"Set and match the codes with computer (injector compensation codes)
+电脑写码（喷油器补偿码）",50,program 程序
+03EL-040,Repair the cucirt of ABS 检修ABS线路,850,ABS传感器
+03EL-041,Repair the FL ABS sensor 维修左前ABS传感器,850,ABS传感器
+03EL-042,Repair the FR ABS sensor 维修右前ABS传感器,500,ABS传感器
+03EL-043,Repair the RL ABS sensor 维修左后ABS传感器,500,ABS传感器
+03EL-044,Repair the RR ABS sensor 维修右后ABS传感器,150,ABS传感器
+03EL-045,Replace FL the ABS sensor 更换左前ABS传感器,150,ABS传感器
+03EL-046,Replace FR the ABS sensor 更换右前ABS传感器,100,ABS传感器
+03EL-047,Replace RL the ABS sensor 更换左后ABS传感器,100,ABS传感器
+03EL-048,Replace RR the ABS sensor 更换右后ABS传感器,500,ABS传感器
+03EL-049,Replace FL the ABS seal 更换左前ABS油封,500,ABS传感器
+03EL-050,Replace FR the ABS seal 更换右前ABS油封,650,ABS传感器
+03EL-051,Replace RL the ABS seal 更换左后ABS油封,650,ABS传感器
+03EL-052,Replace RR the ABS seal 更换右后ABS油封,2000,ABS传感器
+03EL-053,Remove to test & clean the front oxygen sensor and fit it back 拆装检测清洗前氧传感器,2000,sensor 传感器
+03EL-054,Remove to test & clean the rear oxygen sensor and fit it back 拆装检测清洗后氧传感器,500,sensor 传感器
+03EL-055,Repair the front oxygen sensor 维修前氧传感器,,
+03EL-056,Repair the rear oxygen sensor 维修后氧传感器,,
+03EL-057,Replace front oxygen sensor 更换前氧传感器,500,sensor 传感器
+03EL-058,Replace rear oxygen sensor 更换后氧传感器,650,sensor 传感器
+03EL-059,Remove to test and clean crankshaft sensor 拆装检测清洗曲轴位置传感器,650,sensor 传感器
+03EL-060,Replace the crankshaft sensor更换曲轴位置传感器,500,sensor 传感器
+03EL-061,Remove to test and clean camshaft sensor 拆装检测清洗凸轮轴位置传感器,500,sensor 传感器
+03EL-062,Replace the camshaft sensor更换凸轮轴位置传感器,650,sensor 传感器
+03EL-063,Replace the oil pressure sensor更换机油压力传感器,650,sensor 传感器
+03EL-064,Replace the knocking sensor 更换爆震传感器,650,sensor 传感器
+03EL-065,Replace the coolant temperature sensor 更换冷却液温度传感器,650,sensor 传感器
+03EL-066,Replace the gearbox sensor更换变速箱传感器,650,sensor 传感器
+03EL-067,Replace the electronic thermostat 更换电子节温器,650,sensor 传感器
+03EL-068,Repair the cabin sensor 维修车厢位置传感器,650,sensor 传感器
+03EL-069,Replace the cabin sensor 更换车厢位置传感器,650,sensor 传感器
+03EL-070,Replace the radar sensor 更换雷达传感器,,sensor 传感器
+03EL-071,Remove to test & clean the air flow sensor and fit it back 拆装检测清洗空气流量计,,sensor 传感器
+03EL-072,Replace the air flow sensor 更换空气流量计,1500,sensor 传感器
+03EL-073,Replace the oil level sensor 更换油底壳传感器,1500,sensor 传感器
+03EL-074,Match the keys 匹配钥匙,2000,key 钥匙
+03EL-075,Replacing the Front temperature sensor(out) 更换前室外温度传感器,2000,sensor 传感器
+03EL-076,Dismantle and replace the ignition lock 拆装更换钥匙点火锁,300,key 钥匙
+03EL-077,Dismantle and replace the FL door key 拆装更换左前门钥匙,300,key 钥匙
+03EL-078,Dismantle and replace the FR door key 拆装更换右前门钥匙,2000,key 钥匙
+03EL-079,Repair the dash lock 维修中控锁,2000,dash 中控
+03EL-080,Replace the dash control model 更换中控模块,350,dash 中控
+03EL-081,Overhaul the engine circuits 检修发动机线路,350,circuit 线路
+03EL-079,Overhaul the engine circuit of fuel injection 检修发动机喷油电路,350,circuit 线路
+03EL-080,Correct the connection of the circuits 更正线路连接,350,circuit 线路
+03EL-081,Overhaul the circuit of engine control box 检修发动机控制盒线路,350,circuit 线路
+03EL-082,Repair the electrical cables of starter motor 维修启动马达线路,350,circuit 线路
+03EL-083,Repair the electrical cables of gearbox 维修变速箱线路,350,circuit 线路
+03EL-084,Repair the circuit of injectors 清理喷油嘴控制电路,350,circuit 线路
+03EL-085,Repair the high pressure pump socket 维修高压油泵线路,350,circuit 线路
+03EL-086,Repair the circuit of tailgate switch 维修尾门开关电路,350,circuit 线路
+03EL-087,Repair the circuit of fuel gauge 维修油表线路,300,circuit 线路
+03EL-088,Remove the dashboarb to overhaul the circuit and fix it back 拆装仪表台检修线路,300,circuit 线路
+03EL-089,Overhaul air conditioning circuit 空调电路检修,300,circuit 线路
+03EL-090,Detection of the start fault 检测启动故障,300,circuit 线路
+03EL-091,Dealing with the interior and wiring 内饰及线路维修整理,300,circuit 线路
+03EL-092,Repair the circuit of rearview mirror 检修后视镜电路,300,mirror 后视镜
+03EL-093,Repair the circuit of FL mirror 检修左前后视镜线路,300,mirror 后视镜
+03EL-094,Repair the circuit of FR mirror 检修右前后视镜线路,300,mirror 后视镜
+03EL-095,Overhaul the circuit of lights 检修灯光电路,300,light 灯光
+03EL-096,Repair the sensor of FL headlamp 维修左前大灯感应器,300,light 灯光
+03EL-097,Repair the sensor of FR headlamp 维修右前大灯感应器,300,light 灯光
+03EL-098,Repair the circuit of FL headlamp 维修左前大灯线路,300,light 灯光
+03EL-099,Repair the circuit of FR headlamp 维修右前大灯线路,300,light 灯光
+03EL-100,Check the radio 检修音响,300,radio 音响
+03EL-101,Check the original circuit of radio and speaker 检测原车音响和喇叭线路,300,radio 音响
+03EL-102,Check and repair the circuit of FL radio and speaker 检测维修左前门音响和喇叭线路,300,radio 音响
+03EL-103,Check and repair the circuit of FR radio and speaker 检测维修右前门音响和喇叭线路,350,radio 音响
+03EL-104,Check and repair the circuit of RL radio and speaker 检测维修左后门音响和喇叭线路,350,radio 音响
+03EL-105,Check and repair the circuit of RR radio and speaker 检测维修右后门音响和喇叭线路,350,radio 音响
+03EL-106,Repair the timing spring 维修气囊游丝,350,horn 喇叭
+03EL-107,Replace the timing spring 更换气囊游丝,300,horn 喇叭
+03EL-108,Replace the mono horn 更换单音喇叭,300,horn 喇叭
+03EL-109,Replace the snail horn 更换蜗牛喇叭,300,horn 喇叭
+03EL-110,Repair the circuit of hooter 维修喇叭线路,300,horn 喇叭
+03EL-111,Install the hooter switch 加装喇叭开关,350,horn 喇叭
+03EL-112,Repair the lock circuit of FL door 检修左前门锁电路,350,door 门锁电路
+03EL-113,Repair the lock circuit of FR door 检修右前门锁电路,350,door 门锁电路
+03EL-114,Repair the lock circuit of RL door 检修左后门锁电路,350,door 门锁电路
+03EL-115,Repair the lock circuit of RR door 检修右后门锁电路,350,door 门锁电路
+03EL-116,Repair the lock circuit of tailgate 检修后尾门锁电路,350,door 门锁电路
+03EL-117,Repair the FL doo lock 维修左前门锁,350,door lock 锁块
+03EL-118,Repair the FR doo lock 维修右前门锁,350,door lock 锁块
+03EL-119,Repair the RL doo lock 维修左后门锁,350,door lock 锁块
+03EL-120,Repair the RR doo lock 维修右后门锁,350,door lock 锁块
+03EL-121,Repair the tailgate lock 维修后尾门锁,350,door lock 锁块
+03EL-122,Replace the FL doo lock complete 更换左前门锁总成,350,door lock 锁块
+03EL-123,Replace the FR doo lock complete 更换右前门锁总成,350,door lock 锁块
+03EL-124,Replace the RL doo lock complete 更换左后门锁总成,350,door lock 锁块
+03EL-125,Replace the RR doo lock complete 更换右后门锁总成,350,door lock 锁块
+03EL-126,Replace the tailgate lock complete 更换后尾门锁总成,350,door lock 锁块
+03EL-127,Replace the FL doo lock motor 更换左前门锁块电机,350,door lock 锁块
+03EL-128,Replace the FR doo lock motor 更换右前门锁块电机,350,door lock 锁块
+03EL-129,Replace the RL doo lock motor 更换左后门锁块电机,350,door lock 锁块
+03EL-130,Replace the RR doo lock motor 更换右后门锁块电机,350,door lock 锁块
+03EL-131,Replace the tailgate lock motor 更换尾门锁块电机,350,door lock 锁块
+03EL-132,Overhaul glass lifting system circuit 检修玻璃升降系统电路,350,window lift 升降开关
+03EL-133,Repair the circuit of FL window switch 检修左前车窗升降开关线路,350,window lift 升降开关
+03EL-134,Repair the circuit of FR window switch 检修右前车窗升降开关线路,350,window lift 升降开关
+03EL-135,Repair the circuit of RL window switch 检修左后车窗升降开关线路,350,window lift 升降开关
+03EL-136,Repair the circuit of RR window switch 检修右后车窗升降开关线路,350,window lift 升降开关
+03EL-137,Replace the FL window switch 更换左前车窗升降开关,350,window lift 升降开关
+03EL-138,Replace the FR window switch 更换右前车窗升降开关,350,window lift 升降开关
+03EL-139,Replace the RL window switch 更换左后车窗升降开关,350,window lift 升降开关
+03EL-140,Replace the RR window switch 更换右后车窗升降开关,350,window lift 升降开关
+03EL-141,Repair the FL window motor 检修左前车窗电机,2500,window motor车窗电机
+03EL-142,Repair the FR window motor 检修右前车窗电机,,window motor车窗电机
+03EL-143,Repair the RL window motor 检修左后车窗电机,400,window motor车窗电机
+03EL-144,Repair the RR window motor 检修右后车窗电机,2500,window motor车窗电机
+03EL-145,Replace the FL window motor更换左前车窗电机,400,window motor车窗电机
+03EL-146,Replace the FR window motor更换右前车窗电机,400,window motor车窗电机
+03EL-147,Replace the RL window motor更换左后车窗电机,400,window motor车窗电机
+03EL-148,Replace the RR window motor更换右后车窗电机,400,window motor车窗电机
+03EL-149,Install wiper switch 加装雨刮器开关,400,wiper 雨刮
+03EL-150,Remove the wiper motor to clean and fit it back拆装清洗雨刮电机,,
+03EL-151,Repair the circuit of wiper motor 维修雨刮电机电路,,
+03EL-152,Repair the circuit of wiper switch 维修雨刮开关电路,400,wiper 雨刮
+03EL-153,Replace the front wiper motor and actuator assembly 更换前雨刮电机和执行器总成,450,wiper 雨刮
+03EL-154,Installation of the keyless entry system 加装遥控锁,400,install 加装
+03EL-155,Installation of the new control player 改装中控屏,500,install 加装
+03EL-156,Installation of the remote alarm 加装遥控报警器,450,install 加装
+03EL-157, Installation of radio host 安装音响主机,500,install 加装
+03EL-158,Installation of tachograph 安装行车记录仪,500,install 加装
+03EL-159,Installation of reversing video 安装倒车影像,500,install 加装
+03EL-160,System debugging  系统调试,500,install 加装
+03EL-161,Copy the high quality music 拷贝海量音乐曲目,500,install 加装
+03EL-162,Change the position of tachograph 更改行车记录仪位置,500,install 加装
+03EL-163, Installation of GPS 安装GPS定位器,500,install 加装
+03EL-164,Repair the ignition problem 维修启动问题,500,install 加装
+03EL-165,Overhaul the circuit of ECU 检修ECU线路,500,
+03EL-166,Repair the transmission oil circuit control module 修复变速箱油路控制板,500,
+03EL-167,Repair the circuit of rear left tail lamp 检修左后尾灯线路,500,
+03EL-168,Repair the circuit of rear right tail lamp 检修右后尾灯线路,500,
+03EL-169,Repair the circuit of throttle  维修节气门线路,500,
+03EL-170,Replace the dashboard combination switch 更换仪表盘组合开关,500,
+03EL-171,Diagnosis and reset memory with computer 专检设备刷码,350,
+03EL-172,Overhaul the suspension system circuit 检修悬挂系统电路,500,
+03EL-173,Replace the brake sensor 更换刹车传感器,350,
+03EL-174,Modify the kick off cable 改装熄火线,350,
+03EL-175,Install the oxygen sensor isolator 加装氧传感器屏蔽器,2000,
+03EL-176,Replace the injector driver 更换喷油嘴驱动版,350,
+03EL-177,Replace the engine cables complete 更换发动机大线全套,350,
+03EL-178,Replace the front KDSS 更换前KDSS(电子控制式动力调节悬架系统),2000,
+04TR-001,Top up ATF 补充变速箱油,0,ATF 变速箱油
+04TR-002,Replace the ATF 更换自动变速箱油,200,ATF 变速箱油
+04TR-003,Replace the ATF with machine 机器更换自动变速箱油,300,ATF 变速箱油
+04TR-004,Repair the ATF high temperature 处理ATF油温高,350,ATF 变速箱油
+04TR-005,Top up the gear oil 补充变速箱油,,ATF 变速箱油
+04TR-006,Replace the gear oil 更换手动变速箱油,200,gear oil 变速箱油
+04TR-007,Adjust the cluth 调整离合器,500,clutch 离合
+04TR-008,Adjust the cluth 调校离合器,500,clutch 离合
+04TR-009,Replace the clutch plate 更换离合器片,1500,clutch 离合
+04TR-010,Replace the presure plate 更换离合器压板,,clutch 离合
+04TR-011,Replace the thrust bearing 更换分离轴承,,clutch 离合
+04TR-012,Replace the piolt bearing 更换导向轴承,,clutch 离合
+04TR-013,Replace the cluch master cylinder 更换离合器总泵,350,clutch 离合
+04TR-014,Replace the cluch slave cylinder 更换离合器分泵,300,clutch 离合
+04TR-015,Replace the cluch booster 更换离合器助力鼓,400,clutch 离合
+04TR-016,Replace the cluch soft pipe 更换离合器软管,300,clutch 离合
+04TR-017,Replace the cluch iron pipe 更换离合器铁管,300,clutch 离合
+04TR-018,Top up the clutch fluid 补充离合器油,300,clutch 离合
+04TR-019,Replace the clutch fluid 更换离合器油,150,clutch 离合
+04TR-020,Repair the clutch fluid pipe by welding 焊接维修离合器油管,350,clutch 离合
+04TR-021,Remove the gear box and fit it back 拆装变速箱,1200,gear box 变速箱
+04TR-022,Remove to clean the gearbox and fit it back 拆装清洗变速箱 ,1500,gear box 变速箱
+04TR-023,Dismantle the gearbox and fit it back 变速箱拆解组装,1800,gear box 变速箱
+04TR-024,Remove to clean the transmission oil sump and fix it back 拆装清洗变速箱油底壳,350,gear box 变速箱
+04TR-025,Seal the transmission oil sump 变速箱油底壳打胶密封,100,gear box 变速箱
+04TR-026,Replace the transmission oil sump gasket 更换变速箱油底壳密封垫,300,gear box 变速箱
+04TR-027,Replace the transmission oil sump 更换变速箱油底壳,300,gear box 变速箱
+04TR-028,Remove to clean the transmission filter and fix it back 拆装清洗变速箱滤网,350,gear box 变速箱
+04TR-029,Replace transmission fluid filter 更换变速箱油滤,300,gear box 变速箱
+04TR-030,"Test transmission sensors, solenoid valves and wiring 检测变速箱传感器、电磁阀和线路",350,gear box 变速箱
+04TR-031,Remove to clean the transmission control valve 拆装清洗变速箱阀体,350,gear box 变速箱
+04TR-032,Replace the automatic gearbox complete 更换自动变速箱总成,1500,gear box 变速箱
+04TR-033,Replace the gearbox complete 更换手动变速箱总成,1500,gear box 变速箱
+04TR-034,Clean the gearbox surface 变速箱外部清洁,150,gear box 变速箱
+04TR-035,Flush the gearbox inside 变速箱内部清洗,200,gear box 变速箱
+04TR-036,Seal the gearbox (to stop the leakage) 变速箱打胶密封,150,gear box 变速箱
+04TR-037,Stop leaking for transmission 变速箱堵漏,150,gear box 变速箱
+04TR-038,Replace the gear box seal 更换变速箱油封,400,gear box 变速箱
+04TR-039,Replace the transmission torque converter 更换变速箱液力变矩器,400,gear box 变速箱
+04TR-040,Ordinary service for gearbox 保养变速箱系统,400,gear box 变速箱
+04TR-041,Replace the gearbox output speed sensor 更换变速箱输出速度传感器,400,gear box 变速箱
+04TR-042,Repair the oil leakage of gear box 维修变速箱漏油,,gear box 变速箱
+04TR-043,Remove to clean the transfer case 拆装清洗分动箱,,gear box 变速箱
+04TR-044,Overhaul the gear shift system 检修排挡系统,400,gear shift 排挡
+04TR-045,Replace the A/T switch 更换档位开关,400,gear shift 排挡
+04TR-046,Repair the gear lever 检修排挡杆,400,gear shift 排挡
+04TR-047,Replace the gear selector 更换排挡杆球头,300,gear shift 排挡
+04TR-048,Replace the gear shifting system 更换液压档杆机构,350,gear shift 排挡
+04TR-049,Adjust the gear shifting system 液压档杆机构调校,400,gear shift 排挡
+04TR-050,Remove the gear lever to repair and fit it back 排挡杆拆装,400,gear shift 排挡
+04TR-051,Replace the bearing housing 更换变速箱端盖,,
+04TR-052,Replace the fork 更换分离轴承拨叉,,
+04TR-053,Repair the fork 检修分离轴承拨叉,,
+04TR-054,Repair the gear box 维修变速箱,,
+04TR-055,Replace the gear selector 更换气动档杆助力泵,,
+05CL-001,Top up the coolant 补充冷却液,0,coolant 冷却液
+05CL-002,Replace the coolant 更换冷却液,150,coolant 冷却液
+05CL-003,Check the coolant leakage 检查冷却液渗漏,,coolant 冷却液
+05CL-004,Repair the coolant leakage 维修冷却液渗漏,,coolant 冷却液
+05CL-005,Remove the radiator to check the leakage 拆装水箱检查漏水,200, leakage 漏水
+05CL-006,Stop leaking of cooling system 冷却系统堵漏,200, stop leaking 堵漏
+05CL-007,Replace the coolant tank 更换冷却液水壶,300,coolant tank 冷却液水壶
+05CL-008,Replace the coolant tank (with sensor) 更换冷却液水壶（带传感器）,400,coolant tank 冷却液水壶
+05CL-009,Replace the expansion tank complete 更换副水壶总成,350,expansion tank 副水壶
+05CL-010,Repair the leakage of water pump 维修水泵漏水,350,water pump 水泵
+05CL-011,Replace the water pump complete 更换冷却水泵总成,350,water pump 水泵
+05CL-012,Adjust the fan belt 调节风扇皮带,150,fan 风扇
+05CL-013,Replace the fan belt 更换风扇皮带,200,fan 风扇
+05CL-014,Overhaul the circuit of fan 检修冷却风扇电路,300,fan 风扇
+05CL-015,Repair the fan motor 维修冷却风扇电机,350,fan 风扇
+05CL-016,Replace the fan motor 更换冷却风扇电机,300,fan 风扇
+05CL-017,Replace the fan 更换冷却风扇,300,fan 风扇
+05CL-018,Repair the fun crutch 维修水箱风扇耦合器,,fan 风扇
+05CL-019,Repair the radiator hose 维修冷却水管,350,hose 水管
+05CL-020,Replace the radiator hose 更换冷却水管,300,hose 水管
+05CL-021,Hand make the water pipe tee 制作水管三通,350,hose 水管
+05CL-022,Remove the radiator to check and fit it back 拆装水箱,,Radiator 水箱
+05CL-023,Radiator flush 散热器内部清洗,150,Radiator 水箱
+05CL-024,Clean the radiator surface 散热器外部清洗,100,Radiator 水箱
+05CL-025,Repair the radiator 维修散热器,1200,Radiator 水箱
+05CL-026,Repair the radiator leakage 维修水箱漏水,450,Radiator 水箱
+05CL-027,Replace the radiator complete 更换散热器总成,400,Radiator 水箱
+05CL-028,Repair the radiator cap 维修散热器盖子,150,Radiator cap 水箱盖
+05CL-029,Replace the upper radiator guard 更换水箱上护板,,Radiator 水箱
+05CL-030,Replace the radiator cap 更换散热器盖子,50,Radiator cap 水箱盖
+05CL-031,Replace the five-way of the thermostat bracket 更换节温器底座五通,850,thermostat 节温器
+05CL-032,Remove the thermostat and fix it back 拆装节温器,400,thermostat 节温器
+05CL-033,Hand make the thermostat cap 制作节温器盖,300,thermostat 节温器
+05CL-034,Remove the thermostat 拆除节温器,300,thermostat 节温器
+05CL-035,Replace the temperature switch 更换节温器开关,300,thermostat 节温器
+05CL-036,Remove the rear heater 拆除后加热器,350,heater 加热器
+05CL-037,Repair the water pipe leakage 维修水管漏水,245,
+05CL-038,Replace the water pipe of the base of oil filter 更换机油格底座水管,100,
+05CL-039,Replace the join conector of piper 更换水管三通,,
+06BK-001,Top up brake fluid 补充刹车油,0,brake fluid 刹车油
+06BK-002,Top up brake fluid and air discharge 补充刹车油并排空气,,
+06BK-003,Brake fluid regulator 更换刹车油,300,brake fluid 刹车油
+06BK-004,Replace front brake pads 更换前刹车片,300,brake pads 刹车片
+06BK-005,Replace rear brake pads 更换后刹车片,300,brake pads 刹车片
+06BK-006,Service front brake pads 保养前刹车片,350,brake pads 刹车片
+06BK-007,Service rear brake pads 保养后刹车片,350,brake pads 刹车片
+06BK-008,Replace front brake shoess 更换前刹车蹄,350,brake shoess 刹车蹄
+06BK-009,Replace rear brake shoes 更换后刹车蹄,350,brake shoess 刹车蹄
+06BK-010,Service and adjust front brake shoes 保养调节前刹车蹄,400,brake shoess 刹车蹄
+06BK-011,Service and adjust rear brake shoes 保养调节后刹车蹄,400,brake shoess 刹车蹄
+06BK-012,Replace and adjust the hand brake shoes 更换并调节手刹蹄,350,hand brakes 手刹
+06BK-013,Service and adjust the hand brakes 保养并调节手刹,350,hand brakes 手刹
+06BK-014,Repair and adjust the hand brake cable 维修/调节手刹拉线,300,hand brakes 手刹
+06BK-015,Replace the hand brake cable 更换手刹拉线,300,hand brakes 手刹
+06BK-016,Repair the electrical hand brake 维修电子手刹,1500,hand brakes 手刹
+06BK-017,Replace the electrical hand brake 更换电子手刹,1000,hand brakes 手刹
+06BK-018,Replace front brake sensor 更换前刹传感器,350,brake sensor传感器
+06BK-019,Replace rear brake sensor 更换后刹传感器,350,brake sensor传感器
+06BK-020,Reset the brake service light 传感器匹配,200,brake sensor传感器
+06BK-021,Replace FL brake discs 更换左前刹车盘,250,brake discs 刹车盘
+06BK-022,Replace FR brake discs 更换右前刹车盘,250,brake discs 刹车盘
+06BK-023,Replace RL brake discs 更换左后刹车盘,250,brake discs 刹车盘
+06BK-024,Replace RR brake discs 更换右后刹车盘,250,brake discs 刹车盘
+06BK-025,Remove and fix back the front brake discs 拆装前刹车盘,400,brake discs 刹车盘
+06BK-026,Skimming the front brake discs 光前刹车盘,0,brake discs 刹车盘
+06BK-027,Remove and fix back the rear brake discs 拆装后刹车盘,400,brake discs 刹车盘
+06BK-028,Skimming the rear brake discs 光后刹车盘,0,brake discs 刹车盘
+06BK-029,Clean the front wheel drum 清洗前刹车鼓,500,wheel drum 刹车鼓
+06BK-030,Clean the rear wheel drum 清洗后刹车鼓,500,wheel drum 刹车鼓
+06BK-031,Replace the FL wheel dram 更换左前刹车鼓,250,wheel drum 刹车鼓
+06BK-032,Replace the FR wheel dram 更换右前刹车鼓,250,wheel drum 刹车鼓
+06BK-033,Replace the RL wheel dram 更换左后刹车鼓,250,wheel drum 刹车鼓
+06BK-034,Replace the RR wheel dram 更换右后刹车鼓,250,wheel drum 刹车鼓
+06BK-035,"Dismatle the dashboarb to overhaul the brakes
+拆装仪表台检修",2000,master cylinder刹车总泵
+06BK-036,Repair brake master cylinder 维修刹车总泵,400,master cylinder刹车总泵
+06BK-037,Replace brake master cylinder 更换刹车总泵,350,master cylinder刹车总泵
+06BK-038,Replace brake master cylinder seal 更换刹车总泵油封,350,master cylinder刹车总泵
+06BK-039,Repair the ABS pump 维修ABS泵,450,ABS泵
+06BK-040,Replace the ABS pump 更换ABS泵,400,ABS泵
+06BK-041,Repair the FL wheel cylinder 维修左前刹车分泵,400,wheel cylinder刹车分泵
+06BK-042,Repair the FR wheel cylinder 维修右前刹车分泵,400,wheel cylinder刹车分泵
+06BK-043,Repair the RL wheel cylinder 维修左后刹车分泵,400,wheel cylinder刹车分泵
+06BK-044,Repair the RR wheel cylinder 维修右后刹车分泵,400,wheel cylinder刹车分泵
+06BK-045,Replace the FL wheel cylinder 更换左前刹车分泵,350,wheel cylinder刹车分泵
+06BK-046,Replace the FR wheel cylinder 更换右前刹车分泵,350,wheel cylinder刹车分泵
+06BK-047,Replace the RL wheel cylinder 更换左后刹车分泵,350,wheel cylinder刹车分泵
+06BK-048,Replace the RR wheel cylinder 更换右后刹车分泵,350,wheel cylinder刹车分泵
+06BK-049,Repair the FL disc caliper 维修左前刹车钳,400,disc caliper刹车钳
+06BK-050,Repair the FR disc caliper 维修右前刹车钳,400,disc caliper刹车钳
+06BK-051,Repair the RL disc caliper 维修左后刹车钳,400,disc caliper刹车钳
+06BK-052,Repair the RR disc caliper 维修右后刹车钳,400,disc caliper刹车钳
+06BK-053,Replace the FL disc caliper 更换前左刹车钳,350,disc caliper刹车钳
+06BK-054,Replace the FR disc caliper 更换前右刹车钳,350,disc caliper刹车钳
+06BK-055,Replace the RL disc caliper 更换左后刹车钳,350,disc caliper刹车钳
+06BK-056,Replace the RR disc caliper 更换右后刹车钳,350,disc caliper刹车钳
+06BK-057,Repair the FL flaxible pipe 维修左前刹车软管,350,flaxible pipe刹车油管
+06BK-058,Repair the FR flaxible pipe 维修右前刹车软管,350,flaxible pipe刹车油管
+06BK-059,Repair the RL flaxible pipe 维修左后刹车软管,350,flaxible pipe刹车油管
+06BK-060,Repair the RR flaxible pipe 维修右后刹车软管,350,flaxible pipe刹车油管
+06BK-061,Replace the FL flaxible pipe 更换左前刹车软管,300,flaxible pipe刹车油管
+06BK-062,Replace the FR flaxible pipe 更换右前刹车软管,300,flaxible pipe刹车油管
+06BK-063,Replace the RL flaxible pipe 更换左后刹车软管,300,flaxible pipe刹车油管
+06BK-064,Replace the RR flaxible pipe 更换右后刹车软管,300,flaxible pipe刹车油管
+06BK-065,Repair the brake line 维修刹车铁管,450,flaxible pipe刹车油管
+06BK-066,Replace the brake line 更换刹车铁管,400,flaxible pipe刹车油管
+06BK-067,Replace the FL disc caliper bolt  更换左前刹车钳螺丝,300, caliper bolt 刹车钳螺丝
+06BK-068,Replace the FR disc caliper bolt  更换右前刹车钳螺丝,300, caliper bolt 刹车钳螺丝
+06BK-069,Replace the RL disc caliper bolt  更换左后刹车钳螺丝,300, caliper bolt 刹车钳螺丝
+06BK-070,Replace the RR disc caliper bolt  更换右后刹车钳螺丝,300, caliper bolt 刹车钳螺丝
+06BK-071,Replace the FL brake lockers 更换左前刹车螺丝,300,brake lockers刹车螺丝
+06BK-072,Replace the FR brake lockers 更换右前刹车螺丝,300,brake lockers刹车螺丝
+06BK-073,Replace the RL brake lockers 更换左后刹车螺丝,300,brake lockers刹车螺丝
+06BK-074,Replace the RR brake lockers 更换右后刹车螺丝,300,brake lockers刹车螺丝
+06BK-075,Repair the brakes noisy 维修刹车异响,400,noisy异响
+06BK-076,Overhaul the brake system 刹车系统检修,,brake system刹车系统
+06BK-077,Overhaul the FL brake system 左前刹车系统检修,400,brake system刹车系统
+06BK-078,Overhaul the FR brake system 右前刹车系统检修,400,brake system刹车系统
+06BK-079,Overhaul the RL brake system 左后刹车系统检修,400,brake system刹车系统
+06BK-080,Overhaul the RR brake system 右后刹车系统检修,400,brake system刹车系统
+06BK-081,Replace the wheel cylinder seals 更换刹车分泵油封,400,brake system刹车系统
+06BK-082,Machine the wheel drum 加工轴套,400,
+06BK-083,Replace the vacuum pump 更换真空泵,400,
+06BK-084,Replace the booster 更换大力鼓,400,
+06BK-085,Repair and adjust the hand brake 维修手刹,,
+06BK-086,Replace the FL disc caliper return spring 更换左前刹车钳弹簧,,
+06BK-087,Replace the FR disc caliper return spring 更换右前刹车钳弹簧,,
+06BK-088,Replace the brake switch 更换刹车开关,,
+06BK-089,Replace the vacuum booster tube 更换真空助力管,,
+06BK-090,Replace the brake vacuum drayer 更换,,
+07FS-001,Replace FL stablizer links 更换前左平衡杆吊杆,120,stablizer links平衡杆
+07FS-002,Replace FR stablizer links 更换前右平衡杆吊杆,120,stablizer links平衡杆
+07FS-003,Remove the FL stablizer links and fix it back 拆装前左平衡杆吊杆,120,stablizer links平衡杆
+07FS-004,Remove the FR stablizer links and fix it back 拆装前右平衡杆吊杆,120,stablizer links平衡杆
+07FS-005,Repair FL stablizer links 维修前左平衡杆吊杆,120,stablizer bush平衡杆胶套
+07FS-006,Repair FR stablizer links 维修前右平衡杆吊杆,120,stablizer bush平衡杆胶套
+07FS-007,Replace FL stablizer bush 更换前左平衡杆胶套,120,stablizer bush平衡杆胶套
+07FS-008,Replace FR stablizer bush 更换前右平衡杆胶套,120,ball joint球头
+07FS-009,Repair FL stablizer bush 维修前左平衡杆胶套,120,ball joint球头
+07FS-010,Repair FR stablizer nush 维修前右平衡杆胶套,120,ball joint球头
+07FS-011,Replace FL upper ball joint 更换前左上支臂球头,120,ball joint球头
+07FS-012,Replace FR upper ball joint 更换前右上支臂球头,120, bush胶套
+07FS-013,Replace FL lower ball joint 更换前左下支臂球头,100, bush胶套
+07FS-014,Replace FR lower ball joint 更换前右下支臂球头,100, bush胶套
+07FS-015,Replace FL upper arm bushes (big) 更换前左上支臂大胶套,100, bush胶套
+07FS-016,Replace FL upper arm bushes (small) 更换前左上支臂小胶套,100, bush胶套
+07FS-017,Replace FR upper arm bushes (big) 更换前右上支臂大胶套,150, bush胶套
+07FS-018,Replace FR upper arm bushes (small) 更换前右上支臂小胶套,150,arm 支臂
+07FS-019,Replace FL lower arm bushes (big) 更换前左下支臂大胶套,150,arm 支臂
+07FS-020,Replace FL lower arm bushes (small)  更换前左下支臂小胶套,150,arm 支臂
+07FS-021,Replace FR lower arm bushes (big)  更换前右下支臂大胶套,200,arm 支臂
+07FS-022,Replace FR lower arm bushes  (small) 更换前右下支臂小胶套,200,arm 支臂
+07FS-023,Replace FL upper control arm complete更换前左上支臂总成,200,arm 支臂
+07FS-024,Replace FR upper control arm complete更换前右上支臂总成,200,arm 支臂
+07FS-025,Replace FL lower control arm complete更换前左下支臂总成,200,arm 支臂
+07FS-026,Replace FR lower control arm complete更换前右下支臂总成,200,arm 支臂
+07FS-027,Repair FL stablizer link holder 维修前左支臂孔,200,arm 支臂
+07FS-028,Repair FR stablizer link holder 维修前右支臂孔,200,wheel bearing轮芯轴承
+07FS-029,Repair the holder of FL upper control arm 维修前左上支臂支架,220,wheel bearing轮芯轴承
+07FS-030,Repair the holder of FR upper control arm 维修前右上支臂支架,220,wheel bearing轮芯轴承
+07FS-031,Replace the bolt of  FL upper control arm 更换前左上支臂螺栓,200,wheel hub轮毂单元
+07FS-032,Replace the bolt of  FR upper control arm 更换前右上支臂螺栓,200,wheel hub轮毂单元
+07FS-033,Replace the bolt of  FL lower control arm 更换前左下支臂螺栓,220,shock 减震
+07FS-034,Replace the bolt of  FR lower control arm 更换前右下支臂螺栓,220,shock 减震
+07FS-035,Replace FL lower control arm bouncing rubber更换前左下支臂缓冲胶,200,shock 减震
+07FS-036,Replace FR lower control arm bouncing rubber更换前右下支臂缓冲胶,200,shock 减震
+07FS-037,Replace FL wheel bearing 更换左前轮芯轴承,220,shock 减震
+07FS-038,Replace FR wheel bearing 更换右前轮芯轴承,220,shock 减震
+07FS-039,Replace FL wheel hub seal 更换左前轮毂轴承油封,200,shock 减震
+07FS-040,Replace FR wheel hub seal 更换右前轮毂轴承油封,200,shock 减震
+07FS-041,Replace FL wheel hub 更换左前轮毂单元总成,220,shock 减震
+07FS-042,Replace FR wheel hub 更换右前轮毂单元总成,220,shock 减震
+07FS-043,Replace FL shock absorber 更换前左减震器,200,shock 减震
+07FS-044,Replace FR shock absorber 更换前右减震器,200,shock 减震
+07FS-045,Remove the FL shock and fix it back (with spring) 拆装前左减震器(带弹簧),300,shock 减震
+07FS-046,Remove the FR shock and fix it back (with spring) 拆装前右减震器(带弹簧),300,shock 减震
+07FS-047,Replace FL shock (with spring) 更换前左减震器(带弹簧),300,shock 减震
+07FS-048,Replace FR shock (with spring) 更换前右减震器(带弹簧),300,shock 减震
+07FS-049,Modifying FL shock (with spring) 改装前左减震器(带弹簧),300,shock 减震
+07FS-050,Modifying FR shock (with spring) 改装前右减震器(带弹簧),300,shock 减震
+07FS-051,Welding FL shock (with spring) 焊接前左减震器(带弹簧),300,shock 减震
+07FS-052,Welding FR shock (with spring) 焊接前右减震器(带弹簧),300,shock 减震
+07FS-053,Replace FL shock (with air bag) 更换前左气囊震器,350,shock 减震
+07FS-054,Replace FR shock (with  air bag) 更换前右气囊震器,350,shock 减震
+07FS-055,Replace Front Left shock air bag 更换左前震器气囊,,
+07FS-056,Replace Front Right shock air bag 更换右前震器气囊,,
+07FS-057,Replace Front shock air pump 更换前震器气囊打气泵,,
+07FS-058,Reset the suspension 匹配空气悬挂,350,shock 减震
+07FS-059,Replace FL hydraulic shock absorber 更换前左液压震器,350,sring 钢板
+07FS-060,Replace FR hydraulic shock absorber 更换前右液压震器,200,sring 钢板
+07FS-061,Replace front shocks hydraulic oil 更换前减震液压油,200,底盘异响
+07FS-062,Service the FL shocks 保养前左减震器,200,
+07FS-063,Service the FR shocks 保养前右减震器,200,
+07FS-064,Replace FL shock mounting 更换前左减震器顶胶,200,
+07FS-065,Replace FR shock mounting 更换前右减震器顶胶,200,stablizer links平衡杆
+07FS-066,Replace FL shock bush 更换前左减震器胶套,200,stablizer links平衡杆
+07FS-067,Replace FR shock bush 更换前右减震器胶套,200,stablizer links平衡杆
+07FS-068,Replace FL shock spring 更换前左减震器弹簧,,stablizer bush平衡杆胶套
+07FS-069,Replace FR shock spring 更换前右减震器弹簧,,stablizer bush平衡杆胶套
+07FS-070,Replace FL shock spring rubber 更换前左减震弹簧胶垫,,ball joint球头
+07FS-071,Replace FR shock spring rubber 更换前右减震弹簧胶垫,,ball joint球头
+07FS-072,Replace FL shock spring holder/plate 更换前左减震弹簧顶座,200, bush胶套
+07FS-073,Replace FR shock spring holder/plate 更换前右减震弹簧顶座,200, bush胶套
+07FS-074,Service FL shock spring plate bearing 保养前左减震弹簧顶座轴承,,
+07FS-075,Service FR shock spring plate bearing 保养前右减震弹簧顶座轴承,,
+07FS-076,Replace FL shock spring plate bearing 更换前左减震弹簧顶座轴承,200, bush胶套
+07FS-077,Replace FR shock spring plate bearing 更换前右减震弹簧顶座轴承,200,arm 支臂
+07FS-078,Replace FL shock rubber boot更换前左减震器防尘套,250,arm 支臂
+07FS-079,Replace FR shock rubber boot更换前右减震器防尘套,250,arm 支臂
+07FS-080,Fix FL shock bouncing rubber更换前左减震缓冲胶,250,arm 支臂
+07FS-081,Fix FR shock bouncing rubber更换前右减震缓冲胶,250,arm 支臂
+07FS-082,Fix RL shock bouncing rubber更换后左减震缓冲胶,200,shock mounting 减震器顶胶
+07FS-083,Fix RR shock bouncing rubber更换后右减震缓冲胶,200,shock mounting 减震器顶胶
+07FS-084,Replace the FL leaf spring 更换左前减震钢板,250,wheel bearing轮芯轴承
+07FS-085,Replace the FR leaf spring 更换右前减震钢板,250,wheel bearing轮芯轴承
+07FS-086,Dealing with the noisy of suspension 检修底盘异响,250,wheel hub轮毂单元
+07FS-087,Service & coating for the suspension 底盘装甲,250,shock 减震
+07FS-088,Repair the cabin lock 维修驾驶楼拉杆,200,shock 减震
+07FS-089,Fix the suspension guard board紧固底盘护板,200,shock 减震
+07FS-090,Replace the FL left knuckle arm 更换左前羊角,300,转向节
+07FS-091,Replace the FR left knuckle arm 更换右前羊角,300,转向节
+07FS-092,Repair the bolt of FR shock 维修右前减震器螺丝,50,shock 减震
+07FS-093,Repair the bolt of FL shock 维修右前减震器螺丝,50,shock 减震
+08RS-001,Replace RL stablizer links 更换后左平衡杆吊杆,120,stablizer links 平衡杆
+08RS-002,Replace RR stablizer links 更换后右平衡杆吊杆,120,stablizer links 平衡杆
+08RS-003,Replace RL stablizer bush 更换后左平衡杆胶套,120,stablizer bush平衡杆胶套
+08RS-004,Replace RR stablizer bush 更换后右平衡杆胶套,120,stablizer bush平衡杆胶套
+08RS-005,Repair RL stablizer bush 维修后左平衡杆胶套,100,stablizer bush平衡杆胶套
+08RS-006,Repair RR stablizer nush 维修后右平衡杆胶套,100,stablizer bush平衡杆胶套
+08RS-007,Replace RL upper ball joint 更换后左上支臂球头,100,ball joint 球头
+08RS-008,Replace RR upper ball joint 更换后右上支臂球头,100,ball joint 球头
+08RS-009,Replace RL lower ball joint 更换后左下支臂球头,150,ball joint 球头
+08RS-010,Replace RR lower ball joint 更换后右下支臂球头,150,ball joint 球头
+08RS-011,Repair RL control rod 维修后左外拉杆,150,control rod 外拉杆
+08RS-012,Repair RR control rod 维修后右外拉杆,150,control rod 外拉杆
+08RS-013,Replace RL control rod 更换后左外拉杆,200,control rod 外拉杆
+08RS-014,Replace RR control rod 更换后右外拉杆,200,control rod 外拉杆
+08RS-015,Repair RL control rod bush 维修后左外拉杆胶套,200,control rod bush外拉杆胶套
+08RS-016,Repaie RR control rod bush 维修后右外拉杆胶套,200,control rod bush外拉杆胶套
+08RS-017,Replace RL control rod bush 更换后左外拉杆胶套,200,control rod bush外拉杆胶套
+08RS-018,Replace RR control rod bush 更换后右外拉杆胶套,200,control rod bush外拉杆胶套
+08RS-019,Replace RL knuckle arm bush 更换后左转向臂胶套,200,bush 胶套
+08RS-020,Replace RR knuckle arm bush 更换后右转向臂胶套,200,bush 胶套
+08RS-021,Replace RL upper control arm bushes (big) 更换后左上支臂大胶套,200,bush 胶套
+08RS-022,Replace RL upper control arm bushes (small) 更换后左上支臂小胶套,200,bush 胶套
+08RS-023,Replace RR upper control arm bushes (big)  更换后右上支臂大胶套,200,bush 胶套
+08RS-024,Replace RR upper control arm bushes (small)  更换后右上支臂小胶套,200,bush 胶套
+08RS-025,Replace RL lateral arm bush (big) 更换后左侧悬臂大胶套,150,bush 胶套
+08RS-026,Replace RL lateral arm bush (small) 更换后左侧悬臂小胶套,150,bush 胶套
+08RS-027,Replace RR control arm bush (big) 更换后右侧悬臂大胶套,150,bush 胶套
+08RS-028,Replace RR control arm bush (small) 更换后右侧悬臂小胶套,150,bush 胶套
+08RS-029,Replace RL lower arm bushes (big)  更换后左下支臂大胶套,220,bush 胶套
+08RS-030,Replace RL lower arm bushes (small)  更换后左下支臂小胶套,220,bush 胶套
+08RS-031,Replace RR lower arm bushes (big)  更换后右下支臂大胶套,220,bush 胶套
+08RS-032,Replace RR lower arm bushes (small)  更换后右下支臂小胶套,220,bush 胶套
+08RS-033,"Replace rear bushes (Non-independent suspension)
+更换后桥拉杆胶套(非独立悬架VVTI)",200,bush 胶套
+08RS-034,"Replace rear bushes (Independent suspension)
+更换后桥拉杆胶套(独立悬架)",200,bush 胶套
+08RS-035,Replace rear left damper 更换左后后桥缓冲胶,,
+08RS-036,Replace rear right damper 更换右后后桥缓冲胶,,
+08RS-037,Replace RL upper control arm 更换后左上支臂总成,200,arm 支臂
+08RS-038,Replace RR upper control arm更换后右上支臂总成,200,arm 支臂
+08RS-039,Replace RL lower control arm 更换后左下支臂总成,200,arm 支臂
+08RS-040,Replace RR lower control arm 更换后右下支臂总成,200,arm 支臂
+08RS-041,Repair RL stablizer link holder 维修后左支臂孔,200,arm 支臂
+08RS-042,Repair RR stablizer link holder 维修后右支臂孔,200,arm 支臂
+08RS-043,Replace the bolt of  RL upper control arm 更换后左上支臂螺栓,220,arm 支臂
+08RS-044,Repair the holder of RR upper control arm 更换后右上支臂螺栓,220,arm 支臂
+08RS-045,Replace RL wheel bearing 更换后左轮芯轴承,200, wheel bearing轮芯轴承
+08RS-046,Replace RR wheel bearing 更换后右轮芯轴承,200, wheel bearing轮芯轴承
+08RS-047,Replace RL wheel hub 更换后左轮毂单元总成,220,wheel hub轮毂单元
+08RS-048,Replace RR wheel hub 更换后右轮毂单元总成,220,wheel hub轮毂单元
+08RS-049,Replace RL shock absorber 更换后左减震器,200,shock 减震
+08RS-050,Replace RR shock absorber 更换后右减震器,200,shock 减震
+08RS-051,Remove the RL shock and fix it back (with spring) 拆装后左减震器(带弹簧),220,shock 减震
+08RS-052,Remove the RR shock and fix it back (with spring) 拆装后右减震器(带弹簧),220,shock 减震
+08RS-053,Replace RL shock (with spring) 更换后左减震器(带弹簧),200,shock 减震
+08RS-054,Replace RR shock (with spring) 更换后右减震器(带弹簧),200,shock 减震
+08RS-055,Replace RL shock (with air bag) 更换后左气囊震器,220,shock 减震
+08RS-056,Replace RR shock (with  air bag) 更换后右气囊震器,220,shock 减震
+08RS-057,Overhaul the air suspension 检修空气悬挂,,
+08RS-058,Reset the suspension 匹配空气悬挂,200,shock 减震
+08RS-059,Replace RL hydraulic shock absorber 更换后左液压减震器,200,shock 减震
+08RS-060,Replace RL hydraulic shock absorber 更换后左液压震器,220,shock 减震
+08RS-061,Replace RR hydraulic shock absorber 更换后右液压减震器,220,shock 减震
+08RS-062,Replace RR hydraulic shock absorber 更换后右液压震器,200,shock 减震
+08RS-063,Replace rear shocks hydraulic oil 更换后减震液压油,200,shock 减震
+08RS-064,Service the RL shocks 保养后左减震器,220,shock 减震
+08RS-065,Service the RR shocks 保养后右减震器,220,shock 减震
+08RS-066,Replace RL shock mounting 更换后左减震器顶胶,200,shock 减震
+08RS-067,Replace RR shock mounting 更换后右减震器顶胶,200,shock 减震
+08RS-068,Replace RL shock bush 更换后左减震器胶套,500,shock 减震
+08RS-069,Replace RR shock bush 更换后右减震器胶套,500,shock 减震
+08RS-070,Replace RL shock spring 更换后左减震器弹簧,200,shock 减震
+08RS-071,Replace RR shock spring 更换后右减震器弹簧,200,shock 减震
+08RS-072,Replace RL shock spring rubber 更换后左减震弹簧胶垫,300,shock 减震
+08RS-073,Replace RR shock spring rubber 更换后右减震弹簧胶垫,300,shock 减震
+08RS-074,Replace RL shock spring holder/plate 更换后左减震弹簧顶座,300,shock 减震
+08RS-075,Replace RR shock spring holder/plate 更换后右减震弹簧顶座,300,shock 减震
+08RS-076,Replace RL shock spring plate bearing 更换后左减震弹簧顶座轴承,300,shock 减震
+08RS-077,Replace RR shock spring plate bearing 更换后右减震弹簧顶座轴承,300,shock 减震
+08RS-078,Replace RL shock rubber boot更换后左减震器防尘套,300,shock 减震
+08RS-079,Replace RR shock rubber boot更换后右减震器防尘套,300,shock 减震
+08RS-080,Heightening RL shock (with spring) 加高改装后左减震器(带弹簧),350,shock 减震
+08RS-081,Heightening RR shock (with spring) 加高改装后右减震器(带弹簧),350,shock 减震
+08RS-082,Fix RL shock bouncing rubber更换后左减震缓冲胶,350,shock 减震
+08RS-083,Fix RR shock bouncing rubber更换后右减震缓冲胶,350,shock 减震
+08RS-084,Replace the RL leaf spring 更换左后减震钢板,200,spring 钢板
+08RS-085,Replace the RR leaf spring 更换右后减震钢板,200,spring 钢板
+08RS-086,Remove the RL steel to welding and fix it back 左后钢板焊接及拆装,200,spring 钢板
+08RS-087,Remove the RR steel to welding and fix it back 左后钢板焊接及拆装,200,spring 钢板
+08RS-088,Service the rear left leaf spring bush 保养后桥减震钢板胶套（左侧）,250,spring 钢板
+08RS-089,Service the rear right leaf spring bush 保养后桥减震钢板胶套（右侧）,250,spring 钢板
+08RS-090,Replace the rear left leaf spring bush 更换后桥减震钢板胶套（左侧）,250,
+08RS-091,Replace the rear right leaf spring bush 更换后桥减震钢板胶套（右侧）,200,
+08RS-092,Replace exhaust mounting 更换排气管吊耳,250,exhuast monut排气管
+08RS-093,Deal with the noise of exust pipe 处理排气管异响,200,
+09DS-001,Replace the center bearing 更换传动轴过桥胶套,350,drive shaft 传动轴
+09DS-002,Replace the front universal joint 更换传动轴前十字结,250,drive shaft 传动轴
+09DS-003,Replace the middle universal joint 更换传动轴中十字结,250,drive shaft 传动轴
+09DS-004,Replace the rear universal joint 更换传动轴后十字结,250,drive shaft 传动轴
+09DS-005,Remove the drive shaft damper 拆除传动轴连接器,200,drive shaft 传动轴
+09DS-006,Replace the drive shaft damper 更换传动轴连接器,300,drive shaft 传动轴
+09DS-007,Repair the drive shaft 维修传动轴,400,drive shaft 传动轴
+09DS-008,Replace the front drive shaft 更换前驱传动轴,350,drive shaft 传动轴
+09DS-009,Replace the rear drive shaft 更换后驱传动轴,350,drive shaft 传动轴
+09DS-010,Replace the harb seal 更换传动轴油封,350,drive shaft 传动轴
+09DS-011,Replace the drive shaft flange assembly 更换传动轴法兰盘组件（带手刹）,350,drive shaft 传动轴
+09DS-012,Machine the driving harb 加工轴套,350,drive shaft 传动轴
+09DS-013,Welding the driving harb 焊接传动轴法兰盘,350,drive shaft 传动轴
+09DS-014,Replace the fly wheel 更换飞轮盘,1500,fly wheel飞轮盘
+09DS-015,Top up the transfer case oil 补充分动箱油,0,transfer case分动箱
+09DS-016,Replace the transfer case oil 更换分动箱油,150,transfer case分动箱
+09DS-017,Replace the transfer case seal (left)更换分动箱油封(左),300,transfer case分动箱
+09DS-018,Replace the transfer case seal (right)更换分动箱油封(右),300,transfer case分动箱
+09DS-019,Replace the transfer case draining plug washer 更换分动箱放油螺丝垫片,,transfer case分动箱
+09DS-020,Replace FL CV joint 更换前左半轴外球笼,300,CV joint 外球笼
+09DS-021,Replace FR CV joint 更换前右半轴外球笼,300,CV joint 外球笼
+09DS-022,Clean FL CV joint and replace new grease 清洁前左半轴外球笼并更换黄油,300,CV joint 外球笼
+09DS-023,Clean FR CV joint and replace new grease 清洁前右半轴外球笼并更换黄油,300,CV joint 外球笼
+09DS-024,Replace RL CV joint 更换后左半轴外球笼,300,CV joint 外球笼
+09DS-025,Replace RR CV joint 更换后右半轴外球笼,300,CV joint 外球笼
+09DS-026,Clean RL CV joint and replace new grease 清洁后左半轴外球笼并更换黄油,300,CV joint 外球笼
+09DS-027,Clean RR CV joint and replace new grease 清洁后右半轴外球笼并更换黄油,300,CV joint 外球笼
+09DS-028,Replace FL CV spider bearing 更换前左半轴三角轴承,220,spider bearing 三角轴承
+09DS-029,Replace FR CV spider bearing 更换前右半轴三角轴承,220,spider bearing 三角轴承
+09DS-030,Replace RL CV spider bearing 更换后左半轴三角轴承,220,spider bearing 三角轴承
+09DS-031,Replace RR CV spider bearing 更换后右半轴三角轴承,220,spider bearing 三角轴承
+09DS-032,Replace FL couping complete 更换前左半轴内球笼总成,,
+09DS-033,Replace FR couping complete 更换前右半轴内球笼总成,,
+09DS-034,Replace RL couping complete 更换后左半轴内球笼总成,,
+09DS-035,Replace RR couping complete 更换后右半轴内球笼总成,,
+09DS-036,Check the front differ leakage 检修前桥漏油,200, front differ 前差速器
+09DS-037,Replace front differ complete 更换前差速器总成,1500, front differ 前差速器
+09DS-038,Top up front differential oil 补充前差速器油,-, front differ 前差速器
+09DS-039,Replace front differential oil 更换前差速器油,200, front differ 前差速器
+09DS-040,Replace front seal of front differential 更换前差速器前油封,200, front differ 前差速器
+09DS-041,Replace rear seal of front differential 更换前差速器后油封,200, front differ 前差速器
+09DS-042,Check the rear differ leakage 检修后桥漏油,200,rear differ 后差速器
+09DS-043,Top up rear differential oil 补充后差速器油,-,rear differ 后差速器
+09DS-044,Replace rear differential oil 更换后差速器油,200,rear differ 后差速器
+09DS-045,Replace rear differ bolt 更换后差速器加油螺丝,200,rear differ 后差速器
+09DS-046,Replace front seal of rear differential 更换后差速器前油封,200,rear differ 后差速器
+09DS-047,Replace rear seal of rear differential 更换后差速器后油封,200,rear differ 后差速器
+09DS-048,Remove the rear differ complete and fix it back 拆装后差速器,,rear differ 后差速器
+09DS-049,Repair rear differ complete 维修后差速器,,rear differ 后差速器
+09DS-050,Repair the rear differential electronic drive module 维修后差速器电子驱动模块,,rear differ 后差速器
+09DS-051,Replace rear differ complete 更换后差速器总成,1500,rear differ 后差速器
+09DS-052,Replace FL CV couping rubber boot 更换前左半轴内防尘罩,220,rubber boot 防尘罩
+09DS-053,Replace FR CV couping rubber boot 更换前右半轴内防尘罩,220,rubber boot 防尘罩
+09DS-054,Replace FL CV rubber boot 更换前左半轴外防尘罩,220,rubber boot 防尘罩
+09DS-055,Replace FR CV rubber boot 更换前右半轴外防尘罩,220,rubber boot 防尘罩
+09DS-056,Replace RL CV couping rubber boot更换后左半轴内防尘罩,220,rubber boot 防尘罩
+09DS-057,Replace RR CV couping rubber boot更换后右半轴内防尘罩,220,rubber boot 防尘罩
+09DS-058,Replace RL CV rubber boot 更换后左半轴外防尘罩,220,rubber boot 防尘罩
+09DS-059,Replace RR CV rubber boot 更换后右半轴外防尘罩,220,rubber boot 防尘罩
+09DS-060,Replace the left drive shaft rubber boot 更换左侧传动轴防尘套,220,rubber boot 防尘罩
+09DS-061,Replace the right drive shaft rubber boot 更换右侧传动轴防尘套,220,rubber boot 防尘罩
+09DS-062,Replace FL shaft complete 更换前左半轴总成,300,shaft 半轴
+09DS-063,Replace FR shaft complete 更换前右半轴总成,300,shaft 半轴
+09DS-064,Replace RL shaft complete 更换后左半轴总成,300,shaft 半轴
+09DS-065,Replace RR shaft complete 更换后右半轴总成,300,shaft 半轴
+09DS-066,Replace FL shaft seal更换前左半轴油封,,
+09DS-067,Replace FR shaft seal 更换前右半轴油封,,
+09DS-068,Replace RL shaft seal 更换后左半轴油封,,
+09DS-069,Replace RR shaft seal 更换后右半轴油封,,
+09DS-070,Clean the four-wheel drive control box 清洗四驱控制盒,300,control box 控制盒
+09DS-071,Replace the four-wheel drive control box 更换四驱控制盒,300,control box 控制盒
+09DS-072,Check the four-wheel drive control module 检修四驱控制模块,300,control box 控制盒
+09DS-073,Install four-wheel drive control switch 加装四驱控制开关,300,control box 控制盒
+09DS-074,Unlock the 4WD 解锁四驱分动箱,,
+10PS-001,Top up power steering fluid 补充方向助力油,-,steering fluid助力油
+10PS-002,Replace power steering fluid 更换方向助力油,100,steering fluid助力油
+10PS-003,Repair FL rack ends 维修前左方向机内拉杆,180, rack ends内拉杆
+10PS-004,Repair FR rack ends 维修前右方向机内拉杆,180, rack ends内拉杆
+10PS-005,Replace FL rack ends 更换前左方向机内拉杆,150, rack ends内拉杆
+10PS-006,Replace FR rack ends 更换前右方向机内拉杆,150, rack ends内拉杆
+10PS-007,Repair FL tie rod ends 维修前左方向机外拉杆,150,tie rod ends外拉杆
+10PS-008,Repair FR tie rod ends 维修前右方向机外拉杆,150,tie rod ends外拉杆
+10PS-009,Replace FL tie rod ends 更换前左方向机外拉杆,120,tie rod ends外拉杆
+10PS-010,Replace FR tie rod ends 更换前右方向机外拉杆,120,tie rod ends外拉杆
+10PS-011,Remove the draging link to repair and fix it back 拆装方向机拉杆,350,draging link 外拉杆
+10PS-012,Repair the draging link 维修方向机拉杆,350,draging link 外拉杆
+10PS-013,Replace the draging link 更换方向机拉杆,350,draging link 外拉杆
+10PS-014,Replace the FL kingpin 更换左前转向节中心销,300,king pin 中心销
+10PS-015,Replace the FR kingpin 更换右前转向节中心销,300,king pin 中心销
+10PS-016,Replace the FL kingpin bush 更换左前转向节中心销胶套,350,king pin 中心销
+10PS-017,Replace the FR kingpin bush 更换右前转向节中心销胶套,350,king pin 中心销
+10PS-018,Replace the FL kingpin bearing 更换左前转向节中心销轴承,35,king pin 中心销
+10PS-019,Replace the FR kingpin bearing 更换右前转向节中心销轴承,350,king pin 中心销
+10PS-020,Replace the FL kingpin bolt 更换左前转向节中心销螺栓,150,king pin 中心销
+10PS-021,Replace the FR kingpin bolt 更换右前转向节中心销螺栓,150,king pin 中心销
+10PS-022,Replace power steering belt 更换方向机皮带,200,steering belt皮带
+10PS-023,Remove the power steering pump anf fit back 拆装检测方向机助力泵,350,steering pump助力泵
+10PS-024,Repair power steering pump 维修方向助力泵,400,steering pump助力泵
+10PS-025,Replace power steering pump 更换方向助力泵,400,steering pump助力泵
+10PS-026,Replace power steering pump seal 更换方向助力泵油封,,steering pump助力泵
+10PS-027,Clean the steering fluid system & pipe 清洗方向机油路油管,,
+10PS-028,Replace the steering pipe 更换方向机油管,,steering pump助力泵
+10PS-029,Replace the steering seal 更换方向机油封,,
+10PS-030,Replace universal joint of steering 更换转向柱十字结,400,universal joint转向柱
+10PS-031,Remove the power steering rack to check anf fit back 拆装检测方向机,850,steering rack方向机
+10PS-032,Replace power steering rack complete 更换方向机总成,850,steering rack方向机
+10PS-033,Replace power steering rack sensor 更换方向机传感器,400,steering rack方向机
+10PS-034,Reset the Power steering system 匹配转向系统,200,steering rack方向机
+10PS-035,Replace the power steering rack bushes 更换方向机胶套,200,steering rack方向机
+10PS-036,Adjust the power steering rack 调校方向盘,400,steering rack方向机
+10PS-037,Repair power steering fluid tank 维修方向助力油壶,,steering tank助力油壶
+10PS-038,Replace FL rack ends rubber boot 更换前左方向机防尘罩,150,rubber boot 防尘罩
+10PS-039,Replace power steering fluid tank 更换方向助力油壶,,steering tank助力油壶
+10PS-040,Replace FR rack ends rubber boot 更换前右方向机防尘罩,150,rubber boot 防尘罩
+10PS-041,Wheel alignment 四轮定位,400,Wheel alignment四轮定位
+10PS-042,Camber castor 调前束,300,Camber castor前束
+10PS-043,Replace steering angle sensor 更换转向传感器,,
+10PS-044,Repair the power steering box 维修转向机箱,,
+10PS-045,Replace the power steering box housing 更换转向机箱外壳,,
+11AC-001,Dismantle the dashboarb to overhaul A/C and fit it back 拆装仪表台,2000,leakage check 捡漏
+11AC-002,Overhaul the leakage of the evaporator 蒸发箱捡漏,2000,leakage check 捡漏
+11AC-003,Clean the evaporator without removing daskboard 免拆清洗蒸发箱,2000,evaporator蒸发箱
+11AC-004,Repair the evaporator by welding 蒸发箱焊接维修,2000,evaporator蒸发箱
+11AC-005,Remove dashboard to replace the evaporator 拆装仪表台更换蒸发箱,500,evaporator蒸发箱
+11AC-006,Overhaul the leakage of air conditioning pipe 空调管道检漏,500,leakage check 捡漏
+11AC-007,Replace the seals to stop leaking 换胶圈堵漏,-,stop leaking堵漏
+11AC-008,Stop leaking of the A/C pipe 空调管道堵漏,-,stop leaking堵漏
+11AC-009,Repair the A/C pipe 维修空调管,1500,pipe 空调管
+11AC-010,Welding the A/C pipe 焊接空调管,1500,pipe 空调管
+11AC-011,Replace the A/C pipe 更换空调管,200,pipe 空调管
+11AC-012,Vacuum air conditioning pipe 空调管道打气/保压/抽真空,200,Vacuum保压
+11AC-013,Refill Freon加注氟利昂,150,Freon加氟
+11AC-014,Refill compressor oil加注冷冻油,150,compressor oil 加冷冻油
+11AC-015,Replace the A/C belt 更换空调皮带,150,belt 皮带
+11AC-016,Replace the A/C pressure sensor 更换空调压力传感器,150,sensor 传感器
+11AC-017,Remove the compressor to check and fix it back 拆装检测压缩机,300,compressor 压缩机
+11AC-018,Repair the compressor 维修压缩机,300,compressor 压缩机
+11AC-019,Replace the compressor更换压缩机,350,compressor 压缩机
+11AC-020,Replace the compressor bearing 更换压缩机轴承,350,compressor 压缩机
+11AC-021,Detect air conditioning fan control module 检测空调风机调速模块,300,fan 风机
+11AC-022,Install fan control switch 加装风机控制开关,300,fan 风机
+11AC-023,Repair the A/C fan motor 维修空调风机,180,fan 风机
+11AC-024,Replace the A/C fan motor 更换空调风机,180,fan 风机
+11AC-025,Clean the condenser 清洗冷凝器,150,condenser 冷凝器
+11AC-026,Repair the condenser by welding 冷凝器焊接维修,150,condenser 冷凝器
+11AC-027,Replace the condenser 更换冷凝器,150,condenser 冷凝器
+11AC-028,Air conditioning refrigeration duct cleaning 空调制冷风道清洗,150,duct 风道
+11AC-029,Air conditioning refrigeration duct deodorization 空调制冷风道除味,200,duct 风道
+11AC-030,Check the A/C noisy 检修空调异响,200,noisy 异响
+11AC-031,Flush the A/C pipe 空调管道内部清洗,300,duct 风道
+11AC-032,Replace A/C pressure relief valve 更换空调泄压阀,300,
+11AC-033,Remove to clean the A/C fan 拆装清洗空调风扇,850,
+11AC-034,Replace the A/C fan 更换空调风扇,850,
+11AC-035,Replace the expansion valve 更换膨胀阀,650,
+11AC-036,Replace the A/C pipes complete 更换空调管全套,650,
+11AC-037,Replace the dry 更换干燥棒,500,
+11AC-038,Replace the Air Conditioner Dryer 更换干燥棒,500,
+11AC-039,Replace the A/C pump clutch electromagnetic coil更换空调泵离合电磁线圈,,
+11AC-040,Replace the A/C pump thermistor switch更换空调泵热敏开关,,
+11AC-041,Replace the A/C pump clutch更换空调泵离合器,,
+12CM-001,"Oridinary car wash
+(external foam cleaner + internal vacuum dust + pad cleaning)
+常规清洗（外部泡沫清洗剂+内部吸尘+脚垫清洗）",50,cleaning 清洗
+12CM-002,"In-depth cleaning
+(Oridinary car wash + foam/leather cleaner/dashboard + air freshener)
+深度清洗（常规清洗+内饰/皮革清洗剂/表板蜡+空气清新剂）",50,cleaning 清洗
+12CM-003,"Fine cleaning
+(deep cleaning + remove the seats to cleaning)
+精细清洗（深度清洗+拆装座椅清洗）",150,cleaning 清洗
+12CM-004,Clean the seats and interior 内饰及座椅清漆,150,cleaning 清洗
+12CM-005,Ozone disinfection 臭氧消毒,300,disinfection 消毒
+12CM-006,Atomization disinfection 雾化消毒,300,disinfection 消毒
+12CM-007,Refurbishing and coating for FL headlamp 左前大灯翻新镀膜,200,Refurbishing 大灯翻新
+12CM-008,Refurbishing and coating for FR headlamp 右前大灯翻新镀膜,200,Refurbishing 大灯翻新
+12CM-009,Refurbishing and coating for FL fog lamp 左前雾灯翻新镀膜,150,Refurbishing 雾灯翻新
+12CM-010,Refurbishing and coating for FR fog lamp 右前雾灯翻新镀膜,150,Refurbishing 雾灯翻新
+12CM-011,Refurbishing and coating for RL tail lamp 左后尾灯翻新镀膜,150,Refurbishing 尾灯翻新
+12CM-012,Refurbishing and coating for RR tail lamp 右后尾灯翻新镀膜,150,Refurbishing 尾灯翻新
+12CM-013,Polishing for the whole vehicle 整车抛光,150+200,Polishing 抛光
+12CM-014,Polishing for the front bumper 前保险杆抛光,300,Polishing 抛光
+12CM-015,Polishing for the rear bumper 后保险杆抛光,150+200,Polishing 抛光
+12CM-016,Polishing for the bonet 引擎盖抛光,300,Polishing 抛光
+12CM-017,Polishing for the FL door 左前门抛光,180,Polishing 抛光
+12CM-018,Polishing for the RL door 左后门抛光,180,Polishing 抛光
+12CM-019,Polishing for the FL fender 左前叶子板抛光,180,Polishing 抛光
+12CM-020,Polishing for the FL wheel arch 左前轮眉抛光,180,Polishing 抛光
+12CM-021,Polishing for the RL fender 左后叶子板抛光,200,Polishing 抛光
+12CM-022,Polishing for the RL wheel arch 左后轮眉抛光,200,Polishing 抛光
+12CM-023,Polishing for the FR door 右前门抛光,200,Polishing 抛光
+12CM-024,Polishing for the RR door 右后门抛光,200,Polishing 抛光
+12CM-025,Polishing for the FR fender 右前叶子板抛光,1500,Polishing 抛光
+12CM-026,Polishing for the FR wheel arch 右前轮眉抛光,1500,Polishing 抛光
+12CM-027,Polishing for the RR fender 右后叶子板抛光,150,Polishing 抛光
+12CM-028,Polishing for the RR wheel arch 右后轮眉抛光,150,Polishing 抛光
+12CM-029,Polishing for the tail gate 后尾门抛光,151,Polishing 抛光
+12CM-030,Polishing for the rear body 后车斗抛光,151,Polishing 抛光
+12CM-031,Polishing for the paint parts 喷漆部分抛光,,
+12CM-032,Film for the whole vehicle 整车贴膜,200,Film 贴膜
+12CM-033,Film for the front windshield 前挡玻璃贴膜,200,Film 贴膜
+12CM-034,Film for the rear windshield 后挡玻璃贴膜,150,Film 贴膜
+12CM-035,Film for the windows 车窗玻璃贴膜,150,Film 贴膜
+12CM-036,Sewing steering wheel cover 手工缝制方向盘,150,Interior 内饰
+12CM-037,Sewing the FL seat cover 手工缝制左前座椅套,150,Interior 内饰
+12CM-038,Sewing the FR seat cover 手工缝制右前座椅套,150,Interior 内饰
+12CM-039,Cover for seats 包座椅,150,Interior 内饰
+12CM-040,Cover for dashboard 包仪表台,150,Interior 内饰
+12CM-041,Replace the surface leather for front right door panel 门板包皮,150,Interior 内饰
+12CM-042,Repair car roof cloth 维修车顶棚布,150,Interior 内饰
+12CM-043,Fix the ceiling board 固定顶棚,150,Interior 内饰
+12CM-044,Waxing for the whole vehicle 整车打蜡,150,Waxing 打蜡
+12CM-045,Fix the seats cover 安装座椅套,150,seats cover座椅套
+12CM-046,Fix the boot cover 安装后尾箱套,150,
+12CM-047,Fix the carpet 安装脚垫,150,
+12CM-048,Seal the glaze for the whole vehicle全车封釉,150,
+13TI-001,Replacement from front to rear 轮胎从前轮换位至后轮(Smaller than R17 17寸以下的普通胎),30,Replacement 换胎
+13TI-001,Replacement from front to rear 轮胎从前轮换位至后轮(R17 to R19 17-19寸的普通胎),40,Replacement 换胎
+13TI-001,Replacement from front to rear 轮胎从前轮换位至后轮(R17 to R19 AT 17-19寸的越野胎),40,Replacement 换胎
+13TI-002,Replacement from rear to front 轮胎从后轮换位至前轮(Smaller than R17 17寸以下的普通胎),30,Replacement 换胎
+13TI-002,Replacement from rear to front 轮胎从后轮换位至前轮(R17 to R19 17-19寸的普通胎),40,Replacement 换胎
+13TI-002,Replacement from rear to front 轮胎从后轮换位至前轮(R17 to R19 AT 17-19寸的越野胎),40,Replacement 换胎
+13TI-003,Replacement from left to right 轮胎从左轮换位至右轮(Smaller than R17 17寸以下的普通胎),30,Replacement 换胎
+13TI-003,Replacement from left to right 轮胎从左轮换位至右轮(R17 to R19 17-19寸的普通胎),40,Replacement 换胎
+13TI-003,Replacement from left to right 轮胎从左轮换位至右轮(R17 to R19 AT 17-19寸的越野胎),40,Replacement 换胎
+13TI-004,Replacement from right to left 轮胎从右轮换位至左轮(Smaller than R17 17寸以下的普通胎),30,Replacement 换胎
+13TI-004,Replacement from right to left 轮胎从右轮换位至左轮(R17 to R19 17-19寸的普通胎),40,Replacement 换胎
+13TI-004,Replacement from right to left 轮胎从右轮换位至左轮(R17 to R19 AT 17-19寸的越野胎),40,Replacement 换胎
+13TI-005,Replacement of spare tire 备胎换位(Smaller than R17 17寸以下的普通胎),30,Replacement 换胎
+13TI-005,Replacement of spare tire 备胎换位(R17 to R19 17-19寸的普通胎),40,Replacement 换胎
+13TI-005,Replacement of spare tire 备胎换位(R17 to R19 AT 17-19寸的越野胎),40,Replacement 换胎
+13TI-006,Fitness of four new tire 四条新轮胎拆装(Smaller than R17 17寸以下的普通胎),30,Fitness 拆装
+13TI-006,Fitness of four new tire 四条新轮胎拆装(R17 to R19 17-19寸的普通胎),40,Fitness 拆装
+13TI-006,Fitness of four new tire 四条新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),40,Fitness 拆装
+13TI-007,Fitness of Front Left new tire 左前新轮胎拆装(Smaller than R17 17寸以下的普通胎),30,Fitness 拆装
+13TI-007,Fitness of Front Left new tire 左前新轮胎拆装(R17 to R19 17-19寸的普通胎),40,Fitness 拆装
+13TI-007,Fitness of Front Left new tire 左前新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),40,Fitness 拆装
+13TI-008,Fitness of Front Right new tire 右前新轮胎拆装(Smaller than R17 17寸以下的普通胎),30,Fitness 拆装
+13TI-008,Fitness of Front Right new tire 右前新轮胎拆装(R17 to R19 17-19寸的普通胎),40,Fitness 拆装
+13TI-008,Fitness of Front Right new tire 右前新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),40,Fitness 拆装
+13TI-009,Fitness of Rear Left new tire 左后新轮胎拆装(Smaller than R17 17寸以下的普通胎),30,Fitness 拆装
+13TI-009,Fitness of Rear Left new tire 左后新轮胎拆装(R17 to R19 17-19寸的普通胎),40,Fitness 拆装
+13TI-009,Fitness of Rear Left new tire 左后新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),40,Fitness 拆装
+13TI-010,Fitness of Rear Right new tire右后新轮胎拆装(Smaller than R17 17寸以下的普通胎),30,Fitness 拆装
+13TI-010,Fitness of Rear Right new tire右后新轮胎拆装(R17 to R19 17-19寸的普通胎),40,Fitness 拆装
+13TI-010,Fitness of Rear Right new tire右后新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),320,Fitness 拆装
+13TI-011,Fitness of spare tire 备胎新轮胎拆装(Smaller than R17 17寸以下的普通胎),200,Fitness 拆装
+13TI-011,Fitness of spare tire 备胎新轮胎拆装(R17 to R19 17-19寸的普通胎),240,Fitness 拆装
+13TI-011,Fitness of spare tire 备胎新轮胎拆装(R17 to R19 AT 17-19寸的越野胎),320,Fitness 拆装
+13TI-012,Mending of FL tire 左前轮补胎(Smaller than R17 17寸以下的普通胎),200,Mending 补胎
+13TI-012,Mending of FL tire 左前轮补胎(R17 to R19 17-19寸的普通胎),240,Mending 补胎
+13TI-012,Mending of FL tire 左前轮补胎(R17 to R19 AT 17-19寸的越野胎),80,Mending 补胎
+13TI-013,Mending of FR tire 右前轮补胎(Smaller than R17 17寸以下的普通胎),50,Mending 补胎
+13TI-013,Mending of FR tire 右前轮补胎(R17 to R19 17-19寸的普通胎),60,Mending 补胎
+13TI-013,Mending of FR tire 右前轮补胎(R17 to R19 AT 17-19寸的越野胎),80,Mending 补胎
+13TI-014,Mending of RL tire 左后轮补胎(Smaller than R17 17寸以下的普通胎),50,Mending 补胎
+13TI-014,Mending of RL tire 左后轮补胎(R17 to R19 17-19寸的普通胎),60,Mending 补胎
+13TI-014,Mending of RL tire 左后轮补胎(R17 to R19 AT 17-19寸的越野胎),80,Mending 补胎
+13TI-015,Mending of RR tire 右后轮补胎(Smaller than R17 17寸以下的普通胎),50,Mending 补胎
+13TI-015,Mending of RR tire 右后轮补胎(R17 to R19 17-19寸的普通胎),60,Mending 补胎
+13TI-015,Mending of RR tire 右后轮补胎(R17 to R19 AT 17-19寸的越野胎),80,Mending 补胎
+13TI-016,Mending of spare tire 备胎补胎(Smaller than R17 17寸以下的普通胎),50,Mending 补胎
+13TI-016,Mending of spare tire 备胎补胎(R17 to R19 17-19寸的普通胎),60,Mending 补胎
+13TI-016,Mending of spare tire 备胎补胎(R17 to R19 AT 17-19寸的越野胎),80,Mending 补胎
+13TI-017,Balance of four new tire 四条新轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-017,Balance of four new tire 四条新轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-017,Balance of four new tire 四条新轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-018,Balance of Front Left tire 左前轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-018,Balance of Front Left tire 左前轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-018,Balance of Front Left tire 左前轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-019,Balance of Front Right tire 右前轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-019,Balance of Front Right tire 右前轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-019,Balance of Front Right tire 右前轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-020,Balance of  Rear Left tire 左后轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-020,Balance of  Rear Left tire 左后轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-020,Balance of  Rear Left tire 左后轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-021,Balance of Rear Right tire 右后轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-021,Balance of Rear Right tire 右后轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-021,Balance of Rear Right tire 右后轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-022,Balance of spare tire 备胎轮胎动平衡(Smaller than R17 17寸以下的普通胎),50,Balance 动平衡
+13TI-022,Balance of spare tire 备胎轮胎动平衡(R17 to R19 17-19寸的普通胎),60,Balance 动平衡
+13TI-022,Balance of spare tire 备胎轮胎动平衡(R17 to R19 AT 17-19寸的越野胎),80,Balance 动平衡
+13TI-023,Repair the FL rim 修补左前轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-023,Repair the FL rim 修补左前轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-023,Repair the FL rim 修补左前轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-024,Repair the FR rim 修补右前轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-024,Repair the FR rim 修补右前轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-024,Repair the FR rim 修补右前轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-025,Repair the RL rim 修补左后轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-025,Repair the RL rim 修补左后轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-025,Repair the RL rim 修补左后轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-026,Repair the RR rim 修补右后轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-026,Repair the RR rim 修补右后轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-026,Repair the RR rim 修补右后轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-027,Replace the four new rims 更换四个新轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-027,Replace the four new rims 更换四个新轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-027,Replace the four new rims 更换四个新轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-028,Replace the FL rim 更换左前轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-028,Replace the FL rim 更换左前轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-028,Replace the FL rim 更换左前轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-029,Replace the FR rim 更换右前轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-029,Replace the FR rim 更换右前轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-029,Replace the FR rim 更换右前轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-030,Replace the RL rim 更换左后轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-030,Replace the RL rim 更换左后轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-030,Replace the RL rim 更换左后轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-031,Replace the RR rim 更换右后轮毂(Smaller than R17 17寸以下的普通胎),60,Rim 轮毂
+13TI-031,Replace the RR rim 更换右后轮毂(R17 to R19 17-19寸的普通胎),70,Rim 轮毂
+13TI-031,Replace the RR rim 更换右后轮毂(R17 to R19 AT 17-19寸的越野胎),80,Rim 轮毂
+13TI-032,Replace four new rim covers 更换四个新轮毂罩子(Smaller than R17 17寸以下的普通胎),60,Rim cover轮毂罩子
+13TI-032,Replace four new rim covers 更换四个新轮毂罩子(R17 to R19 17-19寸的普通胎),70,Rim cover轮毂罩子
+13TI-032,Replace four new rim covers 更换四个新轮毂罩子(R17 to R19 AT 17-19寸的越野胎),320,Rim cover轮毂罩子
+13TI-033,Replace the FL rim cover 更换左前轮毂罩子(Smaller than R17 17寸以下的普通胎),240,Rim cover轮毂罩子
+13TI-033,Replace the FL rim cover 更换左前轮毂罩子(R17 to R19 17-19寸的普通胎),280,Rim cover轮毂罩子
+13TI-033,Replace the FL rim cover 更换左前轮毂罩子(R17 to R19 AT 17-19寸的越野胎),320,Rim cover轮毂罩子
+13TI-034,Replace the FR rim cover 更换右前轮毂罩子(Smaller than R17 17寸以下的普通胎),240,Rim cover轮毂罩子
+13TI-034,Replace the FR rim cover 更换右前轮毂罩子(R17 to R19 17-19寸的普通胎),280,Rim cover轮毂罩子
+13TI-034,Replace the FR rim cover 更换右前轮毂罩子(R17 to R19 AT 17-19寸的越野胎),80,Rim cover轮毂罩子
+13TI-035,Replace the RL rim cover 更换左后轮毂罩子(Smaller than R17 17寸以下的普通胎),60,Rim cover轮毂罩子
+13TI-035,Replace the RL rim cover 更换左后轮毂罩子(R17 to R19 17-19寸的普通胎),70,Rim cover轮毂罩子
+13TI-035,Replace the RL rim cover 更换左后轮毂罩子(R17 to R19 AT 17-19寸的越野胎),80,Rim cover轮毂罩子
+13TI-036,Replace the RR rim cover 更换右后轮毂罩子(Smaller than R17 17寸以下的普通胎),60,Rim cover轮毂罩子
+13TI-036,Replace the RR rim cover 更换右后轮毂罩子(R17 to R19 17-19寸的普通胎),70,Rim cover轮毂罩子
+13TI-036,Replace the RR rim cover 更换右后轮毂罩子(R17 to R19 AT 17-19寸的越野胎),80,Rim cover轮毂罩子
+13TI-037,Repair the FL wheel stud  维修左前轮毂螺丝(Smaller than R17 17寸以下的普通胎),60,wheel stud 轮毂螺丝
+13TI-037,Repair the FL wheel stud  维修左前轮毂螺丝(R17 to R19 17-19寸的普通胎),70,wheel stud 轮毂螺丝
+13TI-037,Repair the FL wheel stud  维修左前轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),80,wheel stud 轮毂螺丝
+13TI-038,Repair the FR wheel stud 维修右前轮毂螺丝(Smaller than R17 17寸以下的普通胎),60,wheel stud 轮毂螺丝
+13TI-038,Repair the FR wheel stud 维修右前轮毂螺丝(R17 to R19 17-19寸的普通胎),70,wheel stud 轮毂螺丝
+13TI-038,Repair the FR wheel stud 维修右前轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),80,wheel stud 轮毂螺丝
+13TI-039,Repair the RL wheel stud  维修左后轮毂螺丝(Smaller than R17 17寸以下的普通胎),60,wheel stud 轮毂螺丝
+13TI-039,Repair the RL wheel stud  维修左后轮毂螺丝(R17 to R19 17-19寸的普通胎),70,wheel stud 轮毂螺丝
+13TI-039,Repair the RL wheel stud  维修左后轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),80,wheel stud 轮毂螺丝
+13TI-040,Repair the RR wheel stud  维修右后轮毂螺丝(Smaller than R17 17寸以下的普通胎),60,wheel stud 轮毂螺丝
+13TI-040,Repair the RR wheel stud  维修右后轮毂螺丝(R17 to R19 17-19寸的普通胎),70,wheel stud 轮毂螺丝
+13TI-040,Repair the RR wheel stud  维修右后轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),150,wheel stud 轮毂螺丝
+13TI-041,Replace the FL wheel stud  更换左前轮毂螺丝(Smaller than R17 17寸以下的普通胎),150,wheel stud 轮毂螺丝
+13TI-041,Replace the FL wheel stud  更换左前轮毂螺丝(R17 to R19 17-19寸的普通胎),150,wheel stud 轮毂螺丝
+13TI-041,Replace the FL wheel stud  更换左前轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),150,wheel stud 轮毂螺丝
+13TI-042,Replace the FR wheel stud  更换右前轮毂螺丝(Smaller than R17 17寸以下的普通胎),150,wheel stud 轮毂螺丝
+13TI-042,Replace the FR wheel stud  更换右前轮毂螺丝(R17 to R19 17-19寸的普通胎),150,wheel stud 轮毂螺丝
+13TI-042,Replace the FR wheel stud  更换右前轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),150,wheel stud 轮毂螺丝
+13TI-043,Replace the RL wheel stud 更换左后轮毂螺丝(Smaller than R17 17寸以下的普通胎),150,wheel stud 轮毂螺丝
+13TI-043,Replace the RL wheel stud 更换左后轮毂螺丝(R17 to R19 17-19寸的普通胎),150,wheel stud 轮毂螺丝
+13TI-043,Replace the RL wheel stud 更换左后轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),150,wheel stud 轮毂螺丝
+13TI-044,Replace the RR wheel stud 更换右后轮毂螺丝(Smaller than R17 17寸以下的普通胎),150,wheel stud 轮毂螺丝
+13TI-044,Replace the RR wheel stud 更换右后轮毂螺丝(R17 to R19 17-19寸的普通胎),150,wheel stud 轮毂螺丝
+13TI-044,Replace the RR wheel stud 更换右后轮毂螺丝(R17 to R19 AT 17-19寸的越野胎),320,wheel stud 轮毂螺丝
+13TI-045,Replace the valve for FL tyres 更换左前轮气门芯(Smaller than R17 17寸以下的普通胎),200,Valve 气门芯
+13TI-045,Replace the valve for FL tyres 更换左前轮气门芯(R17 to R19 17-19寸的普通胎),240,Valve 气门芯
+13TI-045,Replace the valve for FL tyres 更换左前轮气门芯(R17 to R19 AT 17-19寸的越野胎),320,Valve 气门芯
+13TI-046,Replace the valve for FR tyres 更换右前轮气门芯(Smaller than R17 17寸以下的普通胎),200,Valve 气门芯
+13TI-046,Replace the valve for FR tyres 更换右前轮气门芯(R17 to R19 17-19寸的普通胎),240,Valve 气门芯
+13TI-046,Replace the valve for FR tyres 更换右前轮气门芯(R17 to R19 AT 17-19寸的越野胎),80,Valve 气门芯
+13TI-047,Replace the valve for RL tyres 更换左后轮气门芯(Smaller than R17 17寸以下的普通胎),50,Valve 气门芯
+13TI-047,Replace the valve for RL tyres 更换左后轮气门芯(R17 to R19 17-19寸的普通胎),60,Valve 气门芯
+13TI-047,Replace the valve for RL tyres 更换左后轮气门芯(R17 to R19 AT 17-19寸的越野胎),80,Valve 气门芯
+13TI-048,Replace the valve for RR tyres 更换右后轮气门芯(Smaller than R17 17寸以下的普通胎),50,Valve 气门芯
+13TI-048,Replace the valve for RR tyres 更换右后轮气门芯(R17 to R19 17-19寸的普通胎),40,Valve 气门芯
+13TI-048,Replace the valve for RR tyres 更换右后轮气门芯(R17 to R19 AT 17-19寸的越野胎),50,Valve 气门芯
+14LT-001,Replace the FL headlamp complete 更换左前大灯总成,100,headlamp 大灯
+14LT-002,Replace the FR headlamp complete 更换右前大灯总成,100,headlamp 大灯
+14LT-003,Modify the FL headlamp (from ordinary to xenon bulb) 改装左前大灯,100,headlamp 大灯
+14LT-004,Modify the FR headlamp (from ordinary to xenon bulb) 改装右前大灯,100,headlamp 大灯
+14LT-005,Repair the FL headlamp complete 维修左前大灯总成,350,
+14LT-006,Repair the FR headlamp complete 维修右前大灯总成,350,
+14LT-007,Remove the water from FL headlamp and seal it 左前大灯除水及密封,350,
+14LT-008,Remove the water from FR headlamp and seal it 右前大灯除水及密封,350,
+14LT-009,Replace FL headlamp bulb 更换左前大灯灯泡,,headlamp bulb 大灯泡
+14LT-010,Replace FR headlamp bulb 更换右前大灯灯泡,,headlamp bulb 大灯泡
+14LT-011,Replace FL headlamp low beam xenon lamp 更换左前大灯近光氙气灯,,headlamp bulb 大灯泡
+14LT-012,Replace FR headlamp low beam xenon lamp 更换右前大灯近光氙气灯,,headlamp bulb 大灯泡
+14LT-013,Replace FR headlamp ballast 更换左前大灯安定器,,ballast 安定器
+14LT-014,Replace FR headlamp ballast 更换右前大灯安定器,,ballast 安定器
+14LT-015,Replace the FL corner lamp 更换左前角灯,,corner lamp 角灯
+14LT-016,Replace the FR  corner lamp 更换右前角灯,,corner lamp 角灯
+14LT-017,Repair the RL tail lamp 维修左后尾灯,50,tail lamp 尾灯
+14LT-018,Repair the RR tail lamp 维修右后尾灯,50,tail lamp 尾灯
+14LT-019,Replace the RL tail lamp 更换左后尾灯,50,tail lamp 尾灯
+14LT-020,Replace the Rear Right tail lamp 更换右后尾灯,50,tail lamp 尾灯
+14LT-021,Replace the high position brake lamp 更换高位刹车灯,100, brake lamp 刹车灯
+14LT-022,Replace the high position brake bulb 更换高位刹车灯灯泡,100,brake bulb 刹车灯泡
+14LT-023,Replace RL brake bulb 更换左后刹车灯灯泡,100,brake bulb 刹车灯泡
+14LT-024,Replace Rear Right brake bulb 更换右后刹车灯灯泡,100,brake bulb 刹车灯泡
+14LT-025,Replace FL fog lamp 更换左前雾灯,300, fog lamp 雾灯
+14LT-026,Replace FR fog lamp 更换右前雾灯,300, fog lamp 雾灯
+14LT-027,Replace FL fog lamp linner 更换左前雾灯框,300,
+14LT-028,Replace FR fog lamp linner 更换右前雾灯框,300,
+14LT-029,Replace RL fog lamp 更换左后雾灯,50, fog lamp 雾灯
+14LT-030,Replace RR fog lamp 更换右后雾灯,50, fog lamp 雾灯
+14LT-031,Replace FL fog lamp bulb 更换左前雾灯灯泡,50,fog lamp bulb 雾灯泡
+14LT-032,Replace FR fog lamp bulb 更换右前雾灯灯泡,50,fog lamp bulb 雾灯泡
+14LT-033,Replace RL fog lamp bulb 更换左后雾灯灯泡,50,fog lamp bulb 雾灯泡
+14LT-034,Replace RR fog lamp bulb 更换右后雾灯灯泡,50,fog lamp bulb 雾灯泡
+14LT-035,Replace RL reversing bulb 更换左后倒车灯灯泡,50,reversing bulb 倒车灯泡
+14LT-036,Replace RR reversing bulb 更换右后倒车灯灯泡,50,reversing bulb 倒车灯泡
+14LT-037,Replace FL parking bulb 更换左前停车灯灯泡,50,parking bulb 停车灯泡
+14LT-038,Replace FR parking bulb 更换右前停车灯灯泡,50,parking bulb 停车灯泡
+14LT-039,Replace RL parking bulb 更换左后停车灯灯泡,50,parking bulb 停车灯泡
+14LT-040,Replace RR parking bulb 更换右后停车灯灯泡,50,parking bulb 停车灯泡
+14LT-041,Replace the left indicator 更换左转向灯,100, indicator 转向灯
+14LT-042,Replace the right indicator 更换右转向灯,100, indicator 转向灯
+14LT-043,Replace FL indiactor bulb 更换左前转向灯灯泡,-,indiactor bulb 转向灯泡
+14LT-044,Replace FR indiactor bulb 更换右前转向灯灯泡,-,indiactor bulb 转向灯泡
+14LT-045,Replace RL indicator bulb 更换左后转向灯灯泡,-,indiactor bulb 转向灯泡
+14LT-046,Replace RR indicator bulb 更换右后转向灯灯泡,-,indiactor bulb 转向灯泡
+14LT-047,Repair the front spotlight 维修前射灯,-,spotlight 射灯
+14LT-048,Replace the bulbs of roof light 更换顶灯灯泡,-,roof light 顶灯
+14LT-049,Replace the bulbs of number plate light 更换后牌照灯灯泡,100,number plate light 牌照灯泡
+14LT-050,Clean the rear lights socket 清洗后车灯插头,100,
+14LT-051,Match the rear tail lamp (by BMW Special Equipment) 宝马专检匹配后尾灯,100,
+14LT-052,Replace the FL headlamp module 更换左前大灯模块,100,
+14LT-053,Replace the FR headlamp module 更换右前大灯模块,,
+14LT-054,Match the headlamp by BENZ Special Equipment 奔驰专检刷码（大灯及门窗),,
+15BP-001,Replace the key shell 更换钥匙壳,50,key 钥匙
+15BP-002,Replace the key cover 更换钥匙套,50,key 钥匙
+15BP-003,Copy a spare key 配备用钥匙,200,key 钥匙
+15BP-004,Repace the front wipers 更换前雨刮器,0,wiper 雨刮
+15BP-005,Repace the rear wiper 更换后雨刮器,0,wiper 雨刮
+15BP-006,Repair the spray for windshield cleaner 维修雨刮喷水器,50,wiper 雨刮
+15BP-007,Fix the leakage of windshield cleaner tank 修补玻璃水壶,300,wiper 雨刮
+15BP-008,Replace the front windshield cleaner tank 更换前雨刮水壶,200,wiper 雨刮
+15BP-009,Replace the rear windshield cleaner tank 更换后雨刮水壶,200,wiper 雨刮
+15BP-010,Replace the front windshield cleaner tank cap 更换前雨刮水壶盖子,0,wiper 雨刮
+15BP-011,Replace the rear windshield cleaner tank cap 更换后雨刮水壶盖子,0,wiper 雨刮
+15BP-012,Replace the hose pipe for windshield cleaner tank 更换雨刮水壶管子,200,wiper 雨刮
+15BP-013,Repair the leakage of front windshield 维修前档玻璃漏水,350,windshield 挡风玻璃
+15BP-014,Fitness of the front windshield 更换前挡玻璃,300,windshield 挡风玻璃
+15BP-015,Fix the front windshield rubber 固定前挡玻璃压条,,
+15BP-016,Fix the front left windshield rubber 固定左前挡玻璃压条,,
+15BP-017,Fix the front right windshield rubber 固定右前挡玻璃压条,,
+15BP-018,Fitness of the rear windshield 更换后挡玻璃,300,windshield 挡风玻璃
+15BP-019,Fitness of the FL window glass 更换左前车窗玻璃,,window glass 车窗玻璃
+15BP-020,Fitness of the FR window glass 更换右前车窗玻璃,,window glass 车窗玻璃
+15BP-021,Fitness of the RL window glass 更换左后车窗玻璃,,window glass 车窗玻璃
+15BP-022,Fitness of the RR window glass 更换右后车窗玻璃,,window glass 车窗玻璃
+15BP-023,Fix the FL side mirror 固定左前后视镜镜片,, mirror 后视镜
+15BP-024,Fix the FR side mirror 固定右前后视镜镜片,, mirror 后视镜
+15BP-025,Replace the FL side mirror 更换左前后视镜镜片,50, mirror 后视镜
+15BP-026,Replace the FR side mirror 更换右前后视镜镜片,50, mirror 后视镜
+15BP-027,Replace the rearview mirror 更换内后视镜镜片,50, mirror 后视镜
+15BP-028,Repairthe FL side mirror complete 维修左前后视镜总成,,
+15BP-029,Repairthe FR side mirror complete 维修右前后视镜总成,,
+15BP-030,Repairthe rearview mirror complete 维修内后视镜总成,,
+15BP-031,Replace the FL side mirror complete 更换左前后视镜总成,150, mirror 后视镜
+15BP-032,Replace the FR side mirror complete 更换右前后视镜总成,150, mirror 后视镜
+15BP-033,Replace the rearview mirror complete 更换内后视镜总成,150, mirror 后视镜
+15BP-034,Replace the FL ball mirror 更换左前球镜,100,mirror 球镜
+15BP-035,Replace the FR ball mirror 更换右前球镜,100,mirror 球镜
+15BP-036,Repair the front nadge bar 修复前防撞梁,350,badge bar 防撞梁
+15BP-037,Replace the front nadge bar更换前防撞梁,200,badge bar 防撞梁
+15BP-038,Replace the bonber holder 更换前防撞梁梁头,,badge bar 防撞梁
+15BP-039,Replace the bonber holder cover 更换前防撞梁梁头装饰壳,,badge bar 防撞梁
+15BP-040,Repair the grill 修复中网,800,grill 中网
+15BP-041,Replace the grill 更换中网,200,grill 中网
+15BP-042,Repair the grill holder 维修中网支架,300,grill 中网
+15BP-043,Replace the grill camera更换中网摄像头,,grill 中网
+15BP-044,Replace the grill holder 更换中网支架,200,grill 中网
+15BP-045,Replace the bonet 更换引擎盖,200,bonet 引擎盖
+15BP-046,Replace the bonet lock  更换引擎盖锁,200,bonet 引擎盖
+15BP-047,Replace the bonet hinge  更换引擎盖铰链,,
+15BP-048,Replace the handle of bonet 更换引擎盖拉手,200,bonet 引擎盖
+15BP-049,Remove the front bumper and fix it back 拆装前保险杆,,
+15BP-050,Fix the front bumper 固定前保险杆,100, front bumper 保险杆
+15BP-051,Replace the front bumper 更换前保险杆,200, front bumper 保险杆
+15BP-052,Replace the FL bonet shock 更换左前引擎盖撑杆,,bonet 引擎盖
+15BP-053,Replace the front bumper grill 更换前保险杆中网,, front bumper 保险杆
+15BP-054,Replace the FR bonet shock 更换右前引擎盖撑杆,,bonet 引擎盖
+15BP-055,Replace the FL bumpe supporter 更换左前保险杆卡子,100, front bumper 保险杆
+15BP-056,Replace the bonet trim strip更换引擎盖装饰亮条,,bonet 引擎盖
+15BP-057,Replace the FR bumpe supporter 更换右前保险杆卡子,100, front bumper 保险杆
+15BP-058,Replace the FL bumpe trim 更换左前保险杆轮眉边条,, front bumper 保险杆
+15BP-059,Replace the FR bumpe trim 更换右前保险杆轮眉边条,, front bumper 保险杆
+15BP-060,Fix the rear bumper 固定后保险杠,100,rear bumper 保险杆
+15BP-061,Replace the front bumper camera 更换前保险杆探头,, front bumper 保险杆
+15BP-062,Replace the rear bumper 更换后保险杠,200,rear bumper 保险杆
+15BP-063,Replace the RL bumper clip 更换左后保险杠支架,100,rear bumper 保险杆
+15BP-064,Replace the RR bumper clip 更换右后保险杠支架,100,rear bumper 保险杆
+15BP-065,Replace the RL bumper cover 更换左后保险杠盖板,,
+15BP-066,Replace the RR bumper cover 更换右后保险杠盖板,,
+15BP-067,Replace the FL bumper cover 更换前保险杆左侧盖板,50,cover 盖板
+15BP-068,Replace the FR bumper cover 更换前保险杆右侧盖板,50,cover 盖板
+15BP-069,Replace the FL triangular cover 更换左前三角盖板,50,cover 盖板
+15BP-070,Replace the FR triangular cover更换右前三角盖板,50,cover 盖板
+15BP-071,Replace FL fog lamp deco 更换左前雾灯装饰板,,cover 盖板
+15BP-072,Replace FR fog lamp deco 更换右前雾灯装饰板,,cover 盖板
+15BP-073,Replace the FL fender 更换左前叶子板,200,fender 叶子板
+15BP-074,Replace the FR fender 更换右前叶子板,200,fender 叶子板
+15BP-075,Replace the RL fender 更换左后叶子板,200,fender 叶子板
+15BP-076,Replace the RR fender 更换右后叶子板,200,fender 叶子板
+15BP-077,Replace the FL fender inner lining 更换左前叶子板内衬,,lining叶子板内衬
+15BP-078,Replace the FR fender inner lining 更换右前叶子板内衬,,lining叶子板内衬
+15BP-079,Replace the RL fender inner lining 更换左后叶子板内衬,,lining叶子板内衬
+15BP-080,Replace the RR fender inner lining 更换右后叶子板内衬,,lining叶子板内衬
+15BP-081,Replace FL wheel arch 更换左前轮眉,100,wheel arch 轮眉
+15BP-082,Replace FR wheel arch 更换右前轮眉,100,wheel arch 轮眉
+15BP-083,Replace RL wheel arch 更换左后轮眉,100,wheel arch 轮眉
+15BP-084,Replace RR wheel arch 更换右后轮眉,100,wheel arch 轮眉
+15BP-085,Repair the window glass 维修车窗,300,window 车窗
+15BP-086,Replace the FL window glass 更换左前车窗玻璃,200,window 车窗
+15BP-087,Replace the FR window glass 更换右前车窗玻璃,200,window 车窗
+15BP-088,Replace the RL window glass 更换左后车窗玻璃,200,window 车窗
+15BP-089,Replace the RR window glass 更换右后车窗玻璃,200,window 车窗
+15BP-090,Repair the FL window glass lifter 维修左前车窗玻璃支架,200,window 车窗
+15BP-091,Repair the FR window glass lifter 维修右前车窗玻璃支架,200,window 车窗
+15BP-092,Repair the RL window glass lifter 维修左后车窗玻璃支架,200,window 车窗
+15BP-093,Repair the RR window glass lifter 维修右后车窗玻璃支架,200,window 车窗
+15BP-094,Replace the FL window glass lifter 更换左前车窗玻璃支架,200,window 车窗
+15BP-095,Replace the FR window glass lifter 更换右前车窗玻璃支架,200,window 车窗
+15BP-096,Replace the RL window glass lifter 更换左后车窗玻璃支架,200,window 车窗
+15BP-097,Replace the RR window glass lifter 更换右后车窗玻璃支架,200,window 车窗
+15BP-098,Replace FL window shield 更换左前雨眉,50,window shield 雨眉
+15BP-099,Replace FR window shield 更换右前雨眉,50,window shield 雨眉
+15BP-100,Replace RL window shield 更换左后雨眉,50,window shield 雨眉
+15BP-101,Replace RR window shield 更换右后雨眉,50,window shield 雨眉
+15BP-102,Repair FL window shield 维修左前雨眉,,window shield 雨眉
+15BP-103,Repair FR window shield 维修右前雨眉,,window shield 雨眉
+15BP-104,Repair RL window shield 维修左后雨眉,,window shield 雨眉
+15BP-105,Repair RR window shield 维修右后雨眉,,window shield 雨眉
+15BP-106,Replace the FL door 更换左前车门,300,door 车门
+15BP-107,Replace the FR door 更换右前车门,300,door 车门
+15BP-108,Replace the RL door 更换左后车门,300,door 车门
+15BP-109,Replace the RR door 更换右后车门,300,door 车门
+15BP-110,Replace the tailgate 更换后尾门,300,door 车门
+15BP-111,Service the FL door 保养左前车门,300,door 车门
+15BP-112,Service the FR door 保养右前车门,300,door 车门
+15BP-113,Service the RL door 保养左后车门,300,door 车门
+15BP-114,Service the RR door 保养右后车门,300,door 车门
+15BP-115,Servie and adjust the tailgate 保养调节后尾门,300,door 车门
+15BP-116,Replace the FL door hinges 更换左前门上下合页,200,door 车门
+15BP-117,Replace the FR door hinges 更换右前门上下合页,200,door 车门
+15BP-118,Replace the RL door hinges 更换左后门上下合页,200,door 车门
+15BP-119,Replace the RR door hinges 更换右后门上下合页,200,door 车门
+15BP-120,Repair the FL door handle 维修左前门把手,250,door handle 门把手
+15BP-121,Repair the FR door handle 维修右前门把手,250,door handle 门把手
+15BP-122,Repair the RL door handle 维修左后门把手,250,door handle 门把手
+15BP-123,Repair the RR door handle 维修右后门把手,250,door handle 门把手
+15BP-124,Repair the tailgate handle 维修后尾门拉手,250,door handle 门把手
+15BP-125,Replace the FL door handle 更换左前门把手,200,door handle 门把手
+15BP-126,Replace the FR door handle 更换右前门把手,200,door handle 门把手
+15BP-127,Replace the RL door handle 更换左后门把手,200,door handle 门把手
+15BP-128,Replace the RR door handle 更换右后门把手,200,door handle 门把手
+15BP-129,Replace the tailgate handle更换后尾门拉手,200,door handle 门把手
+15BP-130,Repair the fuel tank handle 维修油箱盖拉手,, handle 拉手
+15BP-131,Replace the fuel tank handle 更换油箱盖拉手,, handle 拉手
+15BP-132,Repair the bonet handle 维修引擎盖拉手,, handle 拉手
+15BP-133,Replace the bonet handle 更换引擎盖拉手,, handle 拉手
+15BP-134,Repair the cable of fuel tank 维修油箱盖拉线,,cable 拉线
+15BP-135,Replace the cable of fuel tank 更换油箱盖拉线,200,cable 拉线
+15BP-136,Repair the bonet cable 维修引擎盖拉线,,cable 拉线
+15BP-137,Replace the bonet cable 更换引擎盖拉线,,cable 拉线
+15BP-138,Replace the rear left body 更换左后车斗,500,rear body 车斗
+15BP-139,Replace the rear right body 更换右后车斗,500,rear body 车斗
+15BP-140,Fix the rear body cover 安装后车斗防雨棚,350,rear body 车斗
+15BP-141,Clean the sunroof glue 清理天窗玻璃胶,500,sunroof 天窗
+15BP-142,Replace the sunroof rubber 更换天窗胶条,200,sunroof 天窗
+15BP-143,Repair the sunroof guide 维修天窗导轨,350,sunroof 天窗
+15BP-144,Replace the left roof water collector 更换左大顶流水槽,300,roof 车顶
+15BP-145,Replace the right roof water collector 更换右大顶流水槽,300,roof 车顶
+15BP-146,Repair the tailgate rubber 维修后尾门胶条,300,rubber 胶条
+15BP-147,Replace the tailgate rubber 更换后尾门胶条,200,rubber 胶条
+15BP-148,Replace the air filter  housing 更换空气格盒子,150,housing 盒子
+15BP-149,Repair the fuel tank cap 维修油箱盖,100,cap 盖子
+15BP-150,Replace the fuel tank cap 更换油箱盖,0,cap 盖子
+15BP-151,Replace the oil tank cap 更换机油盖,0,cap 盖子
+15BP-152,Repair the FL seat belt 维修前左安全带,300,belt 安全带
+15BP-153,Repair the FR seat belt 维修前右安全带,300,belt 安全带
+15BP-154,Repair the RL seat belt 维修后左安全带,300,belt 安全带
+15BP-155,Repair the RR seat belt 维修后右安全带,300,belt 安全带
+15BP-156,Replace the FL seat belt 更换前左安全带,200,belt 安全带
+15BP-157,Replace the FR seat belt 更换前右安全带,200,belt 安全带
+15BP-158,Replace the RL seat belt 更换后左安全带,200,belt 安全带
+15BP-159,Replace the RR seat belt 更换后右安全带,200,belt 安全带
+15BP-160,Replace the FL air bag 更换副驾驶位安全气囊,500,air bag 气囊
+15BP-161,Replace the FR air bag 更换主驾驶位安全气囊,500,air bag 气囊
+15BP-162,Replace the FL curtain bag 更换左侧安全气帘,,
+15BP-163,Replace the FR curtain bag 更换右侧安全气帘,,
+15BP-164,Replace SRS computer 更换气囊电脑版,,
+15BP-165,Fix the letters of the brand 粘帖车标字母,200,车标
+15BP-166,Make a new number plate 更换车牌号码,100,车牌
+15BP-167,Repair glove box lock 维修手套箱锁,200,锁
+15BP-168,Fix the battery lock 加装电瓶锁,200,锁
+15BP-169,Handmake the fuel tank lock 加装油箱锁,200,锁
+15BP-170,Modify to repair the tailgate lock 改装尾门锁,,锁
+15BP-171,Welding the rear tow hook 焊接后尾拖车钩,300,拖车钩
+15BP-172,Fix the left peddle 固定左踏板,100,peddle 踏板
+15BP-173,Fix the righr peddle 固定右踏板,100,peddle 踏板
+15BP-174,Replace the left peddle 更换左踏板,20,peddle 踏板
+15BP-175,Replace the righr peddle 更换右踏板,200,peddle 踏板
+15BP-176,Replace the pad spring 更换踏板弹簧,350,peddle 踏板
+15BP-177,Repair the tailgate peddle 维修后尾门踏板,,peddle 踏板
+15BP-178,Fix the luggage rack 安装尾箱行李架,300,luggage rack 行李架
+15BP-179,Dismantle the dashboard to overhaul and fit it back 拆装仪表台检修,2000,dashboard 仪表台
+15BP-180,Replace the dashboard complete 更换仪表总成,2000,dashboard 仪表台
+15BP-181,Fix the mad flag 固定挡泥板,100,挡泥板
+15BP-182,Replace the mad flag 更换挡泥板,,挡泥板
+15BP-183,"Remove the front bumper, bonet, grill, headlamps and fix them back
+前保险杆、引擎盖、中网、前大灯拆装",200,外观件
+15BP-184,Fix the outer body parts 固定外包围件,100,包围件
+15BP-185,Replace the left doorsill cover 更换左门槛装饰板,,门槛
+15BP-186,Replace the right doorsill cover 更换右门槛装饰板,,门槛
+15BP-187,Repair the passenger seat 维修副驾驶座椅,,座椅
+15BP-188,Remove out the back seats 拆除后座椅,,座椅
+15BP-189,Drilling to remove the broken bolts 取断头螺丝,,断头螺丝
+15BP-190,Repair the FL headlamp cleaner 左前大灯清洗头维修,,
+15BP-191,Repair the FR headlamp cleaner 右前大灯清洗头维修,,
+15BP-192,Repair the leakage of FL Pillar A 维修左前A柱漏水,,Pillar A柱
+15BP-193,Repace the rear bumper cover 更换后保险杆装饰盖板,,
+15BP-194,Fix the front lower guard board安装前下护板,,
+15BP-195,Repair the window winder 维修玻璃摇窗机,,
+15BP-196,Repair the rear mud flap 维修后挡泥板,,
+15BP-197,Replace the bonet shocks 更换引擎盖撑杆,,
+15BP-198,Replace the FL headlamp cleaner 更换左前大灯清洗头,,
+15BP-199,Replace tail gate shocks 更换后尾门撑杆,250,
+15BP-200,Replace the FR headlamp cleaner 更换右前大灯清洗头,,
+15BP-201,Repair the spare tire cover lock 维修备胎罩子锁扣,,
+15BP-202,Replace the spare tire cover lock 更换备胎罩子锁扣,,
+15BP-203,Replace the window trim更换车窗饰条,,
+15BP-204,Fix the sun visor and roof light clip 安装遮阳板和顶灯板,,
+15BP-205,Fix the empennage 安装尾翼,,
+15BP-206,Replace the engine oil dipstick 更换机油尺,,
+15BP-207,Replace the timing belt cover 更换正时皮带壳,,
+15BP-208,Replace of tailgate trim of number plate 更换尾门牌照装饰板并喷漆,,
+15BP-209,Replace of tailgate chrome trim bright bar更换尾门装饰亮条,,
+15BP-210,Replace the Toyota Logo 更换丰田车标,,
+15BP-211,Replace the cap of brake fluid tank 更换刹车油壶盖子,,
+16PP-001,"Panel beating to repair and adjust the clearance for the whole vehicle
+整车钣金修复",3500,whole vehicle整车
+16PP-002,Spray painting for the whole vehicle 整车喷漆,3500,whole vehicle整车
+16PP-003,Repair the front bumper 前保险杆修复,800, bumper 保险杆
+16PP-004,Repair the rear bumper 后保险杠修复,800, bumper 保险杆
+16PP-005,Spray painting of the front bumper前保险杆喷漆,700, bumper 保险杆
+16PP-006,Spray painting of rear bumper 后保险杠喷漆,700, bumper 保险杆
+16PP-007,Panel beating to repair the bonet 引擎盖钣金修复,800, bonet 引擎盖
+16PP-008,Adjust the bonet clearance 矫正引擎盖错位,500, bonet 引擎盖
+16PP-009,Spray painting of the Bonet 引擎盖喷漆,700, bonet 引擎盖
+16PP-010,Panel beating to repair the bonet inside 引擎盖内部钣金修复,800, bonet 引擎盖
+16PP-011,Spray painting of the Bonet inside 引擎盖内部喷漆,600, bonet 引擎盖
+16PP-012,Panel beating to repair the engine compartment 引擎舱钣金修复,800,compartment 引擎舱
+16PP-013,Spray painting for the engine compartment 引擎舱喷漆,600,compartment 引擎舱
+16PP-014,Panel beating to repair the FL door 左前门钣金修复,800,door 车门
+16PP-015,Panel beating to repair the FR door 右前门钣金修复,800,door 车门
+16PP-016,Panel beating to repair the RL door 左后门钣金修复,800,door 车门
+16PP-017,Panel beating to repair the RR door 右后门钣金修复,800,door 车门
+16PP-018,Panel beating to repair Tailgate 后尾门钣金修复,800,door 车门
+16PP-019,Spray painting of FL door 左前车门喷漆,700,door 车门
+16PP-020,Spray painting of FR door 右前车门喷漆,700,door 车门
+16PP-021,Spray painting of RL door 左后车门喷漆,700,door 车门
+16PP-022,Spray painting of RR door 右后车门喷漆,700,door 车门
+16PP-023,Spray painting of tailgate 后尾门喷漆,700,door 车门
+16PP-024,Panel beating to repair the FL fender 左前叶子板钣金修复,800,fender 叶子板
+16PP-025,Panel beating to repair the FR fender 右前叶子板钣金修复,800,fender 叶子板
+16PP-026,Panel beating to repair the RL fender 左后叶子板钣金修复,800,fender 叶子板
+16PP-027,Panel beating to repair the RR fender 右后叶子板钣金修复,800,fender 叶子板
+16PP-028,Panel beating to repair the FL fender inside 左前叶子板支架矫正修复,800,fender 叶子板
+16PP-029,Panel beating to repair the FR fender inside 右前叶子板支架矫正修复,800,fender 叶子板
+16PP-030,Panel beating to repair the RL fender inside 左后叶子板支架矫正修复,800,fender 叶子板
+16PP-031,Panel beating to repair the RR fender inside 右后叶子板支架矫正修复,800,fender 叶子板
+16PP-032,Spray painting of FL fender 左前叶子板喷漆,700,fender 叶子板
+16PP-033,Spray painting of FR fender 右前叶子板喷漆,700,fender 叶子板
+16PP-034,Spray painting of RL fender 左后叶子板喷漆,700,fender 叶子板
+16PP-035,Spray painting of RR fender 右后叶子板喷漆,700,fender 叶子板
+16PP-036,Repair the FL wheel arch 左前轮眉修复,200,wheel arch 轮眉
+16PP-037,Repair the FR wheel arch 右前轮眉修复,200,wheel arch 轮眉
+16PP-038,Repair the RL wheel arch 左后轮眉修复,200,wheel arch 轮眉
+16PP-039,Repair the RR wheel arch 右后轮眉修复,200,wheel arch 轮眉
+16PP-040,Spray painting for FL wheel arch 左前轮眉喷漆,200,wheel arch 轮眉
+16PP-041,Spray painting for FR wheel arch 右前轮眉喷漆,200,wheel arch 轮眉
+16PP-042,Spray painting for RL wheel arch 左后轮眉喷漆,200,wheel arch 轮眉
+16PP-043,Spray painting for RR wheel arch 右后轮眉喷漆,200,wheel arch 轮眉
+16PP-044,Panel beating to repair the roof 车顶钣金修复,1500,roof 车顶
+16PP-045,Spray painting of the roof 车顶喷漆,1000,roof 车顶
+16PP-046,Repair of the inner RL body 左后车斗内部钣金修复,1500,rear body 车斗
+16PP-047,Repair of the inner RR body 右后车斗内部钣金修复,1500,rear body 车斗
+16PP-048,Spray painting of RL body 左后车斗喷漆,700,rear body 车斗
+16PP-049,Spray painting of RR body 右后车斗喷漆,700,rear body 车斗
+16PP-050,Panel beating to repair the left doorsill 左门槛钣金修复,300,doorsill 门槛
+16PP-051,Panel beating to repair the right doorsill 右门槛钣金修复,300,doorsill 门槛
+16PP-052,Spray painting of the left doorsill 左门槛喷漆,200,doorsill 门槛
+16PP-053,Spray painting of the right doorsill 右门槛喷漆,200,doorsill 门槛
+16PP-054,Panel beating to repair the lower coaming 下围板钣金修复,300, coaming 围板
+16PP-055,Spray painting of the lower coaming下围板喷漆,200, coaming 围板
+16PP-056,Panel beating to repair FL Pillar A 左前A柱修复,1000,Pillar A柱
+16PP-057,Panel beating to repair FR Pillar A 右前A柱修复,1000,Pillar A柱
+16PP-058,Panel beating to repair FL Pillar B 左前B柱修复,1000,Pillar B柱
+16PP-059,Panel beating to repair FR Pillar B 右前B柱修复,1000,Pillar B柱
+16PP-060,Spray painting of repair FL Pillar A 左前A柱喷漆,,Pillar A柱
+16PP-061,Spray painting of repair FR Pillar A 右前A柱喷漆,,Pillar A柱
+16PP-062,Spray painting of repair FL Pillar B 左前B柱喷漆,,Pillar B柱
+16PP-063,Spray painting of repair FR Pillar B 右前B柱喷漆,,Pillar B柱
+16PP-064,Panel beating to repair the radiator frame 水箱框架钣金修复,1500,radiator frame 水箱框架
+16PP-065,Repair the front beam 前防撞梁整形修复,, front beam 前防撞梁
+16PP-066,Repair the lower beam of radiator 龙门架整形修复,,龙门架
+16PP-067,Spray painting of the lower beam of radiator 龙门架喷漆,,龙门架
+16PP-068,Panel beating to repair the FL window frame 左前玻璃框钣金修复,,玻璃框
+16PP-069,Replace the lower beam of radiator 更换龙门架,,龙门架
+16PP-070,Panel beating to repair the FR window frame 右前玻璃框钣金修复,,玻璃框
+16PP-071,Panel beating to repair the RL window frame 左后玻璃框钣金修复,,玻璃框
+16PP-072,Panel beating to repair the RR window frame 右后玻璃框钣金修复,,玻璃框
+16PP-073,Spray painting of the FL window frame 左前玻璃框喷漆,,玻璃框
+16PP-074,Spray painting of the FR window frame 右前玻璃框喷漆,,玻璃框
+16PP-075,Spray painting of the RL window frame 左后玻璃框喷漆,,玻璃框
+16PP-076,Spray painting of the RR window frame 右后玻璃框喷漆,,玻璃框
+16PP-077,Panel beating to repair the Front screen frame 前档玻璃框钣金修复,,
+16PP-078,Panel beating to repair the left peddle 左侧踏板钣金修复,,
+16PP-079,Panel beating to repair the right peddle 右侧踏板钣金修复,,
+16PP-080,Spray painting of the left peddle 左侧踏板喷漆,,
+16PP-081,Spray painting of the right peddle 右侧踏板喷漆,,
+16PP-082,Replace the girder 更换大梁,,
+16PP-083,Replace collision energy absorbing device  更换大梁吸能盒,,
+16PP-084,Remove the old surface paint 去除原车自喷漆,,
+,焊条，内饰板卡，原子灰、填充剂、底漆、金属漆、清漆、固化剂、油漆稀释剂、油漆过滤器、砂光盘、砂纸、车漆遮蔽膜、分色纸、除尘布、3M美容粗腊/细腊/镜面处理剂等喷漆材料,,
+17OT-001,Out rescure (daytime within 10km) 外出救援（白天来回10公里内）,300,
+17OT-002,Out rescure (daytime over 10km) 外出救援（白天10公里以上的，超出部分每公里加收10K）,300+10*km,
+17OT-003,Out rescure (at night within 10km) 外出救援（夜间来回10公里内）,500,
+17OT-004,Out rescure (at night over 10km) 外出救援（夜间10公里以上的，超出部分每公里加收20K）,500+20*km,
+17OT-005,Long distance rescue 长途救援,30k/km,
+17OT-006,Towing fee 拖车费 (30K每公里),45k/km,
+17OT-007,Towing fee (by towing company) 拖车费(参考拖车公司收费标准收取),,
+17OT-008,Pick-up service 接送车服务,200,
+17OT-009,Top up windshield cleaner 加玻璃水,-,
+17OT-010,168 health checking 168项健康检查,-,
+17OT-011,Repair auxiliary materials 维修辅材,-,
+17OT-012,Top up fuel for test 试车加油,-,
+17OT-013,Transport by air 空运费,-,
+17OT-014,Transport by sea 海运费,-,
+17OT-015,Car ornament 汽车挂饰,-,
+17OT-016,Car perfume 汽车香水 ,-,
+17OT-017,Music CD 音乐CD,-,
+17OT-018,Car MP3 车载MP3,-,
+17OT-019,Driver's transportation 司机交通费,-,
+17OT-020,Driver''s lunch 司机午餐费,20,
+17OT-021,Service fee for purchase assessment 购车服务费,2%,
+17OT-022,Take away 外带产品,-,
+17OT-023,Do the fitness (annual inspection) 代办年检,350,
+17OT-024,Buy the insurance 购买保险,100,
+17OT-025,Buy the road tax 购买路税,100,
