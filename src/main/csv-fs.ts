@@ -35,13 +35,8 @@ export const csvReadWorks = async (event: Electron.IpcMainEvent) => {
     jobs: strjsonArrToJobs(jobStrjsonArr),
     mats: strjsonArrToMats(matStrjsonArr),
   };
-  console.log(data);
 
-  event.reply(
-    'csv-read',
-    // workStrjsonArr
-    data
-  );
+  event.reply('csv-read', data);
 };
 
 export const csvWriteWorks = async (
@@ -50,5 +45,5 @@ export const csvWriteWorks = async (
 ) => {
   const csv = new Jtc(worksToStrjsonArr(data.works));
   await csv.toDisk(FN_WORKS);
-  event.reply('csv-read', data);
+  event.reply('csv-write', data);
 };

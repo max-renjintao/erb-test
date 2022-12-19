@@ -1,19 +1,27 @@
+/* eslint-disable react/no-children-prop */
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable @typescript-eslint/naming-convention */
-import { Autocomplete, Box, TextField } from '@mui/material';
-import { Stack } from '@mui/system';
-import { WritableDraft } from 'immer/dist/internal';
-import React from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import {
+  Autocomplete,
+  Box,
+  Button,
+  Radio,
+  Stack,
+  Switch,
+  TextField,
+} from '@mui/material';
+import { useState } from 'react';
+import useWork from 'renderer/store/useWork';
+import PrintIcon from '@mui/icons-material/Print';
+import SaveIcon from '@mui/icons-material/Save';
+import CloseIcon from '@mui/icons-material/Close';
 import { TxtIn } from '../InvoiceTable';
 
-type workInfoProps = {
-  work: Work;
-  setWork: (w: Work) => void;
-  setWorkImmer: (draftEdit: (dw: WritableDraft<Work>) => void) => void;
-};
-const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
+const workEditInfo = () => {
+  const [confirmDel, setConfirmDel] = useState('');
+  const { id, work, setWorkImmer, update, remove, setId } = useWork();
   return (
-    <Stack>
+    <>
       <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
         <TxtIn
           label="sn"
@@ -32,7 +40,7 @@ const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
           value={work.date_s}
           onChange={(e) =>
             setWorkImmer((dw) => {
-              dw.date_s = e.target.value;
+              dw.date_s = new Date(e.target.value);
             })
           }
         />
@@ -42,7 +50,7 @@ const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
           value={work.date_e}
           onChange={(e) =>
             setWorkImmer((dw) => {
-              dw.date_e = e.target.value;
+              dw.date_e = new Date(e.target.value);
             })
           }
         />
@@ -80,14 +88,14 @@ const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
           <TextField
             size="small"
             sx={{ width: 90 }}
-            value={ui.delete}
-            onChange={(e) => setUi((u) => ({ ...u, delete: e.target.value }))}
+            value={confirmDel}
+            onChange={(e) => setConfirmDel(e.target.value)}
           />
           <Button
             onClick={() => {
-              if (ui.delete.toLowerCase() === 'delete') {
-                onDelete();
-                onClose();
+              if (confirmDel.toLowerCase() === 'delete') {
+                remove(id);
+                setId(0);
               }
             }}
           >
@@ -120,26 +128,26 @@ const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
           <span>
             En
             <Radio
-              checked={ui.en && !ui.zh}
-              onChange={() => setUi((s) => ({ ...s, en: true, zh: false }))}
+              // checked={ui.en && !ui.zh}
+              // onChange={() => setUi((s) => ({ ...s, en: true, zh: false }))}
               inputProps={{ 'aria-label': 'A' }}
             />
             <Radio
-              checked={ui.en && ui.zh}
-              onChange={() => setUi((s) => ({ ...s, en: true, zh: true }))}
+              // checked={ui.en && ui.zh}
+              // onChange={() => setUi((s) => ({ ...s, en: true, zh: true }))}
               inputProps={{ 'aria-label': 'B' }}
             />
             <Radio
-              checked={!ui.en && ui.zh}
-              onChange={() => setUi((s) => ({ ...s, en: false, zh: true }))}
+              // checked={!ui.en && ui.zh}
+              // onChange={() => setUi((s) => ({ ...s, en: false, zh: true }))}
               inputProps={{ 'aria-label': 'B' }}
             />
             中
           </span>
           Show Tax
           <Switch
-            defaultChecked={ui.discount}
-            onChange={(e, v) => setUi((s) => ({ ...s, discount: v }))}
+            // defaultChecked={ui.discount}
+            // onChange={(e, v) => setUi((s) => ({ ...s, discount: v }))}
             size="small"
           />
           Show Discount
@@ -151,13 +159,17 @@ const WorkInfo = ({ work, setWorkImmer }: workInfoProps) => {
         />
         <Button
           startIcon={<SaveIcon />}
-          onClick={() => onSave(work)}
+          onClick={() => update(work)}
           children="save"
         />
-        <Button startIcon={<CloseIcon />} onClick={onClose} children="quit" />
+        <Button
+          startIcon={<CloseIcon />}
+          onClick={() => setId(0)}
+          children="quit"
+        />
       </Stack>
-    </Stack>
+    </>
   );
 };
 
-export default WorkInfo;
+export default workEditInfo;

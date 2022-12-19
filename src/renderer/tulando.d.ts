@@ -2,11 +2,12 @@ type WorkKeysNum =
   | 'id'
   | 'sn'
   | 'mileage'
-  // | 'labor'
-  // | 'material'
   | 'tax'
-  | 'discount';
-// | 'total';
+  | 'discount'
+  | 'total'
+  | 'labor_final'
+  | 'material_final'
+  | 'material_cost';
 
 type WorkKeysStr =
   | 'date_s'
@@ -22,15 +23,15 @@ type WorkKeysStr =
 
 type WorkKeysJson = 'orders' | 'jobs';
 
-type WorkKeys = WorkKeysNum | WorkKeysStr | WorkKeysJson;
+type WorkKeys = WorkKeysNum | WorkKeysStr | WorkKeysJson | 'display';
 
 type WorkCsvjson = { [k in WorkKeys]: string };
 
 type Work = {
   id: number;
   sn: number;
-  date_s: string;
-  date_e: string;
+  date_s: Date;
+  date_e: Date;
   plate: string;
   model: string;
   mileage: number;
@@ -44,7 +45,14 @@ type Work = {
   jobs: Job[];
   discount: number;
   note: string;
-  // maintenances: [string, string, number, [string, number, number][]][];
+  total: number;
+  labor_final: number;
+  material_final: number;
+  material_cost: number;
+  // display: {
+  //   en: boolean;
+  //   zh: boolean;
+  // };
 };
 
 type MatKeys = 'name' | 'cost' | 'qty' | 'rate';

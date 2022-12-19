@@ -1,16 +1,12 @@
-import { ButtonGroup, Dialog } from '@mui/material';
 import Button from '@mui/material/Button';
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import useWorks from 'renderer/store/useWorks';
+import { format, formatDistance, formatDistanceStrict } from 'date-fns';
 
-const WorksTable = ({
-  data,
-  onEdit,
-}: {
-  data: Work[];
-  onEdit: (id: number) => void;
-}) => {
+const WorksTable = () => {
+  const { works, setId } = useWorks();
+
   const columns: GridColDef[] = [
     { field: 'sn', width: 80 },
     {
@@ -18,14 +14,32 @@ const WorksTable = ({
       headerName: 'Start',
       width: 60,
       editable: false,
-      renderCell: (ps: GridRenderCellParams<Date>) => ps.row.date_s.slice(5),
+      renderCell: (ps: GridRenderCellParams<Date>) =>
+        ps.value && format(ps.value, 'MM-dd'),
     },
     {
       field: 'date_e',
       headerName: 'End',
       width: 60,
       editable: false,
-      renderCell: (ps: GridRenderCellParams<Date>) => ps.row.date_e.slice(5),
+      renderCell: (ps: GridRenderCellParams<Date>) =>
+        ps.value && format(ps.value, 'MM-dd'),
+    },
+    {
+      field: 'dur',
+      type: 'number',
+      width: 40,
+      // filterable: false,
+      renderCell: (ps: GridRenderCellParams<number>) => {
+        const dur = +formatDistanceStrict(
+          ps.row.date_e || new Date(Date.now()),
+          ps.row.date_s || new Date(2022, 1, 1),
+          { unit: 'day' }
+        ).slice(0, -5);
+        // console.log('dur:', dur);
+        return dur + 1;
+        // return dur < 99 ? dur + 1 : 99;
+      },
     },
     { field: 'plate', width: 100 },
     { field: 'model', width: 150 },
@@ -40,7 +54,7 @@ const WorksTable = ({
       sortable: false,
       width: 60,
       renderCell: (params: GridRenderCellParams<Date>) => (
-        <Button size="small" onClick={() => onEdit(+params.id)}>
+        <Button size="small" onClick={() => setId(+params.id)}>
           <EditIcon />
         </Button>
       ),
@@ -52,13 +66,13 @@ const WorksTable = ({
       description: 'Total Amount',
       type: 'number',
       width: 100,
-      valueGetter: (params) => params.row.labor / 1 + params.row.material / 1,
+      valueGetter: (params) => params.row.total,
     },
     { field: 'note', width: 190 },
   ];
   return (
     <DataGrid
-      rows={data}
+      rows={works}
       rowHeight={28}
       headerHeight={36}
       autoHeight

@@ -1,4 +1,6 @@
 {
+  "name": "Tulando",
+  "version": "1.5.0",
   "description": "A foundation for scalable desktop apps",
   "keywords": [
     "electron",
@@ -117,6 +119,7 @@
     "@mui/x-data-grid-pro": "^5.17.15",
     "csv": "^6.2.5",
     "csvtojson": "^2.0.10",
+    "date-fns": "^2.29.3",
     "electron": "^22.0.0",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.8",

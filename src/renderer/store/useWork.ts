@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import produce from 'immer';
 import { WritableDraft } from 'immer/dist/internal';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { jobInit, matInit } from 'renderer/constants';
+import { deduplicateObj } from 'renderer/utils/deduplicate';
 import useWorks from './useWorks';
 
-const useWork = (id: number) => {
-  const { works, ...rest } = useWorks();
+const useWork = () => {
+  const store = useWorks();
+  const { works, data, id } = store;
   const [work, setWork] = useState(works.find((w) => w.id === id) as Work);
   const setWorkImmer = (func: (draft: WritableDraft<Work>) => void) => {
     setWork((w) => produce(w, func));
@@ -19,6 +21,31 @@ const useWork = (id: number) => {
   const subTotal = sumJobs + sumMats;
   const totalAmount = subTotal * (1 + work.tax) + work.discount;
 
+  const orders = useMemo(
+    () => [
+      ...new Set([
+        ...works.map((w) => w.orders).flat(),
+        ...data.orders.map((o) => o.description),
+      ]),
+    ],
+    [works, data.orders]
+  );
+  const jobs = useMemo(
+    () =>
+      deduplicateObj('code', [
+        ...works.map((w) => w.jobs).flat(),
+        ...data.jobs,
+      ]),
+    [works, data.jobs]
+  );
+  const mats = useMemo(
+    () =>
+      deduplicateObj('name', [
+        ...works.map((w) => w.jobs.map((j) => j.mats)).flat(2),
+        ...data.mats,
+      ]),
+    [works, data.mats]
+  );
   const insertOrder = (pos: number) =>
     setWorkImmer((d) => {
       d.orders.splice(pos, 0, '');
@@ -50,6 +77,7 @@ const useWork = (id: number) => {
     });
   };
   return {
+    ...store,
     works,
     work,
     setWork,
@@ -64,7 +92,9 @@ const useWork = (id: number) => {
     deleteJob,
     insertMat,
     deleteMat,
-    ...rest,
+    orders,
+    jobs,
+    mats,
   };
 };
 export default useWork;

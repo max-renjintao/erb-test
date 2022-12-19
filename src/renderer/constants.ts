@@ -3,8 +3,8 @@ export const jobInit: Job = { code: '', item: '', cost: 0, mats: [] };
 export const workInit: Work = {
   id: 0,
   sn: 0,
-  date_e: '2022-00-00',
-  date_s: '2022-00-00',
+  date_e: new Date(),
+  date_s: new Date(),
   plate: '',
   model: '',
   mileage: 0,
@@ -18,4 +18,8 @@ export const workInit: Work = {
   jobs: [],
   discount: 0,
   note: '',
+  total: 0,
+  labor_final: 0,
+  material_cost: 0,
+  material_final: 0,
 };

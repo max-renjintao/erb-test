@@ -1,6 +1,6 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './layouts/layout';
-import WorkInvoice from './pages/page-work-invoice';
+// import WorkInvoice from './pages/page-work-invoice';
 import WorksPage from './pages/page-works';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<WorksPage />} />
-          <Route path="/work/:id" element={<WorkInvoice />} />
+          {/* <Route path="/work/:id" element={<WorkInvoice />} /> */}
         </Routes>
       </Router>
     </Layout>

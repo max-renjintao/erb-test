@@ -1,4 +1,5 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
+import { workInit } from 'renderer/constants';
 
 export const worksInit: Work[] = [];
 export const ordersInit: Order[] = [];
@@ -19,6 +20,8 @@ export const saveData = (data: typeof dataInit) =>
 export const csvContext = createContext({
   data: dataInit,
   saveData,
+  id: 0,
+  setId: (id: number) => {},
 });
 
 const Store = ({
@@ -28,8 +31,9 @@ const Store = ({
   data: StoreData;
   children: React.ReactNode;
 }) => {
+  const [id, setId] = useState(0);
   return (
-    <csvContext.Provider value={{ data, saveData }}>
+    <csvContext.Provider value={{ data, saveData, id, setId }}>
       {children}
     </csvContext.Provider>
   );
