@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import produce from 'immer';
 import { WritableDraft } from 'immer/dist/internal';
-import { useMemo, useState } from 'react';
-import { jobInit, matInit } from 'renderer/store/constants';
+import { useMemo } from 'react';
+import { jobInit, matInit, workInit } from 'renderer/store/constants';
 import { deduplicateObj } from 'utils/deduplicate';
 import useWorks from './useWorks';
 
 const useWork = () => {
   const store = useWorks();
-  const { works, data, id } = store;
-  const [work, setWork] = useState(works.find((w) => w.id === id) as Work);
-  // console.log('useWork.work:', work);
+  const { works, imData, data, app } = store;
 
-  const setWorkImmer = (func: (draft: WritableDraft<Work>) => void) => {
-    setWork((w) => produce(w, func));
+  const work = works[app.index] || workInit;
+  const imWork = (immer: (draft: WritableDraft<Work>) => void) => {
+    imData((d) => {
+      d.works[app.index] = produce(d.works[app.index], immer);
+    });
   };
   const sumJobs = work.jobs.reduce((p, c) => p + c.cost, 0);
   const sumMats = work.jobs.reduce(
@@ -55,41 +56,39 @@ const useWork = () => {
     [works, data.mats]
   );
   const insertOrder = (pos: number) =>
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.orders.splice(pos, 0, '');
     });
 
   const deleteOrder = (pos: number) =>
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.orders.splice(pos, 1);
     });
 
   const insertJob = (pos: number) => {
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.jobs.splice(pos, 0, jobInit);
     });
   };
   const deleteJob = (pos: number) => {
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.jobs.splice(pos, 1);
     });
   };
   const insertMat = (jobId: number, pos: number) => {
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.jobs[jobId].mats.splice(pos, 0, matInit);
     });
   };
   const deleteMat = (jobId: number, pos: number) => {
-    setWorkImmer((d) => {
+    imWork((d) => {
       d.jobs[jobId].mats.splice(pos, 1);
     });
   };
   return {
     ...store,
-    works,
     work,
-    setWork,
-    setWorkImmer,
+    imWork,
     sumJobs,
     sumMats,
     subTotal,

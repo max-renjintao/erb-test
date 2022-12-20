@@ -11,16 +11,16 @@ const WorksPage = () => {
   // const navigate = useNavigate();
   // const { works, insert } = useWorks();
   // const [id, setId] = useState(0);
-  const { id, works, append: insert } = useWorks();
+  const { app, append } = useWorks();
   return (
     <>
       <WorksTable />
-      <ScrollDialog open={id > 0}>
+      <ScrollDialog open={app.showDialogWorkEdit}>
         <WorkEditInfo />
-        <Invoice />
+        {/* <Invoice /> */}
       </ScrollDialog>
 
-      <Button onClick={() => insert()}>Append</Button>
+      <Button onClick={() => append()}>Append</Button>
     </>
   );
 };

@@ -3,7 +3,7 @@ import produce from 'immer';
 import { useContext } from 'react';
 import { workInit } from 'renderer/store/constants';
 
-import { storeContext } from './IpcStore';
+import { storeContext } from './Store';
 
 const useWorks = () => {
   const store = useContext(storeContext);
@@ -11,7 +11,13 @@ const useWorks = () => {
     data,
     data: { works },
     saveData,
+    imApp,
   } = store;
+  const setId = (id: number) =>
+    imApp((a) => {
+      a.id = id;
+      a.index = works.findIndex((w) => w.id === id);
+    });
   const append = (work?: Work) => {
     // const index = works.findIndex((w) => w.id === id);
     saveData(
@@ -26,17 +32,17 @@ const useWorks = () => {
       })
     );
   };
-  const remove = (id: number) => {
-    const index = works.findIndex((w) => w.id === id);
-    if (index)
-      saveData(
-        produce(data, (d) => {
-          d.works.splice(index, 1);
-          d.works.forEach((w, i) => {
-            d.works[i].id = i + 1;
-          });
-        })
-      );
+  const remove = (index: number) => {
+    // const index = works.findIndex((w) => w.id === index);
+
+    saveData(
+      produce(data, (d) => {
+        d.works.splice(index, 1);
+        // d.works.forEach((w, i) => {
+        //   d.works[i].id = i + 1;
+        // });
+      })
+    );
   };
   const update = (w: Work) => {
     works.forEach((v, id) => {
@@ -56,6 +62,7 @@ const useWorks = () => {
   return {
     ...store,
     works,
+    setId,
     update,
     append,
     remove,

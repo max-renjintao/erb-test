@@ -1,3 +1,6 @@
+import { WritableDraft } from 'immer/dist/internal';
+import { Updater } from 'use-immer';
+
 export const matInit: Mat = { name: '', qty: 0, cost: 0, rate: 0 };
 export const jobInit: Job = { code: '', item: '', cost: 0, mats: [] };
 export const workInit: Work = {
@@ -36,3 +39,19 @@ export const dataInit = {
 };
 
 export type StoreData = typeof dataInit;
+export const appInit = {
+  id: 0,
+  index: 0,
+  // work: workInit,
+  showDialogWorkEdit: false,
+  isEdited: false,
+};
+export type StoreApp = typeof appInit;
+export const storeContextInit = {
+  data: dataInit,
+  // setData: (data: StoreData) => {},
+  imData: (() => {}) as Updater<StoreData>,
+  saveData: (data: StoreData) => {},
+  app: appInit,
+  imApp: (() => {}) as Updater<StoreApp>,
+};

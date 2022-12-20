@@ -20,7 +20,7 @@ import { TxtIn } from '../InvoiceTable';
 
 const workEditInfo = () => {
   const [confirmDel, setConfirmDel] = useState('');
-  const { id, work, setWorkImmer, update, remove, setId } = useWork();
+  const { app, imApp, setId, work, imWork, update, remove } = useWork();
   return (
     <>
       <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
@@ -28,9 +28,9 @@ const workEditInfo = () => {
           label="sn"
           type="number"
           sx={{ width: 90 }}
-          value={work.sn}
-          onChange={(e) =>
-            setWorkImmer((dw) => {
+          defaultValue={work.sn}
+          onBlur={(e) =>
+            imWork((dw) => {
               dw.sn = +e.target.value;
             })
           }
@@ -38,9 +38,9 @@ const workEditInfo = () => {
         <TxtIn
           label="Start"
           type="date"
-          value={dateFormat(work.date_s)}
-          onChange={(e) =>
-            setWorkImmer((dw) => {
+          defaultValue={dateFormat(work.date_s)}
+          onBlur={(e) =>
+            imWork((dw) => {
               dw.date_s = dateParse(e.target.value);
             })
           }
@@ -48,9 +48,9 @@ const workEditInfo = () => {
         <TxtIn
           label="End"
           type="date"
-          value={dateFormat(work.date_e)}
-          onChange={(e) =>
-            setWorkImmer((dw) => {
+          defaultValue={dateFormat(work.date_e)}
+          onBlur={(e) =>
+            imWork((dw) => {
               dw.date_e = dateParse(e.target.value);
             })
           }
@@ -61,9 +61,9 @@ const workEditInfo = () => {
           options={['汪攀', '王毅', '杨波']}
           sx={{ width: 100 }}
           renderInput={(params) => <TxtIn {...params} />}
-          value={work.team}
+          defaultValue={work.team}
           onChange={(e, v) =>
-            setWorkImmer((dw) => {
+            imWork((dw) => {
               dw.team = `${v}`;
             })
           }
@@ -78,7 +78,7 @@ const workEditInfo = () => {
           value={work.status}
           onChange={(e, v) =>
             v &&
-            setWorkImmer((dw) => {
+            imWork((dw) => {
               dw.status = v;
             })
           }
@@ -94,8 +94,12 @@ const workEditInfo = () => {
           <Button
             onClick={() => {
               if (confirmDel.toLowerCase() === 'delete') {
-                remove(id);
+                const i = app.index;
+                imApp((a) => {
+                  a.showDialogWorkEdit = false;
+                });
                 setId(0);
+                remove(i);
               }
             }}
           >
@@ -108,9 +112,9 @@ const workEditInfo = () => {
           multiline
           label="note"
           maxRows={5}
-          value={work.note}
-          onChange={(e) =>
-            setWorkImmer((d) => {
+          defaultValue={work.note}
+          onBlur={(e) =>
+            imWork((d) => {
               d.note = e.target.value;
             })
           }
@@ -164,7 +168,11 @@ const workEditInfo = () => {
         />
         <Button
           startIcon={<CloseIcon />}
-          onClick={() => setId(0)}
+          onClick={() => {
+            imApp((a) => {
+              a.showDialogWorkEdit = false;
+            });
+          }}
           children="quit"
         />
       </Stack>

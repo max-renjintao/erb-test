@@ -6,7 +6,7 @@ import { formatDistance, formatDistanceStrict } from 'date-fns';
 import { dateFormat } from '../../utils/date';
 
 const WorksTable = () => {
-  const { works, setId } = useWorks();
+  const { works, app, imApp, setId } = useWorks();
 
   const columns: GridColDef[] = [
     { field: 'sn', width: 80 },
@@ -59,7 +59,15 @@ const WorksTable = () => {
       sortable: false,
       width: 60,
       renderCell: (params: GridRenderCellParams<Date>) => (
-        <Button size="small" onClick={() => setId(+params.id)}>
+        <Button
+          size="small"
+          onClick={() => {
+            imApp((a) => {
+              a.showDialogWorkEdit = true;
+            });
+            setId(+params.id);
+          }}
+        >
           <EditIcon />
         </Button>
       ),
