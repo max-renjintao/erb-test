@@ -8,8 +8,7 @@ import { amount, percent } from 'utils/disp';
 import InvoiceInput from '../InvoiceInput';
 
 const InvoiceBill = () => {
-  const { work, sumJobs, sumMats, subTotal, totalAmount, setWorkImmer } =
-    useWork();
+  const { work, sumJobs, sumMats, subTotal, totalAmount, imWork } = useWork();
   return (
     <InvoiceTable
       heading="Total Amount and Details 费用统计"
@@ -17,7 +16,9 @@ const InvoiceBill = () => {
     >
       <tr>
         <Td justifyContent="end">Labor Cost 人工费</Td>
-        <Td justifyContent="end">{sumJobs}</Td>
+        <Td width={80} justifyContent="end">
+          {sumJobs}
+        </Td>
       </tr>
       <tr>
         <Td justifyContent="end">Parts and Materials 材料费</Td>
@@ -35,7 +36,7 @@ const InvoiceBill = () => {
           textAlign="right"
           value={percent(work.tax)}
           onEdit={(v) =>
-            setWorkImmer((d) => {
+            imWork((d) => {
               d.tax = numeral(v).value() || 0;
             })
           }
@@ -49,17 +50,12 @@ const InvoiceBill = () => {
           textAlign="right"
           value={amount(work.discount)}
           onEdit={(v) =>
-            setWorkImmer((d) => {
+            imWork((d) => {
               d.discount = numeral(v).value() || 0;
             })
           }
-          // style={{ color: 'red' }}
         />
-        {/* <Td justifyContent="end">
-          <span >{amount(work.discount)}</span>
-        </Td> */}
       </tr>
-
       <tr>
         <Td justifyContent="end">Total Amount</Td>
         <Td justifyContent="end">

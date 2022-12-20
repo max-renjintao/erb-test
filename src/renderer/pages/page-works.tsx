@@ -17,7 +17,7 @@ const WorksPage = () => {
       <WorksTable />
       <ScrollDialog open={app.showDialogWorkEdit}>
         <WorkEditInfo />
-        {/* <Invoice /> */}
+        <Invoice />
       </ScrollDialog>
 
       <Button onClick={() => append()}>Append</Button>

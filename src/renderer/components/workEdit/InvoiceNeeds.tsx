@@ -9,18 +9,18 @@ import CloseIcon from '@mui/icons-material/Close';
 import { ButtonSide } from '../Buttons';
 import InvoiceInput from '../InvoiceInput';
 
-const InvoiceOrders = () => {
-  const { work, insertOrder, orders, setWorkImmer, deleteOrder } = useWork();
+const InvoiceNeeds = () => {
+  const { work, insertNeed, app, imWork, deleteNeed } = useWork();
   return (
     <InvoiceTable heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求">
-      {work.orders.map((item, i) => (
+      {work.needs.map((item, i) => (
         <tr key={i}>
           <Td width="4%">
             <ButtonSide // order / insert button
               left={18}
               mt={-40}
               onClick={() => {
-                insertOrder(i);
+                insertNeed(i);
               }}
             >
               <EastIcon />
@@ -29,18 +29,18 @@ const InvoiceOrders = () => {
           </Td>
           <InvoiceInput // order
             textAlign="left"
-            options={orders}
-            value={`${work.orders[i]}`}
+            options={app.workOps.needs}
+            value={`${work.needs[i]}`}
             onEdit={(v) => {
-              setWorkImmer((draft) => {
-                draft.orders[i] = v;
+              imWork((draft) => {
+                draft.needs[i] = v;
               });
             }}
           >
             <ButtonSide // order delete button
               right={1}
               mt={10}
-              onClick={() => deleteOrder(i)}
+              onClick={() => deleteNeed(i)}
             >
               <CloseIcon />
             </ButtonSide>
@@ -51,4 +51,4 @@ const InvoiceOrders = () => {
   );
 };
 
-export default InvoiceOrders;
+export default InvoiceNeeds;

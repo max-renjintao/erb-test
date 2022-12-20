@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import produce from 'immer';
 import { WritableDraft } from 'immer/dist/internal';
-import { useMemo } from 'react';
 import { jobInit, matInit, workInit } from 'renderer/store/constants';
-import { deduplicateObj } from 'utils/deduplicate';
 import useWorks from './useWorks';
 
 const useWork = () => {
@@ -24,65 +22,34 @@ const useWork = () => {
   const subTotal = sumJobs + sumMats;
   const totalAmount = subTotal * (1 + work.tax) + work.discount;
 
-  const orders = useMemo(
-    () => [
-      ...new Set([
-        ...works.map((w) => w.orders).flat(),
-        ...data.orders.map((o) => o.description),
-      ]),
-    ],
-    [works, data.orders]
-  );
-  const jobs = useMemo(
-    () =>
-      deduplicateObj('code', [
-        ...works.map((w) => w.jobs).flat(),
-        ...data.jobs,
-      ]),
-    [works, data.jobs]
-  );
-  const mats = useMemo(
-    () =>
-      deduplicateObj('name', [
-        ...works
-          .map((w) => {
-            // console.log(w.sn, w.jobs);
-            // return [];
-            return w.jobs.map((j) => j.mats);
-          })
-          .flat(2),
-        ...data.mats,
-      ]),
-    [works, data.mats]
-  );
-  const insertOrder = (pos: number) =>
+  const insertNeed = (index: number) =>
     imWork((d) => {
-      d.orders.splice(pos, 0, '');
+      d.needs.splice(index, 0, '');
     });
 
-  const deleteOrder = (pos: number) =>
+  const deleteNeed = (index: number) =>
     imWork((d) => {
-      d.orders.splice(pos, 1);
+      d.needs.splice(index, 1);
     });
 
-  const insertJob = (pos: number) => {
+  const insertJob = (index: number) => {
     imWork((d) => {
-      d.jobs.splice(pos, 0, jobInit);
+      d.jobs.splice(index, 0, jobInit);
     });
   };
-  const deleteJob = (pos: number) => {
+  const deleteJob = (index: number) => {
     imWork((d) => {
-      d.jobs.splice(pos, 1);
+      d.jobs.splice(index, 1);
     });
   };
-  const insertMat = (jobId: number, pos: number) => {
+  const insertMat = (jobId: number, index: number) => {
     imWork((d) => {
-      d.jobs[jobId].mats.splice(pos, 0, matInit);
+      d.jobs[jobId].mats.splice(index, 0, matInit);
     });
   };
-  const deleteMat = (jobId: number, pos: number) => {
+  const deleteMat = (jobId: number, index: number) => {
     imWork((d) => {
-      d.jobs[jobId].mats.splice(pos, 1);
+      d.jobs[jobId].mats.splice(index, 1);
     });
   };
   return {
@@ -93,15 +60,12 @@ const useWork = () => {
     sumMats,
     subTotal,
     totalAmount,
-    insertOrder,
-    deleteOrder,
+    insertNeed,
+    deleteNeed,
     insertJob,
     deleteJob,
     insertMat,
     deleteMat,
-    orders,
-    jobs,
-    mats,
   };
 };
 export default useWork;

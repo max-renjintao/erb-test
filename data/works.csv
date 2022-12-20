@@ -1,4 +1,4 @@
-id,sn,date_e,date_s,plate,model,owner,tel,vip,note,team,status,mileage,orders,jobs,tax,discount,total,labor_final,material_cost,material_final,paid
+id,sn,date_e,date_s,plate,model,owner,tel,vip,note,team,status,mileage,needs,jobs,tax,discount,total,labor_final,material_cost,material_final,paid
 1,0,,2022-12-14,BAK3849,Vanguard,黎敏,,,车抖（内球笼）、风挡,王毅,waiting,0,[],[],0,0,0,0,0,0,0
 2,210000,,,,PRADO,Keda 科达,,,油泵、油滤,王毅,OLD,0,[],[],0,0,0,0,0,0,0
 3,220001,,2022-12-13,BAR2157,PRADO,科达,,,电瓶、后视镜、拖车、返,汪攀,doing,0,[],[],0,0,0,0,0,0,0
@@ -49,7 +49,7 @@ id,sn,date_e,date_s,plate,model,owner,tel,vip,note,team,status,mileage,orders,jo
 48,220830,2022-12-17,2022-12-17,BAX6425,MARK X,张总,,,,杨波,Doing,154794,"[""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养"",""The Fault codes were on 仪表盘故障灯亮""]","[{""code"":""01SV-002"",""item"":""Ordinary Service II 常规保养II"",""cost"":580,""mats"":[{""name"":""SHELL 5W 40"",""qty"":6,""cost"":0,""rate"":180}]},{""code"":""01SV-001-01"",""item"":""Replace engine oil 更换发动机机油"",""cost"":0,""mats"":[]},{""code"":""01SV-001-02"",""item"":""Replace oil filter 更换机油滤芯"",""cost"":0,""mats"":[]},{""code"":""01SV-001-03"",""item"":""Replace air filter 更换空气滤芯"",""cost"":0,""mats"":[]},{""code"":""01SV-001-05"",""item"":""Replace A/C filter 更换空调滤芯"",""cost"":0,""mats"":[]}]",0,0,580,580,0,0,0
 49,220831,2022-12-17,2022-12-17,BAJ9520,ALPHARD,吴建,,,"吴建父亲送来,漏机油，links",,Await,228360,"[""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养"",""The Fault codes were on 仪表盘故障灯亮"",""Suspension service 底盘检修""]","[{""code"":""01SV-002"",""item"":""Ordinary Service II 常规保养II"",""cost"":580,""mats"":[]},{""code"":""01SV-001-01"",""item"":""Replace engine oil 更换发动机机油"",""cost"":0,""mats"":[{""name"":""PUMA "",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-02"",""item"":""Replace oil filter 更换机油滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-03"",""item"":""Replace air filter 更换空气滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-05"",""item"":""Replace A/C filter 更换空调滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]}]",0,0,580,580,0,0,0
 50,220832,2022-12-17,2022-12-12,BAP6247,HARRIER,姚总,,,"救援,t大修发动机漏水，托",杨波,doing,0,[],[],0,0,0,0,0,0,0
-51,220833,2022-12-19,2022-12-19,AEB3372,FORD RANGER T6,曾乾昌,097-4281419,,右后钢板/双减震,王毅,done,0,[],[],0,0,0,0,0,0,0
+51,220833,2022-12-19,2022-12-19,AEB3372,FORD RANGER T6,曾乾昌,0,,右后钢板/双减震,王毅,done,0,[],[],0,0,0,0,0,0,0
 52,220834,2022-12-19,2022-12-19,BAJ2438,NOAH,贾,096-1577988,,换轮胎,汪攀,PAID,0,[],[],0,0,0,0,0,0,0
 53,220835,2022-12-20,2022-12-20,NEW001,BMW 325,张思强,,,保养,王毅,doing,101588,[],[],0,0,0,0,0,0,0
 54,220836,2022-12-20,2022-12-20,BAX4784,Vanguard,林志强,097-4608086,,保养,杨波,done,76592,[],[],0,0,0,0,0,0,0
@@ -57,4 +57,4 @@ id,sn,date_e,date_s,plate,model,owner,tel,vip,note,team,status,mileage,orders,jo
 56,220999,2022-12-20,2022-12-20,,,,,,塞韦特,,,0,[],[],0,0,0,0,0,0,
 57,221000,2022-12-20,2022-12-20,,,,,,,,,0,[],[],0,0,0,0,0,0,
 58,221001,2022-12-20,2022-12-20,,,,,,,,,0,[],[],0,0,0,0,0,0,
-59,221002,2022-12-20,2022-12-20,,,,,,,,,0,[],[],0,0,0,0,0,0,
+59,221003,2022-12-20,2022-12-20,BAL7859,HILUX2,贾豫奇,097-6684372,880198,测试33344444,,DONE,95038,"[""The engine was cutting off 发动机熄火"",""Air conditioning was not working well 空调不制冷""]","[{""code"":""02EN-012"",""item"":""Replace the petrol filter 更换汽油滤芯"",""cost"":0,""mats"":[{""name"":""87139-12010 空调滤芯"",""qty"":1,""cost"":0,""rate"":200}]},{""code"":"""",""item"":"""",""cost"":0,""mats"":[{""name"":""17801-28010 空气滤芯"",""qty"":1,""cost"":0,""rate"":280}]}]",0.16,10,11.6,0,0,0,

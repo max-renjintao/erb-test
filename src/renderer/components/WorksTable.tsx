@@ -16,7 +16,8 @@ const WorksTable = () => {
       headerName: 'Start',
       width: 60,
       editable: false,
-      renderCell: (ps: GridRenderCellParams<Date>) => dateFormat(ps.value),
+      renderCell: (ps: GridRenderCellParams<Date>) =>
+        dateFormat(ps.value, 'MM-dd'),
     },
     {
       field: 'date_e',
@@ -27,7 +28,7 @@ const WorksTable = () => {
       renderCell: (ps: GridRenderCellParams<Date>) => {
         // console.log('ps.value', ps.value);
 
-        return dateFormat(ps.value);
+        return dateFormat(ps.value, 'MM-dd');
       },
     },
     // {

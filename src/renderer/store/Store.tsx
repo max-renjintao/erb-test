@@ -1,30 +1,21 @@
 import { useImmer } from 'use-immer';
-import { createContext, useEffect, useState } from 'react';
-import {
-  appInit,
-  dataInit,
-  StoreApp,
-  storeContextInit,
-  StoreData,
-} from 'renderer/store/constants';
+import { createContext, useEffect } from 'react';
+import { appInit, dataInit, storeContextInit, StoreData } from './constants';
 import initialData from './initialData';
-
-// export const saveData = (data: typeof dataInit) =>
-//   window.electron.ipcRenderer.sendMessage('csv-write', [data]);
+import initialApp from './initialApp';
 
 export const storeContext = createContext(storeContextInit);
 
 const Store = ({ children }: { children: React.ReactNode }) => {
-  // const [txt, imTxt] = useImmer(appInit);
   const [app, imApp] = useImmer(appInit);
   const [data, imData] = useImmer(dataInit);
-  // const imData = (immer: (draft: WritableDraft<StoreData>) => void) => {
-  //   setData((d) => produce(d, immer));
-  // };
+
   useEffect(() => {
     window.electron.ipcRenderer.sendMessage('csv-read', []);
     window.electron.ipcRenderer.once('csv-read', (ipcData) => {
       imData(initialData(ipcData as StoreData));
+      imApp(initialApp(ipcData as StoreData, app));
+      // console.log('app', app);
     });
     window.electron.ipcRenderer.on('csv-write', (d) => {
       imData((dd) => {

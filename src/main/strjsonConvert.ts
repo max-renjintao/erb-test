@@ -14,7 +14,7 @@ export const strjsonToWork = (sj: WorkCsvjson): Work => ({
   discount: +sj.discount,
   date_s: dateParse(sj.date_s),
   date_e: dateParse(sj.date_e),
-  orders: jsonParse(sj.orders as string),
+  needs: jsonParse(sj.needs as string),
   jobs: jsonParse(sj.jobs as string),
 });
 export const workToStrjson = (w: Work): WorkCsvjson => ({
@@ -30,7 +30,7 @@ export const workToStrjson = (w: Work): WorkCsvjson => ({
   material_cost: `${w.material_cost}`,
   date_s: dateFormat(w.date_s),
   date_e: dateFormat(w.date_e),
-  orders: JSON.stringify(w.orders),
+  needs: JSON.stringify(w.needs),
   jobs: JSON.stringify(w.jobs),
 });
 

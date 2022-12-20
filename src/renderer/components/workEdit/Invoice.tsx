@@ -4,22 +4,22 @@ import EastIcon from '@mui/icons-material/East';
 import InvoiceFooter from './InvoiceFooter';
 import InvoiceNotice from './InvoiceNotice';
 import InvoiceBill from './InvoiceBill';
-import InvoiceInfo from './InvoiceInfo';
-import InvoiceOrders from './InvoiceOrders';
+import InvoiceVehicle from './InvoiceVehicle';
+import InvoiceNeeds from './InvoiceNeeds';
 import InvoiceItemList from './InvoiceItemList';
 import InvoiceHeader from './InvoiceHeader';
 import InvoicePaid from './InvoicePaid';
 
 const Invoice = () => {
-  const { work, insertOrder } = useWork();
+  const { work, insertNeed: insertOrder } = useWork();
 
   if (!work) return <>!!! no work</>;
 
   return (
     <div className="invoice-paper">
       <InvoiceHeader />
-      <InvoiceInfo />
-      <InvoiceOrders />
+      <InvoiceVehicle />
+      <InvoiceNeeds />
       <ButtonSide // order / append button
         left={18}
         mt={-15}

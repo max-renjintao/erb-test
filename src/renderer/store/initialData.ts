@@ -3,7 +3,7 @@ import { StoreData } from './constants';
 
 const initialData = (data: StoreData) => {
   return {
-    ...(data as StoreData),
+    ...data,
     works: produce((data as StoreData).works, (dws) => {
       dws.forEach((w) => {
         const labor = w.jobs.length

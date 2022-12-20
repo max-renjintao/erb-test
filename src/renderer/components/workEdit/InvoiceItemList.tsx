@@ -15,10 +15,9 @@ import InvoiceInput from '../InvoiceInput';
 const InvoiceItemList = () => {
   const {
     work,
-    setWorkImmer,
+    imWork,
+    app,
     insertJob,
-    jobs,
-    mats,
     deleteJob,
     insertMat,
     deleteMat,
@@ -53,12 +52,12 @@ const InvoiceItemList = () => {
             </Td>
             <InvoiceInput // job / code
               rowSpan={rowSpan}
-              options={jobs.map((j) => j.code)}
+              options={app.workOps.jobs.map((j) => j.code)}
               value={job.code}
               onEdit={(v) =>
-                setWorkImmer((d) => {
+                imWork((d) => {
                   d.jobs[jobId].code = v;
-                  const sameJob = jobs.find((j) => j.code === v);
+                  const sameJob = app.workOps.jobs.find((j) => j.code === v);
                   if (sameJob) {
                     d.jobs[jobId].item = sameJob.item;
                     d.jobs[jobId].cost = sameJob.cost || 0;
@@ -68,12 +67,12 @@ const InvoiceItemList = () => {
             />
             <InvoiceInput // job / item
               rowSpan={rowSpan}
-              options={deduplicateVar(jobs.map((j) => j.item))}
+              options={deduplicateVar(app.workOps.jobs.map((j) => j.item))}
               value={job.item}
               onEdit={(v) =>
-                setWorkImmer((d) => {
+                imWork((d) => {
                   d.jobs[jobId].item = v;
-                  const sameJob = jobs.find((j) => j.item === v);
+                  const sameJob = app.workOps.jobs.find((j) => j.item === v);
                   if (sameJob) {
                     d.jobs[jobId].code = sameJob.code;
                     d.jobs[jobId].cost = sameJob.cost || 0;
@@ -87,7 +86,7 @@ const InvoiceItemList = () => {
               options={[]}
               value={job.cost.toLocaleString()}
               onEdit={(v) =>
-                setWorkImmer((d) => {
+                imWork((d) => {
                   d.jobs[jobId].cost = +v.replace(',', '');
                 })
               }
@@ -123,13 +122,14 @@ const InvoiceItemList = () => {
             <tr key={matId}>
               {matId === 0 && tdsLabor}
               <InvoiceInput // mat / name
-                options={mats.map((m) => m.name)}
+                options={app.workOps.mats.map((m) => m.name)}
                 value={mat.name}
                 onEdit={(v) =>
-                  setWorkImmer((d) => {
+                  imWork((d) => {
                     d.jobs[jobId].mats[matId].name = v;
-                    const sameMat = mats.find((m) => m.name === v);
+                    const sameMat = app.workOps.mats.find((m) => m.name === v);
                     if (sameMat) {
+                      d.jobs[jobId].mats[matId].qty = sameMat.qty || 1;
                       d.jobs[jobId].mats[matId].rate = sameMat.rate || 0;
                     }
                   })
@@ -147,7 +147,7 @@ const InvoiceItemList = () => {
                 options={[]}
                 value={`${mat.qty}`}
                 onEdit={(v) =>
-                  setWorkImmer((d) => {
+                  imWork((d) => {
                     d.jobs[jobId].mats[matId].qty = +v;
                   })
                 }
@@ -156,7 +156,7 @@ const InvoiceItemList = () => {
                 options={[]}
                 value={`${mat.rate}`}
                 onEdit={(v) =>
-                  setWorkImmer((d) => {
+                  imWork((d) => {
                     d.jobs[jobId].mats[matId].rate = +v;
                   })
                 }

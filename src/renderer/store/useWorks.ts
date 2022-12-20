@@ -19,7 +19,6 @@ const useWorks = () => {
       a.index = works.findIndex((w) => w.id === id);
     });
   const append = (work?: Work) => {
-    // const index = works.findIndex((w) => w.id === id);
     saveData(
       produce(data, (d) => {
         d.works.push({
@@ -33,31 +32,24 @@ const useWorks = () => {
     );
   };
   const remove = (index: number) => {
-    // const index = works.findIndex((w) => w.id === index);
-
     saveData(
       produce(data, (d) => {
         d.works.splice(index, 1);
-        // d.works.forEach((w, i) => {
-        //   d.works[i].id = i + 1;
-        // });
       })
     );
   };
   const update = (w: Work) => {
-    works.forEach((v, id) => {
-      if (v.id === w.id) {
-        saveData(
-          produce(data, (draft) => {
-            draft.works[id] = w;
-          })
-        );
-      }
-    });
+    const index = works.findIndex((item) => item.id === w.id);
+    if (index)
+      saveData(
+        produce(data, (draft) => {
+          draft.works[index] = w;
+        })
+      );
   };
-  const options = (key: keyof Work) => [
-    ...new Set(works.map((w) => `${w[key]}`)),
-  ];
+  // const options = (key: keyof Work) => [
+  //   ...new Set(works.map((w) => `${w[key]}`)),
+  // ];
 
   return {
     ...store,
@@ -66,7 +58,7 @@ const useWorks = () => {
     update,
     append,
     remove,
-    options,
+    // options,
   };
 };
 export default useWorks;
