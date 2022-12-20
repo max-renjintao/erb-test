@@ -3,7 +3,7 @@ import produce from 'immer';
 import { useContext } from 'react';
 import { workInit } from 'renderer/store/constants';
 
-import { csvContext } from './store';
+import { csvContext } from './IpcStore';
 
 const useWorks = () => {
   const store = useContext(csvContext);

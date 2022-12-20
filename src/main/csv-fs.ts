@@ -2,7 +2,7 @@ import ctj from 'csvtojson';
 import Jtc from 'objects-to-csv';
 import path from 'path';
 import { app } from 'electron';
-import { StoreData } from '../renderer/store/store';
+import { StoreData } from 'renderer/store/constants';
 import {
   strjsonArrToOrders,
   strjsonArrToJobs,
