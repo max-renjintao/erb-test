@@ -44,6 +44,6 @@ export const csvWriteWorks = async (
   [data]: [StoreData]
 ) => {
   const csv = new Jtc(worksToStrjsonArr(data.works));
-  // await csv.toDisk(FN_WORKS);
+  await csv.toDisk(FN_WORKS);
   event.reply('csv-write', data);
 };

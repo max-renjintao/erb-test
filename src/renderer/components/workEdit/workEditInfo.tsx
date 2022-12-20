@@ -63,9 +63,8 @@ const workEditInfo = () => {
           renderInput={(params) => <TxtIn {...params} />}
           value={work.team}
           onChange={(e, v) =>
-            v &&
             setWorkImmer((dw) => {
-              dw.team = v;
+              dw.team = `${v}`;
             })
           }
         />

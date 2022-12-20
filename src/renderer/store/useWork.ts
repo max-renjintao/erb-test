@@ -10,6 +10,8 @@ const useWork = () => {
   const store = useWorks();
   const { works, data, id } = store;
   const [work, setWork] = useState(works.find((w) => w.id === id) as Work);
+  // console.log('useWork.work:', work);
+
   const setWorkImmer = (func: (draft: WritableDraft<Work>) => void) => {
     setWork((w) => produce(w, func));
   };
@@ -41,7 +43,13 @@ const useWork = () => {
   const mats = useMemo(
     () =>
       deduplicateObj('name', [
-        ...works.map((w) => w.jobs.map((j) => j.mats)).flat(2),
+        ...works
+          .map((w) => {
+            // console.log(w.sn, w.jobs);
+            // return [];
+            return w.jobs.map((j) => j.mats);
+          })
+          .flat(2),
         ...data.mats,
       ]),
     [works, data.mats]

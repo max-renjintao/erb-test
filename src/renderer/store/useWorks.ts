@@ -57,7 +57,7 @@ const useWorks = () => {
     ...store,
     works,
     update,
-    insert: append,
+    append,
     remove,
     options,
   };
