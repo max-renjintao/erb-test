@@ -2,8 +2,8 @@
 import produce from 'immer';
 import { WritableDraft } from 'immer/dist/internal';
 import { useMemo, useState } from 'react';
-import { jobInit, matInit } from 'renderer/constants';
-import { deduplicateObj } from 'renderer/utils/deduplicate';
+import { jobInit, matInit } from 'renderer/store/constants';
+import { deduplicateObj } from 'utils/deduplicate';
 import useWorks from './useWorks';
 
 const useWork = () => {

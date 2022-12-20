@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import produce from 'immer';
 import { useContext } from 'react';
-import { workInit } from 'renderer/constants';
+import { workInit } from 'renderer/store/constants';
 
 import { csvContext } from './store';
 
@@ -12,11 +12,11 @@ const useWorks = () => {
     data: { works },
     saveData,
   } = store;
-  const insert = (id: number, work?: Work) => {
-    const index = works.findIndex((w) => w.id === id);
+  const append = (work?: Work) => {
+    // const index = works.findIndex((w) => w.id === id);
     saveData(
       produce(data, (d) => {
-        d.works.splice(index + 1, 0, {
+        d.works.push({
           ...(work || workInit),
           id: d.works.reduce((p, c) => Math.max(p, c.id), 0) + 1,
           sn: d.works.reduce((p, c) => Math.max(p, c.sn), 0) + 1,
@@ -49,7 +49,7 @@ const useWorks = () => {
       }
     });
   };
-  const options = (key: WorkKeys) => [
+  const options = (key: keyof Work) => [
     ...new Set(works.map((w) => `${w[key]}`)),
   ];
 
@@ -57,7 +57,7 @@ const useWorks = () => {
     ...store,
     works,
     update,
-    insert,
+    insert: append,
     remove,
     options,
   };

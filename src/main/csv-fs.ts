@@ -2,14 +2,14 @@ import ctj from 'csvtojson';
 import Jtc from 'objects-to-csv';
 import path from 'path';
 import { app } from 'electron';
-import { StoreData } from 'renderer/store/store';
+import { StoreData } from '../renderer/store/store';
 import {
   strjsonArrToOrders,
   strjsonArrToJobs,
   strjsonArrToMats,
   worksToStrjsonArr,
   strjsonArrToWorks,
-} from '../renderer/utils/strjsonConvert';
+} from './strjsonConvert';
 
 export const ASSETS_PATH = app.isPackaged
   ? process.resourcesPath
@@ -41,9 +41,9 @@ export const csvReadWorks = async (event: Electron.IpcMainEvent) => {
 
 export const csvWriteWorks = async (
   event: Electron.IpcMainEvent,
-  data: StoreData
+  [data]: [StoreData]
 ) => {
   const csv = new Jtc(worksToStrjsonArr(data.works));
-  await csv.toDisk(FN_WORKS);
+  // await csv.toDisk(FN_WORKS);
   event.reply('csv-write', data);
 };

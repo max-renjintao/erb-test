@@ -1,32 +1,31 @@
-type WorkKeysNum =
-  | 'id'
-  | 'sn'
-  | 'mileage'
-  | 'tax'
-  | 'discount'
-  | 'total'
-  | 'labor_final'
-  | 'material_final'
-  | 'material_cost';
+// type WorkKeysNum =
+//   | 'id'
+//   | 'sn'
+//   | 'mileage'
+//   | 'tax'
+//   | 'discount'
+//   | 'total'
+//   | 'labor_final'
+//   | 'material_final'
+//   | 'material_cost';
 
-type WorkKeysStr =
-  | 'date_s'
-  | 'date_e'
-  | 'plate'
-  | 'model'
-  | 'owner'
-  | 'tel'
-  | 'vip'
-  | 'status'
-  | 'team'
-  | 'note';
+// type WorkKeysStr =
+//   | 'date_s'
+//   | 'date_e'
+//   | 'plate'
+//   | 'model'
+//   | 'owner'
+//   | 'tel'
+//   | 'vip'
+//   | 'status'
+//   | 'team'
+//   | 'note';
 
-type WorkKeysJson = 'orders' | 'jobs';
+// type WorkKeysJson = 'orders' | 'jobs';
 
-type WorkKeys = WorkKeysNum | WorkKeysStr | WorkKeysJson | 'display';
+// type WorkKeys = WorkKeysNum | WorkKeysStr | WorkKeysJson;
 
-type WorkCsvjson = { [k in WorkKeys]: string };
-
+type WorkCsvjson = { [k in keyof Work]: string };
 type Work = {
   id: number;
   sn: number;

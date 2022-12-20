@@ -4,8 +4,8 @@ import InvoiceTable, {
   InvoiceCell as Td,
 } from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
-import { deduplicateVar } from 'renderer/utils/deduplicate';
-import { amount } from 'renderer/utils/disp';
+import { deduplicateVar } from 'utils/deduplicate';
+import { amount } from 'utils/disp';
 import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';

@@ -2,7 +2,8 @@ import Button from '@mui/material/Button';
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import useWorks from 'renderer/store/useWorks';
-import { format, formatDistance, formatDistanceStrict } from 'date-fns';
+import { formatDistance, formatDistanceStrict } from 'date-fns';
+import { dateFormat } from '../../utils/date';
 
 const WorksTable = () => {
   const { works, setId } = useWorks();
@@ -11,36 +12,40 @@ const WorksTable = () => {
     { field: 'sn', width: 80 },
     {
       field: 'date_s',
+      type: 'date',
       headerName: 'Start',
       width: 60,
       editable: false,
-      renderCell: (ps: GridRenderCellParams<Date>) =>
-        ps.value && format(ps.value, 'MM-dd'),
+      renderCell: (ps: GridRenderCellParams<Date>) => dateFormat(ps.value),
     },
     {
       field: 'date_e',
+      type: 'date',
       headerName: 'End',
       width: 60,
       editable: false,
-      renderCell: (ps: GridRenderCellParams<Date>) =>
-        ps.value && format(ps.value, 'MM-dd'),
-    },
-    {
-      field: 'dur',
-      type: 'number',
-      width: 40,
-      // filterable: false,
-      renderCell: (ps: GridRenderCellParams<number>) => {
-        const dur = +formatDistanceStrict(
-          ps.row.date_e || new Date(Date.now()),
-          ps.row.date_s || new Date(2022, 1, 1),
-          { unit: 'day' }
-        ).slice(0, -5);
-        // console.log('dur:', dur);
-        return dur + 1;
-        // return dur < 99 ? dur + 1 : 99;
+      renderCell: (ps: GridRenderCellParams<Date>) => {
+        // console.log('ps.value', ps.value);
+
+        return dateFormat(ps.value);
       },
     },
+    // {
+    //   field: 'dur',
+    //   type: 'number',
+    //   width: 40,
+    //   // filterable: false,
+    //   renderCell: (ps: GridRenderCellParams<number>) => {
+    //     const dur = +formatDistanceStrict(
+    //       ps.row.date_e || new Date(Date.now()),
+    //       ps.row.date_s || new Date(2022, 1, 1),
+    //       { unit: 'day' }
+    //     ).slice(0, -5);
+    //     // console.log('dur:', dur);
+    //     return dur + 1;
+    //     // return dur < 99 ? dur + 1 : 99;
+    //   },
+    // },
     { field: 'plate', width: 100 },
     { field: 'model', width: 150 },
     { field: 'owner', headerName: 'Owner', width: 200 },

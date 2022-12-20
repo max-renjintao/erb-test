@@ -1,0 +1,54 @@
+id,sn,date_e,date_s,plate,model,mileage,owner,tax,team,status,vip,tel,orders,jobs,discount,note,total,labor_final,material_cost,material_final
+2,0,,2022-12-13,BAR2157,PRADO,0,科达,0,汪攀,doing,,,[],[],0,电瓶、后视镜、拖车、返,0,0,0,0
+3,0,,2022-12-14,BAK3849,Vanguard,0,黎敏,0,王毅,waiting,,,[],[],0,车抖（内球笼）、风挡,0,0,0,0
+4,0,2022-12-15,2022-12-15,BAT2963,HILUX,0,汪洋,0,王毅,PAID,,,[],[],0,保养,0,0,0,0
+1,2,,2022-12-13,BAE9220,LAND CRUSER V8,10,陈建华,0,汪攀,pause,,,[],[],0,,0,0,0,0
+5,210000,,,,PRADO,0,Keda 科达,0,王毅,doing,,,[],[],0,油泵、油滤,0,0,0,0
+6,220437,2022-12-18,2022-11-10,BBA5796,HIACE,126706,从春艳,0,杨波,DONE,,076-0117451,"[""The engine was cutting off 发动机熄火""]","[{""code"":""02EN-099"",""item"":""Replace the engine complete 更换发动机总成"",""cost"":100,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""02EN-012"",""item"":""Replace the petrol filter 更换汽油滤芯"",""cost"":0,""mats"":[{""name"":""6PK1900 风扇皮带"",""qty"":20,""cost"":0,""rate"":320}]},{""code"":"""",""item"":"""",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]}]",0,2000,100,0,0,0
+7,220459,2022-7-6,,GRZ489,HILUX,160790,Mr.Kalasa Mwanda,0,,DONE,,097-6110095,"[""Air conditioning was not working well 空调不制冷""]",[],0,,0,0,0,0
+8,220546,2022-8-9,,BAL7859,HILUX,95038,张记奎,0,,DONE,,076-0117451,"[""""]","[{""code"":"""",""item"":"""",""cost"":0,""mats"":[]},{""code"":"""",""item"":"""",""cost"":0,""mats"":[]}]",0,20000,0,0,0,0
+9,220656,2022-9-28,,BAV1895,MARK X,86018,Keda 科达,0.16,,DONE,,076-0117450,"[""The gearbox was surging 变速箱喘动"",""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养""]","[{""code"":""02EN-099"",""item"":""Replace the engine complete 更换发动机总成"",""cost"":100,""mats"":[{""name"":""04111-0C080 发动机大修包"",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""02EN-012"",""item"":""Replace the petrol filter 更换汽油滤芯"",""cost"":0,""mats"":[{""name"":""87139-12010 空调滤芯"",""qty"":0,""cost"":0,""rate"":200}]}]",0,,116,0,0,0
+10,220732,2022-11-2,,BAP1160,PRADO,117235,Keda 科达,0.16,,DONE,,076-0117451,[],[],0,,0,0,0,0
+11,220742,2022-11-4,,BAJ8384,ALPHARD,108370,CASNO(陆辉),0,,DONE,,096-2907233,[],[],0,,0,0,0,0
+12,220754,2022-11-9,,ALE8008,HILUX,390774,Keda 科达,0.16,,DONE,,076-0117452,[],[],0,,0,0,0,0
+13,220770,2022-11-17,,BAJ8384,ALPHARD,108956,CASNO(陆辉),0,,DONE,,096-2907233,[],[],0,,0,0,0,0
+14,220771,2022-11-17,,BAV1895,MARK X,89815,Keda 科达,0.16,,DONE,,076-0117453,[],[],0,,0,0,0,0
+15,220779,2022-11-21,2022-11-21,BAG2821,FORD RANGER T6,145198,Keda 科达,0.16,,DONE,,076-0117454,[],[],0,,0,0,0,0
+16,220793,2022-12-1,2022-12-1,BAH6166,PRADO,162311,姚文德,0,,UNKNOW,,0,[],[],0,,0,0,0,0
+17,220794,,2022-11-29,GRZ239CZ,MAZDA BT50,0,Mr.Munguya,0.16,,PAID,,077-0960524,[],[],0,,0,0,0,0
+18,220795,2022-12-5,,BAG1842,RAV 4,187876,朱勇,0,杨波,PAID,,096-9750318,[],[],-115,,-115,0,0,0
+19,220796,2022-12-5,,AIC202,ALPHARD,78060,汪云海,0,汪,PAID,,0,[],[],0,,0,0,0,0
+20,220797,2022-12-6,,BAV5519,MARK X,204186,包红兵,0,汪,PAID,,880172,[],[],-30,,-30,0,0,0
+21,220798,2022-12-3,,BAH1843,ALPHARD,135631,曾乾昌,0,王毅,PAID,,0,[],[],0,,0,0,0,0
+22,220802,2022-12-6,,BAJ2777,LITEACE,166745,青岛水厂,0,Group3,PAID,,077-7506666,[],[],0,,0,0,0,0
+23,220803,2022-12-8,2022-12-8,BAZ3086,HIACE,230602,王明,0,王毅,PAID,,076-2088868,[],[],0,,0,0,0,0
+24,220804,2022-12-8,2022-12-8,AAA3082,HARRIER,76074,GLADYS,0,王毅,PAID,,096-1666640,[],[],-430,2222,-430,0,0,0
+25,220806,2022-12-8,2022-12-8,BAR4006,MARK X,146663,林辉,0,杨波,PAID,,097-3408666,[],[],0,,0,0,0,0
+26,220807,2022-12-9,2022-12-2,ALX6918,PRADO,117318,蒋映江,0,杨波,done,,,[],[],0,付款20000,0,0,0,0
+27,220808,2022-12-9,2022-12-9,BBC112,PRADO,32766,梅新培,0,杨波,PAID,,,[],[],0,,0,0,0,0
+28,220809,2022-12-12,2022-12-12,BAF6031,NISSON X TRAIL,0,KAMIMI MUFANA,0,汪,PAID,,,[],[],0,右前杠钣金,0,0,0,0
+29,220810,2022-12-12,,BAT518,VOXY,NaN,袁华润,0,杨波,done,,,[],[],0,水箱、后差速器,0,0,0,0
+30,220811,2022-12-13,2022-12-12,ALB9065,PRADO,207563,何总,0,王毅,PAID,,,[],[],-60,动力不足：油路、油滤、备注手压泵,-60,0,0,0
+31,220812,2022-12-12,2022-12-12,BAG3925,DYNA卡,18766,老董农场,0,杨波,done,,,[],[],0,,0,0,0,0
+32,220813,2022-12-17,2022-12-12,BAE2339,HILUX,179419,Viewgreen,0,杨波,DONE,,,"[""The oil was leaking  漏油""]","[{""code"":"""",""item"":"""",""cost"":0,""mats"":[]}]",0,卡车拖来的,0,0,0,0
+33,220814,,2022-12-13,BAK3238,CARINA,0,MR,0,王毅,doing,,,[],[],0,报价,0,0,0,0
+34,220815,2022-12-13,2022-12-13,BAZ 3086,HIACE,230726,王明,0,王毅,PAID,,,[],[],0,换刹车片,0,0,0,0
+35,220816,,2022-12-13,,HILUX,0,林辉,0,汪攀,done,,,[],[],0,,0,0,0,0
+36,220817,2022-12-14,2022-12-13,BBA4913,BENZ,49790,翟晋,0,王毅,PAID,,,[],[],-10,,-10,0,0,0
+37,220818,2022-12-13,2022-12-13,BLA 9231,PRADO,76579,贾豫奇,0,王毅,PAID,,,[],[],0,保养,0,0,0,0
+38,220819,2022-12-13,2022-12-13,BAX9113,HINO大卡,0,viewgreen,0,杨波,done,,,[],[],0,Gear,0,0,0,0
+39,220820,2022-12-14,2022-12-13,AEB3372,FORD RANGER T6,104437,曾乾昌,0,王毅,PAID,,,[],[],-60,保养,-60,0,0,0
+40,220821,,,BAD2305,RAV 4,0,,0,杨波,done,,,[],[],0,拖回来的,0,0,0,0
+41,220823,2022-12-16,2022-12-16,BCD8910,HILUX,98651,CCM,0.16,汪攀,PAID,,077-1284152,"[""The engine trouble codes were on 发动机故障码""]","[{""code"":""03EL-044"",""item"":""Repair the RR ABS sensor 维修右后ABS传感器"",""cost"":150,""mats"":[{""name"":""Carb Cleaner"",""qty"":1,""cost"":0,""rate"":120}]},{""code"":""03EL-001"",""item"":""Scan and clear fault codes with diagnostic tool 解码器检测并清除故障码"",""cost"":180,""mats"":[]}]",0,,382.8,0,0,0
+42,220824,,2022-12-14,AKB412,PROGRESS,0,Mr Marco,0,,doing,,,[],[],0,拖车来,0,0,0,0
+43,220825,,2022-12-15,BAD5047,HILUX,0,郑总,0,王毅,doing,,,[],[],0,保养、刹车、ATF、前杠等，第二天走,0,0,0,0
+44,220826,,2022-12-15,BBA6688,BENZ 350,0,陆烨,0,杨波,doing,,,[],[],0,空调、漏水、备注：涡轮烧机油,0,0,0,0
+45,220827,2022-12-16,2022-12-15,BAV3975,ALPHARD,0,皇冠赌场,0,汪攀,DONE,,096-3253326,"[""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养"",""Engine service 发动机检修"",""Suspension service 底盘检修""]","[{""code"":""01SV-001-01"",""item"":""Replace engine oil 更换发动机机油"",""cost"":580,""mats"":[]},{""code"":""01SV-001-02"",""item"":""Replace oil filter 更换机油滤芯"",""cost"":0,""mats"":[{""name"":""90915-YZZE1 机油滤清器"",""qty"":0,""cost"":0,""rate"":80}]},{""code"":""01SV-001-03"",""item"":""Replace air filter 更换空气滤芯"",""cost"":0,""mats"":[{""name"":""17801-28010 空气滤芯"",""qty"":0,""cost"":0,""rate"":280}]},{""code"":""01SV-001-05"",""item"":""Replace A/C filter 更换空调滤芯"",""cost"":0,""mats"":[{""name"":""87139-33010"",""qty"":1,""cost"":0,""rate"":0}]},{""code"":""03EL-011"",""item"":""Replace the spark plugs 更换火花塞"",""cost"":50,""mats"":[{""name"":""90919-01210"",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""02EN-016"",""item"":""Remove to clean the throttle body and fit it back 拆装清洗节气门总成"",""cost"":350,""mats"":[{""name"":""BOOMELL-1 化油器清洗剂"",""qty"":0,""cost"":0,""rate"":100}]},{""code"":""07FS-013"",""item"":""Replace FL lower ball joint 更换前左下支臂球头"",""cost"":100,""mats"":[]},{""code"":""07FS-014"",""item"":""Replace FR lower ball joint 更换前右下支臂球头"",""cost"":100,""mats"":[]},{""code"":""07FS-001"",""item"":""Replace FL stablizer links 更换前左平衡杆吊杆"",""cost"":120,""mats"":[]},{""code"":""07FS-020"",""item"":""Replace FL lower arm bushes (small)  更换前左下支臂小胶套"",""cost"":150,""mats"":[]},{""code"":""09DS-052"",""item"":""Replace FL CV couping rubber boot 更换前左半轴内防尘罩"",""cost"":220,""mats"":[]},{""code"":"""",""item"":""防冻液"",""cost"":0,""mats"":[{""name"":""防冻液"",""qty"":1,""cost"":0,""rate"":0}]}]",0,保养、检查底盘,1670,0,0,0
+46,220828,,2022-12-17,ALB9065,PRADO,208203,何总,0,,,,,"[""The engine was cutting off 发动机熄火"",""返修、油路检查""]",[],0,油路问题，手油泵工况不稳定。返修,0,0,0,0
+47,220829,2022-12-17,2022-12-17,BAR 8161,HARRIER,140666,Zampipe,0,王毅,PAID,,097-9871129,"[""Suspension service 底盘检修""]","[{""code"":""07FS-047"",""item"":""Replace FL shock (with spring) \n更换前左减震器(带弹簧)"",""cost"":300,""mats"":[{""name"":""334400"",""qty"":1,""cost"":0,""rate"":1500}]},{""code"":""07FS-048\n"",""item"":""Replace FR shock (with spring) \n更换前右减震器(带弹簧)"",""cost"":300,""mats"":[{""name"":""334399"",""qty"":1,""cost"":0,""rate"":1500}]},{""code"":""07FS-019"",""item"":""Replace FL lower arm bushes (big) \n更换前左下支臂大胶套"",""cost"":120,""mats"":[{""name"":""48655-02080"",""qty"":1,""cost"":0,""rate"":230}]},{""code"":""07FS-021"",""item"":""Replace FR lower arm bushes (big)  \n更换前右下支臂大胶套"",""cost"":120,""mats"":[{""name"":""48655-02080\n"",""qty"":1,""cost"":0,""rate"":230}]}]",-400,,440,0,0,0
+48,220830,2022-12-17,2022-12-17,BAX6425,MARK X,154794,张总,0,杨波,Doing,,,"[""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养"",""The Fault codes were on 仪表盘故障灯亮""]","[{""code"":""01SV-002"",""item"":""Ordinary Service II 常规保养II"",""cost"":580,""mats"":[{""name"":""SHELL 5W 40"",""qty"":6,""cost"":0,""rate"":180}]},{""code"":""01SV-001-01"",""item"":""Replace engine oil 更换发动机机油"",""cost"":0,""mats"":[]},{""code"":""01SV-001-02"",""item"":""Replace oil filter 更换机油滤芯"",""cost"":0,""mats"":[]},{""code"":""01SV-001-03"",""item"":""Replace air filter 更换空气滤芯"",""cost"":0,""mats"":[]},{""code"":""01SV-001-05"",""item"":""Replace A/C filter 更换空调滤芯"",""cost"":0,""mats"":[]}]",0,,580,0,0,0
+49,220831,2022-12-17,2022-12-17,BAJ9520,ALPHARD,228360,吴建,0,,Await,,,"[""Ordinary service (Replace engine oil, oil filter, air cleaner, A/C filter ) 常规保养"",""The Fault codes were on 仪表盘故障灯亮"",""Suspension service 底盘检修""]","[{""code"":""01SV-002"",""item"":""Ordinary Service II 常规保养II"",""cost"":580,""mats"":[]},{""code"":""01SV-001-01"",""item"":""Replace engine oil 更换发动机机油"",""cost"":0,""mats"":[{""name"":""PUMA "",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-02"",""item"":""Replace oil filter 更换机油滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-03"",""item"":""Replace air filter 更换空气滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]},{""code"":""01SV-001-05"",""item"":""Replace A/C filter 更换空调滤芯"",""cost"":0,""mats"":[{""name"":"""",""qty"":0,""cost"":0,""rate"":0}]}]",0,"吴建父亲送来,漏机油，links",580,0,0,0
+50,220832,2022-12-17,2022-12-12,BAP6247,HARRIER,0,姚总,0,杨波,doing,,,[],[],0,"救援,t大修发动机漏水，托",0,0,0,0
+51,220833,2022-12-20,2022-12-20,,,0,,0,,,,,[],[],0,,0,0,0,0
+52,220834,2022-12-20,2022-12-20,,,undefined,,undefined,,,,,,,undefined,,undefined,0,0,0
+53,220835,2022-12-20,2022-12-20,,,undefined,,undefined,,,,,,,undefined,,undefined,0,0,0

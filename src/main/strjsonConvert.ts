@@ -1,5 +1,5 @@
-import { format } from 'date-fns';
 import jsonParse from './jsonParse';
+import { dateFormat, dateParse } from '../utils/date';
 
 export const strjsonToWork = (sj: WorkCsvjson): Work => ({
   ...sj,
@@ -12,8 +12,8 @@ export const strjsonToWork = (sj: WorkCsvjson): Work => ({
   material_final: +sj.material_final,
   material_cost: +sj.material_cost,
   discount: +sj.discount,
-  date_s: new Date(sj.date_s),
-  date_e: new Date(sj.date_e),
+  date_s: dateParse(sj.date_s),
+  date_e: dateParse(sj.date_e),
   orders: jsonParse(sj.orders as string),
   jobs: jsonParse(sj.jobs as string),
 });
@@ -28,8 +28,8 @@ export const workToStrjson = (w: Work): WorkCsvjson => ({
   labor_final: `${w.labor_final}`,
   material_final: `${w.material_final}`,
   material_cost: `${w.material_cost}`,
-  date_s: w.date_s ? format(w.date_s, 'yyyy-MM-dd') : '',
-  date_e: w.date_e ? format(w.date_e, 'yyyy-MM-dd') : '',
+  date_s: dateFormat(w.date_s),
+  date_e: dateFormat(w.date_e),
   orders: JSON.stringify(w.orders),
   jobs: JSON.stringify(w.jobs),
 });

@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { workInit } from 'renderer/constants';
+import { workInit } from 'renderer/store/constants';
 
 export const worksInit: Work[] = [];
 export const ordersInit: Order[] = [];
@@ -15,7 +15,7 @@ export const dataInit = {
 
 export type StoreData = typeof dataInit;
 export const saveData = (data: typeof dataInit) =>
-  window.electron.ipcRenderer.sendMessage('csv-write', data as any);
+  window.electron.ipcRenderer.sendMessage('csv-write', [data]);
 
 export const csvContext = createContext({
   data: dataInit,

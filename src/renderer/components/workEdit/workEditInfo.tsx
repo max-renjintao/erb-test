@@ -15,6 +15,7 @@ import useWork from 'renderer/store/useWork';
 import PrintIcon from '@mui/icons-material/Print';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
+import { dateFormat, dateParse } from 'utils/date';
 import { TxtIn } from '../InvoiceTable';
 
 const workEditInfo = () => {
@@ -37,20 +38,20 @@ const workEditInfo = () => {
         <TxtIn
           label="Start"
           type="date"
-          value={work.date_s}
+          value={dateFormat(work.date_s)}
           onChange={(e) =>
             setWorkImmer((dw) => {
-              dw.date_s = new Date(e.target.value);
+              dw.date_s = dateParse(e.target.value);
             })
           }
         />
         <TxtIn
           label="End"
           type="date"
-          value={work.date_e}
+          value={dateFormat(work.date_e)}
           onChange={(e) =>
             setWorkImmer((dw) => {
-              dw.date_e = new Date(e.target.value);
+              dw.date_e = dateParse(e.target.value);
             })
           }
         />

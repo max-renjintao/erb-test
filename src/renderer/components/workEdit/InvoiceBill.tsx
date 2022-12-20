@@ -4,7 +4,7 @@ import InvoiceTable, {
   InvoiceCell as Td,
 } from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
-import { amount, percent } from 'renderer/utils/disp';
+import { amount, percent } from 'utils/disp';
 import InvoiceInput from '../InvoiceInput';
 
 const InvoiceBill = () => {
