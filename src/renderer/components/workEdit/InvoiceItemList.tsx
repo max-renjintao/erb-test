@@ -9,6 +9,7 @@ import { amount } from 'utils/disp';
 import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
+import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
 import { ButtonSide } from '../Buttons';
 import InvoiceInput from '../InvoiceInput';
 
@@ -21,8 +22,7 @@ const InvoiceItemList = () => {
     deleteJob,
     insertMat,
     deleteMat,
-    sumJobs,
-    sumMats,
+    amount: am,
   } = useWork();
   return (
     <InvoiceTable heading="Maintenance Items and Expense List 维修项目及费用清单">
@@ -185,9 +185,9 @@ const InvoiceItemList = () => {
           </ButtonSide>
           Sub-total of Labor Cost 人工费合计 (K)
         </Td>
-        <Td justifyContent="end">{amount(sumJobs)}</Td>
+        <Td justifyContent="end">{amount(getWorkLabor(work))}</Td>
         <Td colSpan={3}>Sub-total of Material Cost 材料费合计 (K)</Td>
-        <Td justifyContent="end">{amount(sumMats)}</Td>
+        <Td justifyContent="end">{amount(getWorkMaterial(work))}</Td>
       </tr>
     </InvoiceTable>
   );

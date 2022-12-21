@@ -2,6 +2,7 @@
 import produce from 'immer';
 import { WritableDraft } from 'immer/dist/internal';
 import { jobInit, matInit, workInit } from 'renderer/store/constants';
+import getAmount from 'utils/getAmount';
 import useWorks from './useWorks';
 
 const useWork = () => {
@@ -14,13 +15,6 @@ const useWork = () => {
       d.works[app.index] = produce(d.works[app.index], immer);
     });
   };
-  const sumJobs = work.jobs.reduce((p, c) => p + c.cost, 0);
-  const sumMats = work.jobs.reduce(
-    (p, c) => p + c.mats.reduce((mp, mc) => mp + mc.qty * mc.rate, 0),
-    0
-  );
-  const subTotal = sumJobs + sumMats;
-  const totalAmount = subTotal * (1 + work.tax) + work.discount;
 
   const insertNeed = (index: number) =>
     imWork((d) => {
@@ -56,10 +50,7 @@ const useWork = () => {
     ...store,
     work,
     imWork,
-    sumJobs,
-    sumMats,
-    subTotal,
-    totalAmount,
+    amount: getAmount(work),
     insertNeed,
     deleteNeed,
     insertJob,

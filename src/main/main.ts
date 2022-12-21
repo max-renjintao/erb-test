@@ -15,7 +15,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
-import { csvReadWorks, csvWriteWorks } from './csv-fs';
+import { csvPath, csvReadWorks, csvWriteWorks } from './csv-fs';
 
 class AppUpdater {
   constructor() {
@@ -29,6 +29,7 @@ let mainWindow: BrowserWindow | null = null;
 
 ipcMain.on('csv-read', csvReadWorks);
 ipcMain.on('csv-write', csvWriteWorks);
+ipcMain.on('csv-path', csvPath);
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');

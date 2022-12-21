@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import numeral from 'numeral';
 import InvoiceTable, {
   InvoiceTH as Th,
@@ -8,7 +9,7 @@ import { amount, percent } from 'utils/disp';
 import InvoiceInput from '../InvoiceInput';
 
 const InvoiceBill = () => {
-  const { work, sumJobs, sumMats, subTotal, totalAmount, imWork } = useWork();
+  const { work, amount: am, imWork } = useWork();
   return (
     <InvoiceTable
       heading="Total Amount and Details 费用统计"
@@ -17,16 +18,16 @@ const InvoiceBill = () => {
       <tr>
         <Td justifyContent="end">Labor Cost 人工费</Td>
         <Td width={80} justifyContent="end">
-          {sumJobs}
+          {am.labor}
         </Td>
       </tr>
       <tr>
         <Td justifyContent="end">Parts and Materials 材料费</Td>
-        <Td justifyContent="end">{sumMats}</Td>
+        <Td justifyContent="end">{am.material}</Td>
       </tr>
       <tr>
         <Td justifyContent="end">Sub-Total 小计</Td>
-        <Td justifyContent="end">{amount(subTotal)}</Td>
+        <Td justifyContent="end">{amount(am.sub_total)}</Td>
       </tr>
       <tr>
         <Td justifyContent="end">Tax</Td>
@@ -44,7 +45,13 @@ const InvoiceBill = () => {
       </tr>
 
       <tr>
-        <Td justifyContent="end">Discount</Td>
+        <Td justifyContent="end">
+          {work.discount < 0
+            ? 'Discount'
+            : work.discount > 0
+            ? 'Addition'
+            : '-'}
+        </Td>
         <InvoiceInput // discount
           options={[]}
           textAlign="right"
@@ -59,7 +66,7 @@ const InvoiceBill = () => {
       <tr>
         <Td justifyContent="end">Total Amount</Td>
         <Td justifyContent="end">
-          <strong>{amount(totalAmount)}</strong>
+          <strong>{amount(am.total)}</strong>
         </Td>
       </tr>
     </InvoiceTable>

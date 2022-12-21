@@ -26,6 +26,10 @@ export const workInit: Work = {
   material_final: 0,
   paid: 0,
   notice: '',
+  labor_paid: 0,
+  material_paid: 0,
+  tax_paid: 0,
+  profit: 0,
 };
 export const worksInit: Work[] = [];
 export const ordersInit: Order[] = [];
@@ -55,6 +59,7 @@ export const appInit = {
     teams: [],
     status: [],
   } as WorkOps,
+  csvFilePath: '',
 };
 export type StoreApp = typeof appInit;
 

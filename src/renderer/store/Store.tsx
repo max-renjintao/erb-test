@@ -13,8 +13,16 @@ const Store = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     window.electron.ipcRenderer.sendMessage('csv-read', []);
     window.electron.ipcRenderer.once('csv-read', (ipcData) => {
-      imData(initialData(ipcData as StoreData));
-      imApp(initialApp(ipcData as StoreData, app));
+      window.electron.ipcRenderer.sendMessage('csv-path', []);
+      window.electron.ipcRenderer.once('csv-path', (path) => {
+        imData(initialData(ipcData as StoreData));
+        imApp(
+          initialApp(ipcData as StoreData, {
+            ...app,
+            csvFilePath: path as string,
+          })
+        );
+      });
       // console.log('app', app);
     });
     window.electron.ipcRenderer.on('csv-write', (d) => {

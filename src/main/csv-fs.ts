@@ -11,9 +11,9 @@ import {
   strjsonArrToWorks,
 } from './strjsonConvert';
 
-export const ASSETS_PATH = app.isPackaged
-  ? process.resourcesPath
-  : path.join(__dirname, '../../assets');
+// export const ASSETS_PATH = app.isPackaged
+//   ? process.resourcesPath
+//   : path.join(__dirname, '../../assets');
 
 const CSV_PATH = app.isPackaged
   ? path.join(process.resourcesPath, '../../data')
@@ -46,4 +46,8 @@ export const csvWriteWorks = async (
   const csv = new Jtc(worksToStrjsonArr(data.works));
   await csv.toDisk(FN_WORKS);
   event.reply('csv-write', data);
+};
+
+export const csvPath = async (event: Electron.IpcMainEvent) => {
+  event.reply('csv-path', FN_WORKS);
 };

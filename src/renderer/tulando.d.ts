@@ -8,13 +8,20 @@ type Vehicle = {
 };
 
 type Amount = {
+  labor: number;
+  material: number;
+  sub_total: number;
   total: number;
+  paid: number;
+  discount: number;
+  tax: number;
   labor_final: number;
   material_final: number;
   material_cost: number;
-  discount: number;
-  tax: number;
-  paid: number;
+  labor_paid: number;
+  material_paid: number;
+  tax_paid: number;
+  profit: number;
 };
 
 type Work = Vehicle &

@@ -12,6 +12,8 @@ const WorksPage = () => {
   // const { works, insert } = useWorks();
   // const [id, setId] = useState(0);
   const { app, append } = useWorks();
+  // console.log(app);
+
   return (
     <>
       <WorksTable />
@@ -21,6 +23,7 @@ const WorksPage = () => {
       </ScrollDialog>
 
       <Button onClick={() => append()}>Append</Button>
+      {app.csvFilePath}
     </>
   );
 };

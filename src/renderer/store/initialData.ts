@@ -1,25 +1,16 @@
 import produce from 'immer';
+import getAmount from 'utils/getAmount';
 import { StoreData } from './constants';
 
 const initialData = (data: StoreData) => {
   return {
     ...data,
-    works: produce((data as StoreData).works, (dws) => {
-      dws.forEach((w) => {
-        const labor = w.jobs.length
-          ? w.jobs.reduce((p, c) => p + c.cost, 0)
-          : 0;
-        const material = w.jobs.length
-          ? w.jobs
-              .map((j) => j.mats)
-              .flat()
-              .reduce((p, c) => p + c.cost, 0)
-          : 0;
-        const subtotal = labor + material;
-        const discountPercent = subtotal ? 1 + w.discount / subtotal : 0;
-        w.labor_final = labor * discountPercent;
-        w.material_final = material * discountPercent;
-        w.total = (subtotal + w.discount) * (1 + w.tax);
+    works: produce(data.works, (dws) => {
+      data.works.forEach((w, i) => {
+        const amount = getAmount(data.works[i]);
+        // console.log(amount);
+
+        dws[i] = { ...dws[i], ...amount };
       });
     }),
   };
