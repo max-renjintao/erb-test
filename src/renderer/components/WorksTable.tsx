@@ -4,11 +4,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import useWorks from 'renderer/store/useWorks';
 import { dateFormat } from '../../utils/date';
 
-const colAmount = (field: string) => ({
-  field,
-  type: 'number',
-  width: 80,
-});
+// const colAmount = (field: string) => ({
+//   field,
+//   type: 'number',
+//   width: 80,
+// });
 const WorksTable = () => {
   const { works, app, imApp, setId } = useWorks();
 
@@ -30,7 +30,7 @@ const WorksTable = () => {
     },
     { field: 'plate', width: 100 },
     { field: 'model', width: 130 },
-    { field: 'owner', headerName: 'Owner', width: 200 },
+    { field: 'owner', headerName: 'Owner', width: 150 },
     // { field: 'labor', width: 90 },
     // { field: 'material', width: 90 },
     // { field: 'tax', width: 30, type: 'number' },
@@ -59,27 +59,31 @@ const WorksTable = () => {
     },
     { field: 'status', width: 80 },
     { field: 'team', width: 80 },
-    { field: 'total', type: 'number', width: 80 },
-    { field: 'paid', type: 'number', width: 80 },
-    { field: 'labor_final', type: 'number', width: 80 },
-    { field: 'material_final', type: 'number', width: 80 },
-    { field: 'profit', type: 'number', width: 80 },
+
+    { field: 'total', type: 'number', width: 90 },
+    { field: 'paid', type: 'number', width: 90 },
+    { field: 'labor_final', type: 'number', width: 90 },
+    { field: 'material_final', type: 'number', width: 90 },
+    { field: 'profit', type: 'number', width: 90 },
   ];
   return (
     <DataGrid
       rows={works}
-      rowHeight={28}
-      headerHeight={36}
+      rowHeight={23}
+      headerHeight={25}
       autoHeight
       columns={columns}
       // onCellEditStop={(e, v) => console.log(e.field, e.id, e.value)}
       // on
       // pageSize={100}
       rowsPerPageOptions={[5]}
-      checkboxSelection
+      // checkboxSelection
       disableSelectionOnClick
       hideFooter
       experimentalFeatures={{ newEditingApi: true }}
+      getRowClassName={(params) =>
+        `x-row-${(params.row.status as string).toLowerCase()}`
+      }
     />
   );
 };

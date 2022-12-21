@@ -14,16 +14,8 @@ import { ButtonSide } from '../Buttons';
 import InvoiceInput from '../InvoiceInput';
 
 const InvoiceItemList = () => {
-  const {
-    work,
-    imWork,
-    app,
-    insertJob,
-    deleteJob,
-    insertMat,
-    deleteMat,
-    amount: am,
-  } = useWork();
+  const { work, imWork, app, insertJob, deleteJob, insertMat, deleteMat } =
+    useWork();
   return (
     <InvoiceTable heading="Maintenance Items and Expense List 维修项目及费用清单">
       <tr>
@@ -36,7 +28,7 @@ const InvoiceItemList = () => {
         <Th w="6%" en="Unit Price" zh="单价(K)" />
         <Th w="9%" en="Materials Cost" zh="材料费(K)" />
       </tr>
-      {work.jobs.map((job, jobId) => {
+      {work.jobs?.map((job, jobId) => {
         const rowSpan = job.mats.length || undefined;
         const tdsLabor = (
           <>
@@ -185,9 +177,9 @@ const InvoiceItemList = () => {
           </ButtonSide>
           Sub-total of Labor Cost 人工费合计 (K)
         </Td>
-        <Td justifyContent="end">{amount(getWorkLabor(work))}</Td>
+        <Td justifyContent="end">{amount(work.labor)}</Td>
         <Td colSpan={3}>Sub-total of Material Cost 材料费合计 (K)</Td>
-        <Td justifyContent="end">{amount(getWorkMaterial(work))}</Td>
+        <Td justifyContent="end">{amount(work.material)}</Td>
       </tr>
     </InvoiceTable>
   );

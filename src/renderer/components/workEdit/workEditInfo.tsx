@@ -55,6 +55,17 @@ const workEditInfo = () => {
             })
           }
         />
+        <TxtIn
+          label="paid amount"
+          type="number"
+          sx={{ width: 90 }}
+          defaultValue={work.paid}
+          onBlur={(e) =>
+            imWork((dw) => {
+              dw.paid = +e.target.value;
+            })
+          }
+        />
         <span style={{ width: 100 }} />
         <Autocomplete
           freeSolo
@@ -83,7 +94,9 @@ const workEditInfo = () => {
             })
           }
         />
-
+      </Stack>
+      <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
+        {' '}
         <Box ml="auto" mr="0">
           <TextField
             size="small"

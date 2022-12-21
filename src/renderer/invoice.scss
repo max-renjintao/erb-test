@@ -1,4 +1,5 @@
 $blue: #0070c0;
+$x-row-bg-opacity: 0.08;
 
 .invoice-paper {
   position: relative;
@@ -63,4 +64,14 @@ $blue: #0070c0;
 
 span.input-option {
   font-size: 12px;
+}
+
+.x-row-paid {
+  background-color: rgba(60, 122, 60, $x-row-bg-opacity);
+}
+.x-row-done {
+  background-color: rgba(222, 99, 60, $x-row-bg-opacity);
+}
+.x-row-doing {
+  background-color: rgb(35, 38, 140,$x-row-bg-opacity);
 }

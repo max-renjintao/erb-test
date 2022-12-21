@@ -16,15 +16,15 @@ const getAmount = (w: Work): Amount => {
   const material_cost = mats ? mats.reduce((p, c) => p + c.cost, 0) : 0;
   const sub_total = labor + material;
   const discountPercent = sub_total ? 1 + w.discount / sub_total : 0;
-  const labor_final = labor * discountPercent;
-  const material_final = material * discountPercent;
+  const labor_final = Math.round(labor * discountPercent);
+  const material_final = Math.round(material * discountPercent);
   const total = (sub_total + w.discount) * (1 + w.tax);
   const tax_paid = total * tax;
   const paidAfterTax = paid - tax_paid;
   const laborShare = !sub_total ? 0 : labor / sub_total;
   const materialShare = !sub_total ? 0 : material / sub_total;
-  const labor_paid = laborShare * paidAfterTax;
-  const material_paid = materialShare * paidAfterTax;
+  const labor_paid = Math.round(laborShare * paidAfterTax);
+  const material_paid = Math.round(materialShare * paidAfterTax);
   const profit = material_paid - material_cost;
   return {
     labor,

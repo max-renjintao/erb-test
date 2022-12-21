@@ -9,7 +9,7 @@ import { amount, percent } from 'utils/disp';
 import InvoiceInput from '../InvoiceInput';
 
 const InvoiceBill = () => {
-  const { work, amount: am, imWork } = useWork();
+  const { work, imWork } = useWork();
   return (
     <InvoiceTable
       heading="Total Amount and Details 费用统计"
@@ -18,16 +18,16 @@ const InvoiceBill = () => {
       <tr>
         <Td justifyContent="end">Labor Cost 人工费</Td>
         <Td width={80} justifyContent="end">
-          {am.labor}
+          {work.labor}
         </Td>
       </tr>
       <tr>
         <Td justifyContent="end">Parts and Materials 材料费</Td>
-        <Td justifyContent="end">{am.material}</Td>
+        <Td justifyContent="end">{work.material}</Td>
       </tr>
       <tr>
         <Td justifyContent="end">Sub-Total 小计</Td>
-        <Td justifyContent="end">{amount(am.sub_total)}</Td>
+        <Td justifyContent="end">{amount(work.sub_total)}</Td>
       </tr>
       <tr>
         <Td justifyContent="end">Tax</Td>
@@ -66,7 +66,7 @@ const InvoiceBill = () => {
       <tr>
         <Td justifyContent="end">Total Amount</Td>
         <Td justifyContent="end">
-          <strong>{amount(am.total)}</strong>
+          <strong>{amount(work.total)}</strong>
         </Td>
       </tr>
     </InvoiceTable>
