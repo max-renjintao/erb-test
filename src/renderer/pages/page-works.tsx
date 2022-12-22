@@ -2,10 +2,10 @@ import { Button, Dialog } from '@mui/material';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useWorks from 'renderer/store/useWorks';
-import WorkEditInfo from 'renderer/components/workEdit/workEditInfo';
+import WorkEditInfo from 'renderer/components/workEditor/workEditInfo';
 import WorksTable from '../components/WorksTable';
 import ScrollDialog from '../layouts/dialog';
-import Invoice from '../components/workEdit/Invoice';
+import WorkEditor from '../components/workEditor';
 
 const WorksPage = () => {
   // const navigate = useNavigate();
@@ -19,7 +19,7 @@ const WorksPage = () => {
       <WorksTable />
       <ScrollDialog open={app.showDialogWorkEdit}>
         <WorkEditInfo />
-        <Invoice />
+        <WorkEditor />
       </ScrollDialog>
 
       <Button onClick={() => append()}>Append</Button>

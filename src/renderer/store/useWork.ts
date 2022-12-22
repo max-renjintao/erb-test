@@ -19,13 +19,12 @@ const useWork = () => {
   //   })
   // );
   const imWork = (immer: (draft: WritableDraft<Work>) => void) => {
-    // const amount = getAmount(work);
+    const amount = getAmount(work);
+    const newWork = { ...work, ...amount };
     imData((d) => {
-      Object.entries(getAmount(work)).map(
-        ([k, v]) => (d.works[app.index][k] = v)
-      );
-
-      d.works[app.index] = produce(d.works[app.index], immer);
+      // Object.entries(amount).map(([k, v]) => (d.works[app.index][k] = v));
+      // d.works[app.index] = produce(d.works[app.index], immer);
+      d.works[app.index] = produce(newWork, immer);
     });
   };
 

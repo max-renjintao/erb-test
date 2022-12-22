@@ -10,8 +10,8 @@ import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
-import { ButtonSide } from '../Buttons';
-import InvoiceInput from '../InvoiceInput';
+import { ButtonSide } from '../../inputs/Buttons';
+import InvoiceInput from '../../inputs/InvoiceInput';
 
 const InvoiceItemList = () => {
   const { work, imWork, app, insertJob, deleteJob, insertMat, deleteMat } =
@@ -49,30 +49,36 @@ const InvoiceItemList = () => {
               onEdit={(v) =>
                 imWork((d) => {
                   d.jobs[jobId].code = v;
-                  const sameJob = app.workOps.jobs.find((j) => j.code === v);
-                  if (sameJob) {
-                    d.jobs[jobId].item = sameJob.item;
-                    d.jobs[jobId].cost = sameJob.cost || 0;
+                  if (v) {
+                    const sameJob = app.workOps.jobs.find((j) => j.code === v);
+                    if (sameJob) {
+                      d.jobs[jobId].item = sameJob.item;
+                      d.jobs[jobId].cost = sameJob.cost || 0;
+                    }
                   }
                 })
               }
             />
             <InvoiceInput // job / item
+              multiline
+              align="left"
               rowSpan={rowSpan}
               options={deduplicateVar(app.workOps.jobs.map((j) => j.item))}
               value={job.item}
               onEdit={(v) =>
                 imWork((d) => {
                   d.jobs[jobId].item = v;
-                  const sameJob = app.workOps.jobs.find((j) => j.item === v);
-                  if (sameJob) {
-                    d.jobs[jobId].code = sameJob.code;
-                    d.jobs[jobId].cost = sameJob.cost || 0;
+                  if (v) {
+                    const sameJob = app.workOps.jobs.find((j) => j.item === v);
+                    if (sameJob) {
+                      d.jobs[jobId].code = sameJob.code;
+                      d.jobs[jobId].cost = sameJob.cost || 0;
+                    }
                   }
                 })
               }
             />
-            <InvoiceInput // job / labor
+            <InvoiceInput // job / cost
               rowSpan={rowSpan}
               textAlign="right"
               options={[]}
@@ -114,6 +120,7 @@ const InvoiceItemList = () => {
             <tr key={matId}>
               {matId === 0 && tdsLabor}
               <InvoiceInput // mat / name
+                multiline
                 options={app.workOps.mats.map((m) => m.name)}
                 value={mat.name}
                 onEdit={(v) =>
@@ -177,9 +184,9 @@ const InvoiceItemList = () => {
           </ButtonSide>
           Sub-total of Labor Cost 人工费合计 (K)
         </Td>
-        <Td justifyContent="end">{amount(work.labor)}</Td>
+        <Td justifyContent="end">{amount(getWorkLabor(work))}</Td>
         <Td colSpan={3}>Sub-total of Material Cost 材料费合计 (K)</Td>
-        <Td justifyContent="end">{amount(work.material)}</Td>
+        <Td justifyContent="end">{amount(getWorkMaterial(work))}</Td>
       </tr>
     </InvoiceTable>
   );

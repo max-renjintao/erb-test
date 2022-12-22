@@ -11,15 +11,13 @@ type Amount = {
   labor: number;
   material: number;
   sub_total: number;
+  tax: number;
+  discount: number;
   total: number;
   paid: number;
-  discount: number;
-  tax: number;
   labor_final: number;
   material_final: number;
   material_cost: number;
-  labor_paid: number;
-  material_paid: number;
   tax_paid: number;
   profit: number;
 };

@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import useWork from 'renderer/store/useWork';
-import InvoiceTable, { TxtIn } from '../InvoiceTable';
+import InvoiceTable, { TxtIn } from '../../InvoiceTable';
 
 const InvoiceNotice = () => {
   const { work, imWork } = useWork();

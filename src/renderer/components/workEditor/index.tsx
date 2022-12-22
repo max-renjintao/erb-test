@@ -1,16 +1,16 @@
 import useWork from 'renderer/store/useWork';
-import { ButtonSide } from 'renderer/components/Buttons';
+import { ButtonSide } from 'renderer/components/inputs/Buttons';
 import EastIcon from '@mui/icons-material/East';
-import InvoiceFooter from './InvoiceFooter';
-import InvoiceNotice from './InvoiceNotice';
-import InvoiceBill from './InvoiceBill';
-import InvoiceVehicle from './InvoiceVehicle';
-import InvoiceNeeds from './InvoiceNeeds';
-import InvoiceItemList from './InvoiceItemList';
-import InvoiceHeader from './InvoiceHeader';
-import InvoicePaid from './InvoicePaid';
+import InvoiceFooter from './print/Footer';
+import InvoiceNotice from './print/Notice';
+import InvoiceBill from './print/Bill';
+import InvoiceVehicle from './print/Vehicle';
+import InvoiceNeeds from './print/Needs';
+import InvoiceItemList from './print/ItemList';
+import InvoiceHeader from './print/Header';
+import InvoicePaid from './print/Paid';
 
-const Invoice = () => {
+const WorkEditor = () => {
   const { work, insertNeed: insertOrder } = useWork();
 
   if (!work) return <>!!! no work</>;
@@ -60,4 +60,4 @@ const Invoice = () => {
     </div>
   );
 };
-export default Invoice;
+export default WorkEditor;

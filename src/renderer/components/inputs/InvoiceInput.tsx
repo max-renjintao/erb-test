@@ -1,9 +1,34 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-no-duplicate-props */
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, TextField, TextFieldProps } from '@mui/material';
 import React, { CSSProperties } from 'react';
 
+export const InvIn = ({ ...props }: TextFieldProps) => {
+  return (
+    <TextField
+      {...props}
+      style={{ padding: 0, borderRadius: 0 }}
+      InputProps={{
+        ...props.InputProps,
+        style: {
+          padding: 0,
+          border: 0,
+          borderRadius: 0,
+        },
+      }}
+      inputProps={{
+        ...props.inputProps,
+        style: {
+          display: 'inline-block',
+          padding: 0,
+          WebkitTextFillColor: 'black',
+          verticalAlign: 'middle',
+        },
+      }}
+    />
+  );
+};
 const InvoiceInput = ({
   textAlign,
   options,
@@ -11,12 +36,14 @@ const InvoiceInput = ({
   onEdit,
   children,
   disabled,
+  multiline,
   ...rest
 }: {
   textAlign?: CSSProperties['textAlign'];
   options: string[];
   value: string | undefined;
   disabled?: boolean;
+  multiline?: boolean;
   onEdit: (v: string) => void;
 } & React.ComponentProps<'td'>) => (
   <td style={{ padding: 0, height: '40px' }} {...rest}>
@@ -31,7 +58,7 @@ const InvoiceInput = ({
       renderInput={(ps) => (
         <TextField
           {...ps}
-          multiline
+          multiline={multiline}
           style={{ padding: 0, borderRadius: 0 }}
           InputProps={{
             ...ps.InputProps,
@@ -44,9 +71,13 @@ const InvoiceInput = ({
           inputProps={{
             ...ps.inputProps,
             style: {
-              padding: 4,
+              // height: '100%',
+              display: 'inline-block',
+              // alignItems: 'center',
+              padding: 0,
               WebkitTextFillColor: 'black',
               textAlign,
+              verticalAlign: 'middle',
             },
           }}
           onBlur={(e) => {

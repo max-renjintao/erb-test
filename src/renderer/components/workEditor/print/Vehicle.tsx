@@ -5,7 +5,7 @@ import InvoiceTable, {
 } from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
 import { deduplicateVar } from 'utils/deduplicate';
-import InvoiceInput from '../InvoiceInput';
+import InvoiceInput from '../../inputs/InvoiceInput';
 
 const InvoiceVehicle = () => {
   const { work, works, imWork, app } = useWork();
@@ -114,14 +114,16 @@ const InvoiceVehicle = () => {
           options={deduplicateVar(app.workOps.vehicles.map((v) => v.vip))}
           value={work.vip}
           onEdit={(vip) => {
-            const ops = app.workOps.vehicles;
-            const same = ops.find((w) => w.vip === vip);
-            if (same) {
-              imWork((w) => {
-                w.owner = same.owner;
-                w.tel = same.tel;
-                w.vip = same.vip;
-              });
+            if (vip) {
+              const ops = app.workOps.vehicles;
+              const same = ops.find((w) => w.vip === vip);
+              if (same) {
+                imWork((w) => {
+                  w.owner = same.owner;
+                  w.tel = same.tel;
+                  w.vip = same.vip;
+                });
+              }
             } else {
               imWork((w) => {
                 w.vip = vip;

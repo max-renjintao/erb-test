@@ -6,7 +6,7 @@ import InvoiceTable, {
 } from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
 import { amount, percent } from 'utils/disp';
-import InvoiceInput from '../InvoiceInput';
+import InvoiceInput from '../../inputs/InvoiceInput';
 
 const InvoiceBill = () => {
   const { work, imWork } = useWork();

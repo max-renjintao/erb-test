@@ -6,8 +6,8 @@ import InvoiceTable, {
 import useWork from 'renderer/store/useWork';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
-import { ButtonSide } from '../Buttons';
-import InvoiceInput from '../InvoiceInput';
+import { ButtonSide } from '../../inputs/Buttons';
+import InvoiceInput from '../../inputs/InvoiceInput';
 
 const InvoiceNeeds = () => {
   const { work, insertNeed, app, imWork, deleteNeed } = useWork();
@@ -28,6 +28,7 @@ const InvoiceNeeds = () => {
             {i + 1}
           </Td>
           <InvoiceInput // order
+            multiline
             textAlign="left"
             options={app.workOps.needs}
             value={`${work.needs[i]}`}
