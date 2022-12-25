@@ -1,18 +1,24 @@
 import Button from '@mui/material/Button';
-import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import {
+  DataGrid,
+  DataGridProps,
+  GridColDef,
+  GridRenderCellParams,
+} from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
-import useWorks from 'renderer/store/useWorks';
-import { dateFormat } from '../../utils/date';
+import { dateFormat } from 'utils/date';
 
 // const colAmount = (field: string) => ({
 //   field,
 //   type: 'number',
 //   width: 80,
 // });
-const WorksTable = () => {
-  const { works, app, imApp, setId } = useWorks();
+type P = { onEdit: (id: number) => void } & Omit<DataGridProps, 'columns'>;
+const WorksTable = ({ rows, onEdit, ...props }: P) => {
+  // const { works, imApp, setId } = useWorks();
+  console.log('<WorksTable>');
 
-  const columns: GridColDef[] = [
+  const columns: GridColDef<Work>[] = [
     { field: 'sn', width: 80 },
     {
       field: 'date_s',
@@ -47,10 +53,11 @@ const WorksTable = () => {
         <Button
           size="small"
           onClick={() => {
-            imApp((a) => {
-              a.showDialogWorkEdit = true;
-            });
-            setId(+params.id);
+            onEdit(+params.id);
+            // imApp((a) => {
+            //   a.showDialogWorkEdit = true;
+            // });
+            // setId(+params.id);
           }}
         >
           <EditIcon />
@@ -68,11 +75,11 @@ const WorksTable = () => {
   ];
   return (
     <DataGrid
-      rows={works}
+      rows={rows}
+      columns={columns}
       rowHeight={23}
       headerHeight={25}
       autoHeight
-      columns={columns}
       // onCellEditStop={(e, v) => console.log(e.field, e.id, e.value)}
       // on
       // pageSize={100}
@@ -84,6 +91,8 @@ const WorksTable = () => {
       getRowClassName={(params) =>
         `x-row-${(params.row.status as string).toLowerCase()}`
       }
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
     />
   );
 };

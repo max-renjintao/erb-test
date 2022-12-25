@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InvoicePaid = () => {
+const DocPaid = () => {
   return (
     <div
       style={{
@@ -17,4 +17,4 @@ const InvoicePaid = () => {
   );
 };
 
-export default InvoicePaid;
+export default DocPaid;

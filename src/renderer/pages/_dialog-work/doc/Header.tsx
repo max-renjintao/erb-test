@@ -1,8 +1,8 @@
 import { isValid } from 'date-fns';
 import useWork from 'renderer/store/useWork';
 
-const InvoiceHeader = () => {
-  const { work } = useWork();
+const DocHeader = ({ work }: { work: Work }) => {
+  // const { work } = useWork();
   const status = work.status.toLowerCase();
   const date =
     work.date_e || isValid(work.date_e) ? work.date_e : new Date(Date.now());
@@ -24,4 +24,4 @@ const InvoiceHeader = () => {
   );
 };
 
-export default InvoiceHeader;
+export default DocHeader;

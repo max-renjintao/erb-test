@@ -1,9 +1,11 @@
 import { Stack } from '@mui/material';
+import InText from 'renderer/components/inputs/InText';
+import InvoiceTable from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
-import InvoiceTable, { TxtIn } from '../../InvoiceTable';
+// import InvoiceTable, { TxtIn } from '../InvoiceTable';
 
-const InvoiceNotice = () => {
-  const { work, imWork } = useWork();
+const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
+  // const { work, imWork } = useWork();
   return (
     <InvoiceTable
       heading="Thanks for your supporting/谢谢您的惠顾"
@@ -46,7 +48,7 @@ const InvoiceNotice = () => {
               }}
             >
               <li>
-                <TxtIn
+                <InText
                   multiline
                   defaultValue={work.notice}
                   inputProps={{
@@ -67,4 +69,4 @@ const InvoiceNotice = () => {
   );
 };
 
-export default InvoiceNotice;
+export default DocNotice;

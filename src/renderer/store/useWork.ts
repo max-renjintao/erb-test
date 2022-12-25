@@ -1,73 +1,48 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import produce from 'immer';
-import { WritableDraft } from 'immer/dist/internal';
 import { useEffect } from 'react';
-import { jobInit, matInit, workInit } from 'renderer/store/constants';
+import { workInit } from 'renderer/store/constants';
+import { useImmer } from 'use-immer';
 import getAmount from 'utils/getAmount';
+import ObjectEntries from 'utils/ObjectEntries';
 import useWorks from './useWorks';
 
-const useWork = () => {
-  const store = useWorks();
-  const { works, imData, data, app } = store;
+// const ObjectEntries = <T extends { [k: string]: any }>(Obj: T) => [keyof T,T[keyof T]][]
 
-  const work = works[app.index] || workInit;
-  // useEffect(() =>
-  //   imWork((w) => {
-  //     Object.entries(getAmount(work)).map(([k, v]) => {
-  //       w[k] = v;
-  //     });
-  //   })
-  // );
-  const imWork = (immer: (draft: WritableDraft<Work>) => void) => {
-    const amount = getAmount(work);
-    const newWork = { ...work, ...amount };
-    imData((d) => {
-      // Object.entries(amount).map(([k, v]) => (d.works[app.index][k] = v));
-      // d.works[app.index] = produce(d.works[app.index], immer);
-      d.works[app.index] = produce(newWork, immer);
-    });
-  };
+const useWork = (index: number) => {
+  const { works, app, update, remove } = useWorks();
+  const [work, imWork] = useImmer(workInit);
 
-  const insertNeed = (index: number) =>
-    imWork((d) => {
-      d.needs.splice(index, 0, '');
-    });
+  useEffect(() => {
+    imWork(works[app.index]);
+    console.log(`% useWork. useEffect. reassignment:from works[${app.index}]`);
+  }, [app.index, imWork, works]);
 
-  const deleteNeed = (index: number) =>
-    imWork((d) => {
-      d.needs.splice(index, 1);
-    });
+  useEffect(() => {
+    if (work) {
+      imWork((w) => {
+        if (w) {
+          const amount = getAmount(work);
+          ObjectEntries(amount).forEach(([k, v]) => {
+            w[k] = v;
+          });
+          console.log('% useWork. useEffect. calc amount...');
+        }
+      });
+    }
 
-  const insertJob = (index: number) => {
-    imWork((d) => {
-      d.jobs.splice(index, 0, jobInit);
-    });
-  };
-  const deleteJob = (index: number) => {
-    imWork((d) => {
-      d.jobs.splice(index, 1);
-    });
-  };
-  const insertMat = (jobId: number, index: number) => {
-    imWork((d) => {
-      d.jobs[jobId].mats.splice(index, 0, matInit);
-    });
-  };
-  const deleteMat = (jobId: number, index: number) => {
-    imWork((d) => {
-      d.jobs[jobId].mats.splice(index, 1);
-    });
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [work?.jobs, work?.tax, work?.discount, work?.paid]);
+
+  console.log('% useWork');
+
   return {
-    ...store,
+    index,
     work,
     imWork,
-    insertNeed,
-    deleteNeed,
-    insertJob,
-    deleteJob,
-    insertMat,
-    deleteMat,
+    update: () => {
+      update(index, work);
+    },
+    remove: () => remove(index),
   };
 };
 export default useWork;

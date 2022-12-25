@@ -1,27 +1,25 @@
-import { Button, Dialog } from '@mui/material';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import useWorks from 'renderer/store/useWorks';
-import WorkEditInfo from 'renderer/components/workEditor/workEditInfo';
-import WorksTable from '../components/WorksTable';
-import ScrollDialog from '../layouts/dialog';
-import WorkEditor from '../components/workEditor';
+import WorksTable from './_page-works/WorksTable';
+import DialogWork from './dialog-work';
 
 const WorksPage = () => {
-  // const navigate = useNavigate();
-  // const { works, insert } = useWorks();
-  // const [id, setId] = useState(0);
-  const { app, append } = useWorks();
-  // console.log(app);
+  console.log('<WorksPage>');
+  const { works, app, append, imApp } = useWorks();
 
   return (
     <>
-      <WorksTable />
-      <ScrollDialog open={app.showDialogWorkEdit}>
-        <WorkEditInfo />
-        <WorkEditor />
-      </ScrollDialog>
+      <WorksTable
+        rows={works}
+        onEdit={(id) => {
+          imApp((a) => {
+            a.showDialogWorkEdit = true;
+            a.index = works.findIndex((f) => f.id === id);
+          });
+        }}
+      />
 
+      <DialogWork />
       <Button onClick={() => append()}>Append</Button>
       {app.csvFilePath}
     </>

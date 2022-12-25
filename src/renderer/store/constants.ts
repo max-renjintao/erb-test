@@ -26,8 +26,9 @@ export const workInit: Work = {
   material_final: 0,
   paid: 0,
   notice: '',
-  labor_paid: 0,
-  material_paid: 0,
+  labor: 0,
+  material: 0,
+  sub_total: 0,
   tax_paid: 0,
   profit: 0,
 };
@@ -45,7 +46,7 @@ export const dataInit = {
 
 export type StoreData = typeof dataInit;
 export const appInit = {
-  id: 0,
+  // id: 0,
   index: 0,
   // work: workInit,
   showDialogWorkEdit: false,
@@ -58,7 +59,7 @@ export const appInit = {
     mats: [],
     teams: [],
     status: [],
-  } as WorkOps,
+  } as WorkOptions,
   csvFilePath: '',
 };
 export type StoreApp = typeof appInit;
@@ -66,7 +67,7 @@ export type StoreApp = typeof appInit;
 export const storeContextInit = {
   data: dataInit,
   imData: (() => {}) as Updater<StoreData>,
-  saveData: (data: StoreData) => {},
+  // saveData: () => {},
   app: appInit,
   imApp: (() => {}) as Updater<StoreApp>,
 };

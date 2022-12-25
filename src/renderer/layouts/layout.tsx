@@ -9,6 +9,8 @@ import Drawer, { DrawerItem } from './drawer';
 import ScrollDialog from './dialog';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  console.log('<Layout>');
+
   return (
     <Box sx={{ display: 'flex' }}>
       <Drawer width={40} open={false}>

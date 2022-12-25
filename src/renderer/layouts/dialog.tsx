@@ -1,13 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import Dialog, { DialogProps } from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 
-export default function ScrollDialog({
-  children,
-  onClose,
-  ...rest
-}: DialogProps) {
+export default function ScrollDialog(props: DialogProps) {
   return (
     <Dialog
       scroll="body"
@@ -16,7 +10,7 @@ export default function ScrollDialog({
       maxWidth="lg"
       PaperProps={{ sx: { border: 0, boxShadow: 0 } }}
       // slotProps
-      {...rest}
+      {...props}
     >
       {/* <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle> */}
       {/* <DialogContent dividers> */}
@@ -25,7 +19,7 @@ export default function ScrollDialog({
           // ref={descriptionElementRef}
           tabIndex={-1}
         > */}
-      {children}
+      {/* {children} */}
       {/* </DialogContentText> */}
       {/* </DialogContent> */}
     </Dialog>

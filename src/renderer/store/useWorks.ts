@@ -1,64 +1,48 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import produce from 'immer';
-import { useContext } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useCallback, useContext } from 'react';
 import { workInit } from 'renderer/store/constants';
 
 import { storeContext } from './Store';
 
 const useWorks = () => {
   const store = useContext(storeContext);
-  const {
-    data,
-    data: { works },
-    saveData,
-    imApp,
-  } = store;
-  const setId = (id: number) =>
-    imApp((a) => {
-      a.id = id;
-      a.index = works.findIndex((w) => w.id === id);
+  const { data, imData } = store;
+  const { works } = data;
+
+  const append = useCallback((work?: Work) => {
+    imData((d) => {
+      d.works.push({
+        ...(work || workInit),
+        id: d.works.reduce((p, c) => Math.max(p, c.id), 0) + 1,
+        sn: d.works.reduce((p, c) => Math.max(p, c.sn), 0) + 1,
+        date_s: new Date(Date.now()),
+        date_e: new Date(Date.now()),
+      });
     });
-  const append = (work?: Work) => {
-    saveData(
-      produce(data, (d) => {
-        d.works.push({
-          ...(work || workInit),
-          id: d.works.reduce((p, c) => Math.max(p, c.id), 0) + 1,
-          sn: d.works.reduce((p, c) => Math.max(p, c.sn), 0) + 1,
-          date_s: new Date(Date.now()),
-          date_e: new Date(Date.now()),
-        });
-      })
-    );
-  };
-  const remove = (index: number) => {
-    saveData(
-      produce(data, (d) => {
-        d.works.splice(index, 1);
-      })
-    );
-  };
-  const update = (w: Work) => {
-    const index = works.findIndex((item) => item.id === w.id);
-    if (index)
-      saveData(
-        produce(data, (draft) => {
-          draft.works[index] = w;
-        })
-      );
-  };
-  // const options = (key: keyof Work) => [
-  //   ...new Set(works.map((w) => `${w[key]}`)),
-  // ];
+    console.log('% useWorks.append');
+  }, []);
+  const remove = useCallback((index: number) => {
+    imData((d) => {
+      d.works.splice(index, 1);
+    });
+    console.log('% useWorks.remove');
+  }, []);
+  const update = useCallback((index: number, w: Work) => {
+    if (index >= 0)
+      imData((d) => {
+        d.works[index] = w;
+      });
+    console.log('% useWorks.update');
+  }, []);
+  console.log('% useWorks');
 
   return {
     ...store,
     works,
-    setId,
-    update,
     append,
+    update,
     remove,
-    // options,
+    options: store.app.workOps,
   };
 };
 export default useWorks;

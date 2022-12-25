@@ -6,11 +6,16 @@ import InvoiceTable, {
 import useWork from 'renderer/store/useWork';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
-import { ButtonSide } from '../../inputs/Buttons';
-import InvoiceInput from '../../inputs/InvoiceInput';
+// import { WorkImmerProps } from 'renderer/tulando-app';
+import { ButtonSide } from 'renderer/components/inputs/Buttons';
+import { jobInit } from 'renderer/store/constants';
+import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
+// import { ButtonSide } from '../../inputs/Buttons';
+// import InvoiceInput from '../../inputs/InvoiceInput';
 
-const InvoiceNeeds = () => {
-  const { work, insertNeed, app, imWork, deleteNeed } = useWork();
+type P = WorkImmerProps & { options: WorkOptions };
+const DocNeeds = ({ immer: [work, imWork], options }: P) => {
+  // const { work, insertNeed, app, imWork, deleteNeed } = useWork();
   return (
     <InvoiceTable heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求">
       {work.needs.map((item, i) => (
@@ -19,9 +24,11 @@ const InvoiceNeeds = () => {
             <ButtonSide // order / insert button
               left={18}
               mt={-40}
-              onClick={() => {
-                insertNeed(i);
-              }}
+              onClick={() =>
+                imWork((w) => {
+                  w.needs.splice(i, 0, '');
+                })
+              }
             >
               <EastIcon />
             </ButtonSide>
@@ -30,7 +37,7 @@ const InvoiceNeeds = () => {
           <InvoiceInput // order
             multiline
             textAlign="left"
-            options={app.workOps.needs}
+            options={options.needs}
             value={`${work.needs[i]}`}
             onEdit={(v) => {
               imWork((draft) => {
@@ -41,7 +48,11 @@ const InvoiceNeeds = () => {
             <ButtonSide // order delete button
               right={1}
               mt={10}
-              onClick={() => deleteNeed(i)}
+              onClick={() =>
+                imWork((w) => {
+                  w.needs.splice(i, 1);
+                })
+              }
             >
               <CloseIcon />
             </ButtonSide>
@@ -52,4 +63,4 @@ const InvoiceNeeds = () => {
   );
 };
 
-export default InvoiceNeeds;
+export default DocNeeds;

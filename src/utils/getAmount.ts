@@ -10,7 +10,6 @@ export const getWorkMaterial = (w: Work) => {
 const getAmount = (w: Work): Amount => {
   const { discount, tax, paid } = w;
   const labor = getWorkLabor(w);
-
   const material = getWorkMaterial(w);
   const mats = w.jobs.map((j) => j.mats).flat();
   const material_cost = mats ? mats.reduce((p, c) => p + c.cost, 0) : 0;
@@ -35,7 +34,7 @@ const getAmount = (w: Work): Amount => {
     tax_paid,
     profit,
   };
-  console.log(res);
+  // console.log(res);
 
   return res;
 };

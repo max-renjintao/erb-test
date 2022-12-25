@@ -61,7 +61,7 @@ type Order = {
 };
 type OrderCsvjson = { [k in keyof Order]: string };
 
-type WorkOps = {
+type WorkOptions = {
   vehicles: Vehicle[];
   models: string[];
   needs: string[];

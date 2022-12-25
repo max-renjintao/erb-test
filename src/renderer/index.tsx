@@ -5,6 +5,8 @@ import Store from './store/Store';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+console.log('<index>');
+
 root.render(
   <Store>
     <CssBaseline />

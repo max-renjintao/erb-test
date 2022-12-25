@@ -1,4 +1,2 @@
-import { ImmerHook } from 'use-immer';
-
-type WorkImmer = ImmerHook<Work>;
+type WorkImmer = import('use-immer').ImmerHook<Work>;
 type WorkImmerProps = { immer: WorkImmer };

@@ -16,12 +16,20 @@ import PrintIcon from '@mui/icons-material/Print';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
 import { dateFormat, dateParse } from 'utils/date';
-import { WorkImmerProps } from 'renderer/tulando-app';
+// import { WorkImmerProps } from 'renderer/tulando-app';
 import InText from 'renderer/components/inputs/InText';
 // import { TxtIn } from '../InvoiceTable';
+type P = WorkImmerProps & {
+  onDel: () => void;
+  // onSaveDate: () => void;
+  onUpdate: () => void;
+  onClose: () => void;
+};
+const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
+  const [work, imWork] = immer;
+  const [confirmDel, setConfirmDel] = useState('');
+  console.log('<WorkEditInfo>');
 
-const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
-  // const [confirmDel, setConfirmDel] = useState('');
   // const { app, imApp, setId, work, imWork, update, remove } = useWork();
   return (
     <>
@@ -37,7 +45,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
             })
           }
         />
-        {/* <TxtIn
+        <InText
           label="Start"
           type="date"
           defaultValue={dateFormat(work.date_s)}
@@ -47,7 +55,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
             })
           }
         />
-        <TxtIn
+        <InText
           label="End"
           type="date"
           defaultValue={dateFormat(work.date_e)}
@@ -57,7 +65,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
             })
           }
         />
-        <TxtIn
+        <InText
           label="paid amount"
           type="number"
           sx={{ width: 90 }}
@@ -73,7 +81,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
           freeSolo
           options={['汪攀', '王毅', '杨波']}
           sx={{ width: 100 }}
-          renderInput={(params) => <TxtIn {...params} />}
+          renderInput={(params) => <InText {...params} />}
           defaultValue={work.team}
           onChange={(e, v) =>
             imWork((dw) => {
@@ -87,7 +95,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
           disableClearable
           disablePortal
           sx={{ width: 100 }}
-          renderInput={(params) => <TxtIn {...params} />}
+          renderInput={(params) => <InText {...params} />}
           value={work.status}
           onChange={(e, v) =>
             v &&
@@ -95,10 +103,9 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
               dw.status = v;
             })
           }
-        /> */}
+        />
       </Stack>
-      {/* <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
-        {' '}
+      <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
         <Box ml="auto" mr="0">
           <TextField
             size="small"
@@ -109,12 +116,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
           <Button
             onClick={() => {
               if (confirmDel.toLowerCase() === 'delete') {
-                const i = app.index;
-                imApp((a) => {
-                  a.showDialogWorkEdit = false;
-                });
-                setId(0);
-                remove(i);
+                onDel();
               }
             }}
           >
@@ -123,7 +125,7 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
         </Box>
       </Stack>
       <Stack px={2} className="no-print">
-        <TxtIn
+        <InText
           multiline
           label="note"
           maxRows={5}
@@ -176,23 +178,12 @@ const workEditInfo = ({ immer: [work, imWork] }: WorkImmerProps) => {
           onClick={() => window.electron.ipcRenderer.sendMessage('print', [])}
           children="print"
         />
-        <Button
-          startIcon={<SaveIcon />}
-          onClick={() => update(work)}
-          children="save"
-        />
-        <Button
-          startIcon={<CloseIcon />}
-          onClick={() => {
-            imApp((a) => {
-              a.showDialogWorkEdit = false;
-            });
-          }}
-          children="quit"
-        />
-      </Stack> */}
+        {/* <Button startIcon={<SaveIcon />} onClick={onSaveDate} children="save" /> */}
+        <Button startIcon={<SaveIcon />} onClick={onUpdate} children="update" />
+        <Button startIcon={<CloseIcon />} onClick={onClose} children="quit" />
+      </Stack>
     </>
   );
 };
 
-export default workEditInfo;
+export default WorkEditInfo;

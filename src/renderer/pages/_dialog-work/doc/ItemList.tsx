@@ -10,12 +10,14 @@ import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
-import { ButtonSide } from '../../inputs/Buttons';
-import InvoiceInput from '../../inputs/InvoiceInput';
+import { ButtonSide } from 'renderer/components/inputs/Buttons';
+import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
+import { jobInit, matInit } from 'renderer/store/constants';
 
-const InvoiceItemList = () => {
-  const { work, imWork, app, insertJob, deleteJob, insertMat, deleteMat } =
-    useWork();
+type P = WorkImmerProps & { options: WorkOptions };
+const DocItemList = ({ immer: [work, imWork], options }: P) => {
+  // const { work, imWork, app, insertJob, deleteJob, insertMat, deleteMat } =
+  //   useWork();
   return (
     <InvoiceTable heading="Maintenance Items and Expense List 维修项目及费用清单">
       <tr>
@@ -36,7 +38,12 @@ const InvoiceItemList = () => {
               <ButtonSide // job / insert button
                 left={18}
                 mt={(rowSpan || 1) * -40}
-                onClick={() => insertJob(jobId)}
+                onClick={() =>
+                  // insertJob(jobId)
+                  imWork((w) => {
+                    w.jobs.splice(jobId, 0, jobInit);
+                  })
+                }
               >
                 <EastIcon />
               </ButtonSide>
@@ -44,13 +51,13 @@ const InvoiceItemList = () => {
             </Td>
             <InvoiceInput // job / code
               rowSpan={rowSpan}
-              options={app.workOps.jobs.map((j) => j.code)}
+              options={options.jobs.map((j) => j.code)}
               value={job.code}
               onEdit={(v) =>
                 imWork((d) => {
                   d.jobs[jobId].code = v;
                   if (v) {
-                    const sameJob = app.workOps.jobs.find((j) => j.code === v);
+                    const sameJob = options.jobs.find((j) => j.code === v);
                     if (sameJob) {
                       d.jobs[jobId].item = sameJob.item;
                       d.jobs[jobId].cost = sameJob.cost || 0;
@@ -63,13 +70,13 @@ const InvoiceItemList = () => {
               multiline
               align="left"
               rowSpan={rowSpan}
-              options={deduplicateVar(app.workOps.jobs.map((j) => j.item))}
+              options={deduplicateVar(options.jobs.map((j) => j.item))}
               value={job.item}
               onEdit={(v) =>
                 imWork((d) => {
                   d.jobs[jobId].item = v;
                   if (v) {
-                    const sameJob = app.workOps.jobs.find((j) => j.item === v);
+                    const sameJob = options.jobs.find((j) => j.item === v);
                     if (sameJob) {
                       d.jobs[jobId].code = sameJob.code;
                       d.jobs[jobId].cost = sameJob.cost || 0;
@@ -98,7 +105,15 @@ const InvoiceItemList = () => {
             <td>
               <ButtonSide // mat / first mat button
                 mt={-10}
-                onClick={() => insertMat(jobId, 999)}
+                onClick={
+                  // console.log(w.jobs[jobId]);
+
+                  () =>
+                    imWork((w) => {
+                      w.jobs[jobId].mats.push(matInit);
+                    })
+                  //  insertMat(jobId, 999)
+                }
               >
                 <EastIcon />
               </ButtonSide>
@@ -108,7 +123,12 @@ const InvoiceItemList = () => {
             <Td justifyContent="end">
               <ButtonSide // job / delete button
                 right={1}
-                onClick={() => deleteJob(jobId)}
+                onClick={() =>
+                  // deleteJob(jobId)
+                  imWork((w) => {
+                    w.jobs.splice(jobId, 1);
+                  })
+                }
               >
                 <CloseIcon />
               </ButtonSide>
@@ -121,12 +141,12 @@ const InvoiceItemList = () => {
               {matId === 0 && tdsLabor}
               <InvoiceInput // mat / name
                 multiline
-                options={app.workOps.mats.map((m) => m.name)}
+                options={options.mats.map((m) => m.name)}
                 value={mat.name}
                 onEdit={(v) =>
                   imWork((d) => {
                     d.jobs[jobId].mats[matId].name = v;
-                    const sameMat = app.workOps.mats.find((m) => m.name === v);
+                    const sameMat = options.mats.find((m) => m.name === v);
                     if (sameMat) {
                       d.jobs[jobId].mats[matId].qty = sameMat.qty || 1;
                       d.jobs[jobId].mats[matId].rate = sameMat.rate || 0;
@@ -137,7 +157,13 @@ const InvoiceItemList = () => {
                 <ButtonSide // mat /insert
                   right={18}
                   mt={-10}
-                  onClick={() => insertMat(jobId, matId)}
+                  onClick={
+                    () =>
+                      imWork((w) => {
+                        w.jobs[jobId].mats.splice(matId, 0, matInit);
+                      })
+                    // insertMat(jobId, matId)
+                  }
                 >
                   <WestIcon />
                 </ButtonSide>
@@ -163,7 +189,14 @@ const InvoiceItemList = () => {
               <Td justifyContent="end">
                 <ButtonSide // mat / delete button
                   right={1}
-                  onClick={() => deleteMat(jobId, matId)}
+                  onClick={
+                    () =>
+                      imWork((w) => {
+                        w.jobs[jobId].mats.splice(matId, 1);
+                      })
+
+                    // deleteMat(jobId, matId)
+                  }
                 >
                   <CloseIcon />
                 </ButtonSide>
@@ -178,7 +211,13 @@ const InvoiceItemList = () => {
           <ButtonSide // job / append button
             left={18}
             mt={-40}
-            onClick={() => insertJob(9999)}
+            onClick={
+              () =>
+                imWork((w) => {
+                  w.jobs.push(jobInit);
+                })
+              // insertJob(9999)
+            }
           >
             <EastIcon />
           </ButtonSide>
@@ -192,4 +231,4 @@ const InvoiceItemList = () => {
   );
 };
 
-export default InvoiceItemList;
+export default DocItemList;

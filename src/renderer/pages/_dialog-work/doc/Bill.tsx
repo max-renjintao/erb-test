@@ -1,15 +1,16 @@
 /* eslint-disable no-nested-ternary */
 import numeral from 'numeral';
+import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
 import InvoiceTable, {
   InvoiceTH as Th,
   InvoiceCell as Td,
 } from 'renderer/components/InvoiceTable';
 import useWork from 'renderer/store/useWork';
 import { amount, percent } from 'utils/disp';
-import InvoiceInput from '../../inputs/InvoiceInput';
+// import InvoiceInput from '../../inputs/InvoiceInput';
 
-const InvoiceBill = () => {
-  const { work, imWork } = useWork();
+const DocBill = ({ immer: [work, imWork] }: WorkImmerProps) => {
+  // const { work, imWork } = useWork();
   return (
     <InvoiceTable
       heading="Total Amount and Details 费用统计"
@@ -57,8 +58,8 @@ const InvoiceBill = () => {
           textAlign="right"
           value={amount(work.discount)}
           onEdit={(v) =>
-            imWork((d) => {
-              d.discount = numeral(v).value() || 0;
+            imWork((w) => {
+              w.discount = numeral(v).value() || 0;
             })
           }
         />
@@ -73,4 +74,4 @@ const InvoiceBill = () => {
   );
 };
 
-export default InvoiceBill;
+export default DocBill;

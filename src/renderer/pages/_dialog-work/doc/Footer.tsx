@@ -1,4 +1,4 @@
-const InvoiceFooter = () => {
+const DocFooter = () => {
   return (
     <div
       style={{
@@ -15,4 +15,4 @@ const InvoiceFooter = () => {
   );
 };
 
-export default InvoiceFooter;
+export default DocFooter;

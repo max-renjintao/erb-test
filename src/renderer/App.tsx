@@ -4,6 +4,8 @@ import Layout from './layouts/layout';
 import WorksPage from './pages/page-works';
 
 export default function App() {
+  console.log('<App>');
+
   return (
     <Layout>
       <Router>
