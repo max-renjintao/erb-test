@@ -17,49 +17,63 @@ type P = WorkImmerProps & { options: WorkOptions };
 const DocNeeds = ({ immer: [work, imWork], options }: P) => {
   // const { work, insertNeed, app, imWork, deleteNeed } = useWork();
   return (
-    <InvoiceTable heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求">
-      {work.needs.map((item, i) => (
-        <tr key={i}>
-          <Td width="4%">
-            <ButtonSide // order / insert button
-              left={18}
-              mt={-40}
-              onClick={() =>
-                imWork((w) => {
-                  w.needs.splice(i, 0, '');
-                })
-              }
+    <div style={{ position: 'relative' }}>
+      <InvoiceTable heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求">
+        {work.needs.map((item, i) => (
+          <tr key={i}>
+            <Td width="4%">
+              <ButtonSide // order / insert button
+                left={-20}
+                mt={-40}
+                onClick={() =>
+                  imWork((w) => {
+                    w.needs.splice(i, 0, '');
+                  })
+                }
+              >
+                <EastIcon />
+              </ButtonSide>
+              {i + 1}
+            </Td>
+            <InvoiceInput // order
+              multiline
+              textAlign="left"
+              options={options.needs}
+              value={`${work.needs[i]}`}
+              onEdit={(v) => {
+                imWork((draft) => {
+                  draft.needs[i] = v;
+                });
+              }}
             >
-              <EastIcon />
-            </ButtonSide>
-            {i + 1}
-          </Td>
-          <InvoiceInput // order
-            multiline
-            textAlign="left"
-            options={options.needs}
-            value={`${work.needs[i]}`}
-            onEdit={(v) => {
-              imWork((draft) => {
-                draft.needs[i] = v;
-              });
-            }}
-          >
-            <ButtonSide // order delete button
-              right={1}
-              mt={10}
-              onClick={() =>
-                imWork((w) => {
-                  w.needs.splice(i, 1);
-                })
-              }
-            >
-              <CloseIcon />
-            </ButtonSide>
-          </InvoiceInput>
-        </tr>
-      ))}
-    </InvoiceTable>
+              <ButtonSide // order delete button
+                right={-40}
+                mt={10}
+                onClick={() =>
+                  imWork((w) => {
+                    w.needs.splice(i, 1);
+                  })
+                }
+              >
+                <CloseIcon />
+              </ButtonSide>
+            </InvoiceInput>
+          </tr>
+        ))}
+      </InvoiceTable>
+      <ButtonSide // order / append button
+        left={-20}
+        mt={-14}
+        onClick={() =>
+          imWork((w) => {
+            w.needs.push('');
+            // insertOrder(999);
+          })
+        }
+      >
+        <EastIcon />
+      </ButtonSide>
+    </div>
   );
 };
 

@@ -47,18 +47,7 @@ const DialogWork = () => {
         <DocHeader work={work} />
         <DocVehicle immer={[work, imWork]} options={options} />
         <DocNeeds immer={[work, imWork]} options={options} />
-        <ButtonSide // order / append button
-          left={18}
-          mt={-15}
-          onClick={() =>
-            imWork((w) => {
-              w.needs.push('');
-              // insertOrder(999);
-            })
-          }
-        >
-          <EastIcon />
-        </ButtonSide>
+
         <DocItemList immer={[work, imWork]} options={options} />
         <div
           style={{

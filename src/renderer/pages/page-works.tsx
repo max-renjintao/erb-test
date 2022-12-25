@@ -9,6 +9,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Chip,
+  Switch,
 } from '@mui/material';
 import useWorks from 'renderer/store/useWorks';
 import EditIcon from '@mui/icons-material/Edit';
@@ -29,12 +30,13 @@ const ARR1TO12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const WorksPage = () => {
   console.log('<WorksPage>');
   const { works, app, append, imApp } = useWorks();
+  const [filter, setFilter] = useState(false);
   const [fMonth, setFMonth] = useState(ARR1TO12);
   const [fStatus, setFStatus] = useState(STATUS);
   const [fTeam, setFTeam] = useState(TEAMS);
   // const [filter, setFilter] = useState({ month: '10', status: 'all' });
   const rows: WorkRow[] = useMemo(() => {
-    const rs = works
+    let rs = works
       .map((w, index) => ({
         id: w.id,
         sn: w.sn,
@@ -58,13 +60,14 @@ const WorksPage = () => {
           : 0,
         edit: index,
       }))
-      .filter((f) => fMonth.includes(+f.date_s.slice(0, 2)))
-      .filter((f) => fStatus.includes(f.status.toLowerCase()))
-      .filter((f) => fTeam.includes(f.team))
       .sort((p, c) => p.sn - c.sn);
-
+    if (filter)
+      rs = rs
+        .filter((f) => fMonth.includes(+f.date_s.slice(0, 2)))
+        .filter((f) => fStatus.includes(f.status.toLowerCase()))
+        .filter((f) => fTeam.includes(f.team));
     return rs;
-  }, [works, fMonth, fStatus, fTeam]);
+  }, [works, filter, fMonth, fStatus, fTeam]);
   const sum = useMemo(() => {
     const res = { total: 0, paid: 0, labor_final: 0, profit: 0 };
     rows.forEach((row) => {
@@ -90,10 +93,14 @@ const WorksPage = () => {
   return (
     <>
       <Stack direction="row" alignItems="center" spacing={1} p={0.6}>
-        <Button onClick={() => setFMonth(fMonth.length === 12 ? [] : ARR1TO12)}>
+        <Button
+          disabled={!filter}
+          onClick={() => setFMonth(fMonth.length === 12 ? [] : ARR1TO12)}
+        >
           TEAM:
         </Button>
         <ToggleButtonGroup
+          disabled={!filter}
           size="small"
           value={fMonth}
           onChange={(e, v) => {
@@ -114,6 +121,7 @@ const WorksPage = () => {
           <ToggleButton value={12}>D</ToggleButton>
         </ToggleButtonGroup>
         <Button
+          disabled={!filter}
           onClick={() =>
             setFStatus(fStatus.length === STATUS.length ? [] : STATUS)
           }
@@ -121,6 +129,7 @@ const WorksPage = () => {
           status:
         </Button>
         <ToggleButtonGroup
+          disabled={!filter}
           size="small"
           value={fStatus}
           onChange={(e, v) => {
@@ -136,11 +145,13 @@ const WorksPage = () => {
         </ToggleButtonGroup>
 
         <Button
+          disabled={!filter}
           onClick={() => setFTeam(fTeam.length === TEAMS.length ? [] : TEAMS)}
         >
           TEAM:
         </Button>
         <ToggleButtonGroup
+          disabled={!filter}
           size="small"
           value={fTeam}
           onChange={(e, v) => {
@@ -151,7 +162,7 @@ const WorksPage = () => {
           <ToggleButton value="王毅">毅</ToggleButton>
           <ToggleButton value="杨波">波</ToggleButton>
         </ToggleButtonGroup>
-
+        <Switch value={filter} onChange={() => setFilter((f) => !f)} />
         <Typography
           variant="h6"
           component="div"

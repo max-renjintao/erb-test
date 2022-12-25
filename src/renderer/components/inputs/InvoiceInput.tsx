@@ -51,7 +51,7 @@ const InvoiceInput = ({
     <Autocomplete
       disabled={disabled}
       options={options}
-      value={value}
+      value={value || '-'}
       disableClearable
       freeSolo
       onChange={(e, v) => v && onEdit(v)}
@@ -59,7 +59,7 @@ const InvoiceInput = ({
         <TextField
           {...ps}
           multiline={multiline}
-          style={{ padding: 0, borderRadius: 0 }}
+          style={{ padding: '0 2px', borderRadius: 0 }}
           InputProps={{
             ...ps.InputProps,
             style: {
@@ -80,7 +80,7 @@ const InvoiceInput = ({
               verticalAlign: 'middle',
             },
           }}
-          onChange={(e) => {
+          onBlur={(e) => {
             // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             ps.inputProps.onChange && ps.inputProps.onChange(e as any);
             onEdit(e.target.value);

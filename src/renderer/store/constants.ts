@@ -1,7 +1,7 @@
 import { Updater } from 'use-immer';
 
 export const matInit: Mat = { name: '', qty: 0, cost: 0, rate: 0 };
-export const jobInit: Job = { code: '', item: '', cost: 0, mats: [] };
+export const jobInit: Job = { code: '', item: '', cost: 0, mats: [matInit] };
 export const workInit: Work = {
   id: 0,
   sn: 0,
@@ -73,4 +73,10 @@ export const storeContextInit = {
 };
 
 export const TEAMS = ['汪攀', '王毅', '杨波', 'Non'];
+export const TEAMCOLORS = [
+  '#aaaa0080',
+  'rgba(53, 162, 235, 0.5)',
+  '#88330080',
+  '#cccccc80',
+];
 export const STATUS = ['paid', 'done', 'doing', 'quotation', 'await'];

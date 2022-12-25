@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
-import { Autocomplete, TextField, TextFieldProps } from '@mui/material';
+import { TextField, TextFieldProps } from '@mui/material';
 import React, { CSSProperties } from 'react';
 import '../invoice.scss';
 
@@ -56,16 +56,18 @@ const InvoiceTable = ({
   children: any;
   style?: React.CSSProperties;
 }) => (
-  <table className="invoice-table" style={style}>
-    <thead>
-      <tr>
-        <th colSpan={99}>
-          <div>{heading}</div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>{children}</tbody>
-  </table>
+  <div style={{ position: 'relative' }}>
+    <table className="invoice-table" style={style}>
+      <thead>
+        <tr>
+          <th colSpan={99}>
+            <div>{heading}</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>{children}</tbody>
+    </table>
+  </div>
 );
 
 export default InvoiceTable;

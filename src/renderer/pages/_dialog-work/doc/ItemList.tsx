@@ -36,7 +36,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
           <>
             <Td rowSpan={rowSpan}>
               <ButtonSide // job / insert button
-                left={18}
+                left={-20}
                 mt={(rowSpan || 1) * -40}
                 onClick={() =>
                   // insertJob(jobId)
@@ -89,7 +89,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
               rowSpan={rowSpan}
               textAlign="right"
               options={[]}
-              value={job.cost.toLocaleString()}
+              value={`${job.cost || '-'}`}
               onEdit={(v) =>
                 imWork((d) => {
                   d.jobs[jobId].cost = +v.replace(',', '');
@@ -155,7 +155,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
                 }
               >
                 <ButtonSide // mat /insert
-                  right={18}
+                  right={-20}
                   mt={-10}
                   onClick={
                     () =>
@@ -170,7 +170,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
               </InvoiceInput>
               <InvoiceInput // mat / qty
                 options={[]}
-                value={`${mat.qty}`}
+                value={`${mat.qty || '-'}`}
                 onEdit={(v) =>
                   imWork((d) => {
                     d.jobs[jobId].mats[matId].qty = +v;
@@ -179,7 +179,8 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
               />
               <InvoiceInput // mat / rate
                 options={[]}
-                value={`${mat.rate}`}
+                textAlign="right"
+                value={`${mat.rate || '-'}`}
                 onEdit={(v) =>
                   imWork((d) => {
                     d.jobs[jobId].mats[matId].rate = +v;
@@ -188,7 +189,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
               />
               <Td justifyContent="end">
                 <ButtonSide // mat / delete button
-                  right={1}
+                  right={-40}
                   onClick={
                     () =>
                       imWork((w) => {
@@ -200,7 +201,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
                 >
                   <CloseIcon />
                 </ButtonSide>
-                {(mat.qty * mat.rate).toLocaleString()}
+                {mat.qty * mat.rate || '-'}
               </Td>
             </tr>
           ))
@@ -209,7 +210,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
       <tr style={{ backgroundColor: '#ddd', height: 40 }}>
         <Td colSpan={3}>
           <ButtonSide // job / append button
-            left={18}
+            left={-20}
             mt={-40}
             onClick={
               () =>

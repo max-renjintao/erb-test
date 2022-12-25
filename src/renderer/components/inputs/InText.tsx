@@ -2,8 +2,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { TextField, TextFieldProps } from '@mui/material';
 
-const InText = ({ InputProps, inputProps, ...props }: TextFieldProps) => (
+const InText = ({
+  // value,
+  InputProps,
+  inputProps,
+  ...props
+}: TextFieldProps) => (
   <TextField
+    // value={value || '-'}
     variant="standard"
     size="small"
     label=" "
