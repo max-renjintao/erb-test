@@ -80,9 +80,9 @@ const InvoiceInput = ({
               verticalAlign: 'middle',
             },
           }}
-          onBlur={(e) => {
+          onChange={(e) => {
             // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            ps.inputProps.onBlur && ps.inputProps.onBlur(e as any);
+            ps.inputProps.onChange && ps.inputProps.onChange(e as any);
             onEdit(e.target.value);
           }}
         />

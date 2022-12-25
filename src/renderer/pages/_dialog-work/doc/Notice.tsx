@@ -50,11 +50,11 @@ const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
               <li>
                 <InText
                   multiline
-                  defaultValue={work.notice}
+                  value={work.notice}
                   inputProps={{
                     style: { textAlign: 'left', color: '#bb0000' },
                   }}
-                  onBlur={(e) =>
+                  onChange={(e) =>
                     imWork((w) => {
                       w.notice = e.target.value;
                     })

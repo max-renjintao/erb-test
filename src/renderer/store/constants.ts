@@ -73,4 +73,4 @@ export const storeContextInit = {
 };
 
 export const TEAMS = ['汪攀', '王毅', '杨波', 'Non'];
-export const STATUS = ['PAID', 'DONE', 'Doing', 'Quotation', 'Await'];
+export const STATUS = ['paid', 'done', 'doing', 'quotation', 'await'];

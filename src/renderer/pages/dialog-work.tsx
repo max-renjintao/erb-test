@@ -41,6 +41,7 @@ const DialogWork = () => {
         onDel={onDelete}
         onUpdate={onUpdate}
         onClose={onClose}
+        isEdited={app.isEdited}
       />
       <div className="invoice-paper">
         <DocHeader work={work} />

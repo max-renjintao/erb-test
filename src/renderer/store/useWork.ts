@@ -39,6 +39,7 @@ const useWork = (index: number) => {
     index,
     work,
     imWork,
+    // isEdited: app.isEdited,
     update: () => {
       update(index, work);
     },

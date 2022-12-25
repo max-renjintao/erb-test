@@ -18,16 +18,18 @@ import CloseIcon from '@mui/icons-material/Close';
 import { dateFormat, dateParse } from 'utils/date';
 // import { WorkImmerProps } from 'renderer/tulando-app';
 import InText from 'renderer/components/inputs/InText';
+import AlertDialog from 'renderer/layouts/AlertDialog';
 // import { TxtIn } from '../InvoiceTable';
 type P = WorkImmerProps & {
   onDel: () => void;
+  isEdited: boolean;
   // onSaveDate: () => void;
   onUpdate: () => void;
   onClose: () => void;
 };
-const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
+const WorkEditInfo = ({ immer, isEdited, onDel, onUpdate, onClose }: P) => {
   const [work, imWork] = immer;
-  const [confirmDel, setConfirmDel] = useState('');
+  const [show, setShow] = useState({ quit: false, delete: false });
   console.log('<WorkEditInfo>');
 
   // const { app, imApp, setId, work, imWork, update, remove } = useWork();
@@ -38,8 +40,8 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
           label="sn"
           type="number"
           sx={{ width: 90 }}
-          defaultValue={work.sn}
-          onBlur={(e) =>
+          value={work.sn}
+          onChange={(e) =>
             imWork((dw) => {
               dw.sn = +e.target.value;
             })
@@ -48,8 +50,8 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
         <InText
           label="Start"
           type="date"
-          defaultValue={dateFormat(work.date_s)}
-          onBlur={(e) =>
+          value={dateFormat(work.date_s)}
+          onChange={(e) =>
             imWork((dw) => {
               dw.date_s = dateParse(e.target.value);
             })
@@ -58,8 +60,8 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
         <InText
           label="End"
           type="date"
-          defaultValue={dateFormat(work.date_e)}
-          onBlur={(e) =>
+          value={dateFormat(work.date_e)}
+          onChange={(e) =>
             imWork((dw) => {
               dw.date_e = dateParse(e.target.value);
             })
@@ -69,8 +71,8 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
           label="paid amount"
           type="number"
           sx={{ width: 90 }}
-          defaultValue={work.paid}
-          onBlur={(e) =>
+          value={work.paid}
+          onChange={(e) =>
             imWork((dw) => {
               dw.paid = +e.target.value;
             })
@@ -82,7 +84,7 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
           options={['汪攀', '王毅', '杨波']}
           sx={{ width: 100 }}
           renderInput={(params) => <InText {...params} />}
-          defaultValue={work.team}
+          value={work.team}
           onChange={(e, v) =>
             imWork((dw) => {
               dw.team = `${v}`;
@@ -107,19 +109,7 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
       </Stack>
       <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
         <Box ml="auto" mr="0">
-          <TextField
-            size="small"
-            sx={{ width: 90 }}
-            value={confirmDel}
-            onChange={(e) => setConfirmDel(e.target.value)}
-          />
-          <Button
-            onClick={() => {
-              if (confirmDel.toLowerCase() === 'delete') {
-                onDel();
-              }
-            }}
-          >
+          <Button onClick={() => setShow({ ...show, delete: true })}>
             Delete
           </Button>
         </Box>
@@ -129,8 +119,8 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
           multiline
           label="note"
           maxRows={5}
-          defaultValue={work.note}
-          onBlur={(e) =>
+          value={work.note}
+          onChange={(e) =>
             imWork((d) => {
               d.note = e.target.value;
             })
@@ -180,8 +170,49 @@ const WorkEditInfo = ({ immer, onDel, onUpdate, onClose }: P) => {
         />
         {/* <Button startIcon={<SaveIcon />} onClick={onSaveDate} children="save" /> */}
         <Button startIcon={<SaveIcon />} onClick={onUpdate} children="update" />
-        <Button startIcon={<CloseIcon />} onClick={onClose} children="quit" />
+        <Button
+          startIcon={<CloseIcon />}
+          onClick={() =>
+            isEdited ? setShow({ ...show, quit: true }) : onClose()
+          }
+          children="quit"
+        />
       </Stack>
+      <AlertDialog
+        title="Quit Work Edit"
+        content="Quit Work Edit without Save, will lose your edition. Please Make Sure..."
+        open={show.quit}
+        onClose={() => setShow({ ...show, quit: false })}
+      >
+        <Button
+          color="success"
+          onClick={() => {
+            onUpdate();
+            onClose();
+          }}
+        >
+          Save and quit
+        </Button>
+        <Button color="warning" onClick={onClose}>
+          Quit Without Save
+        </Button>
+        <Button onClick={() => setShow({ ...show, quit: false })}>
+          Cancel
+        </Button>
+      </AlertDialog>
+      <AlertDialog
+        title="Delete This Work?"
+        content="Delete this Work, It will be destroyed, and never be back. Please Make Sure..."
+        open={show.delete}
+        onClose={() => setShow({ ...show, delete: false })}
+      >
+        <Button variant="contained" color="error" onClick={onDel}>
+          Delete this work
+        </Button>
+        <Button onClick={() => setShow({ ...show, delete: false })}>
+          Cancel
+        </Button>
+      </AlertDialog>
     </>
   );
 };
