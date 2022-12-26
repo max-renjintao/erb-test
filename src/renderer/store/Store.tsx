@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { DraftFunction, Updater, useImmer } from 'use-immer';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useEffect, useState } from 'react';
 import { appInit, dataInit, storeContextInit, StoreData } from './constants';
 import initialData from './initialData';
 import initialApp from './initialApp';
@@ -11,13 +11,12 @@ export const storeContext = createContext(storeContextInit);
 const Store = ({ children }: { children: React.ReactNode }) => {
   const [app, imApp] = useImmer(appInit);
   const [data, _imData] = useImmer(dataInit);
-  const imData: Updater<StoreData> = (arg) => {
+  const [dataEdited, setDateEdited] = useState(false);
+  const imData: Updater<StoreData> = useCallback((arg) => {
     _imData(arg);
-    imApp((a) => {
-      a.isEdited = true;
-    });
-    console.log('% store.imDate,app.isEdited:', app.isEdited);
-  };
+    setDateEdited(true);
+    console.log('% store.imDate,dataEdited:', dataEdited);
+  }, []);
 
   useEffect(() => {
     window.electron.ipcRenderer.sendMessage('csv-path', []);
@@ -54,14 +53,12 @@ const Store = ({ children }: { children: React.ReactNode }) => {
   }, [app.csvFilePath]);
 
   useEffect(() => {
-    if (app.isEdited) {
-      imApp((a) => {
-        a.isEdited = false;
-      });
+    if (dataEdited) {
+      setDateEdited(false);
       window.electron.ipcRenderer.sendMessage('csv-write', [data]);
       console.info('% store.effect: data saved');
     }
-  }, [app.isEdited]);
+  }, [dataEdited]);
 
   console.log('% Store');
 

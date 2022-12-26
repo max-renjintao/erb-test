@@ -19,7 +19,7 @@ import '../invoice.scss';
 const DialogWork = () => {
   console.log('% <DialogWork> ...');
   const { works, app, imApp, options } = useWorks();
-  const { work, imWork, update, remove } = useWork(app.index);
+  const { work, imWork, update, remove, isEdited } = useWork(app.index);
 
   const onClose = () => {
     imApp((a) => {
@@ -41,7 +41,7 @@ const DialogWork = () => {
         onDel={onDelete}
         onUpdate={onUpdate}
         onClose={onClose}
-        isEdited={app.isEdited}
+        isEdited={isEdited}
       />
       <div className="invoice-paper">
         <DocHeader work={work} />

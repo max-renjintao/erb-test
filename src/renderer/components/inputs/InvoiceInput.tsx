@@ -82,7 +82,7 @@ const InvoiceInput = ({
           }}
           onBlur={(e) => {
             // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            ps.inputProps.onChange && ps.inputProps.onChange(e as any);
+            ps.inputProps.onBlur && ps.inputProps.onBlur(e as any);
             onEdit(e.target.value);
           }}
         />

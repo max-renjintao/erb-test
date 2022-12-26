@@ -50,7 +50,7 @@ export const appInit = {
   index: 0,
   // work: workInit,
   showDialogWorkEdit: false,
-  isEdited: false,
+  // isEdited: false,
   workOps: {
     vehicles: [],
     models: [],

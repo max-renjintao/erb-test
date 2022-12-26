@@ -19,6 +19,7 @@ const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
                 fontSize: 10,
                 paddingInlineStart: 20,
                 marginTop: 5,
+                color: '#0070c0',
               }}
             >
               <li>本店永久免费赠送雨刮水，用完可随时返回添加；</li>

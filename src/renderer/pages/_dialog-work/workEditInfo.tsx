@@ -29,7 +29,9 @@ type P = WorkImmerProps & {
 };
 const WorkEditInfo = ({ immer, isEdited, onDel, onUpdate, onClose }: P) => {
   const [work, imWork] = immer;
-  const [show, setShow] = useState({ quit: false, delete: false });
+  // const [show, setShow] = useState({ quit: false, delete: false });
+  const [sQuit, setSQuit] = useState(false);
+  const [sDel, setSDel] = useState(false);
   console.log('<WorkEditInfo>');
 
   // const { app, imApp, setId, work, imWork, update, remove } = useWork();
@@ -109,9 +111,7 @@ const WorkEditInfo = ({ immer, isEdited, onDel, onUpdate, onClose }: P) => {
       </Stack>
       <Stack direction="row" spacing={1} className="no-print" px={2} pt={2}>
         <Box ml="auto" mr="0">
-          <Button onClick={() => setShow({ ...show, delete: true })}>
-            Delete
-          </Button>
+          <Button onClick={() => setSDel(true)}>Delete</Button>
         </Box>
       </Stack>
       <Stack px={2} className="no-print">
@@ -169,49 +169,60 @@ const WorkEditInfo = ({ immer, isEdited, onDel, onUpdate, onClose }: P) => {
           children="print"
         />
         {/* <Button startIcon={<SaveIcon />} onClick={onSaveDate} children="save" /> */}
-        <Button startIcon={<SaveIcon />} onClick={onUpdate} children="update" />
+        <Button
+          startIcon={<SaveIcon />}
+          onClick={onUpdate}
+          disabled={!isEdited}
+          children="update"
+        />
         <Button
           startIcon={<CloseIcon />}
-          onClick={() =>
-            isEdited ? setShow({ ...show, quit: true }) : onClose()
-          }
+          onClick={() => {
+            console.log('workEditInfo, isEdited', isEdited);
+
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            isEdited ? setSQuit(true) : onClose();
+          }}
           children="quit"
         />
       </Stack>
       <AlertDialog
         title="Quit Work Edit"
         content="Quit Work Edit without Save, will lose your edition. Please Make Sure..."
-        open={show.quit}
-        onClose={() => setShow({ ...show, quit: false })}
+        open={sQuit}
+        onClose={() => setSQuit(false)}
       >
         <Button
           color="success"
           onClick={() => {
             onUpdate();
             onClose();
+            setSQuit(false);
           }}
         >
           Save and quit
         </Button>
-        <Button color="warning" onClick={onClose}>
+        <Button
+          color="warning"
+          onClick={() => {
+            onClose();
+            setSQuit(false);
+          }}
+        >
           Quit Without Save
         </Button>
-        <Button onClick={() => setShow({ ...show, quit: false })}>
-          Cancel
-        </Button>
+        <Button onClick={() => setSQuit(false)}>Cancel</Button>
       </AlertDialog>
       <AlertDialog
         title="Delete This Work?"
         content="Delete this Work, It will be destroyed, and never be back. Please Make Sure..."
-        open={show.delete}
-        onClose={() => setShow({ ...show, delete: false })}
+        open={sDel}
+        onClose={() => setSDel(false)}
       >
         <Button variant="contained" color="error" onClick={onDel}>
           Delete this work
         </Button>
-        <Button onClick={() => setShow({ ...show, delete: false })}>
-          Cancel
-        </Button>
+        <Button onClick={() => setSDel(false)}>Cancel</Button>
       </AlertDialog>
     </>
   );

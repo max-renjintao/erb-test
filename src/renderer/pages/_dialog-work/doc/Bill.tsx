@@ -35,6 +35,7 @@ const DocBill = ({ immer: [work, imWork] }: WorkImmerProps) => {
 
         <InvoiceInput // tax
           options={[]}
+          height={30}
           textAlign="right"
           value={percent(work.tax)}
           onEdit={(v) =>

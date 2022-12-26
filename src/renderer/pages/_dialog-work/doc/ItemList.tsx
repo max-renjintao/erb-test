@@ -92,7 +92,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
               value={`${job.cost || '-'}`}
               onEdit={(v) =>
                 imWork((d) => {
-                  d.jobs[jobId].cost = +v.replace(',', '');
+                  d.jobs[jobId].cost = +v.replace(',', '') || 0;
                 })
               }
             />
@@ -122,7 +122,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
             <td />
             <Td justifyContent="end">
               <ButtonSide // job / delete button
-                right={1}
+                right={-40}
                 onClick={() =>
                   // deleteJob(jobId)
                   imWork((w) => {
@@ -173,7 +173,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
                 value={`${mat.qty || '-'}`}
                 onEdit={(v) =>
                   imWork((d) => {
-                    d.jobs[jobId].mats[matId].qty = +v;
+                    d.jobs[jobId].mats[matId].qty = +v.replace(',', '') || 0;
                   })
                 }
               />
@@ -183,7 +183,8 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
                 value={`${mat.rate || '-'}`}
                 onEdit={(v) =>
                   imWork((d) => {
-                    d.jobs[jobId].mats[matId].rate = +v;
+                    d.jobs[jobId].mats[matId].rate = +v.replace(',', '') || 0;
+                    if (mat.qty < 1) d.jobs[jobId].mats[matId].qty = 1;
                   })
                 }
               />
