@@ -1,19 +1,19 @@
-import React from 'react';
-import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
-import InvoiceTable, {
-  InvoiceTH as Th,
-  InvoiceCell as Td,
-} from 'renderer/components/InvoiceTable';
-import useWork from 'renderer/store/useWork';
-// import { WorkImmerProps } from 'renderer/tulando-app';
+/* eslint-disable react/no-unescaped-entities */
+import InvoiceInput from 'renderer/components/inputs/DocInAuto';
+
 import { deduplicateVar } from 'utils/deduplicate';
+import DocTable from './DocTable';
+import DocTableTd from './DocTableTd';
 
 type P = WorkImmerProps & { options: WorkOptions };
 const DocVehicle = ({ immer: [work, imWork], options }: P) => {
   return (
-    <InvoiceTable heading="Vehicle and owner's information 车辆及车主信息">
+    <DocTable heading="Vehicle and owner's information 车辆及车主信息">
       <tr>
-        <Th w="15%" en="Number Plate" zh="车牌号码" />
+        <DocTableTd width="15%">
+          Number Plate <br /> 车牌号码
+        </DocTableTd>
+
         <InvoiceInput
           options={options.vehicles.map((v) => v.plate)}
           value={work.plate}
@@ -35,7 +35,11 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
             }
           }}
         />
-        <Th w="15%" en="Vehicle Model" zh="车辆型号" />
+
+        <DocTableTd width="15%">
+          Vehicle Model <br /> 车辆型号
+        </DocTableTd>
+
         <InvoiceInput
           options={options.models}
           value={work.model}
@@ -45,7 +49,11 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
             })
           }
         />
-        <Th w="15%" en="The Mileage" zh="行驶里程" />
+
+        <DocTableTd width="15%">
+          The Mileage <br /> 行驶里程
+        </DocTableTd>
+
         <InvoiceInput
           options={[
             `${
@@ -62,7 +70,9 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
         />
       </tr>
       <tr>
-        <Th en="Owner's Name" zh="车主姓名" />
+        <DocTableTd width="15%">
+          Owner's Name <br /> 车主姓名
+        </DocTableTd>
         <InvoiceInput
           options={deduplicateVar(options.vehicles.map((v) => v.owner))}
           value={work.owner}
@@ -82,7 +92,9 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
             }
           }}
         />
-        <Th en="Telephone No." zh="联系电话" />
+        <DocTableTd width="15%">
+          Telephone No. <br /> 联系电话
+        </DocTableTd>
         <InvoiceInput
           options={[]}
           value={work.tel}
@@ -92,7 +104,9 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
             })
           }
         />
-        <Th en="Number of VIP" zh="会员卡号" />
+        <DocTableTd width="15%">
+          Number of VIP <br /> 会员卡号
+        </DocTableTd>
         <InvoiceInput
           options={deduplicateVar(options.vehicles.map((v) => v.vip))}
           value={work.vip}
@@ -115,7 +129,7 @@ const DocVehicle = ({ immer: [work, imWork], options }: P) => {
           }}
         />
       </tr>
-    </InvoiceTable>
+    </DocTable>
   );
 };
 

@@ -12,8 +12,8 @@ export const workInit: Work = {
   mileage: 0,
   owner: '',
   tax: 0,
-  team: '',
-  status: '',
+  team: 0,
+  status: 1,
   vip: '',
   tel: '',
   needs: [],
@@ -46,19 +46,18 @@ export const dataInit = {
 
 export type StoreData = typeof dataInit;
 export const appInit = {
-  // id: 0,
+  usr: 0,
   index: 0,
-  // work: workInit,
+  usrTeamIdx: 0,
   showDialogWorkEdit: false,
-  // isEdited: false,
   workOps: {
     vehicles: [],
     models: [],
     needs: [],
     jobs: [],
     mats: [],
-    teams: [],
-    status: [],
+    // teams: [],
+    // status: [],
   } as WorkOptions,
   csvFilePath: '',
 };
@@ -71,12 +70,35 @@ export const storeContextInit = {
   app: appInit,
   imApp: (() => {}) as Updater<StoreApp>,
 };
-
-export const TEAMS = ['汪攀', '王毅', '杨波', 'Non'];
+export const HEADERS = [
+  '',
+  'QUOTATION',
+  'Reception',
+  'Job Card',
+  'Preform Invoice',
+  '',
+];
+export const STATUS = ['', 'wait', 'recept', 'doing', 'bill', 'paid'];
+export const TEAMS = ['Non', '汪攀', '王毅', '杨波'];
 export const TEAMCOLORS = [
   '#aaaa0080',
   'rgba(53, 162, 235, 0.5)',
   '#88330080',
   '#cccccc80',
 ];
-export const STATUS = ['paid', 'done', 'doing', 'quotation', 'await'];
+
+// authority
+// 99 admin
+// 50 bill
+// 11-12-13 team
+// 1 new
+// 0 guest, read only
+
+// export const USERS = [
+//   'admin',
+//   'reception',
+//   'workshop-1',
+//   'workshop-2',
+//   'workshop-3',
+//   'accountant',
+// ];

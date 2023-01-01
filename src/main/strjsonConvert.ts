@@ -1,4 +1,4 @@
-import jsonParse from './jsonParse';
+import jsonParse from '../utils/jsonParse';
 import { dateFormat, dateParse } from '../utils/date';
 
 export const strjsonToWork = (sj: WorkCsvjson): Work => ({
@@ -22,6 +22,8 @@ export const strjsonToWork = (sj: WorkCsvjson): Work => ({
   profit: +sj.profit,
   paid: +sj.paid,
   tax_paid: +sj.paid,
+  team: +sj.team,
+  status: +sj.status,
 });
 export const workToStrjson = (w: Work): WorkCsvjson => ({
   ...w,
@@ -44,6 +46,8 @@ export const workToStrjson = (w: Work): WorkCsvjson => ({
   profit: `${w.profit}`,
   paid: `${w.paid}`,
   tax_paid: `${w.paid}`,
+  team: `${w.team}`,
+  status: `${w.status}`,
 });
 
 export const strjsonArrToWorks = (sjArr: WorkCsvjson[]) =>

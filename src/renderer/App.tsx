@@ -1,16 +1,20 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
-import CarCrashIcon from '@mui/icons-material/CarCrash';
-import PeopleIcon from '@mui/icons-material/People';
-import WarehouseIcon from '@mui/icons-material/Warehouse';
-import PaidIcon from '@mui/icons-material/Paid';
+import AddIcon from '@mui/icons-material/DirectionsCar';
+import JobIcon from '@mui/icons-material/CarRepair';
+import BillIcon from '@mui/icons-material/CarCrash';
+import HomeIcon from '@mui/icons-material/Newspaper';
+import WorksIcon from '@mui/icons-material/Commute';
+import TeamsIcon from '@mui/icons-material/People';
+import MaterialIcon from '@mui/icons-material/Warehouse';
+import FinanceIcon from '@mui/icons-material/Paid';
+import WaitIcon from '@mui/icons-material/SupportAgent';
 import Layout from './pages/layout';
-import PageHome from './pages/page-home';
+import PageHome from './pages/page-100-home';
 // import WorkInvoice from './pages/page-work-invoice';
-import PageWorks from './pages/page-works';
-import PageTeams from './pages/page-teams';
-import PageMaterial from './pages/page-material';
-import PageFinance from './pages/page-finance';
+import PageTeams from './pages/page-100-teams';
+import PageMaterial from './pages/page-100-material';
+import PageLogin from './pages/page-0-login';
+import PageWorksEdit from './pages/page-works-edit';
 
 export default function App() {
   console.log('<App>');
@@ -19,19 +23,28 @@ export default function App() {
     <Router>
       <Layout
         links={[
-          { icon: <NewspaperIcon />, text: '', path: '/' },
-          { icon: <CarCrashIcon />, text: '', path: '/works' },
-          { icon: <PeopleIcon />, text: '', path: '/employee' },
-          { icon: <WarehouseIcon />, text: '', path: '/material' },
-          { icon: <PaidIcon />, text: '', path: '/finance' },
+          { icon: <WaitIcon />, path: '/wait', authority: 1 },
+          { icon: <AddIcon />, path: '/new', authority: 2 },
+          { icon: <JobIcon />, path: '/job', authority: 3 },
+          { icon: <BillIcon />, path: '/bill', authority: 4 },
+          { icon: <WorksIcon />, path: '/works', authority: 5 },
+          { icon: <HomeIcon />, path: '/home', authority: 5 },
+          { icon: <TeamsIcon />, path: '/teams', authority: 5 },
+          { icon: <MaterialIcon />, path: '/material', authority: 5 },
+          { icon: <FinanceIcon />, path: '/finance', authority: 5 },
         ]}
       >
         <Routes>
-          <Route path="/" element={<PageHome />} />
-          <Route path="/works" element={<PageWorks />} />
-          <Route path="/employee" element={<PageTeams />} />
+          <Route path="/" element={<PageLogin />} />
+          <Route path="/wait" element={<PageWorksEdit status={1} />} />
+          <Route path="/new" element={<PageWorksEdit status={2} />} />
+          <Route path="/job" element={<PageWorksEdit status={3} />} />
+          <Route path="/bill" element={<PageWorksEdit status={4} />} />
+          <Route path="/works" element={<PageWorksEdit status={5} />} />
+          <Route path="/home" element={<PageHome />} />
+          <Route path="/teams" element={<PageTeams />} />
           <Route path="/material" element={<PageMaterial />} />
-          <Route path="/finance" element={<PageFinance />} />
+          {/* <Route path="/finance" element={<PageAdmin />} /> */}
           {/* <Route path="/work/:id" element={<WorkInvoice />} /> */}
         </Routes>
       </Layout>

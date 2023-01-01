@@ -1,12 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { DraftFunction, Updater, useImmer } from 'use-immer';
-import { createContext, useCallback, useEffect, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { appInit, dataInit, storeContextInit, StoreData } from './constants';
 import initialData from './initialData';
 import initialApp from './initialApp';
 
 export const storeContext = createContext(storeContextInit);
+
+export const useStore = () => useContext(storeContext);
 
 const Store = ({ children }: { children: React.ReactNode }) => {
   const [app, imApp] = useImmer(appInit);

@@ -29,8 +29,8 @@ type Work = Vehicle &
     date_s: Date;
     date_e: Date;
 
-    team: string;
-    status: string;
+    team: number;
+    status: number;
 
     needs: string[];
     jobs: Job[];
@@ -67,6 +67,6 @@ type WorkOptions = {
   needs: string[];
   jobs: Job[];
   mats: Mat[];
-  teams: string[];
-  status: string[];
+  // teams: number[];
+  // status: string[];
 };

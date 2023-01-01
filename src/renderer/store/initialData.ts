@@ -10,7 +10,7 @@ const initialData = (data: StoreData) => {
         const amount = getAmount(data.works[i]);
         // console.log(amount);
 
-        dws[i] = { ...dws[i], ...amount };
+        dws[i] = { ...dws[i], id: i, ...amount };
       });
     }),
   };

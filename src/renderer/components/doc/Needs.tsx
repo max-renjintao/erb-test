@@ -1,15 +1,11 @@
 /* eslint-disable react/no-array-index-key */
-import InvoiceTable, {
-  InvoiceTH as Th,
-  InvoiceCell as Td,
-} from 'renderer/components/InvoiceTable';
-import useWork from 'renderer/store/useWork';
+import DocTable from 'renderer/components/doc/DocTable';
 import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
 // import { WorkImmerProps } from 'renderer/tulando-app';
 import { ButtonSide } from 'renderer/components/inputs/Buttons';
-import { jobInit } from 'renderer/store/constants';
-import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
+import InvoiceInput from 'renderer/components/inputs/DocInAuto';
+import Td from './DocTableTd';
 // import { ButtonSide } from '../../inputs/Buttons';
 // import InvoiceInput from '../../inputs/InvoiceInput';
 
@@ -18,7 +14,10 @@ const DocNeeds = ({ immer: [work, imWork], options }: P) => {
   // const { work, insertNeed, app, imWork, deleteNeed } = useWork();
   return (
     <div style={{ position: 'relative' }}>
-      <InvoiceTable heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求">
+      <DocTable
+        noBorderTop
+        heading="Fault Phenomenon/Repair Requirements 故障现象/送修要求"
+      >
         {work.needs.map((item, i) => (
           <tr key={i}>
             <Td width="4%">
@@ -60,7 +59,7 @@ const DocNeeds = ({ immer: [work, imWork], options }: P) => {
             </InvoiceInput>
           </tr>
         ))}
-      </InvoiceTable>
+      </DocTable>
       <ButtonSide // order / append button
         left={-20}
         mt={-14}

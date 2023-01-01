@@ -3,36 +3,44 @@ import { DataGrid, DataGridProps, GridColDef } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import { dateFormat } from 'utils/date';
 import { differenceInDays, isValid } from 'date-fns';
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
+import { IconButton } from '@mui/material';
 
-export type WorkRow = {
-  id: number;
-  sn: number;
-  date_s: string;
-  date_e: string;
-  model: string;
-  dur: number;
-  plate: string;
-  owner: string;
-  note: string;
-  edit: number;
-  status: string;
-  team: string;
-  total: number;
-  paid: number;
-  labor_final: number;
-  profit: number;
-};
-
-type P = { rows: WorkRow[]; onEdit: (id: number) => void } & Omit<
+type P = { works: Work[]; onRowSelect: (id: number) => void } & Omit<
   DataGridProps,
-  'columns'
+  'columns' | 'rows'
 >;
-const WorksTable = ({ rows, onEdit, ...props }: P) => {
-  // const { works, imApp, setId } = useWorks();
-  console.log('<WorksTable>');
-
-  const columns: GridColDef<WorkRow>[] = [
+const DataGridAdmin = ({ works, onRowSelect, ...props }: P) => {
+  // // const { works, imApp, setId } = useWorks();
+  // console.log('<WorksTable>');
+  const rows = useMemo(
+    () =>
+      works.map((w, index) => ({
+        id: w.id,
+        sn: w.sn,
+        date_s: dateFormat(w.date_s, 'MM-dd'),
+        date_e: dateFormat(w.date_e, 'MM-dd'),
+        plate: w.plate,
+        model: w.model,
+        owner: w.owner,
+        note: w.note,
+        status: w.status,
+        team: w.team,
+        total: w.total,
+        paid: w.paid,
+        labor_final: w.labor_final,
+        profit: w.profit,
+        dur: isValid(w.date_s)
+          ? differenceInDays(
+              isValid(w.date_e) ? w.date_e : new Date(Date.now()),
+              w.date_s
+            ) + 1
+          : 0,
+        edit: index,
+      })),
+    [works]
+  );
+  const columns = [
     { field: 'sn', width: 80 },
     { field: 'date_s', width: 60 },
     { field: 'date_e', width: 60 },
@@ -44,12 +52,11 @@ const WorksTable = ({ rows, onEdit, ...props }: P) => {
     {
       field: 'edit',
       sortable: false,
-      hideSortIcons: true,
       width: 60,
-      renderCell: (ps) => (
-        <Button size="small" onClick={() => onEdit(ps.value)}>
-          <EditIcon />
-        </Button>
+      renderCell: (ps: any) => (
+        <IconButton size="small" onClick={() => onRowSelect(ps.value)}>
+          <EditIcon fontSize="small" />
+        </IconButton>
       ),
     },
     { field: 'status', width: 80 },
@@ -76,13 +83,11 @@ const WorksTable = ({ rows, onEdit, ...props }: P) => {
       disableSelectionOnClick
       hideFooter
       experimentalFeatures={{ newEditingApi: true }}
-      getRowClassName={(params) =>
-        `x-row-${(params.row.status as string).toLowerCase()}`
-      }
+      getRowClassName={(params) => `x-row-status-${params.row.status}`}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
   );
 };
 
-export default WorksTable;
+export default DataGridAdmin;

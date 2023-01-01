@@ -11,17 +11,20 @@
       .no-print,
       .no-print * {
         display: none !important;
-        /* max-width: 100% !important; */
+        max-width: 100% !important;
       }
 
       .invoice-paper {
         border: 0 !important;
         width: 820px !important;
-        /* padding: 60 !important; */
+        padding: 10px !important;
       }
       * {
         max-width: 100% !important;
         -webkit-print-color-adjust: exact !important;
+      }
+      *::-webkit-scrollbar {
+        display: none;
       }
       .invoice-paper {
         display: block !important;
@@ -45,6 +48,6 @@
     </style>
   </head>
   <body>
-    <div id="root" class="no-print"></div>
+    <div id="root"></div>
   </body>
 </html>

@@ -11,12 +11,13 @@ type P = {
   icon: React.ReactNode;
   text?: string;
   active?: boolean;
+  disabled?: boolean;
   onClick?: () => void;
 };
-const DrawerItem = ({ icon, text, active, onClick }: P) => (
+const DrawerItem = ({ icon, text, active, disabled, onClick }: P) => (
   <ListItem disablePadding sx={{ display: 'block' }}>
     <ListItemButton
-      // disabled={active}
+      disabled={disabled}
       onClick={onClick}
       sx={{
         minHeight: 48,

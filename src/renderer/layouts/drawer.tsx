@@ -2,14 +2,16 @@
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import MenuIcon from '@mui/icons-material/Menu';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
 import DrawerItem from './DrawerItem';
 
 const Drawer = ({
   width,
   open,
   children,
+  onClickButton,
 }: {
+  onClickButton: () => void;
   width: number;
   open: boolean;
   children: React.ReactNode;
@@ -26,7 +28,7 @@ const Drawer = ({
         boxSizing: 'border-box',
       }}
     >
-      <DrawerItem icon={<MenuIcon />} />
+      <DrawerItem icon={<LockPersonIcon />} onClick={onClickButton} />
 
       <Divider />
       <List sx={{ py: 0 }}>{children}</List>

@@ -1,3 +1,8 @@
+/**
+ * 提供一个 work 状态对象，取值来自 Store.data.works
+ * 可以 更新/删除 store.data.works 中的对应 work
+ */
+
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useCallback, useEffect, useState } from 'react';
@@ -8,26 +13,26 @@ import ObjectEntries from 'utils/ObjectEntries';
 import useWorks from './useWorks';
 
 const useWork = (index: number) => {
-  const { works, app, update, remove } = useWorks();
-  const [work, ImWork] = useImmer(workInit);
+  const { works, update, remove } = useWorks();
+  const [work, _imWork] = useImmer(workInit);
   const [isEdited, setIsEdited] = useState(false);
   const imWork: Updater<Work> = useCallback((immer) => {
-    ImWork(immer);
+    _imWork(immer || workInit);
     setIsEdited(true);
-    // console.log('% useWork imWork, isEdited:', isEdited);
+    console.log('% useWork imWork, isEdited:', isEdited);
   }, []);
   // const reset=()=>{
 
   // }
   useEffect(() => {
-    ImWork(works[app.index]);
+    _imWork(works[index]);
     setIsEdited(false);
     // console.log(`% useWork. useEffect. reassignment: from works[${app.index}]`);
-  }, [app.index, ImWork, works]);
+  }, [index, _imWork, works]);
 
   useEffect(() => {
     if (work) {
-      ImWork((w) => {
+      _imWork((w) => {
         if (w) {
           const amount = getAmount(work);
           ObjectEntries(amount).forEach(([k, v]) => {
@@ -53,7 +58,10 @@ const useWork = (index: number) => {
       update(index, work);
       // console.log('% useWork update, isEdited:', isEdited);
     },
-    remove: () => remove(index),
+    remove: () => {
+      setIsEdited(false);
+      remove(index);
+    },
   };
 };
 export default useWork;

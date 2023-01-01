@@ -1,19 +1,18 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Stack } from '@mui/material';
 import InText from 'renderer/components/inputs/InText';
-import InvoiceTable from 'renderer/components/InvoiceTable';
+import DocTable from 'renderer/components/doc/DocTable';
 import useWork from 'renderer/store/useWork';
+import { ComponentProps } from 'react';
 // import InvoiceTable, { TxtIn } from '../InvoiceTable';
-
-const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
+type P = { immer: WorkImmer } & ComponentProps<'div'>;
+const DocNotice = ({ immer: [work, imWork], ...props }: P) => {
   // const { work, imWork } = useWork();
   return (
-    <InvoiceTable
-      heading="Thanks for your supporting/谢谢您的惠顾"
-      style={{ height: 230 }}
-    >
+    <DocTable heading="Thanks for your supporting/谢谢您的惠顾" {...props}>
       <tr>
         <td>
-          <Stack justifyContent="space-between">
+          <Stack justifyContent="center">
             <ol
               style={{
                 fontSize: 10,
@@ -50,10 +49,15 @@ const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
             >
               <li>
                 <InText
+                  variant="outlined"
                   multiline
                   value={work.notice}
                   inputProps={{
-                    style: { textAlign: 'left', color: '#bb0000' },
+                    style: {
+                      textAlign: 'left',
+                      color: '#bb0000',
+                      padding: '0 8px',
+                    },
                   }}
                   onChange={(e) =>
                     imWork((w) => {
@@ -66,7 +70,7 @@ const DocNotice = ({ immer: [work, imWork] }: WorkImmerProps) => {
           </Stack>
         </td>
       </tr>
-    </InvoiceTable>
+    </DocTable>
   );
 };
 

@@ -2,8 +2,6 @@ import { deduplicateObj, deduplicateVar } from 'utils/deduplicate';
 import { StoreData, StoreApp, TEAMS, STATUS } from './constants';
 
 const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
-  // console.log(data, app);
-
   const vehicles = deduplicateObj(
     'plate',
     data.works.map((w) => ({
@@ -31,25 +29,11 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
   const mats = deduplicateObj('name', [
     ...data.works
       .map((w) => {
-        // console.log(w.sn, w.jobs);
-        // return [];
         return w.jobs.map((j) => j.mats);
       })
       .flat(2),
     ...data.mats,
   ]);
-  // const res = {
-  //   ...app,
-  //   workOps: {
-  //     vehicles,
-  //     needs,
-  //     jobs,
-  //     mats,
-  //     teams: TEAMS,
-  //     status: STATUS,
-  //   },
-  // };
-  // console.log(res);
 
   return {
     ...app,
@@ -59,8 +43,6 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
       needs,
       jobs,
       mats,
-      teams: TEAMS,
-      status: STATUS,
     },
   };
 };

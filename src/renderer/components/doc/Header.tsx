@@ -1,17 +1,19 @@
 import { isValid } from 'date-fns';
+import { HEADERS } from 'renderer/store/constants';
 import useWork from 'renderer/store/useWork';
 
 const DocHeader = ({ work }: { work: Work }) => {
   // const { work } = useWork();
-  const status = work.status.toLowerCase();
+  // const status = work.status;
   const date =
     work.date_e || isValid(work.date_e) ? work.date_e : new Date(Date.now());
   return (
     <>
       <h1 style={{ marginTop: 0, marginBottom: 5 }}>
-        {status === 'paid' || status === 'doing' || status === 'done'
+        {HEADERS[work.status]}
+        {/* {status === 'paid' || status === 'doing' || status === 'done'
           ? 'Proforma Invoice'
-          : 'QUOTATION'}
+          : 'QUOTATION'} */}
       </h1>
       <h6 style={{ textAlign: 'right', margin: 2, color: '#0070c0' }}>
         No. 编号：{work.sn}

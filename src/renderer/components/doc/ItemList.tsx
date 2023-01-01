@@ -1,8 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import InvoiceTable, {
-  InvoiceTH as Th,
-  InvoiceCell as Td,
-} from 'renderer/components/InvoiceTable';
+import DocTable from 'renderer/components/doc/DocTable';
 import useWork from 'renderer/store/useWork';
 import { deduplicateVar } from 'utils/deduplicate';
 import { amount } from 'utils/disp';
@@ -11,24 +8,32 @@ import EastIcon from '@mui/icons-material/East';
 import CloseIcon from '@mui/icons-material/Close';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
 import { ButtonSide } from 'renderer/components/inputs/Buttons';
-import InvoiceInput from 'renderer/components/inputs/InvoiceInput';
+import InvoiceInput from 'renderer/components/inputs/DocInAuto';
 import { jobInit, matInit } from 'renderer/store/constants';
+import Td from './DocTableTd';
 
 type P = WorkImmerProps & { options: WorkOptions };
 const DocItemList = ({ immer: [work, imWork], options }: P) => {
-  // const { work, imWork, app, insertJob, deleteJob, insertMat, deleteMat } =
-  //   useWork();
   return (
-    <InvoiceTable heading="Maintenance Items and Expense List 维修项目及费用清单">
+    <DocTable
+      noBorderTop
+      heading="Maintenance Items and Expense List 维修项目及费用清单"
+    >
       <tr>
-        <Th w="4%" en="Sn" zh="编号" />
-        <Th w="12%" en="Item Code" zh="项目编号" />
-        <Th w="36%" en="Maintenance Item" zh="维修项目" />
-        <Th w="9%" en="Labor Cost" zh="人工费(K)" />
-        <Th w="20%" en="Used Parts/Materials" zh="所用配件/材料" />
-        <Th w="4%" en="Qty" zh="数量" />
-        <Th w="6%" en="Unit Price" zh="单价(K)" />
-        <Th w="9%" en="Materials Cost" zh="材料费(K)" />
+        {[
+          ['4%', 'Sn', '编号'],
+          ['12%', 'Item Code', '项目编号'],
+          ['36%', 'Maintenance Item', '维修项目'],
+          ['9%', 'Labor Cost', '人工费(K)'],
+          ['20%', 'Used Parts/Materials', '所用配件/材料'],
+          ['4%', 'Qty', '数量'],
+          ['6%', 'Unit Price', '单价(K)'],
+          ['9%', 'Materials Cost', '材料费(K)'],
+        ].map((td, i) => (
+          <Td key={i} width={td[0]}>
+            {td[1]} <br /> {td[2]}
+          </Td>
+        ))}
       </tr>
       {work.jobs?.map((job, jobId) => {
         const rowSpan = job.mats.length || undefined;
@@ -120,7 +125,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
             </td>
             <td />
             <td />
-            <Td justifyContent="end">
+            <Td right>
               <ButtonSide // job / delete button
                 right={-40}
                 onClick={() =>
@@ -137,7 +142,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
           </tr>
         ) : (
           job.mats.map((mat, matId) => (
-            <tr key={matId}>
+            <tr key={`${jobId}-${matId}`}>
               {matId === 0 && tdsLabor}
               <InvoiceInput // mat / name
                 multiline
@@ -188,7 +193,7 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
                   })
                 }
               />
-              <Td justifyContent="end">
+              <Td right>
                 <ButtonSide // mat / delete button
                   right={-40}
                   onClick={
@@ -225,11 +230,11 @@ const DocItemList = ({ immer: [work, imWork], options }: P) => {
           </ButtonSide>
           Sub-total of Labor Cost 人工费合计 (K)
         </Td>
-        <Td justifyContent="end">{amount(getWorkLabor(work))}</Td>
+        <Td right>{amount(getWorkLabor(work))}</Td>
         <Td colSpan={3}>Sub-total of Material Cost 材料费合计 (K)</Td>
-        <Td justifyContent="end">{amount(getWorkMaterial(work))}</Td>
+        <Td right>{amount(getWorkMaterial(work))}</Td>
       </tr>
-    </InvoiceTable>
+    </DocTable>
   );
 };
 

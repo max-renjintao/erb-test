@@ -9,40 +9,54 @@ const useWorks = () => {
   const { data, imData } = store;
   const { works } = data;
 
-  const append = useCallback((work?: Work) => {
-    imData((d) => {
-      d.works.push({
-        ...(work || workInit),
-        id: d.works.reduce((p, c) => Math.max(p, c.id), 0) + 1,
-        sn: d.works.reduce((p, c) => Math.max(p, c.sn), 0) + 1,
-        date_s: new Date(Date.now()),
-        date_e: new Date(Date.now()),
-      });
-    });
-    console.log('% useWorks.append');
-  }, []);
-  const remove = useCallback((index: number) => {
-    imData((d) => {
-      d.works.splice(index, 1);
-    });
-    console.log('% useWorks.remove');
-  }, []);
-  const update = useCallback((index: number, w: Work) => {
-    if (index >= 0)
+  const append = useCallback(
+    (work?: Work) => {
       imData((d) => {
-        d.works[index] = w;
+        d.works.push({
+          ...(work || workInit),
+          id: works.length,
+          sn: works.reduce((p, c) => Math.max(p, c.sn), 0) + 1,
+          date_s: new Date(Date.now()),
+          // date_e: new Date(Date.now()),
+        });
       });
-    console.log('% useWorks.update');
-  }, []);
+      console.log('% useWorks.append');
+    },
+    [works]
+  );
+  const remove = useCallback(
+    (index: number) => {
+      imData((d) => {
+        d.works.splice(index, 1);
+        for (let i = index; i < works.length - 1; i += 1) {
+          console.log(i);
+
+          d.works[i].id = i;
+        }
+      });
+      console.log('% useWorks.remove');
+    },
+    [works]
+  );
+  const update = useCallback(
+    (index: number, w: Work) => {
+      if (index >= 0)
+        imData((d) => {
+          d.works[index] = w;
+        });
+      console.log('% useWorks.update');
+    },
+    [works]
+  );
   console.log('% useWorks');
 
   return {
-    ...store,
+    // ...store,
     works,
     append,
     update,
     remove,
-    options: store.app.workOps,
+    // options: store.app.workOps,
   };
 };
 export default useWorks;
