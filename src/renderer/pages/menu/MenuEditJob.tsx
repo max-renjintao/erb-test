@@ -1,48 +1,42 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { Box, IconButton, Popover } from '@mui/material';
+import CropFreeIcon from '@mui/icons-material/CropFree';
+import { BoxProps } from '@mui/system';
+import IconButtonSmall from './IconButtonSmall';
 
-export default function MenuEditJob() {
+export default function MenuEditJob({ children, sx, ...ps }: BoxProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
-    <div>
-      <Button
-        id="demo-positioned-button"
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
+    <Box component="span" sx={{ position: 'absolute', ...sx }} {...ps}>
+      <IconButtonSmall onClick={(e) => setAnchorEl(e.currentTarget)} />
+      <Popover
+        elevation={1}
         anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: 'center',
+          horizontal: 'right',
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: 'center',
+          horizontal: 'center',
         }}
+        PaperProps={{ sx: { p: 0, bgcolor: '#eee' } }}
+        // sx={{ minHeight: 0 }}
+        onClick={() => setAnchorEl(null)}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
+        {children}
+      </Popover>
+    </Box>
   );
 }

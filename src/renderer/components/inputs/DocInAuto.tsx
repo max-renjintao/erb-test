@@ -14,7 +14,7 @@ type P = {
   onEdit: (v: string) => void;
 } & React.ComponentProps<'td'>;
 
-const InvoiceInput = ({
+const DocInAuto = ({
   textAlign,
   options,
   value,
@@ -24,25 +24,17 @@ const InvoiceInput = ({
   multiline,
   ...rest
 }: P) => (
-  <td style={{ padding: '4px' }}>
+  <td {...rest}>
     {children}
     <Autocomplete
       disabled={disabled}
       options={options}
-      value={value || '-'}
+      value={value}
       disableClearable
       freeSolo
       onChange={(e, v) => v && onEdit(v)}
       renderInput={(ps) => (
-        <DocInText
-          {...ps}
-          multiline={multiline}
-          onBlur={(e) => {
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            ps.inputProps.onBlur && ps.inputProps.onBlur(e as any);
-            onEdit(e.target.value);
-          }}
-        />
+        <DocInText {...ps} textAlign={textAlign} multiline={multiline} />
       )}
       renderOption={(props, option) => (
         <li {...props} style={{ padding: 3 }}>
@@ -53,4 +45,4 @@ const InvoiceInput = ({
   </td>
 );
 
-export default InvoiceInput;
+export default DocInAuto;

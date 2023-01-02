@@ -11,7 +11,7 @@ type CellProps = {
 const DocTableTd = ({ children, left, right, ...rest }: CellProps) => (
   <td {...rest}>
     <div
-      className="gutter"
+      className="cell"
       style={{ justifyContent: left ? 'start' : right ? 'end' : 'center' }}
     >
       {children}

@@ -4,11 +4,11 @@ import InText from 'renderer/components/inputs/InText';
 import DocTable, { DocTableProps } from 'renderer/components/doc/DocTable';
 import { amount, percent } from 'utils/disp';
 import { ComponentProps } from 'react';
-import Td from './DocTableTd';
+import Td from '../../components/doc/DocTableTd';
 // import InvoiceInput from '../../inputs/InvoiceInput';
 
 const DocBill = ({
-  immer: [work, imWork],
+  imm: [work, imWork],
   ...props
 }: WorkImmerProps & DocTableProps) => {
   // const { work, imWork } = useWork();

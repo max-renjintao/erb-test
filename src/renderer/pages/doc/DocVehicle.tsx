@@ -1,70 +1,139 @@
-import DocTable from '../../components/doc/DocTable';
-import Td from '../../components/doc/DocTableTd';
+/* eslint-disable react/no-unescaped-entities */
+import DocInAuto from 'renderer/components/inputs/DocInAuto';
 
-const DocVehicle = ({ work }: { work: Work }) => {
+import { deduplicateVar } from 'utils/deduplicate';
+import DocTable from '../../components/doc/DocTable';
+import DocTableTd from '../../components/doc/DocTableTd';
+
+type P = WorkImmerProps & { options: WorkOptions };
+const DocVehicle = ({ imm: [work, imWork], options }: P) => {
   return (
-    <>
-      <DocTable heading="Vehicle Information 车辆信息">
-        <tr>
-          <Td width="14%">
-            Number Plate <br /> 车牌号码
-          </Td>
-          <Td width="22%">{work.plate}</Td>
-          <Td width="14%">
-            Engine Type <br /> 引擎类型
-          </Td>
-          <Td width="14%">Petrol汽油</Td>
-          <Td width="14%">
-            Chassis Number <br /> 车架号
-          </Td>
-          <Td width="22%">AHTYZ59G608031019-608031019</Td>
-        </tr>
-        <tr>
-          <Td>
-            Vehicle Model <br /> 车牌型号
-          </Td>
-          <Td>{work.model}</Td>
-          <Td>
-            Year of Make <br /> 出产年份
-          </Td>
-          <Td>2022</Td>
-          <Td>
-            Engine Number <br /> 引擎号
-          </Td>
-          <Td>1KD-A822722</Td>
-        </tr>
-        <tr>
-          <Td>
-            行驶里程 <br /> Mileage
-          </Td>
-          <Td>{work.mileage}</Td>
-          <Td>
-            Engin Capacity <br /> 引擎排量
-          </Td>
-          <Td>3.5</Td>
-          <Td>
-            Tire Mode <br /> 轮胎型号
-          </Td>
-          <Td>275/65R18</Td>
-        </tr>
-      </DocTable>
-      <DocTable heading="Owner's Information 车辆信息">
-        <tr>
-          <Td width="14%">
-            {`Owner's Name`} <br /> 车主姓名
-          </Td>
-          <Td width="20%">{work.owner}</Td>
-          <Td width="14%">
-            Telephone No. <br /> 联系电话
-          </Td>
-          <Td width="20%">{work.tel}</Td>
-          <Td width="14%">
-            VIP No. <br /> 会员卡号
-          </Td>
-          <Td width="18%">{work.vip}</Td>
-        </tr>
-      </DocTable>
-    </>
+    <DocTable heading="Vehicle and owner's information 车辆及车主信息">
+      <tr>
+        <DocTableTd width="15%">
+          Number Plate <br /> 车牌号码
+        </DocTableTd>
+
+        <DocInAuto
+          options={options.vehicles.map((v) => v.plate).filter((f) => !!f)}
+          value={work.plate}
+          onEdit={(plate) => {
+            const same = options.vehicles.find((w) => w.plate === plate);
+            if (same) {
+              // const { model, owner, tel, vip } = same;
+              imWork((w) => {
+                w.plate = plate;
+                w.model = same.model;
+                w.owner = same.owner;
+                w.tel = same.tel;
+                w.vip = same.vip;
+              });
+            } else {
+              imWork((w) => {
+                w.plate = plate;
+              });
+            }
+          }}
+        />
+
+        <DocTableTd width="15%">
+          Vehicle Model <br /> 车辆型号
+        </DocTableTd>
+
+        <DocInAuto
+          options={options.models}
+          value={work.model}
+          onEdit={(model) =>
+            imWork((w) => {
+              w.model = model;
+            })
+          }
+        />
+
+        <DocTableTd width="15%">
+          The Mileage <br /> 行驶里程
+        </DocTableTd>
+
+        <DocInAuto
+          options={[
+            `${
+              options.vehicles.find((v) => v.plate === work.plate)?.mileage ||
+              '0'
+            } /km`,
+          ]}
+          value={`${work.mileage.toLocaleString()} /km`}
+          onEdit={(v) => {
+            imWork((d) => {
+              d.mileage = +v.slice(0, -3).replaceAll(',', '').replace('，', '');
+            });
+          }}
+        />
+      </tr>
+      <tr>
+        <DocTableTd width="15%">
+          Owner's Name <br /> 车主姓名
+        </DocTableTd>
+        <DocInAuto
+          options={deduplicateVar(options.vehicles.map((v) => v.owner))}
+          value={work.owner}
+          onEdit={(owner) => {
+            const ops = options.vehicles;
+            const same = ops.find((w) => w.owner === owner);
+            if (same) {
+              imWork((w) => {
+                w.owner = same.owner;
+                w.tel = same.tel;
+                w.vip = same.vip;
+              });
+            } else {
+              imWork((w) => {
+                w.owner = owner;
+              });
+            }
+          }}
+        />
+        <DocTableTd width="15%">
+          Telephone No. <br /> 联系电话
+        </DocTableTd>
+        <DocInAuto
+          options={deduplicateVar(options.vehicles.map((v) => v.tel)).filter(
+            (f) => !!f
+          )}
+          value={work.tel}
+          onEdit={(tel) =>
+            imWork((w) => {
+              w.tel = tel;
+            })
+          }
+        />
+        <DocTableTd width="15%">
+          Number of VIP <br /> 会员卡号
+        </DocTableTd>
+        <DocInAuto
+          options={deduplicateVar(options.vehicles.map((v) => v.vip)).filter(
+            (f) => !!f
+          )}
+          value={work.vip}
+          onEdit={(vip) => {
+            if (vip) {
+              const ops = options.vehicles;
+              const same = ops.find((w) => w.vip === vip);
+              if (same) {
+                imWork((w) => {
+                  w.owner = same.owner;
+                  w.tel = same.tel;
+                  w.vip = same.vip;
+                });
+              }
+            } else {
+              imWork((w) => {
+                w.vip = vip;
+              });
+            }
+          }}
+        />
+      </tr>
+    </DocTable>
   );
 };
 

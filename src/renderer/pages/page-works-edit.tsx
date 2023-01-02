@@ -10,7 +10,7 @@ import { useImmer } from 'use-immer';
 
 import FormVehicle from './form/FormVehicle';
 import FormNote from './form/FormNote';
-import Reception from './doc/Reception';
+import Doc from './doc/Doc';
 import QuitAlert from './dialog/QuitAlert';
 import DataGridWorks from './data-grid/DataGridWorks';
 
@@ -26,21 +26,18 @@ const PageWorksEdit = ({ status }: P) => {
   useEffect(() => setId(-1), [status]);
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Box sx={{ width: '100%', height: '100vh' }}>
-        {/* <DataGridWorksFilter works={works} setRows={setRows} /> */}
-        <DataGridWorks
-          works={rows.filter((w) => w.status === status)}
-          id={id}
-          onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
-        />
-      </Box>
+    <Box sx={{ display: 'flex', width: '100%', height: '100vh' }}>
+      <DataGridWorks
+        works={rows.filter((w) => w.status === status)}
+        id={id}
+        onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
+      />
 
       <Drawer
         variant="persistent"
         anchor="right"
         open={!!work}
-        PaperProps={{ sx: { width: 900 } }}
+        PaperProps={{ sx: { width: 920 } }}
       >
         {work && (
           <>
@@ -51,7 +48,8 @@ const PageWorksEdit = ({ status }: P) => {
               isEdited={isEdited}
               onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
             />
-            <Reception im={[work, imWork]} options={app.workOps} />
+
+            <Doc im={[work, imWork]} options={app.workOps} />
           </>
         )}
       </Drawer>

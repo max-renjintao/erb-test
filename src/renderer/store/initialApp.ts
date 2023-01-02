@@ -16,13 +16,19 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
   const models = deduplicateVar(vehicles.map((v) => v.model));
   const needs = [
     ...new Set([
-      ...data.works.map((w) => w.needs).flat(),
+      ...data.works
+        .map((w) => w.needs)
+        .flat()
+        .filter((f) => !!f),
       ...data.orders.map((o) => o.description),
     ]),
   ];
 
   const jobs = deduplicateObj('code', [
-    ...data.works.map((w) => w.jobs).flat(),
+    ...data.works
+      .map((w) => w.jobs)
+      .flat()
+      .filter((f) => !!f),
     ...data.jobs,
   ]);
 
@@ -31,7 +37,8 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
       .map((w) => {
         return w.jobs.map((j) => j.mats);
       })
-      .flat(2),
+      .flat(2)
+      .filter((f) => !!f),
     ...data.mats,
   ]);
 

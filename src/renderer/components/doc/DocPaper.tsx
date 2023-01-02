@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 type P = React.ComponentProps<'div'>;
-const PrintPaper = (props: P) => {
-  return <div className="invoice-paper" {...props} />;
+const DocPaper = (props: P) => {
+  return <div className="doc-paper" {...props} />;
 };
 
-export default PrintPaper;
+export default DocPaper;

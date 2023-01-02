@@ -14,7 +14,7 @@ const DocTable = ({
   ...props
 }: DocTableProps) => (
   <div {...props} style={{ position: 'relative', ...props.style }}>
-    <table className="invoice-table" style={{ height: '100%', width: '100%' }}>
+    <table className="doc-table" style={{ height: '100%', width: '100%' }}>
       <thead>
         <tr>
           <th colSpan={99} style={{ borderTop: noBorderTop ? 0 : undefined }}>
