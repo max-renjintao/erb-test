@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/require-default-props */
 
+import { ReactNode } from 'react';
 import '../../invoice.scss';
 
 export type DocTableProps = {
-  heading?: string;
+  heading?: ReactNode;
   noBorderTop?: boolean;
 } & React.ComponentProps<'div'>;
 const DocTable = ({

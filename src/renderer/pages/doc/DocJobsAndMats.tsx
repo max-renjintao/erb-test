@@ -25,8 +25,8 @@ import {
   SouthWest,
 } from '@mui/icons-material';
 import Td from '../../components/doc/DocTableTd';
-import MenuEditJob from '../menu/MenuEditJob';
-import IconButtonSmall from '../menu/IconButtonSmall';
+import MenuEditJob from '../../components/menu/MenuBar';
+import IconButtonSmall from '../../components/menu/IconBtn';
 
 type P = WorkImmerProps & { options: WorkOptions };
 const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {

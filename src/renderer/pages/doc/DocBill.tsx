@@ -1,24 +1,17 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import numeral from 'numeral';
 import InText from 'renderer/components/inputs/InText';
 import DocTable, { DocTableProps } from 'renderer/components/doc/DocTable';
 import { amount, percent } from 'utils/disp';
-import { ComponentProps } from 'react';
 import Td from '../../components/doc/DocTableTd';
-// import InvoiceInput from '../../inputs/InvoiceInput';
+import MenuBar from '../../components/menu/MenuBar';
+import IconBtn from 'renderer/components/menu/IconBtn';
 
-const DocBill = ({
-  imm: [work, imWork],
-  ...props
-}: WorkImmerProps & DocTableProps) => {
-  // const { work, imWork } = useWork();
+type P = WorkImmerProps & DocTableProps;
+const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
   return (
-    <DocTable
-      heading="Total Amount and Details 费用统计"
-      // style={{ height: 230, textAlign: 'right' }}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
-    >
+    <DocTable heading="Total Amount and Details 费用统计" {...ps}>
       <tr>
         <Td right>Labor Cost 人工费</Td>
         <Td width={80} right>
@@ -31,7 +24,11 @@ const DocBill = ({
       </tr>
       <tr>
         <Td right>Sub-Total 小计</Td>
-        <Td right>{amount(work.sub_total)}</Td>
+        <Td right>
+          {amount(work.sub_total)} <MenuBar sx={{ right: -30 }} >
+            <IconBtn MuiIcon={} />
+          </MenuBar>
+        </Td>
       </tr>
       <tr>
         <Td right>Tax</Td>

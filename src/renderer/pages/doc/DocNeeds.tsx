@@ -10,8 +10,8 @@ import {
   SouthEast,
 } from '@mui/icons-material';
 import Td from '../../components/doc/DocTableTd';
-import MenuEditJob from '../menu/MenuEditJob';
-import IconButtonSmall from '../menu/IconButtonSmall';
+import MenuEditJob from '../../components/menu/MenuBar';
+import IconButtonSmall from '../../components/menu/IconBtn';
 // import { ButtonSide } from '../../inputs/Buttons';
 // import InvoiceInput from '../../inputs/InvoiceInput';
 

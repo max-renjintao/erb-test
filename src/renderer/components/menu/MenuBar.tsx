@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, IconButton, Popover } from '@mui/material';
 import CropFreeIcon from '@mui/icons-material/CropFree';
 import { BoxProps } from '@mui/system';
-import IconButtonSmall from './IconButtonSmall';
+import IconBtn from './IconBtn';
 
 export default function MenuEditJob({ children, sx, ...ps }: BoxProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -17,7 +17,7 @@ export default function MenuEditJob({ children, sx, ...ps }: BoxProps) {
 
   return (
     <Box component="span" sx={{ position: 'absolute', ...sx }} {...ps}>
-      <IconButtonSmall onClick={(e) => setAnchorEl(e.currentTarget)} />
+      <IconBtn onClick={(e) => setAnchorEl(e.currentTarget)} />
       <Popover
         elevation={1}
         anchorEl={anchorEl}
