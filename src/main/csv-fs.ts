@@ -2,14 +2,20 @@ import ctj from 'csvtojson';
 import Jtc from 'objects-to-csv';
 import path from 'path';
 import { app } from 'electron';
-import { StoreData } from 'renderer/store/constants';
 import {
+  JobCsvjson,
+  MatCsvjson,
+  OrderCsvjson,
+  WorkCsvjson,
+} from 'constants/const-work';
+import { StoreData } from 'constants/const-store';
+import {
+  worksToStrjsonArr,
+  strjsonArrToWorks,
   strjsonArrToOrders,
   strjsonArrToJobs,
   strjsonArrToMats,
-  worksToStrjsonArr,
-  strjsonArrToWorks,
-} from './strjsonConvert';
+} from '../utils/strjsonConvert';
 
 // export const ASSETS_PATH = app.isPackaged
 //   ? process.resourcesPath
@@ -31,7 +37,7 @@ export const csvReadWorks = async (event: Electron.IpcMainEvent) => {
   const matStrjsonArr = (await ctj().fromFile(FN_MATS)) as MatCsvjson[];
   const data = {
     works: strjsonArrToWorks(workStrjsonArr),
-    orders: strjsonArrToOrders(orderStrjsonArr),
+    needs: strjsonArrToOrders(orderStrjsonArr),
     jobs: strjsonArrToJobs(jobStrjsonArr),
     mats: strjsonArrToMats(matStrjsonArr),
   };

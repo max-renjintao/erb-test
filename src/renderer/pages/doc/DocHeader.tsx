@@ -1,5 +1,5 @@
 import { isValid } from 'date-fns';
-import { HEADERS } from 'renderer/store/constants';
+import { HEADERS } from 'constants/const-work';
 import useWork from 'renderer/store/useWork';
 
 const DocHeader = ({ work }: { work: Work }) => {

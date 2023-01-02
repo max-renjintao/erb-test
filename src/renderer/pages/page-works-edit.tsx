@@ -49,7 +49,7 @@ const PageWorksEdit = ({ status }: P) => {
               onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
             />
 
-            <Doc im={[work, imWork]} options={app.workOps} />
+            <Doc imm={[work, imWork]} options={app.options} />
           </>
         )}
       </Drawer>

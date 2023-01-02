@@ -1,18 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import DocTable from 'renderer/components/doc/DocTable';
-import useWork from 'renderer/store/useWork';
 import { deduplicateVar } from 'utils/deduplicate';
 import { amount } from 'utils/disp';
-import WestIcon from '@mui/icons-material/West';
-import EastIcon from '@mui/icons-material/East';
-import CloseIcon from '@mui/icons-material/Close';
-import { Box } from '@mui/material';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
-import { ButtonSide } from 'renderer/components/inputs/Buttons';
 import DocInAuto from 'renderer/components/inputs/DocInAuto';
-import { jobInit, matInit } from 'renderer/store/constants';
+import { jobInit, matInit, Work, WorkOptions } from 'constants/const-work';
 import DocInNum from 'renderer/components/inputs/DocInNum';
-import DocInText from 'renderer/components/inputs/DocInText';
+import { ImmerHook } from 'use-immer';
 import {
   Add,
   Delete,
@@ -28,7 +22,7 @@ import Td from '../../components/doc/DocTableTd';
 import MenuEditJob from '../../components/menu/MenuBar';
 import IconButtonSmall from '../../components/menu/IconBtn';
 
-type P = WorkImmerProps & { options: WorkOptions };
+type P = { imm: ImmerHook<Work>; options: WorkOptions };
 const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
   return (
     <DocTable

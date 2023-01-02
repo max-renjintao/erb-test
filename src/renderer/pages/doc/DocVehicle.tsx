@@ -5,7 +5,7 @@ import { deduplicateVar } from 'utils/deduplicate';
 import DocTable from '../../components/doc/DocTable';
 import DocTableTd from '../../components/doc/DocTableTd';
 
-type P = WorkImmerProps & { options: WorkOptions };
+type P = { imm: ImmWork; options: Options };
 const DocVehicle = ({ imm: [work, imWork], options }: P) => {
   return (
     <DocTable heading="Vehicle and owner's information 车辆及车主信息">

@@ -23,7 +23,7 @@
 
 import { ChartData } from 'chart.js';
 import { getMonth } from 'date-fns';
-import { TEAMCOLORS, TEAMS } from 'renderer/store/constants';
+import { TEAM_COLORS, TEAMS } from 'constants/const-work';
 import getWorksMonths from './getWorksMonths';
 
 // }
@@ -47,7 +47,7 @@ const getChartDataWorksGeneral = (
     datasets: data.map((arr, i) => ({
       label: TEAMS[i],
       data: arr,
-      backgroundColor: TEAMCOLORS[i],
+      backgroundColor: TEAM_COLORS[i],
     })),
   };
 };

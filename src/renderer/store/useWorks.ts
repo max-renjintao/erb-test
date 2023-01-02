@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useContext } from 'react';
-import { workInit } from 'renderer/store/constants';
+import { workInit } from 'constants/const-work';
 
 import { storeContext } from './Store';
 
@@ -48,7 +48,7 @@ const useWorks = () => {
     },
     [works]
   );
-  console.log('% useWorks');
+  // console.log('% useWorks');
 
   return {
     // ...store,

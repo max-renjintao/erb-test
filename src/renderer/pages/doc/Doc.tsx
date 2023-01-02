@@ -5,28 +5,21 @@ import DocBill from 'renderer/pages/doc/DocBill';
 import DocNotice from 'renderer/pages/doc/DocNotice';
 import DocHeader from 'renderer/pages/doc/DocHeader';
 import DocFooter from 'renderer/pages/doc/DocFooter';
-import { Stack } from '@mui/material';
-import { ImmerHook } from 'use-immer';
 import DocPaid from 'renderer/components/doc/DocPaid';
+import { Stack } from '@mui/material';
 
-const Doc = ({
-  im,
-  options,
-}: {
-  im: ImmerHook<Work>;
-  options: WorkOptions;
-}) => {
-  const [work] = im;
+const Doc = ({ imm, options }: { imm: ImmWork; options: Options }) => {
+  const [work] = imm;
   return (
     <div className="doc-paper">
       <DocHeader work={work} />
-      <DocVehicle imm={im} options={options} />
-      <DocNeeds imm={im} options={options} />
-      {work.status >= 3 && <DocJobsAndMats imm={im} options={options} />}
+      <DocVehicle imm={imm} options={options} />
+      <DocNeeds imm={imm} options={options} />
+      {work.status >= 3 && <DocJobsAndMats imm={imm} options={options} />}
       <Stack pt={1} direction="row" height={230} justifyContent="space-between">
         {work.status === 5 && <DocPaid />}
-        <DocNotice immer={im} style={{ width: '65%' }} />
-        <DocBill imm={im} style={{ width: '33%' }} />
+        <DocNotice immer={imm} style={{ width: '65%' }} />
+        <DocBill imm={imm} style={{ width: '33%' }} />
       </Stack>
       <DocFooter />
     </div>

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { DraftFunction, Updater, useImmer } from 'use-immer';
+import { Updater, useImmer } from 'use-immer';
 import {
   createContext,
   useCallback,
@@ -8,7 +8,12 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { appInit, dataInit, storeContextInit, StoreData } from './constants';
+import {
+  appInit,
+  dataInit,
+  storeContextInit,
+  StoreData,
+} from 'constants/const-store';
 import initialData from './initialData';
 import initialApp from './initialApp';
 
@@ -23,7 +28,7 @@ const Store = ({ children }: { children: React.ReactNode }) => {
   const imData: Updater<StoreData> = useCallback((arg) => {
     _imData(arg);
     setDateEdited(true);
-    console.log('% store.imDate,dataEdited:', dataEdited);
+    console.log('% store.imDate ,dataEdited:', dataEdited);
   }, []);
 
   useEffect(() => {
@@ -40,13 +45,20 @@ const Store = ({ children }: { children: React.ReactNode }) => {
     if (app.csvFilePath) {
       window.electron.ipcRenderer.sendMessage('csv-read', []);
       window.electron.ipcRenderer.once('csv-read', (ipcData) => {
-        imData(initialData(ipcData as StoreData));
+        console.log(`% store.useEffect.once'csv-read',ipcData=`, ipcData);
+        const data2 = initialData(ipcData as StoreData);
+        console.log(`% initialData`, data2);
+
+        _imData(initialData(ipcData as StoreData));
+        console.log(`% initialData>_imData`);
         imApp(
           initialApp(ipcData as StoreData, {
             ...app,
             csvFilePath: app.csvFilePath as string,
           })
         );
+        console.log(`% initialData>_imApp`);
+        console.log('% store.effect: data read', ipcData);
       });
 
       window.electron.ipcRenderer.on('csv-write', (d) => {
@@ -54,7 +66,6 @@ const Store = ({ children }: { children: React.ReactNode }) => {
           dd.works = (d as StoreData).works;
         });
       });
-      console.info('% store.effect: data read');
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

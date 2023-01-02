@@ -6,7 +6,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useCallback, useEffect, useState } from 'react';
-import { workInit } from 'renderer/store/constants';
+import { workInit } from 'constants/const-work';
 import { Updater, useImmer } from 'use-immer';
 import getAmount from 'utils/getAmount';
 import ObjectEntries from 'utils/ObjectEntries';

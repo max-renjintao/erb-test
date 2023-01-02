@@ -1,5 +1,5 @@
+import { StoreApp, StoreData } from 'constants/const-store';
 import { deduplicateObj, deduplicateVar } from 'utils/deduplicate';
-import { StoreData, StoreApp, TEAMS, STATUS } from './constants';
 
 const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
   const vehicles = deduplicateObj(
@@ -14,13 +14,15 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
     }))
   );
   const models = deduplicateVar(vehicles.map((v) => v.model));
+  console.log(`%2 initialApp(data) data=`, data);
+
   const needs = [
     ...new Set([
       ...data.works
         .map((w) => w.needs)
         .flat()
         .filter((f) => !!f),
-      ...data.orders.map((o) => o.description),
+      ...data.needs.map((o) => o.description),
     ]),
   ];
 
@@ -44,7 +46,7 @@ const initialApp = (data: StoreData, app: StoreApp): StoreApp => {
 
   return {
     ...app,
-    workOps: {
+    options: {
       vehicles,
       models,
       needs,

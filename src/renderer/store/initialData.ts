@@ -1,6 +1,6 @@
+import { StoreData } from 'constants/const-store';
 import produce from 'immer';
 import getAmount from 'utils/getAmount';
-import { StoreData } from './constants';
 
 const initialData = (data: StoreData) => {
   return {

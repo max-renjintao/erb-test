@@ -4,11 +4,15 @@ import numeral from 'numeral';
 import InText from 'renderer/components/inputs/InText';
 import DocTable, { DocTableProps } from 'renderer/components/doc/DocTable';
 import { amount, percent } from 'utils/disp';
-import Td from '../../components/doc/DocTableTd';
-import MenuBar from '../../components/menu/MenuBar';
 import IconBtn from 'renderer/components/menu/IconBtn';
+import Discount from '@mui/icons-material/Discount';
+import Balance from '@mui/icons-material/Balance';
 
-type P = WorkImmerProps & DocTableProps;
+import { Stack } from '@mui/material';
+import Td from 'renderer/components/doc/DocTableTd';
+import MenuBar from 'renderer/components/menu/MenuBar';
+
+type P = { imm: ImmWork } & DocTableProps;
 const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
   return (
     <DocTable heading="Total Amount and Details 费用统计" {...ps}>
@@ -25,8 +29,12 @@ const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
       <tr>
         <Td right>Sub-Total 小计</Td>
         <Td right>
-          {amount(work.sub_total)} <MenuBar sx={{ right: -30 }} >
-            <IconBtn MuiIcon={} />
+          {amount(work.sub_total)}
+          <MenuBar sx={{ right: -30 }}>
+            <Stack>
+              <IconBtn MuiIcon={Balance} />
+              <IconBtn MuiIcon={Discount} />
+            </Stack>
           </MenuBar>
         </Td>
       </tr>
