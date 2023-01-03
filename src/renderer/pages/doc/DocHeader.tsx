@@ -15,7 +15,13 @@ const DocHeader = ({ work }: { work: Work }) => {
           ? 'Proforma Invoice'
           : 'QUOTATION'} */}
       </h1>
-      <h6 style={{ textAlign: 'right', margin: 2, color: '#0070c0' }}>
+      <h6
+        style={{
+          textAlign: 'right',
+          margin: 2,
+          WebkitTextFillColor: '#0070c0',
+        }}
+      >
         No. 编号：{work.sn}
       </h6>
       <h6 style={{ textAlign: 'right', margin: 2 }}>

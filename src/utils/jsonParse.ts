@@ -1,5 +1,5 @@
 const jsonParse = (jsonStr: string): any => {
-  let obj: object = {};
+  let obj: object = [];
   if (!jsonStr) return obj;
   try {
     obj = JSON.parse(jsonStr);

@@ -5,7 +5,7 @@ import DocTable from 'renderer/components/doc/DocTable';
 import useWork from 'renderer/store/useWork';
 import { ComponentProps } from 'react';
 // import InvoiceTable, { TxtIn } from '../InvoiceTable';
-type P = { immer: WorkImmer } & ComponentProps<'div'>;
+type P = { immer: ImmWork } & ComponentProps<'div'>;
 const DocNotice = ({ immer: [work, imWork], ...props }: P) => {
   // const { work, imWork } = useWork();
   return (
@@ -16,9 +16,10 @@ const DocNotice = ({ immer: [work, imWork], ...props }: P) => {
             <ol
               style={{
                 fontSize: 10,
+                fontWeight: 600,
+                WebkitTextFillColor: '#0070c0',
                 paddingInlineStart: 20,
                 marginTop: 5,
-                color: '#0070c0',
               }}
             >
               <li>本店永久免费赠送雨刮水，用完可随时返回添加；</li>

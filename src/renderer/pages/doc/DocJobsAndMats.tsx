@@ -1,12 +1,14 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable react/no-array-index-key */
 import DocTable from 'renderer/components/doc/DocTable';
 import { deduplicateVar } from 'utils/deduplicate';
 import { amount } from 'utils/disp';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
 import DocInAuto from 'renderer/components/inputs/DocInAuto';
-import { jobInit, matInit, Work, WorkOptions } from 'constants/const-work';
+import { jobInit, matInit, Work } from 'constants/const-work';
 import DocInNum from 'renderer/components/inputs/DocInNum';
 import { ImmerHook } from 'use-immer';
+import { Options } from 'constants/const-store';
 import {
   Add,
   Delete,
@@ -20,10 +22,27 @@ import {
 } from '@mui/icons-material';
 import Td from '../../components/doc/DocTableTd';
 import MenuEditJob from '../../components/menu/MenuBar';
-import IconButtonSmall from '../../components/menu/IconBtn';
+import IconBtn from '../../components/menu/IconBtn';
 
-type P = { imm: ImmerHook<Work>; options: WorkOptions };
+type P = { imm: ImmerHook<Work>; options: Options };
 const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
+  const jobRowSpans = work.jobs.map((j) => j.mats.length || 1);
+  const jobCostRowSpans = work.jobs.map((job, jobId, jobs) => {
+    let jobCostRowSpan = jobRowSpans[jobId];
+    if (jobId > 0 && job.joinUp) {
+      //
+      jobCostRowSpan = 0;
+    } else {
+      for (let i = jobId + 1; i < jobs.length; i++) {
+        if (jobs[i].joinUp) jobCostRowSpan += jobRowSpans[i];
+        else break;
+      }
+    }
+    return jobCostRowSpan;
+  });
+  console.log(`jobRowSpans:${jobRowSpans}`);
+  console.log(`jobCostRowS:${jobCostRowSpans}`);
+
   return (
     <DocTable
       noBorderTop
@@ -46,13 +65,13 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
         ))}
       </tr>
       {work.jobs?.map((job, jobId) => {
-        const rowSpan = job.mats.length || undefined;
+        const rowSpan = jobRowSpans[jobId] || undefined;
 
         const tdsLabor = (
           <>
             <Td rowSpan={rowSpan}>
               <MenuEditJob sx={{ left: -30 }}>
-                <IconButtonSmall
+                <IconBtn
                   color="error"
                   MuiIcon={Delete}
                   onClick={() =>
@@ -62,7 +81,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                   }
                 />
 
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={North}
                   onClick={() =>
                     imWork((w) => {
@@ -70,7 +89,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={South}
                   onClick={() =>
                     imWork((w) => {
@@ -78,7 +97,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={NorthEast}
                   onClick={() =>
                     imWork((w) => {
@@ -86,7 +105,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={SouthEast}
                   onClick={() =>
                     imWork((w) => {
@@ -94,22 +113,20 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall MuiIcon={JoinFull} />
-                {/* <IconButtonSmall MuiIcon={CloseIcon} /> */}
+                <IconBtn
+                  color={work.jobs[jobId].joinUp ? 'primary' : 'default'}
+                  MuiIcon={JoinFull}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs[jobId].joinUp = !work.jobs[jobId].joinUp;
+                      if (!work.jobs[jobId].joinUp) w.jobs[jobId].cost = 0;
+                    })
+                  }
+                />
               </MenuEditJob>
-              {/* <ButtonSide // job / insert button
-                left={-20}
-                mt={(rowSpan || 1) * -40}
-                onClick={() =>
-                  // insertJob(jobId)
-                  imWork((w) => {
-                    w.jobs.splice(jobId, 0, jobInit);
-                  })
-                }
-              >
-                <EastIcon />
-              </ButtonSide> */}
-              {jobId + 1}
+              {/* {jobId + 1}  */}
+              {jobCostRowSpans[jobId]}
+              {job.joinUp && 'j'}
             </Td>
             <DocInAuto // job / code
               rowSpan={rowSpan}
@@ -148,16 +165,18 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                 })
               }
             />
-            <td rowSpan={rowSpan}>
-              <DocInNum // job / cost
-                value={job.cost}
-                onEdit={(v) =>
-                  imWork((d) => {
-                    d.jobs[jobId].cost = v;
-                  })
-                }
-              />
-            </td>
+            {!!jobCostRowSpans[jobId] && (
+              <td rowSpan={jobCostRowSpans[jobId]}>
+                <DocInNum // job / cost
+                  value={job.cost}
+                  onEdit={(v) =>
+                    imWork((d) => {
+                      d.jobs[jobId].cost = v;
+                    })
+                  }
+                />
+              </td>
+            )}
           </>
         );
 
@@ -169,7 +188,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
             <td />
             <Td>
               <span style={{ position: 'absolute', right: -30 }}>
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={Add}
                   onClick={() =>
                     imWork((w) => {
@@ -224,7 +243,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                 {mat.qty * mat.rate || '-'}
 
                 <MenuEditJob sx={{ right: -30 }}>
-                  <IconButtonSmall
+                  <IconBtn
                     MuiIcon={NorthWest}
                     onClick={() =>
                       imWork((w) => {
@@ -232,7 +251,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                       })
                     }
                   />
-                  <IconButtonSmall
+                  <IconBtn
                     MuiIcon={SouthWest}
                     onClick={() =>
                       imWork((w) => {
@@ -240,7 +259,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
                       })
                     }
                   />
-                  <IconButtonSmall
+                  <IconBtn
                     color="error"
                     MuiIcon={Delete}
                     onClick={() =>
@@ -258,7 +277,7 @@ const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
       <tr style={{ backgroundColor: '#ddd', height: 40 }}>
         <Td colSpan={3}>
           <span style={{ position: 'absolute', left: -30 }}>
-            <IconButtonSmall
+            <IconBtn
               MuiIcon={Add}
               onClick={() =>
                 imWork((w) => {

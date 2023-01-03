@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
-import FormWrap from 'renderer/components/Form/Form';
+import FormWrap from 'renderer/components/Form/FormWrap';
 import InAuto from 'renderer/components/inputs/InAuto';
 import InImAuto from 'renderer/components/inputs/InImAuto';
 import InImDate from 'renderer/components/inputs/InImDate';

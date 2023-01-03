@@ -2,12 +2,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-array-index-key */
 import { useEffect, useState } from 'react';
-import { Box, Drawer, Stack } from '@mui/material';
+import { Box, Button, Drawer, Stack } from '@mui/material';
 import useApp from 'renderer/store/useApp';
 import useWork from 'renderer/store/useWork';
 import useWorks from 'renderer/store/useWorks';
+import { workInit } from 'constants/const-work';
 import { useImmer } from 'use-immer';
 
+import { Add } from '@mui/icons-material';
 import FormVehicle from './form/FormVehicle';
 import FormNote from './form/FormNote';
 import Doc from './doc/Doc';
@@ -26,12 +28,26 @@ const PageWorksEdit = ({ status }: P) => {
   useEffect(() => setId(-1), [status]);
 
   return (
-    <Box sx={{ display: 'flex', width: '100%', height: '100vh' }}>
+    <Stack sx={{ width: '100%', height: '100vh' }}>
       <DataGridWorks
+        status={status}
         works={rows.filter((w) => w.status === status)}
         id={id}
         onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
       />
+      <Stack direction="row">
+        {status <= 2 && (
+          <Button
+            startIcon={<Add fontSize="small" />}
+            size="small"
+            onClick={() =>
+              append({ ...workInit, status, date_s: new Date(Date.now()) })
+            }
+          >
+            Append
+          </Button>
+        )}
+      </Stack>
 
       <Drawer
         variant="persistent"
@@ -67,7 +83,7 @@ const PageWorksEdit = ({ status }: P) => {
           setQuitId(-2);
         }}
       />
-    </Box>
+    </Stack>
   );
 };
 

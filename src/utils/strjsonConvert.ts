@@ -14,21 +14,21 @@ import { dateFormat, dateParse } from './date';
 import ObjectEntries from './ObjectEntries';
 
 export const strjsonToWork = (sj: WorkCsvjson): Work => {
-  console.log('sj', sj);
+  // console.log('sj', sj);
 
   const w = {} as Work;
-  ObjectEntries(sj).forEach(([k, v]) => {
+  ObjectEntries(workInit).forEach(([k, v]) => {
     w[k] = (
-      typeof workInit[k] === 'string'
-        ? v
-        : typeof workInit[k] === 'number'
-        ? +v
-        : workInit[k] instanceof Date
-        ? dateParse(v)
-        : jsonParse(v)
+      typeof v === 'string'
+        ? sj[k]
+        : typeof v === 'number'
+        ? +sj[k]
+        : v instanceof Date
+        ? dateParse(sj[k])
+        : jsonParse(sj[k])
     ) as never;
   });
-  console.log('w', w);
+  // console.log('w', w);
 
   return w;
 };

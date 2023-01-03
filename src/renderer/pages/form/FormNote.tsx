@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Delete, Print, Save } from '@mui/icons-material';
+import { Close, Delete, East, Print, Save, West } from '@mui/icons-material';
 import { Box, Button, Stack } from '@mui/material';
 import { useMemo } from 'react';
-import FormWrap from 'renderer/components/Form/Form';
+import FormWrap from 'renderer/components/Form/FormWrap';
+import InImDate from 'renderer/components/inputs/InImDate';
 import InImText from 'renderer/components/inputs/InImText';
 import { ImmerHook } from 'use-immer';
 
@@ -23,7 +24,7 @@ const FormNote = ({ im, update, isEdited, onClose }: P) => {
         <Button
           color="warning"
           size="small"
-          startIcon={<Save />}
+          startIcon={<West />}
           disabled={work.status === baseUsr - 1}
           onClick={() =>
             imWork((w) => {
@@ -31,12 +32,12 @@ const FormNote = ({ im, update, isEdited, onClose }: P) => {
             })
           }
         >
-          return back
+          return
         </Button>
         <Button
           color="success"
           size="small"
-          startIcon={<Save />}
+          startIcon={<East />}
           disabled={work.status === baseUsr + 1}
           onClick={() =>
             imWork((w) => {
@@ -44,7 +45,7 @@ const FormNote = ({ im, update, isEdited, onClose }: P) => {
             })
           }
         >
-          done forward
+          done
         </Button>
         <Box flexGrow={1} />
         <Button
@@ -62,11 +63,18 @@ const FormNote = ({ im, update, isEdited, onClose }: P) => {
         >
           print
         </Button>
-        <Button size="small" startIcon={<Print />} onClick={onClose}>
+        <Button size="small" startIcon={<Close />} onClick={onClose}>
           close
         </Button>
       </Stack>
-      <InImText immer={[im, 'note']} multiline pl="50px" />
+      <Stack direction="row">
+        <Stack justifyContent="end">
+          <InImText immer={[im, 'sn']} pl="60px" sx={{ width: 180 }} />
+          <InImDate immer={[im, 'date_s']} pl="60px" sx={{ width: 180 }} />
+          <InImDate immer={[im, 'date_e']} pl="60px" sx={{ width: 180 }} />
+        </Stack>
+        <InImText immer={[im, 'note']} multiline pl="50px" />
+      </Stack>
     </FormWrap>
   );
 };

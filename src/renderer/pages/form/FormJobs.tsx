@@ -3,7 +3,7 @@ import { Add, Work } from '@mui/icons-material';
 import { Button, SpeedDial, Stack } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import FormWrap from 'renderer/components/Form/Form';
+import FormWrap from 'renderer/components/Form/FormWrap';
 import InAuto from 'renderer/components/inputs/InAuto';
 import InImAuto from 'renderer/components/inputs/InImAuto';
 import InImText from 'renderer/components/inputs/InImText';

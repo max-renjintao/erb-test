@@ -11,7 +11,7 @@ import {
 } from '@mui/icons-material';
 import Td from '../../components/doc/DocTableTd';
 import MenuEditJob from '../../components/menu/MenuBar';
-import IconButtonSmall from '../../components/menu/IconBtn';
+import IconBtn from '../../components/menu/IconBtn';
 // import { ButtonSide } from '../../inputs/Buttons';
 // import InvoiceInput from '../../inputs/InvoiceInput';
 
@@ -28,7 +28,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
           <tr key={i}>
             <Td width="4%">
               <MenuEditJob sx={{ left: -30 }}>
-                <IconButtonSmall
+                <IconBtn
                   color="error"
                   MuiIcon={Delete}
                   onClick={() =>
@@ -37,7 +37,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={North}
                   disabled={i <= 0}
                   onClick={() =>
@@ -46,7 +46,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={South}
                   disabled={i >= work.needs.length - 1}
                   onClick={() =>
@@ -55,7 +55,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={NorthEast}
                   onClick={() =>
                     imWork((w) => {
@@ -63,7 +63,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
                     })
                   }
                 />
-                <IconButtonSmall
+                <IconBtn
                   MuiIcon={SouthEast}
                   onClick={() =>
                     imWork((w) => {
@@ -89,7 +89,7 @@ const DocNeeds = ({ imm: [work, imWork], options }: P) => {
         ))}
       </DocTable>
       <span style={{ position: 'absolute', left: -30 }}>
-        <IconButtonSmall
+        <IconBtn
           MuiIcon={Add}
           onClick={() =>
             imWork((w) => {

@@ -36,7 +36,7 @@ export const jobInit = {
   item: '',
   cost: 0,
   mats: [matInit],
-  join: false,
+  joinUp: false,
 };
 
 export type Amount = typeof amountInit;
