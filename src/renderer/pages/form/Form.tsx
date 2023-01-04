@@ -1,23 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Close, Delete, East, Print, Save, West } from '@mui/icons-material';
 import { Box, Button, Stack } from '@mui/material';
-import { useMemo } from 'react';
+import Alert from '@mui/material/Alert';
+import { useMemo, useState } from 'react';
 import FormWrap from 'renderer/components/Form/FormWrap';
 import InImDate from 'renderer/components/inputs/InImDate';
 import InImNum from 'renderer/components/inputs/InImNum';
 import InImText from 'renderer/components/inputs/InImText';
+import AlertDialog from 'renderer/layouts/AlertDialog';
 import { ImmerHook } from 'use-immer';
 
 type B = () => void;
 type P = {
   im: ImmerHook<Work>;
-  // remove: B;
+  status: number;
+  remove: B;
   update: B;
   onClose: () => void;
   isEdited: boolean;
 };
-const Form = ({ im, update, isEdited, onClose }: P) => {
+const Form = ({ im, update, isEdited, onClose, status, remove }: P) => {
   const baseUsr = useMemo(() => im[0].status, []);
+  const [delDialog, setDelDialog] = useState(false);
   const [work, imWork] = im;
   return (
     <FormWrap>
@@ -49,6 +53,32 @@ const Form = ({ im, update, isEdited, onClose }: P) => {
           done
         </Button>
         <Box flexGrow={1} />
+        <Button
+          size="small"
+          color="error"
+          startIcon={<Delete />}
+          disabled={status === 5}
+          onClick={() => setDelDialog(true)}
+        >
+          Delete
+        </Button>
+        <AlertDialog
+          title="Delete a work?"
+          open={delDialog}
+          onClose={() => setDelDialog(false)}
+        >
+          <Button
+            color="error"
+            onClick={() => {
+              remove();
+              setDelDialog(false);
+              onClose();
+            }}
+          >
+            Delete right now
+          </Button>
+          <Button onClick={() => setDelDialog(false)}>Cancel</Button>
+        </AlertDialog>
         <Button
           size="small"
           startIcon={<Save />}

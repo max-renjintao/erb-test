@@ -70,7 +70,6 @@ const columns: GridColDef<WorkRow>[][] = [
     plate,
     model,
     owner,
-    note,
     status,
     team,
     total,
@@ -93,9 +92,10 @@ const DataGridWorks = ({ status: s, works, id, ...ps }: DataGridWorksProps) => {
       className="no-print"
       rowHeight={23}
       headerHeight={25}
-      disableColumnFilter
-      disableColumnMenu
-      hideFooter
+      // disableColumnFilter
+      // disableColumnMenu
+      // hideFooter
+      hideFooterSelectedRowCount
       experimentalFeatures={{ newEditingApi: true }}
       getRowClassName={(prams) =>
         `x-row-status-${prams.row.status}${

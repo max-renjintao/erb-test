@@ -79,7 +79,7 @@ export const strjsonToJob = (sj: JobCsvjson): Job => ({
   ...sj,
   cost: +sj.cost,
   mats: [],
-  join: false,
+  joinUp: false,
 });
 
 export const strjsonArrToJobs = (sjArr: JobCsvjson[]): Job[] =>

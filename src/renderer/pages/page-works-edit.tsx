@@ -10,8 +10,9 @@ import useWorks from 'renderer/store/useWorks';
 import { workInit } from 'constants/const-work';
 import { useImmer } from 'use-immer';
 
-import { Add } from '@mui/icons-material';
+import { Add, Delete } from '@mui/icons-material';
 import DocPaid from 'renderer/components/doc/DocPaid';
+import AlertDialog from 'renderer/layouts/AlertDialog';
 import Form from './form/Form';
 import QuitAlert from './dialog/QuitAlert';
 import DataGridWorks from './data-grid/DataGridWorks';
@@ -19,7 +20,6 @@ import DocHeader from './doc/DocHeader';
 import DocVehicle from './doc/DocVehicle';
 import DocNeeds from './doc/DocNeeds';
 import DocJobsAndMats from './doc/DocJobsAndMats';
-import DocJobsNoCost from './doc/DocJobsNoCost';
 
 import DocNotice from './doc/DocNotice';
 import DocBill from './doc/DocBill';
@@ -29,38 +29,64 @@ import DataGridWorksFilter from './data-grid/DataGridWorksFilter';
 type P = { status: number };
 const PageWorksEdit = ({ status }: P) => {
   const { app } = useApp();
-  const { works, append } = useWorks();
+  const { works, append, remove: removeById } = useWorks();
   const [id, setId] = useState(-1);
   const [quitId, setQuitId] = useState(-2);
-  const { work, imWork, update, isEdited } = useWork(id);
+  const { work, imWork, update, remove, isEdited } = useWork(id);
   const [rows, setRows] = useImmer<Work[]>([]);
   useEffect(() => setRows(works), [works]);
   useEffect(() => setId(-1), [status]);
+  const [delDialog, setDelDialog] = useState(false);
 
   const docProps = {
     imm: [work, imWork] as ImmWork,
     options: app.options,
     disabled: status < work?.status,
   };
+
+  const statusRows = rows.filter((w) => w.status === status);
   return (
     <Stack sx={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
       <DataGridWorks
         status={status}
-        works={rows.filter((w) => w.status === status)}
+        works={statusRows}
         id={id}
         onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
+        hideFooter={statusRows.length < 100}
       />
       <Stack direction="row">
         {status <= 2 && (
-          <Button
-            startIcon={<Add fontSize="small" />}
-            size="small"
-            onClick={() =>
-              append({ ...workInit, status, date_s: new Date(Date.now()) })
-            }
-          >
-            Append
-          </Button>
+          <>
+            <Button
+              startIcon={<Add fontSize="small" />}
+              size="small"
+              onClick={() =>
+                append({ ...workInit, status, date_s: new Date(Date.now()) })
+              }
+            >
+              Append
+            </Button>
+            <Button
+              startIcon={<Delete fontSize="small" />}
+              color="error"
+              size="small"
+              onClick={() => setDelDialog(true)}
+            >
+              Remove the Last work
+            </Button>
+            <AlertDialog title="Delete the last work" open={delDialog}>
+              <Button
+                color="error"
+                onClick={() => {
+                  removeById(statusRows[statusRows.length - 1].id);
+                  setDelDialog(false);
+                }}
+              >
+                Delete right now
+              </Button>
+              <Button onClick={() => setDelDialog(false)}>Cancel</Button>
+            </AlertDialog>
+          </>
         )}
         <DataGridWorksFilter works={works} setRows={setRows} />
       </Stack>
@@ -74,9 +100,10 @@ const PageWorksEdit = ({ status }: P) => {
         {work && (
           <>
             <Form
+              status={status}
               im={[work, imWork]}
               update={update}
-              // remove={remove}
+              remove={remove}
               isEdited={isEdited}
               onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
             />
@@ -85,11 +112,14 @@ const PageWorksEdit = ({ status }: P) => {
               <DocHeader work={work} />
               <DocVehicle {...docProps} />
               <DocNeeds {...docProps} />
-              {work.status > 3 && <DocJobsAndMats {...docProps} />}
-              {work.status === 3 && (
-                <DocJobsNoCost imm={[work, imWork]} options={app.options} />
+              {(work.status === 1 || work.status > 3) && (
+                <DocJobsAndMats
+                  {...docProps}
+                  full={work.status === 1 || work.status > 3}
+                />
               )}
-              {work.status > 3 && (
+
+              {(work.status === 1 || work.status > 3) && (
                 <Stack
                   pt={1}
                   direction="row"
