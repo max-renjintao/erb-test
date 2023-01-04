@@ -18,14 +18,14 @@ const DocPaid = ({ style, ...ps }: P) => {
       <div
         style={{
           fontSize: 40,
-          color: '#bb0000',
+          WebkitTextFillColor: '#bb0000',
           border: '6px solid #bb0000',
           padding: '8px 16px',
           borderRadius: 16,
           opacity: 0.5,
         }}
       >
-        InvoicePaid
+        Paid
       </div>
     </div>
   );

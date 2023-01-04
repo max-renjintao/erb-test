@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import DocInText from './DocInText';
+import DocInText, { DocInTextProps } from './DocInText';
 
-type P = { value: number; onEdit: (v: number) => void };
-const DocInNum = ({ value, onEdit }: P) => {
+type P = { value: number; onEdit: (v: number) => void } & DocInTextProps;
+const DocInNum = ({ value, onEdit, ...ps }: P) => {
   return (
     <DocInText
       value={`${value || '-'}`}
@@ -11,6 +11,7 @@ const DocInNum = ({ value, onEdit }: P) => {
       }}
       onChange={(e) => onEdit(+e.target.value || 0)}
       textAlign="right"
+      {...ps}
     />
   );
 };

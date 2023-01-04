@@ -5,8 +5,8 @@ import DocTable from 'renderer/components/doc/DocTable';
 import useWork from 'renderer/store/useWork';
 import { ComponentProps } from 'react';
 // import InvoiceTable, { TxtIn } from '../InvoiceTable';
-type P = { immer: ImmWork } & ComponentProps<'div'>;
-const DocNotice = ({ immer: [work, imWork], ...props }: P) => {
+type P = { imm: ImmWork } & ComponentProps<'div'>;
+const DocNotice = ({ imm: [work, imWork], ...props }: P) => {
   // const { work, imWork } = useWork();
   return (
     <DocTable heading="Thanks for your supporting/谢谢您的惠顾" {...props}>
@@ -52,11 +52,11 @@ const DocNotice = ({ immer: [work, imWork], ...props }: P) => {
                 <InText
                   variant="outlined"
                   multiline
-                  value={work.notice}
+                  value={work.notice || ''}
                   inputProps={{
                     style: {
                       textAlign: 'left',
-                      color: '#bb0000',
+                      WebkitTextFillColor: '#bb0000',
                       padding: '0 8px',
                     },
                   }}

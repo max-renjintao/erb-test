@@ -5,8 +5,8 @@ import { deduplicateVar } from 'utils/deduplicate';
 import DocTable from '../../components/doc/DocTable';
 import DocTableTd from '../../components/doc/DocTableTd';
 
-type P = { imm: ImmWork; options: Options };
-const DocVehicle = ({ imm: [work, imWork], options }: P) => {
+type P = { imm: ImmWork; disabled: boolean; options: Options };
+const DocVehicle = ({ imm: [work, imWork], disabled, options }: P) => {
   return (
     <DocTable heading="Vehicle and owner's information 车辆及车主信息">
       <tr>
@@ -15,6 +15,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
         </DocTableTd>
 
         <DocInAuto
+          disabled={disabled}
           options={options.vehicles.map((v) => v.plate).filter((f) => !!f)}
           value={work.plate}
           onEdit={(plate) => {
@@ -41,6 +42,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
         </DocTableTd>
 
         <DocInAuto
+          disabled={disabled}
           options={options.models}
           value={work.model}
           onEdit={(model) =>
@@ -55,6 +57,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
         </DocTableTd>
 
         <DocInAuto
+          disabled={disabled}
           options={[
             `${
               options.vehicles.find((v) => v.plate === work.plate)?.mileage ||
@@ -74,6 +77,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
           Owner's Name <br /> 车主姓名
         </DocTableTd>
         <DocInAuto
+          disabled={disabled}
           options={deduplicateVar(options.vehicles.map((v) => v.owner))}
           value={work.owner}
           onEdit={(owner) => {
@@ -96,6 +100,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
           Telephone No. <br /> 联系电话
         </DocTableTd>
         <DocInAuto
+          disabled={disabled}
           options={deduplicateVar(options.vehicles.map((v) => v.tel)).filter(
             (f) => !!f
           )}
@@ -110,6 +115,7 @@ const DocVehicle = ({ imm: [work, imWork], options }: P) => {
           Number of VIP <br /> 会员卡号
         </DocTableTd>
         <DocInAuto
+          disabled={disabled}
           options={deduplicateVar(options.vehicles.map((v) => v.vip)).filter(
             (f) => !!f
           )}

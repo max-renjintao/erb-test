@@ -16,7 +16,7 @@ type P = { works: Work[]; setRows: (ws: Work[]) => void };
 const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
   const [filter, setFilter] = useState(false);
   const [fMonth, setFMonth] = useState([1, 12]);
-  const [fStatus, setFStatus] = useState(ARR0TO5);
+  const [fStatus, setFStatus] = useState([0, 5]);
   const [fTeam, setFTeam] = useState(ARR0TO5);
   useEffect(() => {
     console.log(filter, works.length);
@@ -26,9 +26,10 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
         works
           .filter(
             (f) =>
-              getMonth(f.date_s) > fMonth[0] && getMonth(f.date_s) < fMonth[1]
+              getMonth(f.date_s) >= fMonth[0] &&
+              getMonth(f.date_s) + 1 <= fMonth[1]
           )
-          .filter((f) => fStatus.includes(f.status))
+          .filter((f) => f.status >= fStatus[0] && f.status <= fStatus[1])
           .filter((f) => fTeam.includes(f.team))
       );
     else setWs(works);
@@ -36,19 +37,14 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
 
   return (
     <Stack direction="row" alignItems="center" spacing={1}>
-      <Button
-        size="small"
-        disabled={!filter}
-        onClick={() => setFMonth(fMonth.length === 12 ? [] : ARR1TO12)}
-      >
+      <Button size="small" disabled>
         month:
       </Button>
       <small style={{ width: '15px' }}>{fMonth[0]}</small>
+
       <Slider
         disabled={!filter}
         size="small"
-        // color="primary"
-        // getAriaLabel={() => 'Temperature range'}
         sx={{ width: 200 }}
         step={1}
         marks
@@ -57,32 +53,25 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
         value={fMonth}
         onChange={(e, v) => setFMonth(v as number[])}
         valueLabelDisplay="auto"
-        // getAriaValueText={valuetext}
       />
+
       <small style={{ width: '15px' }}>{fMonth[1]}</small>
-      <Button
-        size="small"
-        disabled={!filter}
-        onClick={() =>
-          setFStatus(fStatus.length === ARR0TO5.length ? [] : ARR0TO5)
-        }
-      >
+      <Button size="small" disabled>
         status:
       </Button>
-      <ToggleButtonGroup
+      <Slider
         disabled={!filter}
         size="small"
+        sx={{ width: 100 }}
+        step={1}
+        marks
+        min={0}
+        max={5}
         value={fStatus}
-        onChange={(e, v) => {
-          setFStatus(v);
-        }}
-      >
-        {[1, 2, 3, 4, 5].map((n) => (
-          <ToggleButton value={n} sx={{ height: 25 }}>
-            {n}
-          </ToggleButton>
-        ))}
-      </ToggleButtonGroup>
+        onChange={(e, v) => setFStatus(v as number[])}
+        valueLabelDisplay="auto"
+      />
+
       <Button
         size="small"
         disabled={!filter}
@@ -97,9 +86,10 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
         onChange={(e, v) => {
           setFTeam(v);
         }}
+        // exclusive
       >
-        {[1, 2, 3].map((n) => (
-          <ToggleButton value={n} sx={{ height: 25 }}>
+        {[0, 1, 2, 3].map((n) => (
+          <ToggleButton key={n} value={n} sx={{ height: 25 }}>
             {n}
           </ToggleButton>
         ))}

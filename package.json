@@ -1,6 +1,6 @@
 {
   "name": "Tulando",
-  "version": "1.5.0",
+  "version": "0.4.0",
   "description": "A foundation for scalable desktop apps",
   "keywords": [
     "electron",
@@ -127,6 +127,7 @@
     "electron-updater": "^5.2.3",
     "immer": "^9.0.16",
     "json2csv": "^5.0.7",
+    "jszip": "^3.10.1",
     "numeral": "^2.0.6",
     "objects-to-csv": "^1.3.6",
     "react": "^18.2.0",

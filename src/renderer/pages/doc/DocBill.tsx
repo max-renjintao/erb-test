@@ -16,8 +16,8 @@ import DocInNum from 'renderer/components/inputs/DocInNum';
 import IconBtnFly from 'renderer/components/menu/IconBtnFly';
 import { LocalAtm } from '@mui/icons-material';
 
-type P = { imm: ImmWork } & DocTableProps;
-const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
+type P = { imm: ImmWork; disabled: boolean } & DocTableProps;
+const DocBill = ({ imm: [work, imWork], disabled, ...ps }: P) => {
   return (
     <DocTable heading="Total Amount and Details 费用统计" {...ps}>
       <tr>
@@ -44,19 +44,22 @@ const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
       <tr>
         <Td right style={{ borderTop: 0, borderBottom: 0 }}>
           Tax 税费
-          <IconBtnFly
-            sx={{ right: -30 }}
-            color={!work.tax ? 'default' : 'primary'}
-            MuiIcon={Balance}
-            onClick={() =>
-              imWork((w) => {
-                w.tax = work.tax !== 0.16 ? 0.16 : 0;
-              })
-            }
-          />
+          {disabled || (
+            <IconBtnFly
+              sx={{ right: -30 }}
+              color={!work.tax ? 'default' : 'primary'}
+              MuiIcon={Balance}
+              onClick={() =>
+                imWork((w) => {
+                  w.tax = work.tax !== 0.16 ? 0.16 : 0;
+                })
+              }
+            />
+          )}
         </Td>
         <td>
           <DocInText // tax
+            disabled={disabled}
             value={work.tax ? percent(work.tax) : '-'}
             textAlign="right"
             onChange={(e) =>
@@ -75,6 +78,7 @@ const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
           </Td>
           <td>
             <DocInNum // discount
+              disabled={disabled}
               value={work.discount}
               onEdit={(v) =>
                 imWork((w) => {
@@ -88,26 +92,30 @@ const DocBill = ({ imm: [work, imWork], ...ps }: P) => {
       <tr>
         <Td right style={{ borderTop: 0 }}>
           Total Amount 总额
-          <IconBtnFly
-            sx={{ right: -30, mt: -2 }}
-            color={!work.docOptions[2] ? 'default' : 'primary'}
-            MuiIcon={Discount}
-            onClick={() =>
-              imWork((w) => {
-                w.docOptions[2] = work.docOptions[2] ? 0 : 1;
-              })
-            }
-          />
-          <IconBtnFly
-            sx={{ right: -30, mt: 5 }}
-            color={!work.docOptions[1] ? 'default' : 'primary'}
-            MuiIcon={LocalAtm}
-            onClick={() =>
-              imWork((w) => {
-                w.docOptions[1] = work.docOptions[1] ? 0 : 1;
-              })
-            }
-          />
+          {disabled || (
+            <>
+              <IconBtnFly
+                sx={{ right: -30, mt: -2 }}
+                color={!work.docOptions[2] ? 'default' : 'primary'}
+                MuiIcon={Discount}
+                onClick={() =>
+                  imWork((w) => {
+                    w.docOptions[2] = work.docOptions[2] ? 0 : 1;
+                  })
+                }
+              />
+              <IconBtnFly
+                sx={{ right: -30, mt: 5 }}
+                color={!work.docOptions[1] ? 'default' : 'primary'}
+                MuiIcon={LocalAtm}
+                onClick={() =>
+                  imWork((w) => {
+                    w.docOptions[1] = work.docOptions[1] ? 0 : 1;
+                  })
+                }
+              />
+            </>
+          )}
         </Td>
         <Td right>
           <strong>

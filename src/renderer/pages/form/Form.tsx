@@ -4,6 +4,7 @@ import { Box, Button, Stack } from '@mui/material';
 import { useMemo } from 'react';
 import FormWrap from 'renderer/components/Form/FormWrap';
 import InImDate from 'renderer/components/inputs/InImDate';
+import InImNum from 'renderer/components/inputs/InImNum';
 import InImText from 'renderer/components/inputs/InImText';
 import { ImmerHook } from 'use-immer';
 
@@ -15,7 +16,7 @@ type P = {
   onClose: () => void;
   isEdited: boolean;
 };
-const FormNote = ({ im, update, isEdited, onClose }: P) => {
+const Form = ({ im, update, isEdited, onClose }: P) => {
   const baseUsr = useMemo(() => im[0].status, []);
   const [work, imWork] = im;
   return (
@@ -67,16 +68,18 @@ const FormNote = ({ im, update, isEdited, onClose }: P) => {
           close
         </Button>
       </Stack>
+      <Stack direction="row" spacing={1}>
+        <InImText immer={[im, 'sn']} pl="30px" sx={{ width: 100 }} />
+        <InImDate immer={[im, 'date_s']} pl="60px" sx={{ width: 180 }} />
+        <InImDate immer={[im, 'date_e']} pl="60px" sx={{ width: 180 }} />
+        <InImNum immer={[im, 'team']} pl="40px" sx={{ width: 50 }} />
+        <InImNum immer={[im, 'status']} pl="50px" sx={{ width: 60 }} />
+      </Stack>
       <Stack direction="row">
-        <Stack justifyContent="end">
-          <InImText immer={[im, 'sn']} pl="60px" sx={{ width: 180 }} />
-          <InImDate immer={[im, 'date_s']} pl="60px" sx={{ width: 180 }} />
-          <InImDate immer={[im, 'date_e']} pl="60px" sx={{ width: 180 }} />
-        </Stack>
         <InImText immer={[im, 'note']} multiline pl="50px" />
       </Stack>
     </FormWrap>
   );
 };
 
-export default FormNote;
+export default Form;

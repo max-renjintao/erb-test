@@ -8,7 +8,7 @@ import DocInAuto from 'renderer/components/inputs/DocInAuto';
 import { jobInit, matInit, Work } from 'constants/const-work';
 import DocInNum from 'renderer/components/inputs/DocInNum';
 import { ImmerHook } from 'use-immer';
-import { Options, worksInit } from 'constants/const-store';
+import { Options } from 'constants/const-store';
 import {
   Add,
   Delete,
@@ -24,8 +24,8 @@ import Td from '../../components/doc/DocTableTd';
 import MenuEditJob from '../../components/menu/MenuBar';
 import IconBtn from '../../components/menu/IconBtn';
 
-type P = { imm: ImmerHook<Work>; options: Options; disabled: boolean };
-const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
+type P = { imm: ImmerHook<Work>; options: Options };
+const DocJobsAndMats = ({ imm: [work, imWork], options }: P) => {
   const jobRowSpans = work.jobs.map((j) => j.mats.length || 1);
   const jobCostRowSpans = work.jobs.map((job, jobId, jobs) => {
     let jobCostRowSpan = jobRowSpans[jobId];
@@ -40,6 +40,8 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
     }
     return jobCostRowSpan;
   });
+  console.log(`jobRowSpans:${jobRowSpans}`);
+  console.log(`jobCostRowS:${jobCostRowSpans}`);
 
   return (
     <DocTable
@@ -68,68 +70,65 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
         const tdsLabor = (
           <>
             <Td rowSpan={rowSpan}>
-              {disabled || (
-                <MenuEditJob sx={{ left: -30 }}>
-                  <IconBtn
-                    color="error"
-                    MuiIcon={Delete}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs.splice(jobId, 1);
-                      })
-                    }
-                  />
+              <MenuEditJob sx={{ left: -30 }}>
+                <IconBtn
+                  color="error"
+                  MuiIcon={Delete}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs.splice(jobId, 1);
+                    })
+                  }
+                />
 
-                  <IconBtn
-                    MuiIcon={North}
-                    disabled={jobId === 0}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs.splice(jobId - 1, 0, w.jobs.splice(jobId, 1)[0]);
-                      })
-                    }
-                  />
-                  <IconBtn
-                    MuiIcon={South}
-                    disabled={jobId === work.jobs.length - 1}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs.splice(jobId + 1, 0, w.jobs.splice(jobId, 1)[0]);
-                      })
-                    }
-                  />
-                  <IconBtn
-                    MuiIcon={NorthEast}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs.splice(jobId, 0, jobInit);
-                      })
-                    }
-                  />
-                  <IconBtn
-                    MuiIcon={SouthEast}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs.splice(jobId + 1, 0, jobInit);
-                      })
-                    }
-                  />
-                  <IconBtn
-                    color={work.jobs[jobId].joinUp ? 'primary' : 'default'}
-                    MuiIcon={JoinFull}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs[jobId].joinUp = !work.jobs[jobId].joinUp;
-                        if (!work.jobs[jobId].joinUp) w.jobs[jobId].cost = 0;
-                      })
-                    }
-                  />
-                </MenuEditJob>
-              )}
+                <IconBtn
+                  MuiIcon={North}
+                  onClick={() =>
+                    imWork((w) => {
+                      // w.needs.splice(i + 1, 0, w.needs.splice(i, 1)[0]);
+                    })
+                  }
+                />
+                <IconBtn
+                  MuiIcon={South}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs.splice(jobId, 0, jobInit);
+                    })
+                  }
+                />
+                <IconBtn
+                  MuiIcon={NorthEast}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs.splice(jobId, 0, jobInit);
+                    })
+                  }
+                />
+                <IconBtn
+                  MuiIcon={SouthEast}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs.splice(jobId + 1, 0, jobInit);
+                    })
+                  }
+                />
+                <IconBtn
+                  color={work.jobs[jobId].joinUp ? 'primary' : 'default'}
+                  MuiIcon={JoinFull}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs[jobId].joinUp = !work.jobs[jobId].joinUp;
+                      if (!work.jobs[jobId].joinUp) w.jobs[jobId].cost = 0;
+                    })
+                  }
+                />
+              </MenuEditJob>
               {jobId + 1}
+              {/* {jobCostRowSpans[jobId]}
+              {job.joinUp && 'j'} */}
             </Td>
             <DocInAuto // job / code
-              disabled={disabled}
               rowSpan={rowSpan}
               options={options.jobs.map((j) => j.code)}
               value={job.code}
@@ -147,7 +146,6 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
               }
             />
             <DocInAuto // job / item
-              disabled={disabled}
               multiline
               textAlign="left"
               rowSpan={rowSpan}
@@ -170,7 +168,6 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
             {!!jobCostRowSpans[jobId] && (
               <td rowSpan={jobCostRowSpans[jobId]}>
                 <DocInNum // job / cost
-                  disabled={disabled}
                   value={job.cost}
                   onEdit={(v) =>
                     imWork((d) => {
@@ -190,18 +187,16 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
             <td />
             <td />
             <Td>
-              {disabled || (
-                <span style={{ position: 'absolute', right: -30 }}>
-                  <IconBtn
-                    MuiIcon={Add}
-                    onClick={() =>
-                      imWork((w) => {
-                        w.jobs[jobId].mats.push(matInit);
-                      })
-                    }
-                  />
-                </span>
-              )}
+              <span style={{ position: 'absolute', right: -30 }}>
+                <IconBtn
+                  MuiIcon={Add}
+                  onClick={() =>
+                    imWork((w) => {
+                      w.jobs[jobId].mats.push(matInit);
+                    })
+                  }
+                />
+              </span>
             </Td>
           </tr>
         ) : (
@@ -209,7 +204,6 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
             <tr key={`${jobId}-${matId}`}>
               {matId === 0 && tdsLabor}
               <DocInAuto // mat / name
-                disabled={disabled}
                 multiline
                 options={options.mats.map((m) => m.name)}
                 value={mat.name}
@@ -226,7 +220,6 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
               />
               <td>
                 <DocInNum // mat / qty
-                  disabled={disabled}
                   value={mat.qty}
                   onEdit={(v) =>
                     imWork((d) => {
@@ -237,7 +230,6 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
               </td>
               <td>
                 <DocInNum // mat / rate
-                  disabled={disabled}
                   value={mat.rate}
                   onEdit={(v) =>
                     imWork((d) => {
@@ -249,61 +241,34 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
               </td>
               <Td right>
                 {mat.qty * mat.rate || '-'}
-                {disabled || (
-                  <MenuEditJob sx={{ right: -30 }}>
-                    <IconBtn
-                      MuiIcon={NorthWest}
-                      onClick={() =>
-                        imWork((w) => {
-                          w.jobs[jobId].mats.splice(matId, 0, matInit);
-                        })
-                      }
-                    />
-                    <IconBtn
-                      MuiIcon={SouthWest}
-                      onClick={() =>
-                        imWork((w) => {
-                          w.jobs[jobId].mats.splice(matId + 1, 0, matInit);
-                        })
-                      }
-                    />
-                    <IconBtn
-                      MuiIcon={North}
-                      disabled={matId === 0}
-                      onClick={() =>
-                        imWork((w) => {
-                          w.jobs[jobId].mats.splice(
-                            matId - 1,
-                            0,
-                            w.jobs[jobId].mats.splice(matId, 1)[0]
-                          );
-                        })
-                      }
-                    />
-                    <IconBtn
-                      MuiIcon={South}
-                      disabled={matId === job.mats.length - 1}
-                      onClick={() =>
-                        imWork((w) => {
-                          w.jobs[jobId].mats.splice(
-                            matId + 1,
-                            0,
-                            w.jobs[jobId].mats.splice(matId, 1)[0]
-                          );
-                        })
-                      }
-                    />
-                    <IconBtn
-                      color="error"
-                      MuiIcon={Delete}
-                      onClick={() =>
-                        imWork((w) => {
-                          w.jobs[jobId].mats.splice(matId, 1);
-                        })
-                      }
-                    />
-                  </MenuEditJob>
-                )}
+
+                <MenuEditJob sx={{ right: -30 }}>
+                  <IconBtn
+                    MuiIcon={NorthWest}
+                    onClick={() =>
+                      imWork((w) => {
+                        w.jobs[jobId].mats.splice(matId, 0, matInit);
+                      })
+                    }
+                  />
+                  <IconBtn
+                    MuiIcon={SouthWest}
+                    onClick={() =>
+                      imWork((w) => {
+                        w.jobs[jobId].mats.splice(matId + 1, 0, matInit);
+                      })
+                    }
+                  />
+                  <IconBtn
+                    color="error"
+                    MuiIcon={Delete}
+                    onClick={() =>
+                      imWork((w) => {
+                        w.jobs[jobId].mats.splice(matId, 1);
+                      })
+                    }
+                  />
+                </MenuEditJob>
               </Td>
             </tr>
           ))
@@ -311,18 +276,16 @@ const DocJobsAndMats = ({ imm: [work, imWork], options, disabled }: P) => {
       })}
       <tr style={{ backgroundColor: '#ddd', height: 40 }}>
         <Td colSpan={3}>
-          {disabled || (
-            <span style={{ position: 'absolute', left: -30 }}>
-              <IconBtn
-                MuiIcon={Add}
-                onClick={() =>
-                  imWork((w) => {
-                    w.jobs.push(jobInit);
-                  })
-                }
-              />
-            </span>
-          )}
+          <span style={{ position: 'absolute', left: -30 }}>
+            <IconBtn
+              MuiIcon={Add}
+              onClick={() =>
+                imWork((w) => {
+                  w.jobs.push(jobInit);
+                })
+              }
+            />
+          </span>
           Sub-total of Labor Cost 人工费合计 (K)
         </Td>
         <Td right>{amount(getWorkLabor(work), '0,0')}</Td>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-array-index-key */
@@ -10,11 +11,20 @@ import { workInit } from 'constants/const-work';
 import { useImmer } from 'use-immer';
 
 import { Add } from '@mui/icons-material';
-import FormVehicle from './form/FormVehicle';
-import FormNote from './form/FormNote';
-import Doc from './doc/Doc';
+import DocPaid from 'renderer/components/doc/DocPaid';
+import Form from './form/Form';
 import QuitAlert from './dialog/QuitAlert';
 import DataGridWorks from './data-grid/DataGridWorks';
+import DocHeader from './doc/DocHeader';
+import DocVehicle from './doc/DocVehicle';
+import DocNeeds from './doc/DocNeeds';
+import DocJobsAndMats from './doc/DocJobsAndMats';
+import DocJobsNoCost from './doc/DocJobsNoCost';
+
+import DocNotice from './doc/DocNotice';
+import DocBill from './doc/DocBill';
+import DocFooter from './doc/DocFooter';
+import DataGridWorksFilter from './data-grid/DataGridWorksFilter';
 
 type P = { status: number };
 const PageWorksEdit = ({ status }: P) => {
@@ -27,8 +37,13 @@ const PageWorksEdit = ({ status }: P) => {
   useEffect(() => setRows(works), [works]);
   useEffect(() => setId(-1), [status]);
 
+  const docProps = {
+    imm: [work, imWork] as ImmWork,
+    options: app.options,
+    disabled: status < work?.status,
+  };
   return (
-    <Stack sx={{ width: '100%', height: '100vh' }}>
+    <Stack sx={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
       <DataGridWorks
         status={status}
         works={rows.filter((w) => w.status === status)}
@@ -47,6 +62,7 @@ const PageWorksEdit = ({ status }: P) => {
             Append
           </Button>
         )}
+        <DataGridWorksFilter works={works} setRows={setRows} />
       </Stack>
 
       <Drawer
@@ -57,7 +73,7 @@ const PageWorksEdit = ({ status }: P) => {
       >
         {work && (
           <>
-            <FormNote
+            <Form
               im={[work, imWork]}
               update={update}
               // remove={remove}
@@ -65,7 +81,28 @@ const PageWorksEdit = ({ status }: P) => {
               onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
             />
 
-            <Doc imm={[work, imWork]} options={app.options} />
+            <div className="doc-paper">
+              <DocHeader work={work} />
+              <DocVehicle {...docProps} />
+              <DocNeeds {...docProps} />
+              {work.status > 3 && <DocJobsAndMats {...docProps} />}
+              {work.status === 3 && (
+                <DocJobsNoCost imm={[work, imWork]} options={app.options} />
+              )}
+              {work.status > 3 && (
+                <Stack
+                  pt={1}
+                  direction="row"
+                  height={230}
+                  justifyContent="space-between"
+                >
+                  {work.status === 5 && <DocPaid />}
+                  <DocNotice {...docProps} style={{ width: '65%' }} />
+                  <DocBill {...docProps} style={{ width: '33%' }} />
+                </Stack>
+              )}
+              <DocFooter />
+            </div>
           </>
         )}
       </Drawer>
