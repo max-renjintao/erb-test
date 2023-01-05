@@ -26,7 +26,7 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
         works
           .filter(
             (f) =>
-              getMonth(f.date_s) >= fMonth[0] &&
+              getMonth(f.date_s) + 1 >= fMonth[0] &&
               getMonth(f.date_s) + 1 <= fMonth[1]
           )
           .filter((f) => f.status >= fStatus[0] && f.status <= fStatus[1])

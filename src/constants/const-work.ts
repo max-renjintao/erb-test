@@ -89,13 +89,13 @@ export const HEADERS = [
   'Reception',
   'Job Card',
   'Preform Invoice',
-  '',
+  'Payment Archive',
 ];
 export const STATUS = ['', 'wait', 'recept', 'doing', 'bill', 'paid'];
 export const TEAMS = ['Non', '汪攀', '王毅', '杨波'];
 export const TEAM_COLORS = [
-  '#aaaa0080',
-  'rgba(53, 162, 235, 0.5)',
-  '#88330080',
   '#cccccc80',
+  'rgba(53, 162, 235, 0.5)', // '#3377ff80',
+  '#88330080',
+  '#aaaa0080',
 ];

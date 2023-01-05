@@ -12,6 +12,7 @@ const InImNum = ({ immer: [[v, im], k], pl, ...props }: P) => (
   <InText
     fullWidth
     label={k}
+    type="number"
     pl={pl}
     value={`${v[k]}`}
     onChange={(e) =>

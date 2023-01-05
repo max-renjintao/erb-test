@@ -33,7 +33,7 @@ const owner = { field: 'owner', width: 150 };
 const tel = { field: 'tel', width: 150 };
 const vip = { field: 'vip', width: 150 };
 const status = { field: 'status', width: 80 };
-const team = { field: 'team', width: 80 };
+const team = { field: 'team', width: 30 };
 const total = { field: 'total', type: 'number', width: 90 };
 const paid = { field: 'paid', type: 'number', width: 90 };
 const labor_final = { field: 'labor_final', type: 'number', width: 90 };
@@ -62,7 +62,7 @@ const columns: GridColDef<WorkRow>[][] = [
   [sn, dur, plate, model, owner, note],
   [sn, date_s, dur, plate, model, mileage, owner, tel, vip, note],
   [sn, date_s, dur, plate, model, owner, note],
-  [sn, dur, date_e, plate, model, owner, tel, total, note],
+  [sn, dur, date_e, plate, model, owner, tel, team, total, note],
   [
     sn,
     date_s,
