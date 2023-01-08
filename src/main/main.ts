@@ -30,7 +30,10 @@ let mainWindow: BrowserWindow | null = null;
 ipcMain.on('csv-read', csvReadWorks);
 ipcMain.on('csv-write', csvWriteWorks);
 ipcMain.on('csv-path', csvPath);
-
+ipcMain.on('full-screen', (e, [b]: any) => {
+  console.log('b:', b);
+  mainWindow?.setFullScreen(b !== undefined ? b : !mainWindow.isFullScreen());
+});
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();

@@ -32,9 +32,18 @@ const DocInAuto = ({
       value={value}
       disableClearable
       freeSolo
-      onChange={(e, v) => v && onEdit(v)}
+      onChange={(e, v) => v && v !== value && onEdit(v)}
       renderInput={(ps) => (
-        <DocInText {...ps} textAlign={textAlign} multiline={multiline} />
+        <DocInText
+          {...ps}
+          textAlign={textAlign}
+          multiline={multiline}
+          onBlur={(e) => {
+            const v = e.target.value;
+            if (v !== value) onEdit(v);
+            if (ps.inputProps.onBlur) ps.inputProps.onBlur(e as any);
+          }}
+        />
       )}
       renderOption={(props, option) => (
         <li {...props} style={{ padding: 3 }}>

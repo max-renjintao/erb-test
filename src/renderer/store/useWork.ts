@@ -19,7 +19,7 @@ const useWork = (index: number) => {
   const imWork: Updater<Work> = useCallback((immer) => {
     _imWork(immer || workInit);
     setIsEdited(true);
-    console.log('% useWork imWork, isEdited:', isEdited);
+    // console.log('% useWork imWork, isEdited:', isEdited);
   }, []);
   // const reset=()=>{
 

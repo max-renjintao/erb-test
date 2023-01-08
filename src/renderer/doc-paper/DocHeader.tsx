@@ -1,8 +1,7 @@
 import { isValid } from 'date-fns';
 import { HEADERS } from 'constants/const-work';
-import useWork from 'renderer/store/useWork';
 
-const DocHeader = ({ work }: { work: Work }) => {
+const DocHeader = ({ imm: [work] }: DocProps) => {
   // const { work } = useWork();
   // const status = work.status;
   const date =

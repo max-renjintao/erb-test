@@ -1,4 +1,4 @@
-const DocFooter = () => {
+const DocFooter = ({ imm: [work] }: DocProps) => {
   return (
     <div
       style={{
@@ -9,8 +9,12 @@ const DocFooter = () => {
         width: 600,
       }}
     >
-      <div>Customer 客户:</div>
-      <div>Receptionist 接待员:</div>
+      {work.status === 4 && (
+        <>
+          <div>Customer 客户:</div>
+          <div>Receptionist 接待员:</div>
+        </>
+      )}
     </div>
   );
 };

@@ -8,10 +8,10 @@ const PageLogin = () => {
   const { app, imApp } = useStore();
   const [pass, setPass] = useState('');
   const navigate = useNavigate();
-  const setUser = (usr: number, usrTeamIdx = 0) =>
+  const setUser = (usr: number, team = 0) =>
     imApp((a) => {
       a.usr = usr;
-      a.usrTeamIdx = usrTeamIdx;
+      a.team = team;
     });
   useEffect(() => {
     switch (pass) {

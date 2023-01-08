@@ -61,7 +61,7 @@ const columns: GridColDef<WorkRow>[][] = [
   [],
   [sn, dur, plate, model, owner, note],
   [sn, date_s, dur, plate, model, mileage, owner, tel, vip, note],
-  [sn, date_s, dur, plate, model, owner, note],
+  [sn, date_s, dur, plate, model, owner, team, note],
   [sn, dur, date_e, plate, model, owner, tel, team, total, note],
   [
     sn,

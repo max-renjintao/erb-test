@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import DocTable from 'renderer/components/doc/DocTable';
-import DocInAuto from 'renderer/components/inputs/DocInAuto';
+import DocInAuto from 'renderer/components/doc/DocInAuto';
 import {
   Add,
   Delete,
@@ -9,9 +9,9 @@ import {
   South,
   SouthEast,
 } from '@mui/icons-material';
-import Td from '../../components/doc/DocTableTd';
-import MenuEditJob from '../../components/menu/MenuBar';
-import IconBtn from '../../components/menu/IconBtn';
+import DocMenuBar from 'renderer/components/doc/DocMenuBar';
+import Td from '../components/doc/DocTableTd';
+import IconBtn from '../components/doc/DocIconBtn';
 // import { ButtonSide } from '../../inputs/Buttons';
 // import InvoiceInput from '../../inputs/InvoiceInput';
 
@@ -28,7 +28,7 @@ const DocNeeds = ({ imm: [work, imWork], options, disabled }: P) => {
           <tr key={i}>
             <Td width="4%">
               {disabled || (
-                <MenuEditJob sx={{ left: -30 }}>
+                <DocMenuBar sx={{ left: -30 }}>
                   <IconBtn
                     color="error"
                     MuiIcon={Delete}
@@ -72,7 +72,7 @@ const DocNeeds = ({ imm: [work, imWork], options, disabled }: P) => {
                       })
                     }
                   />
-                </MenuEditJob>
+                </DocMenuBar>
               )}
               {i + 1}
             </Td>

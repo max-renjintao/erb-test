@@ -4,23 +4,23 @@
 
 import { Input, InputProps } from '@mui/material';
 import { ImmerHook } from 'use-immer';
-import InText from './InText2';
+import InText, { InTextProps } from './InText2';
 
-type P = { immer: [ImmerHook<any>, string]; pl?: string } & InputProps;
+type P = { immer: [ImmerHook<any>, string]; pl?: string } & InTextProps;
 
-const InImNum = ({ immer: [[v, im], k], pl, ...props }: P) => (
+const InImNum = ({ immer: [[v, im], k], ...ps }: P) => (
   <InText
     fullWidth
     label={k}
     type="number"
-    pl={pl}
+    sx={{ textAlign: 'right', ...ps.sx }}
     value={`${v[k]}`}
     onChange={(e) =>
       im((d: { [x: string]: string }) => {
         d[k] = +e.target.value;
       })
     }
-    {...props}
+    {...ps}
   />
 );
 export default InImNum;

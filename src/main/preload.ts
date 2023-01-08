@@ -1,6 +1,11 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
-export type Channels = 'csv-read' | 'csv-write' | 'print' | 'csv-path';
+export type Channels =
+  | 'csv-read'
+  | 'csv-write'
+  | 'print'
+  | 'csv-path'
+  | 'full-screen';
 
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: {

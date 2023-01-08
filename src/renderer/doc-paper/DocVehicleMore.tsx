@@ -1,5 +1,5 @@
-import DocTable from '../../components/doc/DocTable';
-import Td from '../../components/doc/DocTableTd';
+import DocTable from '../components/doc/DocTable';
+import Td from '../components/doc/DocTableTd';
 
 const DocVehicle = ({ work }: { work: Work }) => {
   return (

@@ -1,16 +1,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Button } from '@mui/material';
 import React from 'react';
-import AlertDialog, { AlertDialogProps } from 'renderer/layouts/AlertDialog';
+import Dlg, { DlgProps } from 'renderer/components/ui/Dlg';
 
 type P = {
   onSaveQuit: () => void;
   onQuit: () => void;
   onClose: () => void;
-} & AlertDialogProps;
-const QuitAlert = ({ onSaveQuit, onQuit, onClose, ...rest }: P) => {
+} & DlgProps;
+const DlgQuit = ({ onSaveQuit, onQuit, onClose, ...rest }: P) => {
   return (
-    <AlertDialog
+    <Dlg
       title="Quit Work Edit"
       content="Quit Work Edit without Save, will lose your edition. Please Make Sure..."
       {...rest}
@@ -22,8 +22,8 @@ const QuitAlert = ({ onSaveQuit, onQuit, onClose, ...rest }: P) => {
         Quit Without Save
       </Button>
       <Button onClick={onClose}>Cancel</Button>
-    </AlertDialog>
+    </Dlg>
   );
 };
 
-export default QuitAlert;
+export default DlgQuit;

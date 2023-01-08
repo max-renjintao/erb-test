@@ -4,9 +4,9 @@
 
 import { Input, InputProps } from '@mui/material';
 
-type P = { label?: string; pl?: string } & InputProps;
+export type InTextProps = { label?: string; pl?: string } & InputProps;
 
-const InText = ({ label, pl, ...props }: P) => (
+const InText = ({ label, pl, ...props }: InTextProps) => (
   <Input
     startAdornment={
       label && <small style={{ minWidth: pl || '70px' }}>{label}</small>

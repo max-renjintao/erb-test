@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Box } from '@mui/material';
-import IconBtn, { IconBtnProps } from './IconBtn';
+import IconBtn, { IconBtnProps } from './DocIconBtn';
 
 type P = IconBtnProps;
 const IconBtnFly = ({ sx, ...ps }: P) => {

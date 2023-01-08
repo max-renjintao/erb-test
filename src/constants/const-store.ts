@@ -24,8 +24,8 @@ export type Options = {
 export type StoreData = typeof dataInit;
 export const appInit = {
   usr: 0,
+  team: 0,
   index: 0,
-  usrTeamIdx: 0,
   showDialogWorkEdit: false,
   options: {
     vehicles: [],

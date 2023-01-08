@@ -10,6 +10,7 @@ const FormBase = ({ imm }: { imm: ImmWork }) => {
       <InImDate immer={[imm, 'date_e']} pl="60px" sx={{ width: 180 }} />
       <InImNum immer={[imm, 'team']} pl="40px" sx={{ width: 70 }} />
       <InImNum immer={[imm, 'status']} pl="50px" sx={{ width: 80 }} />
+      <InImNum immer={[imm, 'paid']} pl="40px" sx={{ width: 120 }} />
     </Stack>
   );
 };

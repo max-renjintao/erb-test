@@ -5,17 +5,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { ReactNode } from 'react';
 
-export type AlertDialogProps = DialogProps & {
+export type DlgProps = DialogProps & {
   title?: string;
-  content?: string;
+  content?: ReactNode;
 };
-export default function AlertDialog({
-  title,
-  content,
-  children,
-  ...rest
-}: AlertDialogProps) {
+export default function Dlg({ title, content, children, ...rest }: DlgProps) {
   return (
     <Dialog {...rest}>
       <DialogTitle>{title}</DialogTitle>

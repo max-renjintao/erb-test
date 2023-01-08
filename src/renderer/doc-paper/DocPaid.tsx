@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { ComponentProps } from 'react';
 
-type P = ComponentProps<'div'>;
-const DocPaid = ({ style, ...ps }: P) => {
-  return (
+type P = DocProps & ComponentProps<'div'>;
+const DocPaid = ({ imm: [work], style, ...ps }: P) => {
+  return work.paid === work.total && work.paid > 0 ? (
     <div
       {...ps}
       style={{
@@ -28,7 +28,7 @@ const DocPaid = ({ style, ...ps }: P) => {
         Paid
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default DocPaid;

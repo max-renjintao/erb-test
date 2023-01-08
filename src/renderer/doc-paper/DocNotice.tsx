@@ -5,11 +5,11 @@ import DocTable from 'renderer/components/doc/DocTable';
 import useWork from 'renderer/store/useWork';
 import { ComponentProps } from 'react';
 // import InvoiceTable, { TxtIn } from '../InvoiceTable';
-type P = { imm: ImmWork } & ComponentProps<'div'>;
-const DocNotice = ({ imm: [work, imWork], ...props }: P) => {
+type P = DocProps & ComponentProps<'div'>;
+const DocNotice = ({ imm: [work, imWork], ...ps }: P) => {
   // const { work, imWork } = useWork();
   return (
-    <DocTable heading="Thanks for your supporting/谢谢您的惠顾" {...props}>
+    <DocTable heading="Thanks for your supporting/谢谢您的惠顾" {...ps}>
       <tr>
         <td>
           <Stack justifyContent="center">

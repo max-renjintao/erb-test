@@ -91,11 +91,6 @@ export const HEADERS = [
   'Preform Invoice',
   'Payment Archive',
 ];
-export const STATUS = ['', 'wait', 'recept', 'doing', 'bill', 'paid'];
+export const STATUS = ['', 'wait', 'recept', 'doing', 'bill', 'pay'];
 export const TEAMS = ['Non', '汪攀', '王毅', '杨波'];
-export const TEAM_COLORS = [
-  '#cccccc80',
-  'rgba(53, 162, 235, 0.5)', // '#3377ff80',
-  '#88330080',
-  '#aaaa0080',
-];
+export const TEAM_COLORS = ['#cccccc', '#4377ff', '#883300', '#aaaa00'];

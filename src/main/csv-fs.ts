@@ -23,7 +23,7 @@ import {
 
 const CSV_PATH = app.isPackaged
   ? path.join(process.resourcesPath, '../../data')
-  : path.join(__dirname, '../../data');
+  : path.join('C:/tulando/data');
 
 const FN_WORKS = `${CSV_PATH}/works.csv`;
 const FN_ORDERS = `${CSV_PATH}/orders.csv`;

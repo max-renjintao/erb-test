@@ -1,5 +1,5 @@
 $blue: #0070c0;
-$x-row-bg-opacity: 0.08;
+$x-row-bg-opacity: 0.2;
 
 .doc-paper {
   position: relative;
@@ -11,7 +11,7 @@ $x-row-bg-opacity: 0.08;
   h1 {
     font-size: 20px;
   }
-  width: 900px;
+  width: 855px;
   padding: 40px;
 }
 
@@ -26,7 +26,7 @@ $x-row-bg-opacity: 0.08;
 
   thead {
     font-size: 12px;
-    background-color: #ccc;
+    background-color: #bbb;
     th {
       border: 0.3px solid #000;
       text-align: left;

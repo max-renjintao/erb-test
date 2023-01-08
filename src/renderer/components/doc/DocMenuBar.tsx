@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
-import { Box, IconButton, Popover } from '@mui/material';
-import CropFreeIcon from '@mui/icons-material/CropFree';
+import { Box, Popover } from '@mui/material';
 import { BoxProps } from '@mui/system';
-import IconBtn from './IconBtn';
+import IconBtn from './DocIconBtn';
 
-export default function MenuEditJob({ children, sx, ...ps }: BoxProps) {
+export default function DocMenuBar({ children, sx, ...ps }: BoxProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   // const open = Boolean(anchorEl);
   // const handleClick = (event: React.MouseEvent<HTMLElement>) => {

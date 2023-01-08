@@ -4,11 +4,10 @@ import DocTable from 'renderer/components/doc/DocTable';
 import { deduplicateVar } from 'utils/deduplicate';
 import { amount } from 'utils/disp';
 import { getWorkLabor, getWorkMaterial } from 'utils/getAmount';
-import DocInAuto from 'renderer/components/inputs/DocInAuto';
+import DocInAuto from 'renderer/components/doc/DocInAuto';
 import { jobInit, matInit, Work } from 'constants/const-work';
-import DocInNum from 'renderer/components/inputs/DocInNum';
-import { ImmerHook } from 'use-immer';
 import { Options, worksInit } from 'constants/const-store';
+import DocMenuBar from 'renderer/components/doc/DocMenuBar';
 import {
   Add,
   Delete,
@@ -20,16 +19,11 @@ import {
   SouthEast,
   SouthWest,
 } from '@mui/icons-material';
-import Td from '../../components/doc/DocTableTd';
-import MenuEditJob from '../../components/menu/MenuBar';
-import IconBtn from '../../components/menu/IconBtn';
+import DocInNum from 'renderer/components/doc/DocInNum';
+import Td from '../components/doc/DocTableTd';
+import IconBtn from '../components/doc/DocIconBtn';
 
-type P = {
-  imm: ImmerHook<Work>;
-  options: Options;
-  disabled: boolean;
-  full: boolean;
-};
+type P = DocProps & { full: boolean };
 const DocJobsAndMats = ({
   imm: [work, imWork],
   options,
@@ -71,14 +65,14 @@ const DocJobsAndMats = ({
         <tr>
           {(
             [
-              ['4%', 'Sn', '编号'],
-              ['12%', 'Item Code', '项目编号'],
-              ['36%', 'Maintenance Item', '维修项目'],
+              ['5%', 'Sn', '编号'],
+              ['10%', 'Item Code', '项目编号'],
+              ['33%', 'Maintenance Item', '维修项目'],
               full && ['9%', 'Labor Cost', '人工费(K)'],
-              ['20%', 'Used Parts/Materials', '所用配件/材料'],
-              ['4%', 'Qty', '数量'],
-              full && ['6%', 'Unit Price', '单价(K)'],
-              full && ['9%', 'Materials Cost', '材料费(K)'],
+              ['19%', 'Used Parts/Materials', '所用配件/材料'],
+              ['5%', 'Qty', '数量'],
+              full && ['8%', 'Unit Price', '单价(K)'],
+              full && ['12%', 'Materials Cost', '材料费(K)'],
             ] as string[][]
           )
             .filter((f) => f)
@@ -95,7 +89,7 @@ const DocJobsAndMats = ({
             <>
               <Td rowSpan={rowSpan}>
                 {disabled || (
-                  <MenuEditJob sx={{ left: -30 }}>
+                  <DocMenuBar sx={{ left: -30 }}>
                     <IconBtn
                       color="error"
                       MuiIcon={Delete}
@@ -158,7 +152,7 @@ const DocJobsAndMats = ({
                         })
                       }
                     />
-                  </MenuEditJob>
+                  </DocMenuBar>
                 )}
                 {jobId + 1}
               </Td>
@@ -205,6 +199,7 @@ const DocJobsAndMats = ({
                 <td rowSpan={jobCostRowSpans[jobId]}>
                   <DocInNum // job / cost
                     disabled={disabled}
+                    format="0,0.00"
                     value={job.cost}
                     onEdit={(v) =>
                       imWork((d) => {
@@ -262,6 +257,7 @@ const DocJobsAndMats = ({
                   <DocInNum // mat / qty
                     disabled={disabled}
                     value={mat.qty}
+                    format="0,0[.]0"
                     onEdit={(v) =>
                       imWork((d) => {
                         d.jobs[jobId].mats[matId].qty = v;
@@ -269,7 +265,7 @@ const DocJobsAndMats = ({
                     }
                   />{' '}
                   {disabled || (
-                    <MenuEditJob sx={{ right: -30 }}>
+                    <DocMenuBar sx={{ right: -30 }}>
                       <IconBtn
                         MuiIcon={NorthWest}
                         onClick={() =>
@@ -321,7 +317,7 @@ const DocJobsAndMats = ({
                           })
                         }
                       />
-                    </MenuEditJob>
+                    </DocMenuBar>
                   )}
                 </td>
                 {full && (
@@ -329,6 +325,7 @@ const DocJobsAndMats = ({
                     <DocInNum // mat / rate
                       disabled={disabled}
                       value={mat.rate}
+                      format="0,0.00"
                       onEdit={(v) =>
                         imWork((d) => {
                           d.jobs[jobId].mats[matId].rate = v;
@@ -338,7 +335,7 @@ const DocJobsAndMats = ({
                     />
                   </td>
                 )}
-                {full && <Td right>{mat.qty * mat.rate || '-'}</Td>}
+                {full && <Td right>{amount(mat.qty * mat.rate) || '-'}</Td>}
               </tr>
             ))
           );
@@ -348,9 +345,9 @@ const DocJobsAndMats = ({
             <Td colSpan={3}>
               Sub-total of Labor Cost 人工费合计 (K){BtnAppendJob}
             </Td>
-            <Td right>{amount(getWorkLabor(work), '0,0')}</Td>
+            <Td right>{amount(getWorkLabor(work))}</Td>
             <Td colSpan={3}>Sub-total of Material Cost 材料费合计 (K)</Td>
-            <Td right>{amount(getWorkMaterial(work), '0,0')}</Td>
+            <Td right>{amount(getWorkMaterial(work))}</Td>
           </tr>
         )}
       </DocTable>

@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import DocInAuto from 'renderer/components/inputs/DocInAuto';
+import DocInAuto from 'renderer/components/doc/DocInAuto';
+import DocInNum from 'renderer/components/doc/DocInNum';
 
 import { deduplicateVar } from 'utils/deduplicate';
-import DocTable from '../../components/doc/DocTable';
-import DocTableTd from '../../components/doc/DocTableTd';
+import { amount } from 'utils/disp';
+import DocTable from '../components/doc/DocTable';
+import DocTableTd from '../components/doc/DocTableTd';
 
-type P = { imm: ImmWork; disabled: boolean; options: Options };
-const DocVehicle = ({ imm: [work, imWork], disabled, options }: P) => {
+const DocVehicle = ({ imm: [work, imWork], disabled, options }: DocProps) => {
   return (
     <DocTable heading="Vehicle and owner's information 车辆及车主信息">
       <tr>
@@ -55,22 +56,20 @@ const DocVehicle = ({ imm: [work, imWork], disabled, options }: P) => {
         <DocTableTd width="15%">
           The Mileage <br /> 行驶里程
         </DocTableTd>
-
-        <DocInAuto
-          disabled={disabled}
-          options={[
-            `${
-              options.vehicles.find((v) => v.plate === work.plate)?.mileage ||
-              '0'
-            } /km`,
-          ]}
-          value={`${work.mileage.toLocaleString()} /km`}
-          onEdit={(v) => {
-            imWork((d) => {
-              d.mileage = +v.slice(0, -3).replaceAll(',', '').replace('，', '');
-            });
-          }}
-        />
+        <DocTableTd width="17%">
+          <DocInNum
+            disabled={disabled}
+            format="0,0"
+            unit="/km"
+            textAlign="center"
+            value={work.mileage}
+            onEdit={(v) => {
+              imWork((d) => {
+                d.mileage = v;
+              });
+            }}
+          />
+        </DocTableTd>
       </tr>
       <tr>
         <DocTableTd width="15%">
@@ -119,9 +118,11 @@ const DocVehicle = ({ imm: [work, imWork], disabled, options }: P) => {
           options={deduplicateVar(options.vehicles.map((v) => v.vip)).filter(
             (f) => !!f
           )}
-          value={work.vip}
+          value={work.vip || '/'}
           onEdit={(vip) => {
-            if (vip) {
+            console.log('vip:', vip, 'work.vip:', work.vip);
+
+            if (vip && vip !== '/') {
               const ops = options.vehicles;
               const same = ops.find((w) => w.vip === vip);
               if (same) {
@@ -130,10 +131,14 @@ const DocVehicle = ({ imm: [work, imWork], disabled, options }: P) => {
                   w.tel = same.tel;
                   w.vip = same.vip;
                 });
+              } else {
+                imWork((w) => {
+                  w.vip = vip;
+                });
               }
             } else {
               imWork((w) => {
-                w.vip = vip;
+                w.vip = '';
               });
             }
           }}

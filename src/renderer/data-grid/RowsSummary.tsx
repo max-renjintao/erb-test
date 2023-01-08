@@ -28,10 +28,26 @@ const RowsSummary = ({ rows }: P) => {
       >
         <strong>SUM:</strong>
       </Typography>
-      <Chip avatar={<ShoppingCartIcon />} label={amount(sum.total, '0,0')} />
-      <Chip avatar={<RequestQuoteIcon />} label={amount(sum.paid, '0,0')} />
-      <Chip avatar={<BuildIcon />} label={amount(sum.labor_final, '0,0')} />
-      <Chip avatar={<SavingsIcon />} label={amount(sum.profit, '0,0')} />
+      <Chip
+        size="small"
+        avatar={<ShoppingCartIcon />}
+        label={amount(sum.total, '0,0')}
+      />
+      <Chip
+        size="small"
+        avatar={<RequestQuoteIcon />}
+        label={amount(sum.paid, '0,0')}
+      />
+      <Chip
+        size="small"
+        avatar={<BuildIcon />}
+        label={amount(sum.labor_final, '0,0')}
+      />
+      <Chip
+        size="small"
+        avatar={<SavingsIcon />}
+        label={amount(sum.profit, '0,0')}
+      />
     </Stack>
   );
 };
