@@ -1,39 +1,32 @@
-import {
-  Button,
-  Slider,
-  Stack,
-  Switch,
-  ToggleButton,
-  ToggleButtonGroup,
-} from '@mui/material';
+import { Button, Checkbox, Slider, Stack, Switch } from '@mui/material';
 import { getMonth } from 'date-fns';
 import { useEffect, useState } from 'react';
 
-const ARR1TO12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const ARR0TO5 = [0, 1, 2, 3, 4, 5];
+// const ARR1TO12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// const ARR0TO5 = [0, 1, 2, 3, 4, 5];
 
 type P = { works: Work[]; setRows: (ws: Work[]) => void };
-const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
-  const [filter, setFilter] = useState(false);
+const Filter3 = ({ works, setRows }: P) => {
+  const [filter, setFilter] = useState(true);
   const [fMonth, setFMonth] = useState([1, 12]);
-  const [fStatus, setFStatus] = useState([0, 5]);
-  const [fTeam, setFTeam] = useState(ARR0TO5);
+  const [fStatus, setFStatus] = useState(false);
+  // const [fTeam, setFTeam] = useState(ARR0TO5);
   useEffect(() => {
     console.log(filter, works.length);
 
     if (filter)
-      setWs(
+      setRows(
         works
           .filter(
-            (f) =>
-              getMonth(f.date_e) + 1 >= fMonth[0] &&
-              getMonth(f.date_e) + 1 <= fMonth[1]
+            (w) =>
+              getMonth(w.date_e) + 1 >= fMonth[0] &&
+              getMonth(w.date_e) + 1 <= fMonth[1]
           )
-          .filter((f) => f.status >= fStatus[0] && f.status <= fStatus[1])
-          .filter((f) => fTeam.includes(f.team))
+          .filter((w) => (fStatus ? w.status >= 3 : w.status === 3))
+        // .filter((f) => fTeam.includes(f.team))
       );
-    else setWs(works);
-  }, [works, filter, fMonth, fStatus, fTeam, setWs]);
+    else setRows(works);
+  }, [works, filter, fMonth, fStatus, setRows]);
 
   return (
     <Stack direction="row" alignItems="center" spacing={1}>
@@ -57,22 +50,16 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
 
       <small style={{ width: '15px' }}>{fMonth[1]}</small>
       <Button size="small" disabled>
-        status:
+        show Done
       </Button>
-      <Slider
-        disabled={!filter}
+      <Checkbox
         size="small"
-        sx={{ width: 100 }}
-        step={1}
-        marks
-        min={0}
-        max={5}
-        value={fStatus}
-        onChange={(e, v) => setFStatus(v as number[])}
-        valueLabelDisplay="auto"
+        disabled={!filter}
+        checked={fStatus}
+        onChange={(e) => setFStatus(e.target.checked)}
       />
 
-      <Button
+      {/* <Button
         size="small"
         disabled={!filter}
         onClick={() => setFTeam(fTeam.length === ARR0TO5.length ? [] : ARR0TO5)}
@@ -93,14 +80,14 @@ const DataGridWorksFilter = ({ works, setRows: setWs }: P) => {
             {n}
           </ToggleButton>
         ))}
-      </ToggleButtonGroup>
+      </ToggleButtonGroup> */}
       <Switch
         size="small"
-        value={filter}
+        checked={filter}
         onChange={() => setFilter((f) => !f)}
       />
     </Stack>
   );
 };
 
-export default DataGridWorksFilter;
+export default Filter3;

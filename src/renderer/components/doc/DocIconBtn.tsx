@@ -7,7 +7,7 @@ export type IconBtnProps = {
   MuiIcon?: (props: any) => JSX.Element;
 } & IconButtonProps;
 const IconBtn = ({ MuiIcon = CropFree, ...ps }: IconBtnProps) => (
-  <IconButton size="small" {...ps}>
+  <IconButton className="no-print" size="small" color="warning" {...ps}>
     <MuiIcon fontSize="small" />
   </IconButton>
 );

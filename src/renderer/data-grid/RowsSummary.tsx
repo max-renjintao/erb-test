@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import { Chip, Stack, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import ObjectEntries from 'utils/ObjectEntries';
@@ -7,8 +8,16 @@ import BuildIcon from '@mui/icons-material/Build';
 import SavingsIcon from '@mui/icons-material/Savings';
 import { amount } from 'utils/disp';
 
-type P = { rows: { [k: string]: any }[] };
-const RowsSummary = ({ rows }: P) => {
+type P = {
+  rows: {
+    [k: string]: any;
+  }[];
+  total?: boolean;
+  paid?: boolean;
+  labor?: boolean;
+  profit?: boolean;
+};
+const RowsSummary = ({ rows, total, paid, labor, profit }: P) => {
   const sum = useMemo(() => {
     const res = { total: 0, paid: 0, labor_final: 0, profit: 0 };
     rows.forEach((row) => {
@@ -28,26 +37,34 @@ const RowsSummary = ({ rows }: P) => {
       >
         <strong>SUM:</strong>
       </Typography>
-      <Chip
-        size="small"
-        avatar={<ShoppingCartIcon />}
-        label={amount(sum.total, '0,0')}
-      />
-      <Chip
-        size="small"
-        avatar={<RequestQuoteIcon />}
-        label={amount(sum.paid, '0,0')}
-      />
-      <Chip
-        size="small"
-        avatar={<BuildIcon />}
-        label={amount(sum.labor_final, '0,0')}
-      />
-      <Chip
-        size="small"
-        avatar={<SavingsIcon />}
-        label={amount(sum.profit, '0,0')}
-      />
+      {total && (
+        <Chip
+          size="small"
+          avatar={<ShoppingCartIcon />}
+          label={amount(sum.total, '0,0')}
+        />
+      )}
+      {paid && (
+        <Chip
+          size="small"
+          avatar={<RequestQuoteIcon />}
+          label={amount(sum.paid, '0,0')}
+        />
+      )}
+      {labor && (
+        <Chip
+          size="small"
+          avatar={<BuildIcon />}
+          label={amount(sum.labor_final, '0,0')}
+        />
+      )}
+      {profit && (
+        <Chip
+          size="small"
+          avatar={<SavingsIcon />}
+          label={amount(sum.profit, '0,0')}
+        />
+      )}
     </Stack>
   );
 };

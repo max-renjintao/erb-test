@@ -32,7 +32,7 @@ const DocJobsAndMats = ({
 }: P) => {
   const jobRowSpans = work.jobs.map((j) => j.mats.length || 1);
   const jobCostRowSpans = work.jobs.map((job, jobId, jobs) => {
-    let jobCostRowSpan = jobRowSpans[jobId];
+    let jobCostRowSpan = jobRowSpans[jobId] as number;
     if (jobId > 0 && job.joinUp) {
       //
       jobCostRowSpan = 0;
@@ -68,7 +68,7 @@ const DocJobsAndMats = ({
               ['5%', 'Sn', '编号'],
               ['10%', 'Item Code', '项目编号'],
               ['33%', 'Maintenance Item', '维修项目'],
-              full && ['9%', 'Labor Cost', '人工费(K)'],
+              ['9%', 'Labor Cost', '人工费(K)'],
               ['19%', 'Used Parts/Materials', '所用配件/材料'],
               ['5%', 'Qty', '数量'],
               full && ['8%', 'Unit Price', '单价(K)'],
@@ -143,7 +143,7 @@ const DocJobsAndMats = ({
                       }
                     />
                     <IconBtn
-                      color={work.jobs[jobId].joinUp ? 'primary' : 'default'}
+                      color={work.jobs[jobId].joinUp ? 'primary' : 'warning'}
                       MuiIcon={JoinFull}
                       onClick={() =>
                         imWork((w) => {
@@ -195,7 +195,7 @@ const DocJobsAndMats = ({
                   })
                 }
               />
-              {full && !!jobCostRowSpans[jobId] && (
+              {!!jobCostRowSpans[jobId] && (
                 <td rowSpan={jobCostRowSpans[jobId]}>
                   <DocInNum // job / cost
                     disabled={disabled}

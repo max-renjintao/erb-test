@@ -32,6 +32,9 @@ import FormBase from 'renderer/form/FormBase';
 import FormNote from 'renderer/form/FormNote';
 import RowsSummary from 'renderer/data-grid/RowsSummary';
 import BtnWithAlert from 'renderer/components/ui/BtnWithAlert';
+import Btn from 'renderer/components/ui/Btn';
+import Filter3 from 'renderer/data-grid/Filter3';
+import Filter4 from 'renderer/data-grid/Filter4';
 
 type P = { pageStatus: number };
 const PageWorksEdit = ({ pageStatus }: P) => {
@@ -53,7 +56,7 @@ const PageWorksEdit = ({ pageStatus }: P) => {
     pageStatus === 5
       ? rows
       : pageStatus === 3 && app.usr === 3
-      ? rows.filter((w) => w.status === 3 && w.team === app.team)
+      ? rows.filter((w) => w.status >= 3 && w.team === app.team)
       : pageStatus === 1
       ? rows.filter((w) => w.status === 5 || w.status === 1)
       : rows.filter((w) => w.status === pageStatus);
@@ -70,108 +73,125 @@ const PageWorksEdit = ({ pageStatus }: P) => {
     (...users: number[]) => users.includes(work?.status),
     [work?.status]
   );
+  const DataGrid = (
+    <DataGridWorks
+      status={pageStatus}
+      works={statusRows}
+      id={id}
+      onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
+      hideFooter={statusRows.length < 100}
+    />
+  );
+  const Foot = (
+    <Stack direction="row">
+      {pu(1, 2, 4, 5) && (
+        <>
+          <Btn
+            startIcon={<Add fontSize="small" />}
+            text={work ? 'Copy' : 'Append'}
+            onClick={() => {
+              const newWork = work || workInit;
+              const now = new Date(Date.now());
+              append({
+                ...newWork,
+                status: pageStatus,
+                date_s: now,
+                date_e: now,
+              });
+            }}
+          />
+
+          <BtnWithAlert
+            startIcon={<Delete fontSize="small" />}
+            color="error"
+            text="Remove"
+            title="Delete the last work"
+            btnProps={[
+              {
+                color: 'error',
+                children: 'Delete right now',
+                onClick: () => {
+                  const delId = statusRows[statusRows.length - 1].id;
+                  const delWork = works[delId];
+                  if (delWork.status === pageStatus) {
+                    removeById(delId);
+                  } else {
+                    window.alert(
+                      `warning!
+              sorry you have no authority to delete the last work!
+              sn.${delWork.sn}`
+                    );
+                  }
+                },
+              },
+            ]}
+          />
+        </>
+      )}
+      {au(5) && <DataGridWorksFilter works={works} setRows={setRows} />}
+      {au(4) && <Filter4 works={works} setRows={setRows} />}
+      {au(3) && <Filter3 works={works} setRows={setRows} />}
+      <span style={{ flexGrow: 1 }} />
+      <RowsSummary
+        rows={statusRows}
+        total={au(4, 5)}
+        paid={au(4, 5)}
+        labor={au(3, 5)}
+        profit={au(5)}
+      />
+    </Stack>
+  );
+
+  const Form = (
+    <div className="no-print">
+      <FormAdmin
+        usr={app.usr}
+        imm={[work, imWork]}
+        update={update}
+        remove={remove}
+        isEdited={isEdited}
+        onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
+      />
+      {au(4, 5) && <FormBase imm={imm} />}
+      <FormNote imm={imm} />
+    </div>
+  );
+  const Doc = (
+    <div className="doc-paper">
+      <DocHeader {...docProps} />
+      <DocVehicle {...docProps} />
+      {wu(2, 3, 4, 5) && <DocNeeds {...docProps} />}
+      {wu(3) && <DocJobsAndMats {...docProps} full={false} />}
+      {wu(1, 4, 5) && <DocJobsAndMats {...docProps} full />}
+      {wu(1, 4, 5) && (
+        <Stack
+          pt={1}
+          direction="row"
+          height={230}
+          justifyContent="space-between"
+        >
+          <DocPaid {...docProps} />
+          <DocNotice {...docProps} style={{ width: '65%' }} />
+          <DocBill {...docProps} style={{ width: '31%' }} />
+        </Stack>
+      )}
+      <DocFooter {...docProps} />
+    </div>
+  );
   return (
     <Stack sx={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
-      <DataGridWorks
-        status={pageStatus}
-        works={statusRows}
-        id={id}
-        onRowClick={(ps) => (isEdited ? setQuitId(+ps.id) : setId(+ps.id))}
-        hideFooter={statusRows.length < 100}
-      />
-      <Stack direction="row">
-        {pu(1, 2, 4, 5) && (
-          <>
-            <Button
-              startIcon={<Add fontSize="small" />}
-              size="small"
-              onClick={() => {
-                const newWork = work || workInit;
-                const now = new Date(Date.now());
-                append({
-                  ...newWork,
-                  status: pageStatus,
-                  date_s: now,
-                  date_e: now,
-                });
-              }}
-            >
-              {work ? 'copy' : 'Append'}
-            </Button>
-            <BtnWithAlert
-              startIcon={<Delete fontSize="small" />}
-              color="error"
-              text="Remove"
-              title="Delete the last work"
-              btnProps={[
-                {
-                  color: 'error',
-                  children: 'Delete right now',
-                  onClick: () => {
-                    const delId = statusRows[statusRows.length - 1].id;
-                    const delWork = works[delId];
-                    if (delWork.status === pageStatus) {
-                      removeById(delId);
-                    } else {
-                      window.alert(
-                        `warning!
-                    sorry you have no authority to delete the last work!
-                    sn.${delWork.sn}`
-                      );
-                    }
-                  },
-                },
-              ]}
-            />
-          </>
-        )}
-        <DataGridWorksFilter works={works} setRows={setRows} />
-        <span style={{ flexGrow: 1 }} />
-        {au(5) && <RowsSummary rows={statusRows} />}
-      </Stack>
+      {DataGrid}
+      {Foot}
 
       <Drawer
         variant="persistent"
         anchor="right"
+        className="bg-white"
         open={!!work}
-        PaperProps={{ sx: { width: 880 } }}
+        PaperProps={{ className: 'bg-white', sx: { width: 880 } }}
       >
-        {work && (
-          <>
-            <div className="no-print">
-              <FormAdmin
-                status={pageStatus}
-                imm={[work, imWork]}
-                update={update}
-                remove={remove}
-                isEdited={isEdited}
-                onClose={() => (isEdited ? setQuitId(-1) : setId(-1))}
-              />
-              {au(4, 5) && <FormBase imm={imm} />}
-              <FormNote imm={imm} />
-            </div>
-            <div className="doc-paper">
-              <DocHeader {...docProps} />
-              <DocVehicle {...docProps} />
-              {wu(2, 3, 4, 5) && <DocNeeds {...docProps} />}
-              {wu(3) && <DocJobsAndMats {...docProps} full={false} />}
-              {wu(1, 4, 5) && <DocJobsAndMats {...docProps} full />}
-              {wu(1, 4, 5) && (
-                <Stack
-                  pt={1}
-                  direction="row"
-                  height={230}
-                  justifyContent="space-between"
-                >
-                  <DocPaid {...docProps} />
-                  <DocNotice {...docProps} style={{ width: '65%' }} />
-                  <DocBill {...docProps} style={{ width: '31%' }} />
-                </Stack>
-              )}
-              <DocFooter {...docProps} />
-            </div>
-          </>
-        )}
+        {work && Form}
+        {work && Doc}
       </Drawer>
 
       <DlgQuit
